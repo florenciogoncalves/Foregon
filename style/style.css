@@ -148,15 +148,17 @@ main h2 + span {
 
 main > div > ul {
   display: grid;
-  padding: 0 20px;
   box-sizing: border-box;
   justify-content: space-between;
 }
-main > div:not() > ul
+#nossos-produtos > ul {
+  padding: 0 20px;
+}
 #nossos-produtos .cartao {
   padding: 7px;
   box-sizing: border-box;
   width: 150px;
+  height: 220px;
 
   border: 2px solid #85e0a3;
 
@@ -170,9 +172,21 @@ main > div:not() > ul
   height: 100%;
 }
 
-.cartao img {
-  width: 70%;
-  height: max-content;
+#nossos-produtos .cartao > figure {
+  width: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+#nossos-produtos .cartao figcaption {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: grid;
+}
+
+#nossos-produtos .cartao img {
+  height: 50px;
   margin: auto;
   display: flex;
   object-fit: fill;
@@ -197,7 +211,11 @@ main > div:not() > ul
   font-weight: 400;
   font-size: 10px;
 
+  width: 100%;
+
   color: #455a64;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .cartao .botao-verde {
@@ -220,9 +238,77 @@ main > div:not() > ul
   line-height: 13px;
 }
 
+/*
+************************************
+***   #avaliacoes-dos-usuarios   ***
+************************************
+*/
+
 #avaliacoes-dos-usuarios .cartao {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   border-radius: 6px;
-    width: 150px;
+  width: 120px;
+  padding: 25px;
 }
 
+#avaliacoes-dos-usuarios figure,
+#avaliacoes-dos-usuarios figcaption {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  row-gap: 7px;
+}
+
+#avaliacoes-dos-usuarios h4 {
+  text-align: center;
+  font-size: 13px;
+  margin: 3px 0 0;
+  font-weight: 700;
+}
+
+#avaliacoes-dos-usuarios .cartao img {
+  width: 60px;
+  height: 60px;
+  max-height: 60px;
+  margin: auto;
+  display: flex;
+  overflow: hidden;
+  object-fit: fill;
+  background: #000;
+  border-radius: 100px;
+}
+
+#avaliacoes-dos-usuarios .cartao p {
+  font-weight: 400;
+font-size: 10px;
+line-height: 11px;
+text-align: center;
+}
+
+/*
+************************************
+***            Rodapé            ***
+************************************
+*/
+#rodape-principal {
+  background: var(--verde-principal);
+  margin-top: 150px;
+  height: max-content;
+  display: grid;
+  grid-template-columns: auto 1fr;
+
+  color: #fff;
+}
+
+#rodape-principal #caminhos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 20%);
+  font-size: 8px;
+  row-gap: 5px;
+  padding: 10px;
+  font-weight: 500;
+}
+
+#rodape-principal #caminhos li:not(li:nth-of-type(n + 6)){
+  font-weight: 700;
+  margin-bottom: 5px;
+}
