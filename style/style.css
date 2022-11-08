@@ -290,12 +290,13 @@ text-align: center;
 ************************************
 */
 #rodape-principal {
+  position: relative;
   background: var(--verde-principal);
   margin-top: 150px;
   height: max-content;
   padding: 10px;
   display: grid;
-  grid-template-rows: max-content 1fr;
+  grid-template-rows: max-content max-content;
   row-gap: 15px;
 
   color: #fff;
@@ -377,3 +378,14 @@ text-align: center;
   margin-bottom: 3px;
 }
 
+#rodape-principal > span:last-of-type {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+
+  font-size: 5px;
+  line-height: 9px;
+  text-align: center;
+
+  background: #8991A0;
+}
