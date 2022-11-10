@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foregon</title>
+    <link rel="shortcut icon" href="./image/favicon.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="./style/reset.css" />
+    <link rel="stylesheet" href="./style/style.css" />
+  </head>
+  <body id="cadastro" class="iniciar-sessao">
+    <header id="cabecalho-principal">
+      <img src="./image/logo-minha-bufunfa.svg" alt="Minha Bufunfa - logo" />
+    </header>
+
+    <div class="lado-esquerdo"></div>
+
+    <main class="lado-direito">
+      <img src="./image/favicon.svg" alt="minha-bufunfa" />
+      <h1>Criar minha conta</h1>
+      <span
+        >Insira abaixo seus dados de contato abaixo para que possamos entrar em contato:</span
+      >
+      <form action="">
+        <!-- Entranda de senha retalhada -->
+        <fieldset id="campos-cadastro">
+          <input type="text" placeholder="Nome" />
+          <input type="email" placeholder="E-mail"/>
+          <input type="tel" placeholder="Celular"/>
+          <div>
+            <input type="password" name="" id="" placeholder="Senha">
+            <input type="checkbox" class="mostrar-senha">
+          </div>
+          <div>
+            <input type="password" name="" id="" placeholder="Confirmação de senha">
+            <input type="checkbox" class="mostrar-senha">
+          </div>
+        </fieldset>
+
+        <!-- Contem a senha completa no seu atributo value -->
+        <input
+          type="text"
+          id="senha-completa"
+          style="display: none !important"
+        />
+
+        <button class="botao-verde">Efectuar login</button>
+      </form>
+    </main>
+
+    <script src="./script/resize-windown.js"></script>
+    <script src="./script/script.js"></script>
+  </body>
+</html>

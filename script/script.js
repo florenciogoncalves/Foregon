@@ -73,3 +73,22 @@ console.clear()
 ***********************************************
 */
 const camposDeSenha = document.querySelectorAll('#codigo-de-confirmacao')
+
+/*
+***********************************************
+***               cadastro.html             ***
+***********************************************
+*/
+/*Mostrar e ocultar senha*/
+const mostrarSenha = document.querySelectorAll('#cadastro .mostrar-senha')
+
+mostrarSenha.forEach( elemento => {
+  elemento.addEventListener('click', () => {
+    if(elemento.checked){
+      elemento.parentNode.firstElementChild.setAttribute('type', 'text')
+    }
+    else {
+      elemento.parentNode.firstElementChild.setAttribute('type', 'password')
+    }
+  })
+})

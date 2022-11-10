@@ -67,9 +67,17 @@ a, a:visited {
 
 #cabecalho-principal img {
   margin: 0 auto auto;
-  height: 20px;
-  padding-bottom: 5px;
+  height: 15px;
+  padding-bottom: 3px;
   display: flex;
+}
+
+@media only screen and (min-width: 480px) {
+  #cabecalho-principal img {
+    margin: 0 auto auto;
+    height: 23px;
+    padding-bottom: 5px;
+  }
 }
 
 #carroussel-pos-header {
@@ -583,4 +591,52 @@ main > div > ul {
   font-size: 20px;
   max-height: 60px;
   padding: 0px;
+}
+
+/*
+***************************
+***     cadastro.html      ***
+***************************
+*/
+#cadastro {
+  background: url(./../image/background-cadastro.svg) no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+#cadastro #campos-cadastro {
+  row-gap: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (max-width: 480px) {
+   .iniciar-sessao .lado-direito {
+    border-radius: 0;
+  }
+}
+
+#cadastro #campos-cadastro > div {
+  position: relative;
+  width: 100%;
+}
+
+#cadastro #campos-cadastro > div > input:first-of-type {
+  padding-right: 33px;
+}
+
+#cadastro #campos-cadastro .mostrar-senha {
+  border: none;
+  background: url(./../image/nao-vizualizando-senha.svg) no-repeat;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: 8px;
+  margin: auto;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#cadastro #campos-cadastro .mostrar-senha:checked {
+  mix-blend-mode: difference;
 }
