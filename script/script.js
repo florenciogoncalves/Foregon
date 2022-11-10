@@ -65,3 +65,11 @@ navegacaoCarroussel.children[contadorCarroussel].id = "slide-atual";
 }
 
 console.clear()
+
+
+/*
+***********************************************
+*** Campo de senha em esqueceu-a-senha.html ***
+***********************************************
+*/
+const camposDeSenha = document.querySelectorAll('#codigo-de-confirmacao')

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foregon</title>
+    <link rel="shortcut icon" href="./image/favicon.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="./style/reset.css" />
+    <link rel="stylesheet" href="./style/style.css" />
+  </head>
+  <body id="esqueceu-a-senha" class="iniciar-sessao">
+    <header id="cabecalho-principal">
+      <img src="./image/logo-minha-bufunfa.svg" alt="Minha Bufunfa - logo" />
+    </header>
+
+    <div class="lado-esquerdo"></div>
+
+    <main class="lado-direito">
+      <img src="./image/favicon.svg" alt="minha-bufunfa" />
+      <h1>Esqueceu sua senha?</h1>
+      <span
+        >Lorem ipsum dolor sit amet, consectetur adipis cing elit consectetur
+        adipis cing elit.</span
+      >
+      <form action="">
+
+        <!-- Entranda de senha retalhada -->
+        <fieldset id="codigo-de-confirmacao">
+          <input type="text" id="campo-senha-1" maxlength="1" placeholder="-" onkeypress="return event.charCode >= 48 && event.charCode <= 57"/>
+          <input type="text" id="campo-senha-2" maxlength="1" placeholder="-" onkeypress="return event.charCode >= 48 && event.charCode <= 57"/>
+          <input type="text" id="campo-senha-3" maxlength="1" placeholder="-" onkeypress="return event.charCode >= 48 && event.charCode <= 57"/>
+          <input type="text" id="campo-senha-4" maxlength="1" placeholder="-" onkeypress="return event.charCode >= 48 && event.charCode <= 57"/>
+          <input type="text" id="campo-senha-5" maxlength="1" placeholder="-" onkeypress="return event.charCode >= 48 && event.charCode <= 57"/>
+        </fieldset>
+
+        <!-- Contem a senha completa no seu atributo value -->
+        <input type="text" id="senha-completa" style="display: none !important;">
+
+        <button class="botao-verde">Efectuar login</button>
+      </form>
+    </main>
+
+    <script src="./script/resize-windown.js"></script>
+    <script src="./script/script.js"></script>
+  </body>
+</html>
