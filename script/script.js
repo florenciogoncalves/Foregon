@@ -1,4 +1,5 @@
-const quantidadeCarrousseis = document.querySelectorAll(".conteudo-carroussel");
+try {
+    const quantidadeCarrousseis = document.querySelectorAll(".conteudo-carroussel");
 const navegacaoCarroussel = document.querySelector("#navegacao-carroussel");
 
 let contadorCarroussel = 0;
@@ -58,3 +59,9 @@ navegacaoCarroussel.children[contadorCarroussel].id = "slide-atual";
   });
 }
 
+
+} catch (error) {
+    console.error('Index.html > ' + error)   
+}
+
+console.clear()
