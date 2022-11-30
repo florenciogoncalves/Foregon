@@ -33,22 +33,62 @@
       <div class="container-fluid py-3 py-md-4">
         <form
           id="faca-seu-cadastro"
-          class="form-group col-12 col-sm-8 col-md-7 col-lg-6 px-4 px-sm-5 pt-3 my-auto "
+          class="form-group col-12 col-sm-9 col-lg-6 px-4 px-sm-5 my-auto"
         >
-          <h1>Faça seu cadastro!</h1>
-          <span
-            >Lorem ipsum dolor sit amet, consectetur adipis cing elit
-            consectetur adipis cing elit.</span
-          >
-          <fieldset class="mt-3 mb-md-2">
-            <input type="number" placeholder="CPF" class="campo form-control" />
+          <h1 class="py-3 pt-lg-0">Finalize seu cadastro</h1>
+          <fieldset class="row gap-2">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Nome completo"
+              name="nome"
+            />
+            <fieldset class="px-0 row gap-3">
+              <input
+                type="tel"
+                class="form-control col-sm"
+                placeholder="Telefone"
+                name="telefone"
+              />
+              <input
+                type="text"
+                class="form-control col-sm"
+                placeholder="Data de nascimento"
+                name="data-de-nascimento"
+              />
+            </fieldset>
+            <fieldset class="px-0 row gap-3">
+              <select name="estado" class="form-select col-sm">
+                <option value="" selected>Estado</option>
+              </select>
+              <select name="cidade" class="form-select col-sm">
+                <option value="" selected>Cidade</option>
+              </select>
+            </fieldset>
+            <fieldset class="px-0 row gap-3">
+              <div class="col-sm px-0">
+                <select name="ocupacao" class="form-select">
+                  <option value="" selected>Ocupação</option>
+                </select>
+              </div>
+              <div class="col-sm px-0">
+                <input
+                type="text"
+                class="form-control"
+                placeholder="Renda Mensal"
+              />
+              </div>
+            </fieldset>
           </fieldset>
 
-          <!-- Remover a tag a depois de adicionar a rota, mantendo apenas o seu texto -->
-          <button class="btn btn-primary my-2 mb-3"><a href="./conclua-o-cadastro.html" style="text-decoration: none;">Prosseguir</a></button>
+          <button
+            class="btn btn-primary my-2 mb-3 mt-3 w-75 d-flex justify-content-center mx-auto"
+          >
+            Cadastrar
+          </button>
           <ul id="navegacao-carroussel" class="m-0">
-            <li id="slide-atual"></li>
             <li></li>
+            <li id="slide-atual"></li>
           </ul>
         </form>
       </div>

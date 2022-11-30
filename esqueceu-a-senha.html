@@ -7,7 +7,6 @@
     <title>Foregon</title>
     <link rel="shortcut icon" href="./image/favicon.svg" type="image/x-icon" />
     <link rel="stylesheet" href="./style/reset.css" />
-    <link rel="stylesheet" href="./style/style.css" />
     <!-- CSS only -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
@@ -15,73 +14,105 @@
       integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="./style/style.css" />
   </head>
   <body id="esqueceu-a-senha" class="iniciar-sessao">
-    <header id="cabecalho-principal">
-      <img src="./image/logo-minha-bufunfa.svg" alt="Minha Bufunfa - logo" />
+    <header id="cabecalho-principal" class="row pb-3">
+      <img
+        class="img-fluid"
+        src="./image/logo-minha-bufunfa.svg"
+        alt="Minha Bufunfa - logo"
+      />
     </header>
 
-    <div class="lado-esquerdo"></div>
+    <main class="container-fluid">
+      <div class="row col-md-12" style="height: 100vh">
+        <!-- Conteúdo da esquerda -->
+        <div
+          class="margem-topo col-md-10 col-lg-7 d-flex mx-auto justify-content-center p-0"
+        >
+          <div
+            class="lado-direito col-sm-10 col-lg-9 h-75 row p-4 p-sm-4 p-md-5 pb-lg-4 pt-lg-4" style="max-height: 540px;"
+          >
+            <img
+              class="img-fluid w-25 mb-3"
+              src="./image/favicon.svg"
+              alt="minha-bufunfa"
+            />
+            <h1>Esqueceu sua senha?</h1>
+            <span class="col-10 m-auto mt-2"
+              >Lorem ipsum dolor sit amet, consectetur adipis cing elit
+              consectetur adipis cing elit.</span
+            >
+            <form action="">
+              <!-- Entranda de senha retalhada -->
+              <fieldset
+                id="codigo-de-confirmacao"
+                class="m-auto col-11 col-sm-10 col-lg-11 col-xl-10 gap-1 gap-xs-0 row mt-4 mb-5"
+              >
+                <input
+                  type="text"
+                  id="campo-senha-1"
+                  class="col"
+                  maxlength="1"
+                  placeholder="-"
+                  onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                />
+                <input
+                  type="text"
+                  id="campo-senha-2"
+                  class="col"
+                  maxlength="1"
+                  placeholder="-"
+                  onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                />
+                <input
+                  type="text"
+                  id="campo-senha-3"
+                  class="col"
+                  maxlength="1"
+                  placeholder="-"
+                  onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                />
+                <input
+                  type="text"
+                  id="campo-senha-4"
+                  class="col"
+                  maxlength="1"
+                  placeholder="-"
+                  onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                />
+                <input
+                  type="text"
+                  id="campo-senha-5"
+                  class="col"
+                  maxlength="1"
+                  placeholder="-"
+                  onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                />
+              </fieldset>
 
-    <main class="lado-direito">
-      <img src="./image/favicon.svg" alt="minha-bufunfa" />
-      <h1>Esqueceu sua senha?</h1>
-      <span
-        >Lorem ipsum dolor sit amet, consectetur adipis cing elit consectetur
-        adipis cing elit.</span
-      >
-      <form action="">
-        <!-- Entranda de senha retalhada -->
-        <fieldset id="codigo-de-confirmacao">
-          <input
-            type="text"
-            id="campo-senha-1"
-            maxlength="1"
-            placeholder="-"
-            onkeypress="return event.charCode >= 48 && event.charCode <= 57"
-          />
-          <input
-            type="text"
-            id="campo-senha-2"
-            maxlength="1"
-            placeholder="-"
-            onkeypress="return event.charCode >= 48 && event.charCode <= 57"
-          />
-          <input
-            type="text"
-            id="campo-senha-3"
-            maxlength="1"
-            placeholder="-"
-            onkeypress="return event.charCode >= 48 && event.charCode <= 57"
-          />
-          <input
-            type="text"
-            id="campo-senha-4"
-            maxlength="1"
-            placeholder="-"
-            onkeypress="return event.charCode >= 48 && event.charCode <= 57"
-          />
-          <input
-            type="text"
-            id="campo-senha-5"
-            maxlength="1"
-            placeholder="-"
-            onkeypress="return event.charCode >= 48 && event.charCode <= 57"
-          />
-        </fieldset>
+              <!-- Contem a senha completa no seu atributo value -->
+              <input
+                type="text"
+                id="senha-completa"
+                style="display: none !important"
+              />
 
-        <!-- Contem a senha completa no seu atributo value -->
-        <input
-          type="text"
-          id="senha-completa"
-          style="display: none !important"
+              <button class="btn btn-md btn-primary mb-3">Efectuar login</button>
+            </form>
+          </div>
+        </div>
+
+        <img
+          class="bg-img img-fluid col-md-5 d-none d-lg-block"
+          style="padding-right: 1rem"
+          src="./image/bg-esqueceu-a-senha.svg"
+          alt="Esqueceu a senha"
         />
-
-        <button class="botao-verde">Efectuar login</button>
-      </form>
+      </div>
     </main>
 
-    <script src="./script/resize-windown.js"></script>
     <script src="./script/script.js"></script>
   </body>
 </html>

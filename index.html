@@ -7,7 +7,6 @@
     <title>Foregon</title>
     <link rel="shortcut icon" href="./image/favicon.svg" type="image/x-icon" />
     <link rel="stylesheet" href="./style/reset.css" />
-    <link rel="stylesheet" href="./style/style.css" />
     <!-- CSS only -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
@@ -15,78 +14,103 @@
       integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
       crossorigin="anonymous"
     />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./style/style.css" />
+    <link rel="stylesheet" href="./style/responsive.css" />
+    <script>
+      import bootstrap from "bootstrap";
+    </script>
   </head>
-  <body>
-    <header id="cabecalho-principal">
-      <img src="./image/logo-minha-bufunfa.svg" alt="Minha Bufunfa - logo" />
+  <body class="container-fluid">
+    <!-- Cabeçalho -->
+    <header id="cabecalho-principal" class="row pb-3">
+      <img
+        class="img-fluid"
+        src="./image/logo-minha-bufunfa.svg"
+        alt="Minha Bufunfa - logo"
+      />
     </header>
-    <section id="carroussel-pos-header">
-      <section id="conteudo-carroussel-container">
-        <div class="conteudo-carroussel">
-          <h3>Lorem ipsum 1</h3>
-          <span>
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout. The point
-            of using Lorem Ipsum is that it has a more-or-less normal
-            distribution of letters, as oppos
-          </span>
-          <button class="botao-verde">Lorem Ipsum</button>
-        </div>
 
-        <div class="conteudo-carroussel">
-          <h3>Lorem ipsum 2</h3>
-          <span>
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout. The point
-            of using Lorem Ipsum is that it has a more-or-less normal
-            distribution of letters, as oppos
-          </span>
-          <button class="botao-verde">Lorem Ipsum</button>
-        </div>
+    <!-- Carroussel -->
+    <section id="carroussel-pos-header" class="p-4 pb-1 container-fluid mb-5">
+      <!-- container do carroussel -->
+      <section
+        id="conteudo-carroussel-container"
+        class="col-11 col-sm-7 col-lg-6 m-auto h-auto pt-2"
+      >
+        <div class="container-fluid">
+          <!-- Item do carroussel -->
+          <div class="conteudo-carroussel row col-12 col-lg-10 m-auto">
+            <h3 class="text-center">Lorem ipsum 1</h3>
+            <span class="col-12">
+              It is a long established fact that a reader will be distracted by
+              the readable content of a page when looking at its layout. The
+              point of using Lorem Ipsum is that it has a more-or-less normal
+              distribution of letters, as oppos
+            </span>
+            <button class="btn btn-primary">Lorem Ipsum</button>
+          </div>
 
-        <div class="conteudo-carroussel">
-          <h3>Lorem ipsum 3</h3>
-          <span>
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout. The point
-            of using Lorem Ipsum is that it has a more-or-less normal
-            distribution of letters, as oppos
-          </span>
-          <button class="botao-verde">Lorem Ipsum</button>
-        </div>
+          <!-- Item do carroussel -->
+          <div class="conteudo-carroussel row col-12 col-lg-10 m-auto">
+            <h3 class="text-center">Lorem ipsum 2</h3>
+            <span class="col-12">
+              It is a long established fact that a reader will be distracted by
+              the readable content of a page when looking at its layout. The
+              point of using Lorem Ipsum is that it has a more-or-less normal
+              distribution of letters, as oppos
+            </span>
+            <button class="btn btn-primary">Lorem Ipsum</button>
+          </div>
 
-        <div class="conteudo-carroussel">
-          <h3>Lorem ipsum 4</h3>
-          <span>
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout. The point
-            of using Lorem Ipsum is that it has a more-or-less normal
-            distribution of letters, as oppos
-          </span>
-          <button class="botao-verde">Lorem Ipsum</button>
+          <!-- Item do carroussel -->
+          <div class="conteudo-carroussel row col-12 col-lg-10 m-auto">
+            <h3 class="text-center">Lorem ipsum 3</h3>
+            <span class="col-12">
+              It is a long established fact that a reader will be distracted by
+              the readable content of a page when looking at its layout. The
+              point of using Lorem Ipsum is that it has a more-or-less normal
+              distribution of letters, as oppos
+            </span>
+            <button class="btn btn-primary">Lorem Ipsum</button>
+          </div>
         </div>
       </section>
 
-      <!-- Aqui termina o carroussel -->
-      <!-- A quantidade de li vai corresponder a quantidade de slide -->
       <ul id="navegacao-carroussel">
-        <!-- <li id="slide-atual"></li> -->
+        <!-- <li id="slide-atual"></li> Corresponde ao slide atual -->
       </ul>
     </section>
 
-    <main id="conteudo-principal">
-      <div id="nossos-produtos">
-        <h2>Nossos Produtos</h2>
-        <span
+    <!-- Conteúdo principal -->
+    <main
+      id="conteudo-principal"
+      class="row d-flex justify-content-center mt-5"
+    >
+      <!-- Conteúdo principal => Nossos-produtos -->
+      <div id="nossos-produtos" class="produtos container-fluid px-0 mb-5">
+        <h2 class="titulo-da-categoria">Nossos Produtos</h2>
+        <span class="subtitulo-da-categoria text-center"
           >Lorem ipsum dolor sit amet, consectetur adipis cing elit consectetur
           adipis cing elit.</span
         >
 
-        <ul>
-          <li class="cartao">
-            <figure>
-              <img src="./image/nossos-produtos-img.svg" alt="" />
-              <figcaption>
+        <ul
+          class="row gap-3 gap-sm-3 gap-md-4 col-10 col-xs-8 col-sm-12 col-md-10 justify-content-center"
+        >
+          <!-- Item - Cartão produto -->
+          <li class="cartao col-10 col-sm-3 col-md rounded-1 row">
+            <figure class="p-2 pt-3 px-sm-0 px-lg-3 pb-1">
+              <img
+                src="./image/nossos-produtos-img.svg"
+                alt=""
+                class="img-fluid w-50 mb-3"
+              />
+              <figcaption class="container">
                 <h4>Lorem Ipsum</h4>
                 <span>Visa</span>
                 <p>
@@ -94,42 +118,139 @@
                   consectetur adipis cing elit. Dolor sit amet, consectetur
                   adipis cing elit consectetur adipis cing elit.
                 </p>
-                <button class="botao-verde">Conferir cartão</button>
+                <button class="btn-primary btn btn-primary">
+                  Conferir cartão
+                </button>
+              </figcaption>
+            </figure>
+          </li>
+
+          <!-- Item - Cartão produto -->
+          <li class="cartao col-10 col-sm-3 col-md rounded-1 row">
+            <figure class="p-2 pt-3 pb-1 px-sm-0 px-lg-3">
+              <img
+                src="./image/nossos-produtos-img.svg"
+                alt=""
+                class="img-fluid w-50 mb-3"
+              />
+              <figcaption class="container">
+                <h4>Lorem Ipsum</h4>
+                <span>Visa</span>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipis cing elit
+                  consectetur adipis cing elit. Dolor sit amet, consectetur
+                  adipis cing elit consectetur adipis cing elit.
+                </p>
+                <button class="btn-primary btn btn-primary">
+                  Conferir cartão
+                </button>
+              </figcaption>
+            </figure>
+          </li>
+
+          <!-- Item - Cartão produto -->
+          <li class="cartao col-10 col-sm-3 col-md rounded-1 row">
+            <figure class="p-2 pt-3 pb-1 px-sm-0 px-lg-3">
+              <img
+                src="./image/nossos-produtos-img.svg"
+                alt=""
+                class="img-fluid w-50 mb-3"
+              />
+              <figcaption class="container">
+                <h4>Lorem Ipsum</h4>
+                <span>Visa</span>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipis cing elit
+                  consectetur adipis cing elit. Dolor sit amet, consectetur
+                  adipis cing elit consectetur adipis cing elit.
+                </p>
+                <button class="btn-primary btn btn-primary">
+                  Conferir cartão
+                </button>
               </figcaption>
             </figure>
           </li>
         </ul>
       </div>
 
-      <div id="como-funcionamos">
-        <h2>Como funcionamos</h2>
-        <p>
-          It is a long established fact that a reader will be distracted by the
-          readable content of a page when looking at its layout. The point of
-          using Lorem Ipsum is that it has a more-or-less normal distribution of
-          letters, as oppos It is a long established fact that a reader will be
-          distracted by the readable content of a page when looking at its
-          layout. The point of using Lorem Ipsum is that it has a more-or-less
-          normal distribution of letters, as oppos
-        </p>
+      <!-- Conteúdo principal => Como funcionamos -->
+      <div id="como-funcionamos" class="row mt-4 mb-4 pt-5 pb-5">
+        <div class="col-12 col-sm-10 m-auto">
+          <h2 class="titulo-da-categoria">Como funcionamos</h2>
+          <p>
+            It is a long established fact that a reader will be distracted by
+            the readable content of a page when looking at its layout. The point
+            of using Lorem Ipsum is that it has a more-or-less normal
+            distribution of letters, as oppos It is a long established fact that
+            a reader will be distracted by the readable content of a page when
+            looking at its layout. The point of using Lorem Ipsum is that it has
+            a more-or-less normal distribution of letters, as oppos
+          </p>
+        </div>
       </div>
 
-      <div id="avaliacoes-dos-usuarios">
-        <h2>Avaliações dos usuários</h2>
-        <span
+      <!-- Conteúdo principal => Avaliação dos usuários -->
+      <div
+        id="avaliacoes-dos-usuarios"
+        class="container-fluid col-lg-12 col-12 mt-4 mb-4 ml-0"
+      >
+        <h2 class="titulo-da-categoria">Avaliações dos usuários</h2>
+        <span class="subtitulo-da-categoria text-center"
           >Lorem Ipsum is simply dummy text of the printing and typesetting
           industry</span
         >
 
-        <ul>
-          <li class="cartao">
-            <figure>
+        <ul class="row p-0 gap-3 col-11 col-lg-9 justify-content-center m-auto">
+          <!-- Item Cartão usuário -->
+          <li class="cartao col-10 col-sm">
+            <figure class="col col-lg-10 m-auto">
               <img
                 src="./arquivos-temporarios/Ellipse 142.svg"
                 alt="magem-de-perfil"
+                class="rounded-circle img-fluid d-flex m-auto mb-3"
               />
               <figcaption>
-                <h4>Luiza lipsum Dollor</h4>
+                <h4 class="mb-2">Luiza lipsum Dollor</h4>
+                <p>
+                  It is a long established fact that a reader will be distracted
+                  by the readable content of a page when looking at its layout.
+                  The point of using Lorem Ipsum is that it has a more-or-less
+                  normal distribution of letters, as oppos
+                </p>
+              </figcaption>
+            </figure>
+          </li>
+
+          <!-- Item Cartão usuário -->
+          <li class="cartao col-10 col-sm">
+            <figure class="col col-lg-10 m-auto">
+              <img
+                src="./arquivos-temporarios/Ellipse 142.svg"
+                alt="magem-de-perfil"
+                class="rounded-circle img-fluid d-flex m-auto mb-3"
+              />
+              <figcaption>
+                <h4 class="mb-2">Luiza lipsum Dollor</h4>
+                <p>
+                  It is a long established fact that a reader will be distracted
+                  by the readable content of a page when looking at its layout.
+                  The point of using Lorem Ipsum is that it has a more-or-less
+                  normal distribution of letters, as oppos
+                </p>
+              </figcaption>
+            </figure>
+          </li>
+
+          <!-- Item Cartão usuário -->
+          <li class="cartao col-10 col-sm">
+            <figure class="col col-lg-10 m-auto">
+              <img
+                src="./arquivos-temporarios/Ellipse 142.svg"
+                alt="magem-de-perfil"
+                class="rounded-circle img-fluid d-flex m-auto mb-3"
+              />
+              <figcaption>
+                <h4 class="mb-2">Luiza lipsum Dollor</h4>
                 <p>
                   It is a long established fact that a reader will be distracted
                   by the readable content of a page when looking at its layout.
@@ -143,46 +264,99 @@
       </div>
     </main>
 
-    <footer id="rodape-principal">
-      <div id="contate-nos">
-        <img src="./image/logo-minha-bufunfa.svg" alt="" />
-        <div>
+    <!-- Rodapé Principal -->
+    <footer
+      id="rodape-principal"
+      class="container-fluid mt-5 p-3 p-sm-4 p-md-4 row"
+    >
+      <div
+        id="contate-nos"
+        class="col-12 col-sm col-md-4 p-sm-4 pt-sm-3 pb-sm-3"
+      >
+        <img
+          class="img-fluid col-4 col-md-9 pb-md-2"
+          src="./image/logo-minha-bufunfa.svg"
+          alt="Minha bufanfa"
+        />
+        <div class="container-fluid p-0">
           <span>Acesse nossas redes</span>
-          <ul>
-            <li><a href="https://pt-br.facebook.com/" target="_blank"></a></li>
-            <li><a href="https://twitter.com/" target="_blank"></a></li>
-            <li><a href="https://www.instagram.com/" target="_blank"></a></li>
-            <li><a href="https://pt.linkedin.com/" target="_blank"></a></li>
-            <li><a href="https://www.youtube.com/" target="_blank"></a></li>
-          </ul>
+          <nav class="row p-0 gap-1 col-5 col-md-8">
+            <a class="col-2" href="https://pt-br.facebook.com/" target="_blank"
+              ><img
+                class="img-fluid h-50"
+                src="./image/redes-sociais/Facebook.svg"
+                alt="Facebook"
+            /></a>
+            <a class="col-2" href="https://twitter.com/" target="_blank"
+              ><img
+                class="img-fluid h-50"
+                src="./image/redes-sociais/Twitter.svg"
+                alt="Twitter"
+            /></a>
+            <a class="col-2" href="https://www.instagram.com/" target="_blank"
+              ><img
+                class="img-fluid h-50"
+                src="./image/redes-sociais/Instagram.svg"
+                alt="Instagram"
+            /></a>
+            <a class="col-2" href="https://pt.linkedin.com/" target="_blank"
+              ><img
+                class="img-fluid h-50"
+                src="./image/redes-sociais/LinkedIn.svg"
+                alt="Linkedin"
+            /></a>
+            <a class="col-2" href="https://www.youtube.com/" target="_blank"
+              ><img
+                class="img-fluid h-50"
+                src="./image/redes-sociais/YouTube.svg"
+                alt="Youtube"
+            /></a>
+          </nav>
         </div>
       </div>
-      <ul id="caminhos">
-        <li class="caminho-rodape">Lorem Ipsum</li>
-        <li class="caminho-rodape">Lorem Ipsum</li>
-        <li class="caminho-rodape">Lorem Ipsum</li>
-        <li class="caminho-rodape">Lorem Ipsum</li>
-        <li class="caminho-rodape">Lorem Ipsum</li>
-        <li class="caminho-rodape">Lorem Ipsum</li>
-        <li class="caminho-rodape">Lorem Ipsum</li>
-        <li class="caminho-rodape">Lorem Ipsum</li>
-        <li class="caminho-rodape">Lorem Ipsum</li>
-        <li class="caminho-rodape">Lorem Ipsum</li>
-        <li class="caminho-rodape">Lorem Ipsum</li>
-        <li class="caminho-rodape">Lorem Ipsum</li>
-        <li class="caminho-rodape">Lorem Ipsum</li>
-        <li class="caminho-rodape">Lorem Ipsum</li>
-        <li class="caminho-rodape">Lorem Ipsum</li>
-        <li class="caminho-rodape">Lorem Ipsum</li>
-        <li class="caminho-rodape">Lorem Ipsum</li>
-        <li class="caminho-rodape">Lorem Ipsum</li>
-        <li class="caminho-rodape">Lorem Ipsum</li>
-        <li class="caminho-rodape">Lorem Ipsum</li>
-        <li class="caminho-rodape">Lorem Ipsum</li>
-        <li class="caminho-rodape">Lorem Ipsum</li>
-        <li class="caminho-rodape">Lorem Ipsum</li>
-        <li class="caminho-rodape">Lorem Ipsum</li>
-        <li class="caminho-rodape">Lorem Ipsum</li>
+      <ul
+        id="caminhos"
+        class="row gap-1 col-12 col-md p-3 pb-sm-2 pt-sm-2 justify-content-between m-0 m-sm-2 mb-0 mt-sm-0 mh-100"
+      >
+        <div class="col-auto">
+          <li class="caminho-rodape"><a href="">Lorem Ipsum</a></li>
+          <li class="caminho-rodape"><a href="">Lorem Ipsum</a></li>
+          <li class="caminho-rodape"><a href="">Lorem Ipsum</a></li>
+          <li class="caminho-rodape"><a href="">Lorem Ipsum</a></li>
+          <li class="caminho-rodape"><a href="">Lorem Ipsum</a></li>
+        </div>
+
+        <div class="col-auto">
+          <li class="caminho-rodape"><a href="">Lorem Ipsum</a></li>
+          <li class="caminho-rodape"><a href="">Lorem Ipsum</a></li>
+          <li class="caminho-rodape"><a href="">Lorem Ipsum</a></li>
+          <li class="caminho-rodape"><a href="">Lorem Ipsum</a></li>
+          <li class="caminho-rodape"><a href="">Lorem Ipsum</a></li>
+        </div>
+
+        <div class="col-auto">
+          <li class="caminho-rodape"><a href="">Lorem Ipsum</a></li>
+          <li class="caminho-rodape"><a href="">Lorem Ipsum</a></li>
+          <li class="caminho-rodape"><a href="">Lorem Ipsum</a></li>
+          <li class="caminho-rodape"><a href="">Lorem Ipsum</a></li>
+          <li class="caminho-rodape"><a href="">Lorem Ipsum</a></li>
+        </div>
+
+        <div class="col-auto">
+          <li class="caminho-rodape"><a href="">Lorem Ipsum</a></li>
+          <li class="caminho-rodape"><a href="">Lorem Ipsum</a></li>
+          <li class="caminho-rodape"><a href="">Lorem Ipsum</a></li>
+          <li class="caminho-rodape"><a href="">Lorem Ipsum</a></li>
+          <li class="caminho-rodape"><a href="">Lorem Ipsum</a></li>
+        </div>
+
+        <div class="col-auto">
+          <li class="caminho-rodape"><a href="">Lorem Ipsum</a></li>
+          <li class="caminho-rodape"><a href="">Lorem Ipsum</a></li>
+          <li class="caminho-rodape"><a href="">Lorem Ipsum</a></li>
+          <li class="caminho-rodape"><a href="">Lorem Ipsum</a></li>
+          <li class="caminho-rodape"><a href="">Lorem Ipsum</a></li>
+        </div>
       </ul>
 
       <span
