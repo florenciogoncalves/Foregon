@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Foregon</title>
+    <title>Cadastrar | Foregon</title>
     <link rel="shortcut icon" href="./image/favicon.svg" type="image/x-icon" />
     <link rel="stylesheet" href="./style/reset.css" />
     <!-- CSS only -->
@@ -15,6 +15,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="./style/style.css" />
+    <link rel="stylesheet" href="./style/responsive.css" />
   </head>
   <body id="cadastro" class="iniciar-sessao container-fluid">
     <header id="cabecalho-principal" class="row pb-3">
@@ -30,7 +31,7 @@
       class="margem-topo h-100 col-md-10 col-lg-7 d-flex m-auto justify-content-center p-0"
     >
       <div
-        class="lado-direito col-sm-10 col-lg-8 row p-4 p-sm-5 pb-lg-4 pt-lg-4"
+        class="lado-direito col-sm-10 col-lg-8 row p-4 p-sm-5 pb-lg-4 pt-lg-4 mt-4 mt-lg-auto"
       >
         <img
           class="img-fluid w-25"
@@ -42,27 +43,57 @@
           >Insira abaixo seus dados de contato abaixo para que possamos entrar
           em contato:</span
         >
-        <form action="" class="form-group mt-4">
+        <form class="needs-validation mt-4" novalidate>
           <!-- Entranda de senha retalhada -->
           <fieldset id="campos-cadastro">
-            <input type="text" name="nome" placeholder="Nome" class="form-control" required/>
-            <input type="email" name="email" placeholder="E-mail" class="form-control" required/>
-            <input type="tel" name="celular" placeholder="Celular" class="form-control" required/>
-            <fieldset>
-              <input type="password" name="senha" id="" placeholder="Senha" class="form-control" required/>
-              <input type="checkbox" class="mostrar-senha"/>
-            </fieldset>
+            <input
+              type="text"
+              name="nome"
+              placeholder="Nome"
+              class="form-control"
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="E-mail"
+              class="form-control"
+              required
+            />
+            <input
+              type="tel"
+              name="celular"
+              placeholder="Celular"
+              class="form-control"
+              required
+            />
             <fieldset>
               <input
                 type="password"
+                name="senha"
+                id="password"
+                placeholder="Senha"
                 class="form-control"
-                placeholder="Confirmação de senha" required
+                required
+                minlength="6"
               />
-              <input type="checkbox" class="mostrar-senha"/>
+              <div class="invalid-feedback">A senha deve ter um mínimo de 6 caracteres</div>
+              <input type="checkbox" class="mostrar-senha" />
+            </fieldset>
+            <fieldset>
+              <input
+              id="confirmar-password"
+                type="password"
+                class="form-control"
+                placeholder="Confirmação de senha"
+                required
+                minlength="6"
+              />
+              <input type="checkbox" class="mostrar-senha" />
             </fieldset>
           </fieldset>
 
-          <button class="btn btn-primary mt-4">Efectuar login</button>
+          <button id="btn_cadastrar" class="btn btn-primary mt-4">Efectuar login</button>
         </form>
       </div>
     </div>
@@ -73,5 +104,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="./script/script.js"></script>
+    <script src="./script/validacoes_formularios.js"></script>
   </body>
 </html>

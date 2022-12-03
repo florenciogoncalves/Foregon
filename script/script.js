@@ -142,73 +142,142 @@ try {
  */
 /*Setar altura de um quadrado*/
 try {
-  const progressContainer = document.querySelector('.skill')
-let alturaContainer = getComputedStyle(progressContainer).width
-progressContainer.style.height = alturaContainer
-progressContainer.querySelector('circle').setAttribute('cx', parseInt(alturaContainer) / 2)
-progressContainer.querySelector('circle').setAttribute('cy', parseInt(alturaContainer) / 2)
-progressContainer.querySelector('circle').setAttribute('r', parseInt(alturaContainer) / 2 * 0.87)
-progressContainer.querySelector('circle').setAttribute('style', 'stroke-width: ' + parseInt(alturaContainer) * .1875 + 'px')
+  const progressContainer = document.querySelector(".skill");
+  let alturaContainer = getComputedStyle(progressContainer).width;
+  progressContainer.style.height = alturaContainer;
+  progressContainer
+    .querySelector("circle")
+    .setAttribute("cx", parseInt(alturaContainer) / 2);
+  progressContainer
+    .querySelector("circle")
+    .setAttribute("cy", parseInt(alturaContainer) / 2);
+  progressContainer
+    .querySelector("circle")
+    .setAttribute("r", (parseInt(alturaContainer) / 2) * 0.87);
+  progressContainer
+    .querySelector("circle")
+    .setAttribute(
+      "style",
+      "stroke-width: " + parseInt(alturaContainer) * 0.1875 + "px"
+    );
 
+  let addEvent = function (elem, type, eventHandle) {
+    if (elem == null || typeof elem == "undefined") return;
+    if (elem.addEventListener) {
+      elem.addEventListener(type, eventHandle, false);
+    } else if (elem.attachEvent) {
+      elem.attachEvent("on" + type, eventHandle);
+    } else {
+      elem["on" + type] = eventHandle;
+    }
+  };
 
-let addEvent = function (elem, type, eventHandle) {
-  if (elem == null || typeof elem == "undefined") return;
-  if (elem.addEventListener) {
-    elem.addEventListener(type, eventHandle, false);
-  } else if (elem.attachEvent) {
-    elem.attachEvent("on" + type, eventHandle);
-  } else {
-    elem["on" + type] = eventHandle;
-  }
-};
-
-addEvent(window, "resize", function () {
-  alturaContainer = getComputedStyle(progressContainer).width
-  progressContainer.style.height = alturaContainer
-  progressContainer.querySelector('circle').setAttribute('cx', parseInt(alturaContainer) / 2)
-  progressContainer.querySelector('circle').setAttribute('cy', parseInt(alturaContainer) / 2)
-  progressContainer.querySelector('circle').setAttribute('r', parseInt(alturaContainer) / 2 * 0.87)
-  progressContainer.querySelector('circle').setAttribute('style', 'stroke-width: ' + parseInt(alturaContainer) * .1875 + 'px')
-});
+  addEvent(window, "resize", function () {
+    alturaContainer = getComputedStyle(progressContainer).width;
+    progressContainer.style.height = alturaContainer;
+    progressContainer
+      .querySelector("circle")
+      .setAttribute("cx", parseInt(alturaContainer) / 2);
+    progressContainer
+      .querySelector("circle")
+      .setAttribute("cy", parseInt(alturaContainer) / 2);
+    progressContainer
+      .querySelector("circle")
+      .setAttribute("r", (parseInt(alturaContainer) / 2) * 0.87);
+    progressContainer
+      .querySelector("circle")
+      .setAttribute(
+        "style",
+        "stroke-width: " + parseInt(alturaContainer) * 0.1875 + "px"
+      );
+  });
 } catch (error) {
-  erros.push(error)
+  erros.push(error);
 }
-
 
 // Reajuste de tamanho do progresso circular
 function setProgressVal(achieved, total) {
   const numbers = document.getElementById("numbers");
-  let percentual = 450 - (achieved * 100 / 1000) * 450 / 100
-  document.body.style.setProperty(
-    "--progresso-circular",
-    (percentual)
-  );
-  
+  let percentual = 450 - (((achieved * 100) / 1000) * 450) / 100;
+  document.body.style.setProperty("--progresso-circular", percentual);
+
   count = 0;
   setInterval(() => {
     if (count >= 100) {
       clearInterval;
     } else {
       count += 1;
-      numbers.querySelector("h4").innerHTML = `${Math.round(achieved / 100 * count)}`;
-      numbers.querySelector("h5").innerHTML = `De ${Math.round(total / 100 * count)}`;
+      numbers.querySelector("h4").innerHTML = `${Math.round(
+        (achieved / 100) * count
+      )}`;
+      numbers.querySelector("h5").innerHTML = `De ${Math.round(
+        (total / 100) * count
+      )}`;
     }
   }, 20);
 }
 
+/*
+ ***************************************************************************************************
+ ***     Alterar texto 'Adquirir' por 'Adquirido', para todo elemento da classe 'adquirido'      ***
+ ***************************************************************************************************
+ */
+try {
+  const adquiridos = document.querySelectorAll(
+    ".produto-adquirido .btn-primary"
+  );
+  adquiridos.forEach((elemento) => {
+    elemento.textContent = "Adquirido";
+  });
+  console.log(adquiridos);
+} catch (error) {
+  console.error(error);
+  erros.push(error);
+}
 
 /*
-***************************************************************************************************
-***     Alterar texto 'Adquirir' por 'Adquirido', para todo elemento da classe 'adquirido'      ***
-***************************************************************************************************
-*/
+ ***************************************************
+ ***     Abrir/Fechar modais com clicks em botoes      ***
+ ***************************************************
+ */
+// Abrir
 try {
-  const adquiridos = document.querySelectorAll('.produto-adquirido .btn-primary')
-  adquiridos.forEach(elemento => {
-    elemento.textContent = 'Adquirido'
-  })
-  console.log(adquiridos)
+  document.querySelectorAll(".btn-add-produto").forEach((el) => {
+    el.addEventListener("click", () => {
+      document.querySelector("#modal-editar-produto").style.display = "flex";
+    });
+  });
 } catch (error) {
-  console.error(error)
   erros.push(error)
 }
+
+try {
+  document.querySelectorAll(".btn-editar-produto").forEach((el) => {
+    el.addEventListener("click", () => {
+      document.querySelector("#modal-editar-produto").style.display = "flex";
+    });
+  });
+  
+} catch (error) {
+  erros.push(error)  
+}
+
+
+// Fechar
+try {
+  document
+  .querySelectorAll("#modal-editar-produto button:not([type='submit'])")
+  .forEach((el) => {
+    el.addEventListener("click", () => {
+      document.querySelector("#modal-editar-produto").style.display = "none";
+    });
+  });
+} catch (error) {
+  erros.push(error)
+}
+
+// Funcão para fechar
+function closeModal() {
+  document.querySelector("#modal-editar-produto").style.display = "none";
+}
+

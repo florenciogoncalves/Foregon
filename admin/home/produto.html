@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Foregon</title>
+    <title>Produto | Foregon</title>
     <link
       rel="shortcut icon"
       href="./../../image/favicon.svg"
@@ -30,10 +30,12 @@
     </script>
   </head>
   <!-- Relativo ao 'Seu score': No evento onload da tag body, defina dois parametros, o primeiro referente ao total positivo, e o segundo referente ao somatorio total -->
-  <body class="home-page padrao_produtos container-fluid d-flex d-lg-grid">
+  <body
+    class="home-page __admin padrao_produtos container-fluid d-flex d-lg-grid"
+  >
     <nav id="menu-lateral" class="navbar col sticky-bottom py-2 px-4">
       <div class="logo d-none d-lg-flex">
-        <img src="./../../image/Minha-bufunfa-pequeno.svg" alt="" />
+        <img src="./../../image/Minha-bufunfa-pequeno.svg" alt="Minha Bufunfa" />
       </div>
       <ul
         class="navegacao row p-0 px-sm-4 mb-0 col-12 gap-2 justify-content-between"
@@ -47,15 +49,33 @@
           /></a>
         </li>
         <li class="col px-0 py-2 rounded-3" id="vizualizando">
-          <a href=""
+          <a href="./produtos.html"
             ><img
               class="img-fluid m-auto d-flex"
               src="./../../image/icones-do-menu/produtos-white.svg"
               alt="produtos"
           /></a>
         </li>
+
         <li class="col px-0 py-2 rounded-3">
-          <a href=""
+          <a href="clientes.html"
+            ><img
+              class="img-fluid m-auto d-flex"
+              src="./../../image/icones-do-menu/cliente.svg"
+              alt="Clientes"
+          /></a>
+        </li>
+        <li class="col px-0 py-2 rounded-3">
+          <a href="./consultas.html"
+            ><img
+              class="img-fluid m-auto d-flex"
+              src="./../../image/icones-do-menu/consulta.svg"
+              alt="Consulta"
+          /></a>
+        </li>
+
+        <li class="col px-0 py-2 rounded-3">
+          <a href="./configuracoes.html"
             ><img
               class="img-fluid m-auto d-flex"
               src="./../../image/icones-do-menu/configuracoes.svg"
@@ -63,53 +83,60 @@
           /></a>
         </li>
         <li class="col px-0 py-2 rounded-3">
-          <a href=""
+          <a href="./blog.html"
             ><img
               class="img-fluid m-auto d-flex"
               src="./../../image/icones-do-menu/blog.svg"
               alt="blog"
           /></a>
         </li>
-        <li class="col px-0 py-2">
-          <a href=""
+        <li class="logout col px-0 py-2">
+          <button
             ><img
-              class="logout img-fluid m-auto d-flex"
+              class=" img-fluid m-auto d-flex"
               src="./../../image/icones-do-menu/logout.svg"
               alt="logout"
-          /></a>
+          /></button>
         </li>
       </ul>
     </nav>
 
     <main id="conteudo-principal" class="col p-3 p-sm-4 pb-5 mb-3 mb-lg-0">
-      <div class="container-fluid">
-
+      <div class="container-fluid m-0">
         <div id="cartao-produto" class="area-de-conteudo p-2">
-            <figure class="p-0 pt-3 px-sm-0 px-lg-3 pb-1 row">
-              <img
-                src="./../../image/produto-bg-img.png"
-                alt=""
-                class="img-fluid col-6"
-              />
-              <figcaption class="container col-6">
-                <h4>Cartão Pro lipsum<span class="visa">(Visa)</span></h4>
-                
-                <div class="classificado">
-                  <ul class="estrelas col-8 h-100">
-                    <li class="estrelar estrelado col"></li>
-                    <li class="estrelar estrelado col"></li>
-                    <li class="estrelar estrelado col"></li>
-                    <li class="estrelar estrelado col"></li>
-                    <li class="estrelar col"></li>
-                  </ul>
-                  <span class="classificacao-geral col-2">4,2</span>
-                </div>
-                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here',</p>
-                <span class="valor-label">Valor:</span>
-                <h6 class="valor">R$999,00.00</h6>
-                <button class="btn-primary btn btn-primary">Comprar</button>
-              </figcaption>
-            </figure>
+          <figure class="p-0 pt-3 px-sm-0 px-lg-3 pb-1 row">
+            <img
+              src="./../../image/produto-bg-img.png"
+              alt="Minha Bufunfa"
+              class="img-fluid col-6"
+            />
+            <figcaption class="container col-6">
+              <h4>Cartão Pro lipsum<span class="visa">(Visa)</span></h4>
+
+              <div class="classificado">
+                <ul class="estrelas col-8 h-100">
+                  <li class="estrelar estrelado col"></li>
+                  <li class="estrelar estrelado col"></li>
+                  <li class="estrelar estrelado col"></li>
+                  <li class="estrelar estrelado col"></li>
+                  <li class="estrelar col"></li>
+                </ul>
+                <span class="classificacao-geral col-2">4,2</span>
+              </div>
+              <p>
+                It is a long established fact that a reader will be distracted
+                by the readable content of a page when looking at its layout.
+                The point of using Lorem Ipsum is that it has a more-or-less
+                normal distribution of letters, as opposed to using 'Content
+                here, content here',
+              </p>
+              <span class="valor-label">Valor:</span>
+              <h6 class="valor">R$999,00.00</h6>
+              <button class="btn-primary btn btn-primary btn-editar-produto">
+                Editar
+              </button>
+            </figcaption>
+          </figure>
         </div>
 
         <section
@@ -127,7 +154,7 @@
                 <figure class="p-0 pt-3 px-sm-0 px-lg-3 pb-1">
                   <img
                     src="./../../image/cartao-mcx.svg"
-                    alt=""
+                    alt="Minha Bufunfa"
                     class="img-fluid w-50"
                   />
                   <figcaption class="container">
@@ -158,7 +185,7 @@
                 <figure class="p-0 pt-3 px-sm-0 px-lg-3 pb-1">
                   <img
                     src="./../../image/cartao-mcx.svg"
-                    alt=""
+                    alt="Minha Bufunfa"
                     class="img-fluid w-50"
                   />
                   <figcaption class="container">
@@ -189,7 +216,7 @@
                 <figure class="p-0 pt-3 px-sm-0 px-lg-3 pb-1">
                   <img
                     src="./../../image/cartao-mcx.svg"
-                    alt=""
+                    alt="Minha Bufunfa"
                     class="img-fluid w-50"
                   />
                   <figcaption class="container">
@@ -220,7 +247,7 @@
                 <figure class="p-0 pt-3 px-sm-0 px-lg-3 pb-1">
                   <img
                     src="./../../image/cartao-mcx.svg"
-                    alt=""
+                    alt="Minha Bufunfa"
                     class="img-fluid w-50"
                   />
                   <figcaption class="container">
@@ -250,6 +277,50 @@
         </section>
       </div>
     </main>
+
+    <div id="modal-editar-produto">
+      <div class="modal__container row m-auto">
+        <form
+          id="cartao-produto"
+          class="area-de-conteudo px-3 py-4 col-12 m-auto"
+        >
+          <figure class="p-0 m-0 row">
+            <div class="img col-5 px-0">
+              <img
+                src="./../../image/editar-produto-imagem.png"
+                alt="Minha Bufunfa"
+                class="img-fluid"
+              />
+              <img
+                src="./../../image/broken-image.svg"
+                alt="broken"
+                class="broken"
+              />
+            </div>
+            <figcaption class="container col-7 px-3">
+              <h4>Cartão Pro lipsum<span class="visa">(Visa)</span></h4>
+
+              <fieldset class="row mb-3">
+                <label class="p-0 valor-label" for="descricao">Descrição</label>
+                <textarea name="descricao" id="descricao" rows="6" required placeholder="Lorem ipsum dolor sit amet. Non ullam Quis eos quisquam voluptatem quo molestiae quam ut molestiae doloribus aut animi culpa ut galisum quia ut obcaecati quia. Qui porro consequatur sed minima cupiditate aut aliquam labore ut asperiores exercitationem"></textarea>
+              </fieldset>
+
+              <fieldset class="row mb-3">
+                <label class="valor-label px-0">Valor:</label>
+                <input class="w-75" type="text" name="valor" id="valor" placeholder="Lorem ipsum" required/>
+              </fieldset>
+
+              <fieldset class="gap-2 row mt-auto">
+                <button type="reset" class="btn-primary btn btn-primary btn-editar-produto">
+                  Cancelar
+                </button>
+                <button class="btn btn-primary" type="submit">Salvar</button>
+              </fieldset>
+            </figcaption>
+          </figure>
+        </form>
+      </div>
+    </div>
 
     <script src="./../../script/script.js"></script>
   </body>

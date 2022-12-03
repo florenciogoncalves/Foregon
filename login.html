@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Foregon</title>
+    <title>Login | Foregon</title>
     <link rel="shortcut icon" href="./image/favicon.svg" type="image/x-icon" />
     <link rel="stylesheet" href="./style/reset.css" />
     <!-- CSS only -->
@@ -17,7 +17,11 @@
     <link rel="stylesheet" href="./style/style.css" />
     <link rel="stylesheet" href="./style/responsive.css" />
   </head>
-  <body id="login" class="iniciar-sessao container-fluid d-grid" style="max-height: 100% !important;">
+  <body
+    id="login"
+    class="iniciar-sessao container-fluid d-grid"
+    style="max-height: 100% !important"
+  >
     <header id="cabecalho-principal" class="row pb-3">
       <img
         class="img-fluid"
@@ -32,64 +36,95 @@
         <img
           class="col-lg-5 d-none d-lg-block h-100 mh-100"
           src="./image/background-login.png"
-          alt=""
+          alt="Minha Bufunfa"
         />
 
         <!-- Conteúdo da direita -->
-        <div class="col-md-9 col-lg-7 m-auto justify-content-center p-0" style="padding-top: var(--altura-cabecalho) !important;">
-          <div class="lado-direito col-sm-10 col-lg-9 h-50 row p-4 p-sm-5 pb-lg-4 pt-lg-4">
+        <div
+          class="col-md-9 col-lg-7 m-auto mt-5 mb-lg-auto justify-content-center p-0 my-lg-auto"
+          style="padding-top: var(--altura-cabecalho) !important"
+        >
+          <div
+            class="lado-direito col-sm-10 col-lg-9 h-50 row p-4 p-sm-5 pb-lg-4 pt-lg-4"
+          >
             <img
               class="img-fluid w-25"
               src="./image/favicon.svg"
               alt="minha-bufunfa"
             />
             <h1>Acesse sua conta</h1>
-            <span class="w-100 d-block">Lorem ipsum dolor sit amet, consectetur adipis cing elit
+            <span class="w-100 d-block"
+              >Lorem ipsum dolor sit amet, consectetur adipis cing elit
               consectetur adipis cing elit.</span
             >
-            <form action="" method="post" class="form-group row p-0">
-              <div class="mt-3 mb-3">
+            <form class="needs-validation row p-0" novalidate>
+              <div class="mt-3 mb-3 form-group">
                 <input
-                  type="text"
+                  type="email"
                   name="email"
                   id="email"
                   placeholder="Endereço de email"
                   class="form-control form-control-md"
+                  required
+                  value=""
                 />
               </div>
-              <div class="mb-2">
+              <div class="mb-2 form-group">
                 <input
                   type="password"
                   name="password"
                   id="password"
                   placeholder="*************"
                   class="form-control form-control-md"
+                  required
+                  value=""
                 />
               </div>
 
-              <div class="mb-3 d-sm-flex justify-content-between">
+              <div
+                class="mb-3 d-sm-flex justify-content-between form-group form-check"
+              >
                 <label for="salvar-login"
                   ><input
                     type="checkbox"
                     name="salvar-login"
+                    class="form-check-input"
                     id="salvar-login"
                   />Salvar login</label
                 >
-                <a class="d-none d-sm-flex" href="./esqueceu-a-senha.html">Esqueci minha senha</a>
+                <a class="d-none d-sm-flex" href="./esqueceu-a-senha.html"
+                  >Esqueci minha senha</a
+                >
               </div>
 
-              <button class="btn btn-md btn-primary m-auto mt-sm-2">
+              <button
+                type="submit"
+                class="btn btn-md btn-primary m-auto mt-sm-2"
+              >
                 Efectuar login
               </button>
-              <a class="d-sm-none m-auto mt-3 mb-2 d-flex col-auto" href="./esqueceu-a-senha.html">Esqueci minha senha</a
-              >
             </form>
 
-            <span class="d-none d-sm-grid mt-3 mb-2 text-center">Não tem uma conta? Cadastre-se gratuitamente.</span>
+            <span class="d-none d-sm-grid mt-3 mb-2 text-center"
+              >Não tem uma conta? Cadastre-se gratuitamente.</span
+            >
 
-            <a class="d-flex mt-md-3 p-0 col-auto" href="./cadastro.html">Criar minha conta</a>
+            <a class="d-flex mt-3 p-0 col-auto" href="./cadastro.html"
+              >Criar minha conta</a
+            >
           </div>
         </div>
+        <a
+          class="d-lg-none m-auto mt-3 mb-2 d-flex col-auto start-50 translate-middle"
+          href="./esqueceu-a-senha.html"
+          style="
+            font-size: 0.75rem !important;
+            position: absolute;
+            bottom: 2rem;
+            width: max-content;
+          "
+          >Esqueci minha senha</a
+        >
       </div>
     </main>
 
@@ -99,5 +134,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="./script/script.js"></script>
+    <script src="./script/validacoes_formularios.js"></script>
   </body>
 </html>

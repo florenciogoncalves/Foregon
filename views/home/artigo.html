@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Foregon</title>
+    <title>Artigo | Foregon</title>
     <link
       rel="shortcut icon"
       href="./../../image/favicon.svg"
@@ -35,7 +35,7 @@
   >
     <nav id="menu-lateral" class="navbar col sticky-bottom py-2 px-4">
       <div class="logo d-none d-lg-flex">
-        <img src="./../../image/Minha-bufunfa-pequeno.svg" alt="" />
+        <img src="./../../image/Minha-bufunfa-pequeno.svg" alt="Minha Bufunfa" />
       </div>
       <ul
         class="navegacao row p-0 px-sm-4 mb-0 col-12 gap-2 justify-content-between"
@@ -72,13 +72,13 @@
               alt="blog"
           /></a>
         </li>
-        <li class="col px-0 py-2">
-          <a href=""
+        <li class="logout col px-0 py-2">
+          <button
             ><img
-              class="logout img-fluid m-auto d-flex"
+              class=" img-fluid m-auto d-flex"
               src="./../../image/icones-do-menu/logout.svg"
               alt="logout"
-          /></a>
+          /></button>
         </li>
       </ul>
     </nav>
@@ -86,7 +86,7 @@
     <main id="conteudo-principal" class="col p-3 p-sm-4 pb-5  mb-3 mb-lg-0 container-fluid">
       <div class="row">
 
-        <section id="leia-artigo" class="col-9 p-0">
+        <section id="leia-artigo" class="col-12 col-lg-9  p-0">
           <figure>
             <img class="img-fluid" src="./../../image/foto-do-artigo.png" alt="Imagem do artigo">
             <figcaption>
@@ -96,26 +96,32 @@
             </figcaption>
           </figure>
 
-          <p class="artigo-mensagem">
+          <p class="artigo-mensagem px-2 p-lg-0">
             Lorem ipsum dolor sit amet. Non ullam Quis eos quisquam voluptatem quo molestiae quam ut molestiae doloribus aut animi culpa ut galisum quia ut obcaecati quia. Qui porro consequatur sed minima cupiditate aut aliquam labore ut asperiores exercitationem hic voluptatem voluptatem in autem tempore qui libero excepturi. Ad reiciendis provident aut itaque ratione cum sunt accusantium est omnis nobis? Qui voluptas rerum et voluptates eligendi ut aliquam quia aut iusto inventore et voluptatem rerum et explicabo delectus ad nisi eaque. Est dolorem possimus vel consequuntur consequatur eos eaque dolorem aut commodi facilis sed veritatis excepturi sit obcaecati vitae sit velit repudiandae. Qui voluptatem quos sed nulla nulla aut consequatur ipsa quo nihil rerum vel eligendi quae ut galisum quasi non voluptatum autem. Ex debitis dolor id consectetur suscipit et maiores veritatis a beatae repellendus! Id vitae porro ut nihil laborum ut rerum minima. Id sint galisum sit optio voluptas in dolores consequuntur eos unde possimus qui reiciendis ipsum vel nihil rerum eos natus quam. Sit corrupti voluptatem et fugiat labore qui necessitatibus beatae et quibusdam beatae et ipsam rerum ut temporibus voluptates
           </p>
 
           <div class="artigo-interacao">
-            <button class="artigo-reacao">150</button>
+
+            <!-- Setar 'true' ou 'false' no value do botão a seguir, ele define o estado do botão, se sim ou não curtido -->
+            <button class="artigo-reacao" value="false" onclick="this.value == 'false' ? this.value = 'true' : this.value = 'false'">150</button>
             <button class="artigo-partilhas">150</button>
+            
           </div>
 
           
         </section>
 
-        <div class="container-back-btn col-1"></div>
+        <div class="back-btn col-1 d-none mx-auto d-lg-flex">
+          <a href="./blog.html"></a>
+        </div>
 
-        <section id="graficos-usuario" class="row col-9 p-0 gap-2 gap-sm-3 mb-3 mt-5">
+        <section id="graficos-usuario" class="row col-12 col-lg-9 p-0 gap-2 gap-sm-3 mb-3 mt-5">
 
           <div id="ultimos-artigos" class=" col p-0">
             <h3 class="titulo">Leia também</h3>
             <div class="container row gap-3 p-0">
-              <figure class="artigo-usuario col-12 col-lg mb-2 my-3">
+
+              <figure class="artigo-usuario col col-lg mb-2 my-3">
                 <img
                   class="img-fluid m-auto d-flex"
                   src="./../../arquivos-temporarios/artigo-img.png"
@@ -127,9 +133,7 @@
                 <span class="descricao-artigo">Post de lorem</span>
               </figure>
 
-              <figure
-                class="artigo-usuario d-none d-lg-block col-12 col-lg mb-2 my-3"
-              >
+              <figure class="artigo-usuario col col-lg mb-2 my-3">
                 <img
                   class="img-fluid m-auto d-flex"
                   src="./../../arquivos-temporarios/artigo-img.png"
@@ -141,9 +145,7 @@
                 <span class="descricao-artigo">Post de lorem</span>
               </figure>
 
-              <figure
-                class="artigo-usuario d-none d-lg-block col-12 col-lg mb-2 my-3"
-              >
+              <figure class="artigo-usuario col col-lg mb-2 my-3">
                 <img
                   class="img-fluid m-auto d-flex"
                   src="./../../arquivos-temporarios/artigo-img.png"
@@ -154,6 +156,7 @@
                 </figcaption>
                 <span class="descricao-artigo">Post de lorem</span>
               </figure>
+
             </div>
           </div>
         </section>

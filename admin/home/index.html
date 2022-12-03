@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Foregon</title>
+    <title>Home | Foregon</title>
     <link
       rel="shortcut icon"
       href="./../../image/favicon.svg"
@@ -36,13 +36,13 @@
   >
     <nav id="menu-lateral" class="navbar col sticky-bottom py-2 px-4">
       <div class="logo d-none d-lg-flex">
-        <img src="./../../image/Minha-bufunfa-pequeno.svg" alt="" />
+        <img src="./../../image/Minha-bufunfa-pequeno.svg" alt="Minha Bufunfa" />
       </div>
       <ul
         class="navegacao row p-0 px-sm-4 mb-0 col-12 gap-2 justify-content-between"
       >
         <li class="col px-0 py-2 rounded-3" id="vizualizando">
-          <a href="#"
+          <a href="./index.html"
             ><img
               class="img-fluid m-auto d-flex"
               src="./../../image/icones-do-menu/home-white.svg"
@@ -59,7 +59,7 @@
         </li>
 
         <li class="col px-0 py-2 rounded-3">
-          <a href=""
+          <a href="./clientes.html"
             ><img
               class="img-fluid m-auto d-flex"
               src="./../../image/icones-do-menu/cliente.svg"
@@ -67,7 +67,7 @@
           /></a>
         </li>
         <li class="col px-0 py-2 rounded-3">
-          <a href="./blog.html"
+          <a href="./consultas.html"
             ><img
               class="img-fluid m-auto d-flex"
               src="./../../image/icones-do-menu/consulta.svg"
@@ -76,7 +76,7 @@
         </li>
 
         <li class="col px-0 py-2 rounded-3">
-          <a href=""
+          <a href="./configuracoes.html"
             ><img
               class="img-fluid m-auto d-flex"
               src="./../../image/icones-do-menu/configuracoes.svg"
@@ -91,19 +91,19 @@
               alt="blog"
           /></a>
         </li>
-        <li class="col px-0 py-2">
-          <a href=""
+        <li class="logout col px-0 py-2">
+          <button
             ><img
-              class="logout img-fluid m-auto d-flex"
+              class=" img-fluid m-auto d-flex"
               src="./../../image/icones-do-menu/logout.svg"
               alt="logout"
-          /></a>
+          /></button>
         </li>
       </ul>
     </nav>
 
-    <main id="conteudo-principal" class="col p-3 p-sm-4 pb-5 gap-5 mb-3 mb-lg-0 row">
-      <div class="container-fluid col-10 m-0">
+    <main id="conteudo-principal" class="col p-3 p-sm-4 pb-5 mb-3 mb-lg-0 row">
+      <div class="container-fluid col-12 col-lg-10 m-0">
         <section id="mensagem-rececao">
           <h1>Que bom vê-lo novamente</h1>
           <span class="nome-do-usuario">*Nome do user*</span>
@@ -112,11 +112,11 @@
         <section id="graficos-usuario" class="row p-0 gap-3 gap-sm-5 mt-4 mb-3">
           <div
             id="score"
-            class="area-de-conteudo p-2 p-sm-3 col-5 col-lg-5 p-0 gap-4"
+            class="area-de-conteudo p-2 p-sm-3 col-5 col-lg-4 p-0 gap-2"
           >
             <h3 class="titulo">Seu score</h3>
             <div class="w-100 d-flex">
-              <div class="skill w-50" style="width: 45% !important;">
+              <div class="skill w-75">
                 <div class="outer">
                   <div class="inner">
                     <div id="numbers">
@@ -153,6 +153,7 @@
 
             <div class="area-de-conteudo p-2 text-center">
               <h4>Número de consultas</h4>
+              <hr>
               <span class="numero-de-consultas">600</span>
             </div>
             <div class="area-de-conteudo p-2 text-center">
@@ -170,7 +171,7 @@
 
           <div class="produtos container-fluid pb-3 px-0 mt-3 col-lg-11">
             <div class="container row gap-3 p-0">
-              <figure class="artigo-usuario col-12 col-lg mb-2 my-3">
+              <figure class="artigo-usuario col col-lg mb-2 my-3">
                 <img
                   class="img-fluid m-auto d-flex"
                   src="./../../arquivos-temporarios/artigo-img.png"
@@ -182,9 +183,7 @@
                 <span class="descricao-artigo">Post de lorem</span>
               </figure>
 
-              <figure
-                class="artigo-usuario d-none d-lg-block col-12 col-lg mb-2 my-3"
-              >
+              <figure class="artigo-usuario col col-lg mb-2 my-3">
                 <img
                   class="img-fluid m-auto d-flex"
                   src="./../../arquivos-temporarios/artigo-img.png"
@@ -196,9 +195,7 @@
                 <span class="descricao-artigo">Post de lorem</span>
               </figure>
 
-              <figure
-                class="artigo-usuario d-none d-lg-block col-12 col-lg mb-2 my-3"
-              >
+              <figure class="artigo-usuario col col-lg mb-2 my-3">
                 <img
                   class="img-fluid m-auto d-flex"
                   src="./../../arquivos-temporarios/artigo-img.png"
@@ -216,19 +213,36 @@
         </section>
       </div>
 
-      <aside class="aside-clientes area-de-conteudo col mh-100">
-        <div>
+      <div class="container-aside-clientes col mh-100">
+        <aside class="aside-clientes area-de-conteudo p-0 p-lg-2 h-100 w-75">
 
-        </div>
-        <h5>Clientes</h5>
-        <div>
-          <div class="__cliente">
-            <img src="./../../arquivos-temporarios/foto-cliente.png" alt="Foto do cliente" class="__cliente-imagem">
-            <span class="__cliente-nome-cliente">Lorem ipsum silva</span>
+          <h5 class="mt-2 mt-lg-0">Clientes</h5>
+          <div>
+
+            <div class="__cliente">
+              <img class="img-fluid w-75" src="./../../arquivos-temporarios/foto-cliente.png" alt="Foto do cliente" class="__cliente-imagem">
+              <span class="__cliente-nome-cliente">Lorem ipsum silva</span>
+            </div>
+
+            <div class="__cliente">
+              <img class="img-fluid w-75" src="./../../arquivos-temporarios/foto-cliente.png" alt="Foto do cliente" class="__cliente-imagem">
+              <span class="__cliente-nome-cliente">Lorem ipsum silva</span>
+            </div>
+
+            <div class="__cliente">
+              <img class="img-fluid w-75" src="./../../arquivos-temporarios/foto-cliente.png" alt="Foto do cliente" class="__cliente-imagem">
+              <span class="__cliente-nome-cliente">Lorem ipsum silva</span>
+            </div>
+
+            <div class="__cliente">
+              <img class="img-fluid w-75" src="./../../arquivos-temporarios/foto-cliente.png" alt="Foto do cliente" class="__cliente-imagem">
+              <span class="__cliente-nome-cliente">Lorem ipsum silva</span>
+            </div>
+
           </div>
-        </div>
-        <a href="" class="ver-mais">Ver mais</a>
-      </aside>
+          <a href="" class="__ver-mais">Ver mais</a>
+        </aside>
+      </div>
     </main>
 
     <script src="./../../script/script.js"></script>
