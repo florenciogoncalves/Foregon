@@ -1,4 +1,6 @@
 const erros = [];
+
+
 /*
  ***********************************************
  ***                Cabeçalho                ***
@@ -16,6 +18,8 @@ document.body.style.setProperty(
   "--altura-corpo",
   document.documentElement.clientHeight + "px"
 );
+
+
 
 /*
  ***********************************************
@@ -85,12 +89,7 @@ try {
   erros.push(error);
 }
 
-/*
- ***********************************************
- *** Campo de senha em esqueceu-a-senha.html ***
- ***********************************************
- */
-const camposDeSenha = document.querySelectorAll("#codigo-de-confirmacao");
+
 
 /*
  ***********************************************
@@ -110,6 +109,8 @@ mostrarSenha.forEach((elemento) => {
   });
 });
 
+
+
 /*
  **********************************************
  ***     Arredondar botões .btn-primary     ***
@@ -120,6 +121,8 @@ document.querySelectorAll(".btn-primary").forEach((element) => {
   // if (innerWidth >= 767.98)
   //   element.className += ' btn-xs'
 });
+
+
 
 /*
  **********************************************
@@ -135,6 +138,8 @@ try {
   erros.push(error);
 }
 
+
+
 /*
  ***********************************
  ***     Progresso circular      ***
@@ -145,21 +150,15 @@ try {
   const progressContainer = document.querySelector(".skill");
   let alturaContainer = getComputedStyle(progressContainer).width;
   progressContainer.style.height = alturaContainer;
-  progressContainer
-    .querySelector("circle")
-    .setAttribute("cx", parseInt(alturaContainer) / 2);
-  progressContainer
-    .querySelector("circle")
-    .setAttribute("cy", parseInt(alturaContainer) / 2);
-  progressContainer
-    .querySelector("circle")
-    .setAttribute("r", (parseInt(alturaContainer) / 2) * 0.87);
-  progressContainer
-    .querySelector("circle")
-    .setAttribute(
-      "style",
-      "stroke-width: " + parseInt(alturaContainer) * 0.1875 + "px"
-    );
+  progressContainer.querySelector("circle").setAttribute("cx", parseInt(alturaContainer) / 2);
+  progressContainer.querySelector("circle").setAttribute("cy", parseInt(alturaContainer) / 2);
+  let raio = (parseInt(alturaContainer) / 2)
+  progressContainer.querySelector("circle").setAttribute("r", raio);
+  console.log(raio)
+  progressContainer.querySelector("circle").setAttribute( "style", "stroke-width: " + parseInt(alturaContainer) / 2 * 0.18 + "px !important");
+  console.log('>' + parseInt(alturaContainer) * 0.1875)
+  progressContainer.querySelector("circle").setAttribute( "style", "stroke-dasharray: " + raio * 2 * Math.PI + "px");
+  progressContainer.querySelector("circle").setAttribute( "style", "stroke-dashoffset: " + raio * 2 * Math.PI + "px");
 
   let addEvent = function (elem, type, eventHandle) {
     if (elem == null || typeof elem == "undefined") return;
@@ -173,32 +172,27 @@ try {
   };
 
   addEvent(window, "resize", function () {
-    alturaContainer = getComputedStyle(progressContainer).width;
+    let alturaContainer = getComputedStyle(progressContainer).width;
     progressContainer.style.height = alturaContainer;
-    progressContainer
-      .querySelector("circle")
-      .setAttribute("cx", parseInt(alturaContainer) / 2);
-    progressContainer
-      .querySelector("circle")
-      .setAttribute("cy", parseInt(alturaContainer) / 2);
-    progressContainer
-      .querySelector("circle")
-      .setAttribute("r", (parseInt(alturaContainer) / 2) * 0.87);
-    progressContainer
-      .querySelector("circle")
-      .setAttribute(
-        "style",
-        "stroke-width: " + parseInt(alturaContainer) * 0.1875 + "px"
-      );
+    progressContainer.querySelector("circle").setAttribute("cx", parseInt(alturaContainer) / 2);
+    progressContainer.querySelector("circle").setAttribute("cy", parseInt(alturaContainer) / 2);
+    let raio = (parseInt(alturaContainer) / 2)
+    progressContainer.querySelector("circle").setAttribute("r", raio);
+    console.log(raio)
+    progressContainer.querySelector("circle").setAttribute( "style", "stroke-width: " + parseInt(alturaContainer) / 2 * 0.18 + "px !important");
+    console.log('>' + parseInt(alturaContainer) * 0.1875)
   });
 } catch (error) {
   erros.push(error);
 }
 
+
+
 // Reajuste de tamanho do progresso circular
 function setProgressVal(achieved, total) {
   const numbers = document.getElementById("numbers");
-  let percentual = 450 - (((achieved * 100) / 1000) * 450) / 100;
+  let percentual = 252 - (((achieved * 100) / 1000) * 252) / 100;
+  console.log(percentual)
   document.body.style.setProperty("--progresso-circular", percentual);
 
   count = 0;
@@ -217,6 +211,8 @@ function setProgressVal(achieved, total) {
   }, 20);
 }
 
+
+
 /*
  ***************************************************************************************************
  ***     Alterar texto 'Adquirir' por 'Adquirido', para todo elemento da classe 'adquirido'      ***
@@ -229,11 +225,11 @@ try {
   adquiridos.forEach((elemento) => {
     elemento.textContent = "Adquirido";
   });
-  console.log(adquiridos);
 } catch (error) {
-  console.error(error);
   erros.push(error);
 }
+
+
 
 /*
  ***************************************************
@@ -263,6 +259,8 @@ try {
 }
 
 
+
+
 // Fechar
 try {
   document
@@ -280,4 +278,78 @@ try {
 function closeModal() {
   document.querySelector("#modal-editar-produto").style.display = "none";
 }
+
+
+
+// Upload de imagens
+try {
+  document.querySelector('#imagem-produto').addEventListener(
+    "change",
+    (_, current = document.querySelector('#imagem-produto')) => {
+      if (current.files && current.files[0]) {
+        const preview = document.querySelector("#preview_image");
+  
+        // preview.style.display = "flex";
+        // preview.nextElementSibling.style.display = "none";
+  
+        var file = new FileReader();
+  
+        file.onload = function (e) {
+          preview.src = e.target.result;
+  
+          /*Estiliza a card contendo a imagem, quando possui um caminho*/
+          preview.src = e.target.result;
+          current.parentNode.style.boxShadow =
+            "0px 0px 9px rgba(0, 0, 0, .1)";
+        };
+  
+        document.querySelector('.broken').style.display = 'none'
+  
+        file.readAsDataURL(current.files[0]);
+      }
+    },
+    false
+  );
+} catch (error) {
+  erros.push(error)
+}
+
+
+
+// Estrelar carões
+try {
+  document.querySelectorAll('.estrelar').forEach(star => {
+    star.addEventListener('click', () => {
+      if (star == star.parentElement.lastElementChild && star.classList.contains('estrelado')) {
+        star.parentElement.querySelectorAll('.estrelar').forEach(el => el.classList.remove('estrelado'))
+      }
+      else if((star.classList.contains('estrelado') && !star.nextElementSibling.classList.contains('estrelado')) && (star != star.parentElement.lastElementChild)) {
+        star.parentElement.querySelectorAll('.estrelar').forEach(el => el.classList.remove('estrelado'))
+      }
+      else if((star == star.parentElement.lastChild.previousSibling) && star.classList.contains('estrelado') && !star.parentNode.lastElementChild.classList.contains('estrelado')) {
+        star.parentElement.querySelectorAll('.estrelar').forEach(el => el.classList.remove('estrelado'))
+      }
+      else if(star == star.parentElement.lastElementChild && star.classList.contains('estrelado')){
+        star.parentElement.querySelectorAll('.estrelar').forEach(el => el.classList.remove('estrelado'))
+      }
+      else {
+        let cond = true
+        star.parentElement.querySelectorAll('.estrelar').forEach(el => el.classList.remove('estrelado'))
+        star.parentElement.querySelectorAll('.estrelar').forEach(el => {
+        if(el == star) {
+          cond = false
+          el.classList.add('estrelado')
+        }
+        if (cond)
+          el.classList.add('estrelado')
+      })
+      
+      }
+      star.parentElement.value = star.parentElement.querySelectorAll('.estrelado').length
+    })
+  })
+} catch (error) {
+  erros.push(error)
+}
+
 

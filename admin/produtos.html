@@ -7,10 +7,10 @@
     <title>Produtos | Foregon</title>
     <link
       rel="shortcut icon"
-      href="./../../image/favicon.svg"
+      href="./../image/favicon.svg"
       type="image/x-icon"
     />
-    <link rel="stylesheet" href="./../../style/reset.css" />
+    <link rel="stylesheet" href="./../style/reset.css" />
     <!-- CSS only -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
@@ -23,11 +23,8 @@
       integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="./../../style/style.css" />
-    <link rel="stylesheet" href="./../../style/responsive.css" />
-    <script>
-      import bootstrap from "bootstrap";
-    </script>
+    <link rel="stylesheet" href="./../style/style.css" />
+    <link rel="stylesheet" href="./../style/responsive.css" />
   </head>
   <!-- Relativo ao 'Seu score': No evento onload da tag body, defina dois parametros, o primeiro referente ao total positivo, e o segundo referente ao somatorio total -->
   <body id="produtos-page"
@@ -35,7 +32,7 @@
   >
     <nav id="menu-lateral" class="navbar col sticky-bottom py-2 px-4">
       <div class="logo d-none d-lg-flex">
-        <img src="./../../image/Minha-bufunfa-pequeno.svg" alt="Minha Bufunfa" />
+        <img src="./../image/Minha-bufunfa-pequeno.svg" alt="Minha Bufunfa" />
       </div>
       <ul
         class="navegacao row p-0 px-sm-4 mb-0 col-12 gap-2 justify-content-between"
@@ -44,7 +41,7 @@
           <a href="./index.html"
             ><img
               class="img-fluid m-auto d-flex"
-              src="./../../image/icones-do-menu/home.svg"
+              src="./../image/icones-do-menu/home.svg"
               alt="home"
           /></a>
         </li>
@@ -52,7 +49,7 @@
           <a href="./produtos.html"
             ><img
               class="img-fluid m-auto d-flex"
-              src="./../../image/icones-do-menu/produtos-white.svg"
+              src="./../image/icones-do-menu/produtos-white.svg"
               alt="produtos"
           /></a>
         </li>
@@ -61,7 +58,7 @@
           <a href="./clientes.html"
             ><img
               class="img-fluid m-auto d-flex"
-              src="./../../image/icones-do-menu/cliente.svg"
+              src="./../image/icones-do-menu/cliente.svg"
               alt="Clientes"
           /></a>
         </li>
@@ -69,7 +66,7 @@
           <a href="./consultas.html"
             ><img
               class="img-fluid m-auto d-flex"
-              src="./../../image/icones-do-menu/consulta.svg"
+              src="./../image/icones-do-menu/consulta.svg"
               alt="Consulta"
           /></a>
         </li>
@@ -78,7 +75,7 @@
           <a href="./configuracoes.html"
             ><img
               class="img-fluid m-auto d-flex"
-              src="./../../image/icones-do-menu/configuracoes.svg"
+              src="./../image/icones-do-menu/configuracoes.svg"
               alt="configurações"
           /></a>
         </li>
@@ -86,7 +83,7 @@
           <a href="./blog.html"
             ><img
               class="img-fluid m-auto d-flex"
-              src="./../../image/icones-do-menu/blog.svg"
+              src="./../image/icones-do-menu/blog.svg"
               alt="blog"
           /></a>
         </li>
@@ -94,7 +91,7 @@
           <button>
             <img
               class="img-fluid m-auto d-flex"
-              src="./../../image/icones-do-menu/logout.svg"
+              src="./../image/icones-do-menu/logout.svg"
               alt="logout"
             />
           </button>
@@ -116,14 +113,15 @@
           <h3 class="titulo">Em alta <a href="">Ver todos</a></h3>
 
           <div class="produtos container-fluid pb-3 px-0 mt-4 col-lg-11">
+            
             <ul
-              class="row gap-3 gap-sm-2 gap-md-3 col-10 col-xs-8 col-sm-12 col-lg-9 justify-content-center row-cols-3"
+              class="row gap-3 gap-sm-2 gap-md-3 col-12 justify-content-center row-cols-3"
             >
               <!-- Item - Cartão produto -->
               <li class="cartao produto-adquirido col-10 col-sm rounded-1 row">
                 <figure class="p-0 pt-3 px-sm-0 px-lg-3 pb-1">
                   <img
-                    src="./../../image/cartao-mcx.svg"
+                    src="./../image/cartao-mcx.svg"
                     alt="Minha Bufunfa"
                     class="img-fluid w-50"
                   />
@@ -142,72 +140,9 @@
                     <p>
                       Lorem ipsum dolor sit amet, consectetur adipis cing elit.
                     </p>
-                    <button class="btn-primary btn btn-primary">
+                    <a href="./produto.html" class="btn-primary btn btn-primary">
                       Adquirir
-                    </button>
-                  </figcaption>
-                </figure>
-              </li>
-
-              <!-- Item - Cartão produto com link -->
-              <li class="cartao col-10 col-sm rounded-1 row">
-                <a href="./produto.html">
-                  <figure class="p-0 pt-3 px-sm-0 px-lg-3 pb-1">
-                    <img
-                      src="./../../image/cartao-mcx.svg"
-                      alt="Minha Bufunfa"
-                      class="img-fluid w-50"
-                    />
-                    <figcaption class="container">
-                      <h4>Lorem Ipsum</h4>
-                      <span>Avalie:</span>
-                      <div class="classificado classificar">
-                        <ul class="estrelas col-8 h-100">
-                          <li class="estrelar col"></li>
-                          <li class="estrelar col"></li>
-                          <li class="estrelar col"></li>
-                          <li class="estrelar col"></li>
-                          <li class="estrelar col"></li>
-                        </ul>
-                      </div>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipis cing
-                        elit.
-                      </p>
-                      <button class="btn-primary btn btn-primary">
-                        Adquirir
-                      </button>
-                    </figcaption>
-                  </figure>
-                </a>
-              </li>
-
-              <!-- Item - Cartão produto -->
-              <li class="cartao col-10 col-sm rounded-1 row">
-                <figure class="p-0 pt-3 px-sm-0 px-lg-3 pb-1">
-                  <img
-                    src="./../../image/cartao-mcx.svg"
-                    alt="Minha Bufunfa"
-                    class="img-fluid w-50"
-                  />
-                  <figcaption class="container">
-                    <h4>Lorem Ipsum</h4>
-                    <span>Avalie:</span>
-                    <div class="classificado classificar">
-                      <ul class="estrelas col-8 h-100">
-                        <li class="estrelar col"></li>
-                        <li class="estrelar col"></li>
-                        <li class="estrelar col"></li>
-                        <li class="estrelar col"></li>
-                        <li class="estrelar col"></li>
-                      </ul>
-                    </div>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipis cing elit.
-                    </p>
-                    <button class="btn-primary btn btn-primary">
-                      Adquirir
-                    </button>
+                    </a>
                   </figcaption>
                 </figure>
               </li>
@@ -216,7 +151,7 @@
               <li class="cartao col-10 col-sm rounded-1 row">
                 <figure class="p-0 pt-3 px-sm-0 px-lg-3 pb-1">
                   <img
-                    src="./../../image/cartao-mcx.svg"
+                    src="./../image/cartao-mcx.svg"
                     alt="Minha Bufunfa"
                     class="img-fluid w-50"
                   />
@@ -235,13 +170,75 @@
                     <p>
                       Lorem ipsum dolor sit amet, consectetur adipis cing elit.
                     </p>
-                    <button class="btn-primary btn btn-primary">
+                    <a href="./produto.html" class="btn-primary btn btn-primary">
                       Adquirir
-                    </button>
+                    </a>
                   </figcaption>
                 </figure>
               </li>
+
+              <!-- Item - Cartão produto -->
+              <li class="cartao col-10 col-sm rounded-1 row">
+                <figure class="p-0 pt-3 px-sm-0 px-lg-3 pb-1">
+                  <img
+                    src="./../image/cartao-mcx.svg"
+                    alt="Minha Bufunfa"
+                    class="img-fluid w-50"
+                  />
+                  <figcaption class="container">
+                    <h4>Lorem Ipsum</h4>
+                    <span>Avalie:</span>
+                    <div class="classificado classificar">
+                      <ul class="estrelas col-8 h-100">
+                        <li class="estrelar col"></li>
+                        <li class="estrelar col"></li>
+                        <li class="estrelar col"></li>
+                        <li class="estrelar col"></li>
+                        <li class="estrelar col"></li>
+                      </ul>
+                    </div>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipis cing elit.
+                    </p>
+                    <a href="./produto.html" class="btn-primary btn btn-primary">
+                      Adquirir
+                    </a>
+                  </figcaption>
+                </figure>
+              </li>
+
+              <!-- Item - Cartão produto -->
+              <li class="cartao col-10 col-sm rounded-1 row">
+                <figure class="p-0 pt-3 px-sm-0 px-lg-3 pb-1">
+                  <img
+                    src="./../image/cartao-mcx.svg"
+                    alt="Minha Bufunfa"
+                    class="img-fluid w-50"
+                  />
+                  <figcaption class="container">
+                    <h4>Lorem Ipsum</h4>
+                    <span>Avalie:</span>
+                    <div class="classificado classificar">
+                      <ul class="estrelas col-8 h-100">
+                        <li class="estrelar col"></li>
+                        <li class="estrelar col"></li>
+                        <li class="estrelar col"></li>
+                        <li class="estrelar col"></li>
+                        <li class="estrelar col"></li>
+                      </ul>
+                    </div>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipis cing elit.
+                    </p>
+                    <a href="./produto.html" class="btn-primary btn btn-primary">
+                      Adquirir
+                    </a>
+                  </figcaption>
+                </figure>
+              </li>
+              
             </ul>
+
           </div>
         </div>
       </section>
@@ -250,125 +247,136 @@
         <h3 class="titulo">Todos os produtos <a href="">Ver todos</a></h3>
 
         <div class="produtos container-fluid pb-3 px-0 mt-4 col-lg-11">
+          
           <ul
-            class="row gap-3 gap-sm-2 gap-md-3 col-10 col-xs-8 col-sm-12 col-lg-9 justify-content-center row-cols-3"
-          >
-            <!-- Item - Cartão produto -->
-            <li class="cartao col-10 col-sm rounded-1 row">
-              <figure class="p-0 pt-3 px-sm-0 px-lg-3 pb-1">
-                <img
-                  src="./../../image/cartao-mcx.svg"
-                  alt="Minha Bufunfa"
-                  class="img-fluid w-50"
-                />
-                <figcaption class="container">
-                  <h4>Lorem Ipsum</h4>
-                  <span>Visa</span>
-                  <div class="classificado">
-                    <ul class="estrelas col-8 h-100">
-                      <li class="estrelar estrelado col"></li>
-                      <li class="estrelar estrelado col"></li>
-                      <li class="estrelar estrelado col"></li>
-                      <li class="estrelar estrelado col"></li>
-                      <li class="estrelar col"></li>
-                    </ul>
-                    <span class="classificacao-geral col-2">4,2</span>
-                  </div>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipis cing elit.
-                  </p>
-                  <button class="btn-primary btn btn-primary">Adquirir</button>
-                </figcaption>
-              </figure>
-            </li>
+              class="row gap-3 gap-sm-2 gap-md-3 col-12 justify-content-center row-cols-3"
+            >
+              <!-- Item - Cartão produto -->
+              <li class="cartao col-10 col-sm rounded-1 row">
+                <figure class="p-0 pt-3 px-sm-0 px-lg-3 pb-1">
+                  <img
+                    src="./../image/cartao-mcx.svg"
+                    alt="Minha Bufunfa"
+                    class="img-fluid w-50"
+                  />
+                  <figcaption class="container">
+                    <h4>Lorem Ipsum</h4>
+                    <span>Visa</span>
+                    <div class="classificado">
+                      <ul class="estrelas col-8 h-100">
+                        <li class="estrelar estrelado col"></li>
+                        <li class="estrelar estrelado col"></li>
+                        <li class="estrelar estrelado col"></li>
+                        <li class="estrelar estrelado col"></li>
+                        <li class="estrelar col"></li>
+                      </ul>
+                      <span class="classificacao-geral col-2">4,2</span>
+                    </div>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipis cing elit.
+                    </p>
+                    <a href="./produto.html" class="btn-primary btn btn-primary">
+                      Adquirir
+                    </a>
+                  </figcaption>
+                </figure>
+              </li>
 
-            <!-- Item - Cartão produto -->
-            <li class="cartao col-10 col-sm rounded-1 row">
-              <figure class="p-0 pt-3 px-sm-0 px-lg-3 pb-1">
-                <img
-                  src="./../../image/cartao-mcx.svg"
-                  alt="Minha Bufunfa"
-                  class="img-fluid w-50"
-                />
-                <figcaption class="container">
-                  <h4>Lorem Ipsum</h4>
-                  <span>Visa</span>
-                  <div class="classificado">
-                    <ul class="estrelas col-8 h-100">
-                      <li class="estrelar estrelado col"></li>
-                      <li class="estrelar estrelado col"></li>
-                      <li class="estrelar estrelado col"></li>
-                      <li class="estrelar estrelado col"></li>
-                      <li class="estrelar col"></li>
-                    </ul>
-                    <span class="classificacao-geral col-2">4,2</span>
-                  </div>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipis cing elit.
-                  </p>
-                  <button class="btn-primary btn btn-primary">Adquirir</button>
-                </figcaption>
-              </figure>
-            </li>
+              <!-- Item - Cartão produto -->
+              <li class="cartao col-10 col-sm rounded-1 row">
+                <figure class="p-0 pt-3 px-sm-0 px-lg-3 pb-1">
+                  <img
+                    src="./../image/cartao-mcx.svg"
+                    alt="Minha Bufunfa"
+                    class="img-fluid w-50"
+                  />
+                  <figcaption class="container">
+                    <h4>Lorem Ipsum</h4>
+                    <span>Visa</span>
+                    <div class="classificado">
+                      <ul class="estrelas col-8 h-100">
+                        <li class="estrelar estrelado col"></li>
+                        <li class="estrelar estrelado col"></li>
+                        <li class="estrelar estrelado col"></li>
+                        <li class="estrelar estrelado col"></li>
+                        <li class="estrelar col"></li>
+                      </ul>
+                      <span class="classificacao-geral col-2">4,2</span>
+                    </div>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipis cing elit.
+                    </p>
+                    <a href="./produto.html" class="btn-primary btn btn-primary">
+                      Adquirir
+                    </a>
+                  </figcaption>
+                </figure>
+              </li>
 
-            <!-- Item - Cartão produto -->
-            <li class="cartao col-10 col-sm rounded-1 row">
-              <figure class="p-0 pt-3 px-sm-0 px-lg-3 pb-1">
-                <img
-                  src="./../../image/cartao-mcx.svg"
-                  alt="Minha Bufunfa"
-                  class="img-fluid w-50"
-                />
-                <figcaption class="container">
-                  <h4>Lorem Ipsum</h4>
-                  <span>Visa</span>
-                  <div class="classificado">
-                    <ul class="estrelas col-8 h-100">
-                      <li class="estrelar estrelado col"></li>
-                      <li class="estrelar estrelado col"></li>
-                      <li class="estrelar estrelado col"></li>
-                      <li class="estrelar estrelado col"></li>
-                      <li class="estrelar col"></li>
-                    </ul>
-                    <span class="classificacao-geral col-2">4,2</span>
-                  </div>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipis cing elit.
-                  </p>
-                  <button class="btn-primary btn btn-primary">Adquirir</button>
-                </figcaption>
-              </figure>
-            </li>
+              <!-- Item - Cartão produto -->
+              <li class="cartao col-10 col-sm rounded-1 row">
+                <figure class="p-0 pt-3 px-sm-0 px-lg-3 pb-1">
+                  <img
+                    src="./../image/cartao-mcx.svg"
+                    alt="Minha Bufunfa"
+                    class="img-fluid w-50"
+                  />
+                  <figcaption class="container">
+                    <h4>Lorem Ipsum</h4>
+                    <span>Visa</span>
+                    <div class="classificado">
+                      <ul class="estrelas col-8 h-100">
+                        <li class="estrelar estrelado col"></li>
+                        <li class="estrelar estrelado col"></li>
+                        <li class="estrelar estrelado col"></li>
+                        <li class="estrelar estrelado col"></li>
+                        <li class="estrelar col"></li>
+                      </ul>
+                      <span class="classificacao-geral col-2">4,2</span>
+                    </div>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipis cing elit.
+                    </p>
+                    <a href="./produto.html" class="btn-primary btn btn-primary">
+                      Adquirir
+                    </a>
+                  </figcaption>
+                </figure>
+              </li>
 
-            <!-- Item - Cartão produto -->
-            <li class="cartao col-10 col-sm rounded-1 row">
-              <figure class="p-0 pt-3 px-sm-0 px-lg-3 pb-1">
-                <img
-                  src="./../../image/cartao-mcx.svg"
-                  alt="Minha Bufunfa"
-                  class="img-fluid w-50"
-                />
-                <figcaption class="container">
-                  <h4>Lorem Ipsum</h4>
-                  <span>Visa</span>
-                  <div class="classificado">
-                    <ul class="estrelas col-8 h-100">
-                      <li class="estrelar estrelado col"></li>
-                      <li class="estrelar estrelado col"></li>
-                      <li class="estrelar estrelado col"></li>
-                      <li class="estrelar estrelado col"></li>
-                      <li class="estrelar col"></li>
-                    </ul>
-                    <span class="classificacao-geral col-2">4,2</span>
-                  </div>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipis cing elit.
-                  </p>
-                  <button class="btn-primary btn btn-primary">Adquirir</button>
-                </figcaption>
-              </figure>
-            </li>
-          </ul>
+              <!-- Item - Cartão produto -->
+              <li class="cartao col-10 col-sm rounded-1 row">
+                <figure class="p-0 pt-3 px-sm-0 px-lg-3 pb-1">
+                  <img
+                    src="./../image/cartao-mcx.svg"
+                    alt="Minha Bufunfa"
+                    class="img-fluid w-50"
+                  />
+                  <figcaption class="container">
+                    <h4>Lorem Ipsum</h4>
+                    <span>Visa</span>
+                    <div class="classificado">
+                      <ul class="estrelas col-8 h-100">
+                        <li class="estrelar estrelado col"></li>
+                        <li class="estrelar estrelado col"></li>
+                        <li class="estrelar estrelado col"></li>
+                        <li class="estrelar estrelado col"></li>
+                        <li class="estrelar col"></li>
+                      </ul>
+                      <span class="classificacao-geral col-2">4,2</span>
+                    </div>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipis cing elit.
+                    </p>
+                    <a href="./produto.html" class="btn-primary btn btn-primary">
+                      Adquirir
+                    </a>
+                  </figcaption>
+                </figure>
+              </li>
+              
+            </ul>
+
         </div>
       </section>
     </main>
@@ -382,15 +390,19 @@
           <figure class="p-0 m-0 row">
             <div class="img col-5 px-0">
               <img
-                src="./../../image/editar-produto-imagem.png"
+                src="./../image/editar-produto-imagem.png"
                 alt="Minha Bufunfa"
                 class="img-fluid"
+
+                id="preview_image"
               />
               <img
-                src="./../../image/broken-image.svg"
+                src="./../image/broken-image.svg"
                 alt="broken"
                 class="broken"
               />
+
+              <input id="imagem-produto" type="file" accept="image/*">
             </div>
             <figcaption class="container col-7 px-3">
 
@@ -421,6 +433,6 @@
       </div>
     </div>
 
-    <script src="./../../script/script.js"></script>
+    <script src="./../script/script.js"></script>
   </body>
 </html>

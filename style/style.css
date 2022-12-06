@@ -10,7 +10,7 @@
   --altura-corpo: 0;
   --borda-cartao: 0.7rem;
   --sombra-cx: 0px 0px 19px rgba(0, 0, 0, 0.1);
-  --progresso-circular: 450;
+  --progresso-circular: 252;
 }
 
 html {
@@ -132,7 +132,7 @@ select option {
   background: #fff;
 } 
 
-.produtos .cartao .btn-primary:active {
+.produtos .cartao:not(.produto-adquirido) .btn-primary:active {
   border: none !important;
 }
 
@@ -281,12 +281,17 @@ main {
   margin: auto;
 }
 
-.produtos .cartao {
+.produtos .cartao:not(.produto-adquirido) {
   box-sizing: border-box;
 
   border: 0px solid #85e0a3;
 
+  color: #fff;
   box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.15);
+}
+
+.produtos .cartao .btn-primary {
+  padding: .38rem 0;
 }
 
 .produtos .cartao figcaption {
@@ -990,8 +995,8 @@ body.home-page {
   height: 100px;
   stroke: url(#GradientColor);
   stroke-width: 30px;
-  stroke-dasharray: 450;
-  /* stroke-dashoffset: 450; */
+  stroke-dasharray: 252;
+  stroke-dashoffset: 252;
   /* stroke-linecap: round; */
 
   animation: anim 2s linear forwards;
@@ -1087,7 +1092,6 @@ figure.artigo-usuario .descricao-artigo {
 }
 
 .home-page .nossos-produtos ul:first-child {
-  width: auto;
   box-sizing: border-box;
 }
 
@@ -1099,7 +1103,8 @@ figure.artigo-usuario .descricao-artigo {
   padding: 0;
 }
 
-.home-page .nossos-produtos .cartao button {
+.home-page .nossos-produtos .cartao button,
+.home-page .nossos-produtos .cartao a {
   line-height: 1.5 !important;
   width: auto;
 }
@@ -1202,8 +1207,8 @@ figure.artigo-usuario .descricao-artigo {
 }
 
 /* Produto adquirido*/
-.produto-adquirido button.btn-primary,
-.produto-adquirido button.btn-primary:active {
+.produto-adquirido .btn-primary,
+.produto-adquirido .btn-primary:active {
   color: var(--verde-meio-escuro);
   background: none !important;
   border: 1px solid var(--verde-principal);
@@ -1638,12 +1643,32 @@ figure.artigo-usuario .descricao-artigo {
 #modal-editar-produto #cartao-produto .img {
   position: relative;
   padding-left: 0;
-  height: max-content;
+  min-height: 100%;
+  max-height: 100%;
+  justify-items: center;
+  border-radius: .5rem;
+}
+
+#modal-editar-produto #cartao-produto .img:not(.on-produto) {
+  max-width: 14.736842105263158rem;
+}
+
+#modal-editar-produto #cartao-produto .img.on-produto input[type="file"]{
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 #modal-editar-produto #cartao-produto img:first-of-type {
-  height: 10%;
+  height: 100%;
   max-height: 90vh;
+  object-fit: contain;
+  background-color: rgba(0, 0, 0, .1);
+}
+
+#modal-editar-produto #cartao-produto .img.on-produto img:first-of-type {
+  max-height: 32vh !important;
+  object-fit: contain !important;
 }
 
 #modal-editar-produto #cartao-produto .broken {
@@ -1651,7 +1676,18 @@ figure.artigo-usuario .descricao-artigo {
   top: 50%;
   left: 50%;
   transform: translate(-50%);
-  z-index: 99999;
+  z-index: 99;
+}
+
+#modal-editar-produto input[type="file"] {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 999;
+  cursor: pointer;
 }
 
 #modal-editar-produto fieldset {
@@ -1691,7 +1727,7 @@ figure.artigo-usuario .descricao-artigo {
 
   background-image: url(./../image/espiral-esmaecida.svg);
   background-repeat: no-repeat;
-  background-size: 37%;
+  background-size: 19.5rem;
   background-position: bottom left;
   
   height: 100%;

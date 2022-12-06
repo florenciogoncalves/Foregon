@@ -163,6 +163,10 @@
   margin-top: 1rem;
   margin-bottom: 0;
 }
+
+.container-aside-clientes .__cliente img {
+  width: 3.75rem !important;
+}
 }
 
 @media (min-width: 575.98px) {
@@ -793,11 +797,12 @@
     line-height: 1.5rem;
   }
 
-  #artigo-page .back-btn a {
+  #artigo-page .back-btn button {
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
     margin-left: auto;
+    border: none;
 
     background: url(./../image/back.svg) no-repeat center, var(--verde-principal);
     background-size: 40%;
@@ -817,4 +822,7 @@
 
 /* X-Large devices (large desktops, less than 1400px) */
 @media (min-width: 1399.98px) {
+  main > * {
+    max-width: 1400px;
+  }
 }
