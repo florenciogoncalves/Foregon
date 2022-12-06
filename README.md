@@ -1,3 +1,3 @@
 # Foregon
 
-## Sem validações e feactures ainda
+## Frontend finalizado
