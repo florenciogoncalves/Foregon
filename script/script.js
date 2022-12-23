@@ -316,9 +316,9 @@ try {
 
 
 
-// Estrelar carões
+// Estrelar cartões
 try {
-  document.querySelectorAll('.estrelar').forEach(star => {
+  document.querySelectorAll('.classificar .estrelar').forEach(star => {
     star.addEventListener('click', () => {
       if (star == star.parentElement.lastElementChild && star.classList.contains('estrelado')) {
         star.parentElement.querySelectorAll('.estrelar').forEach(el => el.classList.remove('estrelado'))
