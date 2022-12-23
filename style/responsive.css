@@ -672,6 +672,14 @@
     padding-left: calc(4rem + 3rem) !important;
   }
 
+  ._fullscreen-main main#conteudo-principal {
+  padding-left: 0 !important;
+}
+
+._fullscreen-main main#conteudo-principal > *:not(:last-child){
+  padding-left: calc(4rem + 3rem) !important;
+}
+
   .informacao-sobre {
     width: 0.85rem;
     height: 0.85rem;

@@ -24,11 +24,12 @@
 		<link rel="stylesheet" href="./../style/responsive.css" />
 	</head>
 	<!-- Relativo ao 'Seu score': No evento onload da tag body, defina dois parametros, o primeiro referente ao total positivo, e o segundo referente ao somatorio total -->
-	<body class="home-page padrao_produtos container-fluid d-flex d-lg-grid">
+	<body
+		class="home-page padrao_produtos container-fluid d-flex d-lg-grid _fullscreen-main">
 		<nav id="menu-lateral" class="navbar col sticky-bottom py-2 px-4">
-			<div class="logo d-none d-lg-flex">
+			<a href="./" class="logo d-none d-lg-flex">
 				<img src="./../image/Minha-bufunfa-pequeno.svg" alt="Minha Bufunfa" />
-			</div>
+			</a>
 			<ul
 				class="navegacao row p-0 px-sm-4 mb-0 col-12 gap-2 justify-content-between">
 				<li class="col px-0 py-2 rounded-3">
@@ -75,7 +76,7 @@
 		</nav>
 
 		<main id="conteudo-principal" class="col p-3 p-sm-4 pb-5 mb-3 mb-lg-0">
-			<div class="container-fluid">
+			<div class="container-fluid pb-5">
 				<!-- Cartão com os dados do produto -->
 				<div id="cartao-produto" class="area-de-conteudo p-2">
 					<figure class="p-0 pt-3 px-sm-0 px-lg-3 pb-1 row">
@@ -110,7 +111,7 @@
 					</figure>
 				</div>
 
-				<!-- Barra com algumas informações -->
+				<!-- Barra com informações -->
 				<div class="container-informacoes area-de-conteudo row p-3 mt-2 gap-4">
 					<div class="container-coluna p-0 col-auto pe-md-3">
 						<h4 class="titulo-artigo _icone--informacao _texto--verde">
@@ -124,7 +125,7 @@
 						</h4>
 						<span class="texto-coluna">Não informado</span>
 					</div>
-					<span class="texto-coluna p-0 col-auto"
+					<span class="texto-coluna p-0 col-auto __elemento-pontos"
 						>Acumule 4<br />pontos a cada<br />dólar gasto</span
 					>
 					<div class="nivelador container-coluna p-0 col-2 row align-items-end">
@@ -141,58 +142,105 @@
 				</div>
 
 				<!-- Comparação de cartões -->
-				<table class="table tabela-comparacao-cartoes mt-5">
-					<thead>
-						<tr>
-							<th class="tabela-coparacao-cartoes__cabecalho" scope="col">
-								
+				<div class="container-tabela-comparacao">
+					<table class="table tabela-comparacao-cartoes mt-5">
+						<colgroup>
+							<col />
+							<col class="_bg-cor--verde" />
+							<col />
+						</colgroup>
+						<thead>
+							<tr>
+								<th class="tabela-coparacao-cartoes__cabecalho pe-4" scope="col">
 									<h2 class="__titulo _texto--verde">Comparação de cartões</h2>
 									<span class="__subtitulo texto-coluna"
 										>It is a long established fact that a reader will be
 										distracted<br />by the readable content of a page when
 										looking at its<br />layout. The point of using
 									</span>
-								
-							</th>
-							<th class="tabela-coparacao-cartoes__cartao" scope="col">
-								<div class="container-cartao">
-									<img
-										class="__imagem-cartao mb-1"
-										src="./../image/cartao-mcx.svg"
-										alt="Imagem do cartão" />
-									<span class="__nome-cartao">Lorem Ipsum</span
-									><button class="__botao-solicitar-cartao mt-3 mb-1">
-										solicitar cartão
-									</button>
-								</div>
-							</th>
-							<th class="tabela-coparacao-cartoes__cartao" scope="col">
-								<div class="container-cartao">
-									<img
-										class="__imagem-cartao mb-1"
-										src="./../image/cartao-mcx.svg"
-										alt="Imagem do cartão" />
-									<span class="__nome-cartao">Lorem Ipsum</span
-									><button class="__botao-solicitar-cartao mt-3 mb-1">
-										solicitar cartão
-									</button>
-								</div>
-							</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<th class="__rotulo py-3" scope="row">Anuinidade</th>
-							<td class="__dado">4x de R$ 405,00<br />(R$ 1.620,00)</td>
-							<td class="__dado">Lorem Ipsum</td>
-						</tr>
-						<tr>
-							<th class="__rotulo py-3" scope="row">Renda mínima</th>
-							<td class="__dado">Lorem Ipsum</td>
-							<td class="__dado">Lorem Ipsum</td>
-						</tr>
-					</tbody>
-				</table>
+								</th>
+								<th class="tabela-coparacao-cartoes__cartao" scope="col">
+									<div class="container-cartao px-3">
+										<img
+											class="__imagem-cartao mb-1"
+											src="./../image/cartao-mcx.svg"
+											alt="Imagem do cartão" />
+										<span class="__nome-cartao">Lorem Ipsum</span
+										><button class="__botao-solicitar-cartao mt-3 mb-1">
+											solicitar cartão
+										</button>
+									</div>
+								</th>
+								<th class="tabela-coparacao-cartoes__cartao" scope="col">
+									<div class="container-cartao px-3">
+										<img
+											class="__imagem-cartao mb-1"
+											src="./../image/cartao-mcx.svg"
+											alt="Imagem do cartão" />
+										<span class="__nome-cartao">Lorem Ipsum</span
+										><button class="__botao-solicitar-cartao mt-3 mb-1">
+											solicitar cartão
+										</button>
+									</div>
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th class="__rotulo py-3" scope="row">Anuinidade</th>
+								<td class="__dado">4x de R$ 405,00<br />(R$ 1.620,00)</td>
+								<td class="__dado">Lorem Ipsum</td>
+							</tr>
+							<tr>
+								<th class="__rotulo py-3" scope="row">Renda mínima</th>
+								<td class="__dado">Lorem Ipsum</td>
+								<td class="__dado">Lorem Ipsum</td>
+							</tr>
+						</tbody>
+					</table>
+
+          <div class="container-tabela-comparacao__overlay"></div>
+				</div>
+				<div>
+					<button
+						class="__botao-solicitar-cartao __ver-analise-completa mt-3 mb-1 mx-auto row">
+						Ver a análise completa
+					</button>
+				</div>
+
+				<!-- Saiba todas as informações do cartão -->
+			</div>
+			<div
+				id="landing-pos-header"
+				class="container-todas-informacoes-produto margem-topo row">
+				<div class="container-fluid py-3 py-md-4">
+					<form
+						id="faca-seu-cadastro"
+						class="form-group col-12 col-sm-8 col-md-7 col-lg-6 px-4 px-sm-5 pt-3 my-auto">
+						<h1>Faça seu cadastro!</h1>
+						<span
+							>Lorem ipsum dolor sit amet, consectetur adipis cing elit
+							consectetur adipis cing elit.</span
+						>
+						<fieldset class="mt-3 mb-md-2">
+							<input
+								type="number"
+								placeholder="CPF"
+								class="campo form-control" />
+						</fieldset>
+
+						<!-- Remover a tag a depois de adicionar a rota, mantendo apenas o seu texto -->
+						<button class="btn btn-primary my-2 mb-3">
+							<a href="./conclua-o-cadastro.html" style="text-decoration: none"
+								>Prosseguir</a
+							>
+						</button>
+						<ul id="navegacao-carroussel" class="m-0">
+							<li id="slide-atual"></li>
+							<li></li>
+						</ul>
+					</form>
+				</div>
 			</div>
 		</main>
 

@@ -1971,6 +1971,23 @@ figure.artigo-usuario .descricao-artigo {
 	background-size: contain;
 }
 
+.__elemento-pontos {
+  position: relative;
+}
+
+.__elemento-pontos::before {
+  position: absolute;
+  content: ' ';
+  top: .15em;
+  left: -1.5em;
+  width: 1em;
+  height: 1em;
+
+  background-image: url(./../image/troca.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
 .nivelador {
 	max-width: max-content;
 	display: grid;
@@ -2021,6 +2038,22 @@ figure.artigo-usuario .descricao-artigo {
 }
 
 /* Tabela */
+.container-tabela-comparacao {
+  position: relative;
+}
+.container-tabela-comparacao__overlay {
+position: absolute;
+bottom: 0;
+left: 0%;
+  height: 2.5rem;
+  width: 100%;
+  background: linear-gradient(rgba(255, 255, 255, 0), #f5f5f5);
+}
+
+.tabela-coparacao-cartoes {
+  box-sizing: border-box;
+}
+
 .tabela-coparacao-cartoes__cabecalho .container-cabecalho {
 	display: grid;
 	flex-direction: column;
@@ -2066,7 +2099,7 @@ figure.artigo-usuario .descricao-artigo {
 	height: max-content;
 	padding: 0;
 
-	font-size: 0.8rem;
+	font-size: 0.75rem;
 	font-weight: 600;
 	color: var(--verde-principal);
 	text-transform: uppercase;
@@ -2074,20 +2107,47 @@ figure.artigo-usuario .descricao-artigo {
 	background: none;
 }
 
-th:nth-child(2),
-td:nth-child(2) {
-	background: rgba(0, 204, 102, 0.19);
-	backdrop-filter: blur(2px);
-
-	/* border-radius: 12px; */
+.__ver-analise-completa {
+  font-size: .7rem;
 }
+
+tr {
+  border-color: #C1BBBB;
+}
+
+.tabela-coparacao-cartoes__cartao {
+border-radius: 0;
+  border-top-left-radius: 12px;
+	border-top-right-radius: 12px;
+  border-collapse: separate;
+}
+
+._bg-cor--verde{
+	background: rgba(0, 204, 102, 0.19);
+	backdrop-filter: blur(2px);	
+}
+
 
 .__rotulo,
 .__dado {
 	font-weight: 600;
-	font-size: 0.9rem;
+	font-size: 0.85rem;
 }
 
 .__dado {
 text-align: center;
+}
+
+._fullscreen-main main {
+  padding: 1.5rem 0 0 !important;
+}
+
+._fullscreen-main main > *:not(:last-child) {
+  padding-right: 1.5rem !important;
+}
+
+.container-todas-informacoes-produto {
+  position: relative;
+  bottom: 0%;
+  left: 0;
 }
