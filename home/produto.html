@@ -112,8 +112,10 @@
 
 				<!-- Barra com algumas informações -->
 				<div class="container-informacoes area-de-conteudo row p-3 mt-2 gap-4">
-					<div class="container-coluna p-0 col-auto">
-						<h4 class="titulo-artigo _icone--informacao _texto--verde">Anuidade</h4>
+					<div class="container-coluna p-0 col-auto pe-md-3">
+						<h4 class="titulo-artigo _icone--informacao _texto--verde">
+							Anuidade
+						</h4>
 						<a href="" class="texto-coluna">Vizualizar</a>
 					</div>
 					<div class="container-coluna p-0 col-auto">
@@ -122,16 +124,75 @@
 						</h4>
 						<span class="texto-coluna">Não informado</span>
 					</div>
-					<span class="texto-coluna p-0 col-auto">Acumule 4<br>pontos a cada<br>dólar gasto</span>
+					<span class="texto-coluna p-0 col-auto"
+						>Acumule 4<br />pontos a cada<br />dólar gasto</span
+					>
 					<div class="nivelador container-coluna p-0 col-2 row align-items-end">
 						<div class="nivelador__nivel _nivel--1 col"></div>
 						<div class="nivelador__nivel _nivel--2 col"></div>
 						<div class="nivelador__nivel _nivel--3 col"></div>
 					</div>
-					<a href="" class="titulo-artigo _texto--verde p-0 col container-informacoes__descubra"
-						>Descubra suas chances de aprovação neste cartão <img src="./../image/proceder.svg" alt=""></a
-					>
+					<a
+						href=""
+						class="titulo-artigo _texto--verde p-0 col col-md-auto container-informacoes__descubra"
+						>Descubra suas chances de<br />aprovação neste cartão
+						<img src="./../image/proceder.svg" alt=""
+					/></a>
 				</div>
+
+				<!-- Comparação de cartões -->
+				<table class="table tabela-comparacao-cartoes mt-5">
+					<thead>
+						<tr>
+							<th class="tabela-coparacao-cartoes__cabecalho" scope="col">
+								
+									<h2 class="__titulo _texto--verde">Comparação de cartões</h2>
+									<span class="__subtitulo texto-coluna"
+										>It is a long established fact that a reader will be
+										distracted<br />by the readable content of a page when
+										looking at its<br />layout. The point of using
+									</span>
+								
+							</th>
+							<th class="tabela-coparacao-cartoes__cartao" scope="col">
+								<div class="container-cartao">
+									<img
+										class="__imagem-cartao mb-1"
+										src="./../image/cartao-mcx.svg"
+										alt="Imagem do cartão" />
+									<span class="__nome-cartao">Lorem Ipsum</span
+									><button class="__botao-solicitar-cartao mt-3 mb-1">
+										solicitar cartão
+									</button>
+								</div>
+							</th>
+							<th class="tabela-coparacao-cartoes__cartao" scope="col">
+								<div class="container-cartao">
+									<img
+										class="__imagem-cartao mb-1"
+										src="./../image/cartao-mcx.svg"
+										alt="Imagem do cartão" />
+									<span class="__nome-cartao">Lorem Ipsum</span
+									><button class="__botao-solicitar-cartao mt-3 mb-1">
+										solicitar cartão
+									</button>
+								</div>
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th class="__rotulo py-3" scope="row">Anuinidade</th>
+							<td class="__dado">4x de R$ 405,00<br />(R$ 1.620,00)</td>
+							<td class="__dado">Lorem Ipsum</td>
+						</tr>
+						<tr>
+							<th class="__rotulo py-3" scope="row">Renda mínima</th>
+							<td class="__dado">Lorem Ipsum</td>
+							<td class="__dado">Lorem Ipsum</td>
+						</tr>
+					</tbody>
+				</table>
 			</div>
 		</main>
 
