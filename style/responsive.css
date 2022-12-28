@@ -486,9 +486,9 @@
       right 10% top calc(40% + var(--altura-cabecalho)), right 11% bottom 5%,
       right 28% bottom, right -1.7rem top calc(var(--altura-cabecalho) + 5%),
       right -2rem top calc(43% + var(--altura-cabecalho)),
-      right -1.7rem bottom 5%;
+      right -1.7rem bottom 5% !important;
     background-size: 2.7rem, 3rem, 2.7rem, 6.6rem, 2.9em, 6.6rem, 3rem, 6.6rem,
-      2.9em, 6.6rem, 3rem, 2.7rem, 4.1rem, 2.7rem;
+      2.9em, 6.6rem, 3rem, 2.7rem, 4.1rem, 2.7rem !important;
     background-color: var(--verde-principal);
   }
 

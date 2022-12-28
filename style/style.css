@@ -674,7 +674,8 @@ main {
 	display: flex;
 }
 
-#landing-pos-header > div form {
+#landing-pos-header > div form,
+#landing-pos-header > div #faca-seu-cadastro {
 	background: #fff;
 	margin: auto;
 	border-radius: 15px;
@@ -2150,4 +2151,71 @@ text-align: center;
   position: relative;
   bottom: 0%;
   left: 0;
+}
+
+/* Todas as informações do cartão */
+.container-diferencas {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem 3rem 3rem;
+}
+
+#faca-seu-cadastro .subtitulo {
+font-size: .8rem;
+  font-weight: 600;
+}
+
+.contexto {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-bottom: 1px solid #000;
+  padding: .5rem 0;
+
+  font-size: .75rem;
+}
+
+._contexto--direita {
+  text-align: end;
+}
+
+
+/* Autor */
+#leia-artigo.autor-artigo figure {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	align-items: center;
+	padding: .35rem 1rem;
+	margin: 0;
+}
+#leia-artigo.autor-artigo img {
+	width: 3rem !important;
+	min-height: 0 !important;
+	height: 3rem !important;
+	object-fit: cover !important;
+	border-radius: 50%;
+}
+#leia-artigo.autor-artigo figcaption {
+	position: relative !important;
+	color:#000 !important;
+}
+
+#leia-artigo.autor-artigo .nome {
+	position: relative;
+	width: max-content;
+}
+
+#leia-artigo.autor-artigo .nome + span {
+	background: none !important;
+}
+
+#leia-artigo.autor-artigo .nome::after {
+	position: absolute;
+	left: calc(100% + 4px);
+	top: 0;
+	content: ' ' !important;
+	width: 1em !important;
+	height: 1em !important;
+	background: url(./../image/mark.svg) no-repeat center !important;
 }
