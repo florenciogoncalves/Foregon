@@ -33,7 +33,7 @@ session_start();
       <img class="col-lg-5 d-none d-lg-block h-100 mh-100" src="./image/background-login.png" alt="Minha Bufunfa" />
 
       <!-- Conteúdo da direita -->
-      <div class="col-md-9 col-lg-7 m-auto mt-5 mb-lg-auto justify-content-center p-0 my-lg-auto" style="padding-top: var(--altura-cabecalho) !important">
+      <div class="col-md-9 col-lg-7 m-auto mt-5 mb-lg-auto justify-content-center p-0 my-lg-auto" style="padding-top: $header-height !important">
 
         <?php
         if (isset($_SESSION['message'])) :

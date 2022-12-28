@@ -1,25 +1,22 @@
 const erros = [];
 
-
 /*
  ***********************************************
  ***                Cabeçalho                ***
  ***********************************************
  */
 try {
-  document.body.style.setProperty(
-    "--altura-cabecalho",
-    getComputedStyle(document.getElementById("cabecalho-principal")).height
-  );
+	document.body.style.setProperty(
+		"--header-height",
+		getComputedStyle(document.getElementById("cabecalho-principal")).height
+	);
 } catch (error) {
-  erros.push(error);
+	erros.push(error);
 }
 document.body.style.setProperty(
-  "--altura-corpo",
-  document.documentElement.clientHeight + "px"
+	"--body-height",
+	document.documentElement.clientHeight + "px"
 );
-
-
 
 /*
  ***********************************************
@@ -27,69 +24,67 @@ document.body.style.setProperty(
  ***********************************************
  */
 try {
-  const quantidadeCarrousseis = document.querySelectorAll(
-    ".conteudo-carroussel"
-  );
-  const navegacaoCarroussel = document.querySelector("#navegacao-carroussel");
+	const quantidadeCarrousseis = document.querySelectorAll(
+		".conteudo-carroussel"
+	);
+	const navegacaoCarroussel = document.querySelector("#navegacao-carroussel");
 
-  let contadorCarroussel = 0;
+	let contadorCarroussel = 0;
 
-  //Upar a quantidade de slides para as marcações de ponto
-  for (count = 0; count < quantidadeCarrousseis.length; count++) {
-    let elemento = document.createElement("li");
-    navegacaoCarroussel.appendChild(elemento);
-  }
+	//Upar a quantidade de slides para as marcações de ponto
+	for (count = 0; count < quantidadeCarrousseis.length; count++) {
+		let elemento = document.createElement("li");
+		navegacaoCarroussel.appendChild(elemento);
+	}
 
-  //Mostra carroussel na posição X e seu repetivo indicativo
-  quantidadeCarrousseis[contadorCarroussel].id = "na-tela";
-  navegacaoCarroussel.children[contadorCarroussel].id = "slide-atual";
-  contadorCarroussel = 1;
+	//Mostra carroussel na posição X e seu repetivo indicativo
+	quantidadeCarrousseis[contadorCarroussel].id = "visible-slide";
+	navegacaoCarroussel.children[contadorCarroussel].id = "slide-atual";
+	contadorCarroussel = 1;
 
-  function carroussel() {
-    //Aplicando a repetição por timer
-    timerCarroussel = setInterval(() => {
-      //Deixando para trás o slide anterior e partindo para um novo
-      document.querySelector("#na-tela").removeAttribute("id");
-      document.querySelector("#slide-atual").removeAttribute("id");
+	function carroussel() {
+		//Aplicando a repetição por timer
+		timerCarroussel = setInterval(() => {
+			//Deixando para trás o slide anterior e partindo para um novo
+			document.querySelector("#visible-slide").removeAttribute("id");
+			document.querySelector("#slide-atual").removeAttribute("id");
 
-      //Resetando contador, caso tenha excedido o limite
-      if (contadorCarroussel >= quantidadeCarrousseis.length) {
-        contadorCarroussel = 0;
-      }
+			//Resetando contador, caso tenha excedido o limite
+			if (contadorCarroussel >= quantidadeCarrousseis.length) {
+				contadorCarroussel = 0;
+			}
 
-      //Setando os valores de apresentação a outra posição de slide
-      quantidadeCarrousseis[contadorCarroussel].id = "na-tela";
-      navegacaoCarroussel.children[contadorCarroussel].id = "slide-atual";
+			//Setando os valores de apresentação a outra posição de slide
+			quantidadeCarrousseis[contadorCarroussel].id = "visible-slide";
+			navegacaoCarroussel.children[contadorCarroussel].id = "slide-atual";
 
-      contadorCarroussel++;
-    }, 5000);
-  }
+			contadorCarroussel++;
+		}, 5000);
+	}
 
-  carroussel();
+	carroussel();
 
-  //Evento de clique aos nodos do carroussel
-  for (c = 0; c < navegacaoCarroussel.children.length; c++) {
-    navegacaoCarroussel.children[c].posicao = c;
-    navegacaoCarroussel.children[c].addEventListener("click", (evt) => {
-      contadorCarroussel = evt.target.posicao;
+	//Evento de clique aos nodos do carroussel
+	for (c = 0; c < navegacaoCarroussel.children.length; c++) {
+		navegacaoCarroussel.children[c].posicao = c;
+		navegacaoCarroussel.children[c].addEventListener("click", (evt) => {
+			contadorCarroussel = evt.target.posicao;
 
-      //Deixando para trás o slide anterior e partindo para um novo
-      document.querySelector("#na-tela").removeAttribute("id");
-      document.querySelector("#slide-atual").removeAttribute("id");
+			//Deixando para trás o slide anterior e partindo para um novo
+			document.querySelector("#visible-slide").removeAttribute("id");
+			document.querySelector("#slide-atual").removeAttribute("id");
 
-      //Mostra carroussel na posição X e seu repetivo indicativo
-      quantidadeCarrousseis[contadorCarroussel].id = "na-tela";
-      navegacaoCarroussel.children[contadorCarroussel].id = "slide-atual";
+			//Mostra carroussel na posição X e seu repetivo indicativo
+			quantidadeCarrousseis[contadorCarroussel].id = "visible-slide";
+			navegacaoCarroussel.children[contadorCarroussel].id = "slide-atual";
 
-      clearInterval(timerCarroussel);
-      carroussel();
-    });
-  }
+			clearInterval(timerCarroussel);
+			carroussel();
+		});
+	}
 } catch (error) {
-  erros.push(error);
+	erros.push(error);
 }
-
-
 
 /*
  ***********************************************
@@ -100,16 +95,14 @@ try {
 const mostrarSenha = document.querySelectorAll("#cadastro .mostrar-senha");
 
 mostrarSenha.forEach((elemento) => {
-  elemento.addEventListener("click", () => {
-    if (elemento.checked) {
-      elemento.parentNode.firstElementChild.setAttribute("type", "text");
-    } else {
-      elemento.parentNode.firstElementChild.setAttribute("type", "password");
-    }
-  });
+	elemento.addEventListener("click", () => {
+		if (elemento.checked) {
+			elemento.parentNode.firstElementChild.setAttribute("type", "text");
+		} else {
+			elemento.parentNode.firstElementChild.setAttribute("type", "password");
+		}
+	});
 });
-
-
 
 /*
  **********************************************
@@ -117,12 +110,10 @@ mostrarSenha.forEach((elemento) => {
  **********************************************
  */
 document.querySelectorAll(".btn-primary").forEach((element) => {
-  element.className += " rounded-5";
-  // if (innerWidth >= 767.98)
-  //   element.className += ' btn-xs'
+	element.className += " rounded-5";
+	// if (innerWidth >= 767.98)
+	//   element.className += ' btn-xs'
 });
-
-
 
 /*
  **********************************************
@@ -130,15 +121,13 @@ document.querySelectorAll(".btn-primary").forEach((element) => {
  **********************************************
  */
 try {
-  document.querySelectorAll("select").forEach((elemento) => {
-    if (elemento.selectedIndex == 0) elemento.style.color = "grey";
-    elemento.addEventListener("change", () => (elemento.style.color = "#555"));
-  });
+	document.querySelectorAll("select").forEach((elemento) => {
+		if (elemento.selectedIndex == 0) elemento.style.color = "grey";
+		elemento.addEventListener("change", () => (elemento.style.color = "#555"));
+	});
 } catch (error) {
-  erros.push(error);
+	erros.push(error);
 }
-
-
 
 /*
  ***********************************
@@ -147,71 +136,93 @@ try {
  */
 /*Setar altura de um quadrado*/
 try {
-  const progressContainer = document.querySelector(".skill");
-  let alturaContainer = getComputedStyle(progressContainer).width;
-  progressContainer.style.height = alturaContainer;
-  progressContainer.querySelector("circle").setAttribute("cx", parseInt(alturaContainer) / 2);
-  progressContainer.querySelector("circle").setAttribute("cy", parseInt(alturaContainer) / 2);
-  let raio = (parseInt(alturaContainer) / 2)
-  progressContainer.querySelector("circle").setAttribute("r", raio);
-  console.log(raio)
-  progressContainer.querySelector("circle").setAttribute( "style", "stroke-width: " + parseInt(alturaContainer) / 2 * 0.18 + "px !important");
-  console.log('>' + parseInt(alturaContainer) * 0.1875)
-  progressContainer.querySelector("circle").setAttribute( "style", "stroke-dasharray: " + raio * 2 * Math.PI + "px");
-  progressContainer.querySelector("circle").setAttribute( "style", "stroke-dashoffset: " + raio * 2 * Math.PI + "px");
+	const progressContainer = document.querySelector(".skill");
+	let alturaContainer = getComputedStyle(progressContainer).width;
+	progressContainer.style.height = alturaContainer;
+	progressContainer
+		.querySelector("circle")
+		.setAttribute("cx", parseInt(alturaContainer) / 2);
+	progressContainer
+		.querySelector("circle")
+		.setAttribute("cy", parseInt(alturaContainer) / 2);
+	let raio = parseInt(alturaContainer) / 2;
+	progressContainer.querySelector("circle").setAttribute("r", raio);
+	console.log(raio);
+	progressContainer
+		.querySelector("circle")
+		.setAttribute(
+			"style",
+			"stroke-width: " +
+				(parseInt(alturaContainer) / 2) * 0.18 +
+				"px !important"
+		);
+	console.log(">" + parseInt(alturaContainer) * 0.1875);
+	progressContainer
+		.querySelector("circle")
+		.setAttribute("style", "stroke-dasharray: " + raio * 2 * Math.PI + "px");
+	progressContainer
+		.querySelector("circle")
+		.setAttribute("style", "stroke-dashoffset: " + raio * 2 * Math.PI + "px");
 
-  let addEvent = function (elem, type, eventHandle) {
-    if (elem == null || typeof elem == "undefined") return;
-    if (elem.addEventListener) {
-      elem.addEventListener(type, eventHandle, false);
-    } else if (elem.attachEvent) {
-      elem.attachEvent("on" + type, eventHandle);
-    } else {
-      elem["on" + type] = eventHandle;
-    }
-  };
+	let addEvent = function (elem, type, eventHandle) {
+		if (elem == null || typeof elem == "undefined") return;
+		if (elem.addEventListener) {
+			elem.addEventListener(type, eventHandle, false);
+		} else if (elem.attachEvent) {
+			elem.attachEvent("on" + type, eventHandle);
+		} else {
+			elem["on" + type] = eventHandle;
+		}
+	};
 
-  addEvent(window, "resize", function () {
-    let alturaContainer = getComputedStyle(progressContainer).width;
-    progressContainer.style.height = alturaContainer;
-    progressContainer.querySelector("circle").setAttribute("cx", parseInt(alturaContainer) / 2);
-    progressContainer.querySelector("circle").setAttribute("cy", parseInt(alturaContainer) / 2);
-    let raio = (parseInt(alturaContainer) / 2)
-    progressContainer.querySelector("circle").setAttribute("r", raio);
-    console.log(raio)
-    progressContainer.querySelector("circle").setAttribute( "style", "stroke-width: " + parseInt(alturaContainer) / 2 * 0.18 + "px !important");
-    console.log('>' + parseInt(alturaContainer) * 0.1875)
-  });
+	addEvent(window, "resize", function () {
+		let alturaContainer = getComputedStyle(progressContainer).width;
+		progressContainer.style.height = alturaContainer;
+		progressContainer
+			.querySelector("circle")
+			.setAttribute("cx", parseInt(alturaContainer) / 2);
+		progressContainer
+			.querySelector("circle")
+			.setAttribute("cy", parseInt(alturaContainer) / 2);
+		let raio = parseInt(alturaContainer) / 2;
+		progressContainer.querySelector("circle").setAttribute("r", raio);
+		console.log(raio);
+		progressContainer
+			.querySelector("circle")
+			.setAttribute(
+				"style",
+				"stroke-width: " +
+					(parseInt(alturaContainer) / 2) * 0.18 +
+					"px !important"
+			);
+		console.log(">" + parseInt(alturaContainer) * 0.1875);
+	});
 } catch (error) {
-  erros.push(error);
+	erros.push(error);
 }
-
-
 
 // Reajuste de tamanho do progresso circular
 function setProgressVal(achieved, total) {
-  const numbers = document.getElementById("numbers");
-  let percentual = 252 - (((achieved * 100) / 1000) * 252) / 100;
-  console.log(percentual)
-  document.body.style.setProperty("--progresso-circular", percentual);
+	const numbers = document.getElementById("numbers");
+	let percentual = 252 - (((achieved * 100) / 1000) * 252) / 100;
+	console.log(percentual);
+	document.body.style.setProperty("--progresso-circular", percentual);
 
-  count = 0;
-  setInterval(() => {
-    if (count >= 100) {
-      clearInterval;
-    } else {
-      count += 1;
-      numbers.querySelector("h4").innerHTML = `${Math.round(
-        (achieved / 100) * count
-      )}`;
-      numbers.querySelector("h5").innerHTML = `De ${Math.round(
-        (total / 100) * count
-      )}`;
-    }
-  }, 20);
+	count = 0;
+	setInterval(() => {
+		if (count >= 100) {
+			clearInterval;
+		} else {
+			count += 1;
+			numbers.querySelector("h4").innerHTML = `${Math.round(
+				(achieved / 100) * count
+			)}`;
+			numbers.querySelector("h5").innerHTML = `De ${Math.round(
+				(total / 100) * count
+			)}`;
+		}
+	}, 20);
 }
-
-
 
 /*
  ***************************************************************************************************
@@ -219,17 +230,15 @@ function setProgressVal(achieved, total) {
  ***************************************************************************************************
  */
 try {
-  const adquiridos = document.querySelectorAll(
-    ".produto-adquirido .btn-primary"
-  );
-  adquiridos.forEach((elemento) => {
-    elemento.textContent = "Adquirido";
-  });
+	const adquiridos = document.querySelectorAll(
+		".produto-adquirido .btn-primary"
+	);
+	adquiridos.forEach((elemento) => {
+		elemento.textContent = "Adquirido";
+	});
 } catch (error) {
-  erros.push(error);
+	erros.push(error);
 }
-
-
 
 /*
  ***************************************************
@@ -238,118 +247,126 @@ try {
  */
 // Abrir
 try {
-  document.querySelectorAll(".btn-add-produto").forEach((el) => {
-    el.addEventListener("click", () => {
-      document.querySelector("#modal-editar-produto").style.display = "flex";
-    });
-  });
+	document.querySelectorAll(".btn-add-produto").forEach((el) => {
+		el.addEventListener("click", () => {
+			document.querySelector("#modal-editar-produto").style.display = "flex";
+		});
+	});
 } catch (error) {
-  erros.push(error)
+	erros.push(error);
 }
 
 try {
-  document.querySelectorAll(".btn-editar-produto").forEach((el) => {
-    el.addEventListener("click", () => {
-      document.querySelector("#modal-editar-produto").style.display = "flex";
-    });
-  });
-  
+	document.querySelectorAll(".btn-editar-produto").forEach((el) => {
+		el.addEventListener("click", () => {
+			document.querySelector("#modal-editar-produto").style.display = "flex";
+		});
+	});
 } catch (error) {
-  erros.push(error)  
+	erros.push(error);
 }
-
-
-
 
 // Fechar
 try {
-  document
-  .querySelectorAll("#modal-editar-produto button:not([type='submit'])")
-  .forEach((el) => {
-    el.addEventListener("click", () => {
-      document.querySelector("#modal-editar-produto").style.display = "none";
-    });
-  });
+	document
+		.querySelectorAll("#modal-editar-produto button:not([type='submit'])")
+		.forEach((el) => {
+			el.addEventListener("click", () => {
+				document.querySelector("#modal-editar-produto").style.display = "none";
+			});
+		});
 } catch (error) {
-  erros.push(error)
+	erros.push(error);
 }
 
 // Funcão para fechar
 function closeModal() {
-  document.querySelector("#modal-editar-produto").style.display = "none";
+	document.querySelector("#modal-editar-produto").style.display = "none";
 }
-
-
 
 // Upload de imagens
 try {
-  document.querySelector('#imagem-produto').addEventListener(
-    "change",
-    (_, current = document.querySelector('#imagem-produto')) => {
-      if (current.files && current.files[0]) {
-        const preview = document.querySelector("#preview_image");
-  
-        // preview.style.display = "flex";
-        // preview.nextElementSibling.style.display = "none";
-  
-        var file = new FileReader();
-  
-        file.onload = function (e) {
-          preview.src = e.target.result;
-  
-          /*Estiliza a card contendo a imagem, quando possui um caminho*/
-          preview.src = e.target.result;
-          current.parentNode.style.boxShadow =
-            "0px 0px 9px rgba(0, 0, 0, .1)";
-        };
-  
-        document.querySelector('.broken').style.display = 'none'
-  
-        file.readAsDataURL(current.files[0]);
-      }
-    },
-    false
-  );
+	document.querySelector("#imagem-produto").addEventListener(
+		"change",
+		(_, current = document.querySelector("#imagem-produto")) => {
+			if (current.files && current.files[0]) {
+				const preview = document.querySelector("#preview_image");
+
+				// preview.style.display = "flex";
+				// preview.nextElementSibling.style.display = "none";
+
+				var file = new FileReader();
+
+				file.onload = function (e) {
+					preview.src = e.target.result;
+
+					/*Estiliza a card contendo a imagem, quando possui um caminho*/
+					preview.src = e.target.result;
+					current.parentNode.style.boxShadow = "0px 0px 9px rgba(0, 0, 0, .1)";
+				};
+
+				document.querySelector(".broken").style.display = "none";
+
+				file.readAsDataURL(current.files[0]);
+			}
+		},
+		false
+	);
 } catch (error) {
-  erros.push(error)
+	erros.push(error);
 }
-
-
 
 // Estrelar cartões
 try {
-  document.querySelectorAll('.classificar .estrelar').forEach(star => {
-    star.addEventListener('click', () => {
-      if (star == star.parentElement.lastElementChild && star.classList.contains('estrelado')) {
-        star.parentElement.querySelectorAll('.estrelar').forEach(el => el.classList.remove('estrelado'))
-      }
-      else if((star.classList.contains('estrelado') && !star.nextElementSibling.classList.contains('estrelado')) && (star != star.parentElement.lastElementChild)) {
-        star.parentElement.querySelectorAll('.estrelar').forEach(el => el.classList.remove('estrelado'))
-      }
-      else if((star == star.parentElement.lastChild.previousSibling) && star.classList.contains('estrelado') && !star.parentNode.lastElementChild.classList.contains('estrelado')) {
-        star.parentElement.querySelectorAll('.estrelar').forEach(el => el.classList.remove('estrelado'))
-      }
-      else if(star == star.parentElement.lastElementChild && star.classList.contains('estrelado')){
-        star.parentElement.querySelectorAll('.estrelar').forEach(el => el.classList.remove('estrelado'))
-      }
-      else {
-        let cond = true
-        star.parentElement.querySelectorAll('.estrelar').forEach(el => el.classList.remove('estrelado'))
-        star.parentElement.querySelectorAll('.estrelar').forEach(el => {
-        if(el == star) {
-          cond = false
-          el.classList.add('estrelado')
-        }
-        if (cond)
-          el.classList.add('estrelado')
-      })
-      
-      }
-      star.parentElement.value = star.parentElement.querySelectorAll('.estrelado').length
-    })
-  })
+	document.querySelectorAll(".classificar .estrelar").forEach((star) => {
+		star.addEventListener("click", () => {
+			if (
+				star == star.parentElement.lastElementChild &&
+				star.classList.contains("estrelado")
+			) {
+				star.parentElement
+					.querySelectorAll(".estrelar")
+					.forEach((el) => el.classList.remove("estrelado"));
+			} else if (
+				star.classList.contains("estrelado") &&
+				!star.nextElementSibling.classList.contains("estrelado") &&
+				star != star.parentElement.lastElementChild
+			) {
+				star.parentElement
+					.querySelectorAll(".estrelar")
+					.forEach((el) => el.classList.remove("estrelado"));
+			} else if (
+				star == star.parentElement.lastChild.previousSibling &&
+				star.classList.contains("estrelado") &&
+				!star.parentNode.lastElementChild.classList.contains("estrelado")
+			) {
+				star.parentElement
+					.querySelectorAll(".estrelar")
+					.forEach((el) => el.classList.remove("estrelado"));
+			} else if (
+				star == star.parentElement.lastElementChild &&
+				star.classList.contains("estrelado")
+			) {
+				star.parentElement
+					.querySelectorAll(".estrelar")
+					.forEach((el) => el.classList.remove("estrelado"));
+			} else {
+				let cond = true;
+				star.parentElement
+					.querySelectorAll(".estrelar")
+					.forEach((el) => el.classList.remove("estrelado"));
+				star.parentElement.querySelectorAll(".estrelar").forEach((el) => {
+					if (el == star) {
+						cond = false;
+						el.classList.add("estrelado");
+					}
+					if (cond) el.classList.add("estrelado");
+				});
+			}
+			star.parentElement.value =
+				star.parentElement.querySelectorAll(".estrelado").length;
+		});
+	});
 } catch (error) {
-  erros.push(error)
+	erros.push(error);
 }
-
-

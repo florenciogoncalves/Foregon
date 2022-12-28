@@ -107,10 +107,10 @@
     gap: 0.5rem !important;
   }
   /*
-  *********************
-  ***     ADMIN     ***
-  *********************
-  */
+   *********************
+   ***     ADMIN     ***
+   *********************
+   */
   .__admin #graficos-usuario #score + div h4 {
     font-size: 0.85rem;
   }
@@ -180,18 +180,18 @@
   /* home/index.html*/
   .home-page:not(.padrao_produtos) .nossos-produtos {
     background: #fff !important;
-    box-shadow: var(--sombra-cx) !important;
+    box-shadow: 0px 0px 18px rgba(0, 0, 0, 0.1) !important;
   }
   .home-page:not(.padrao_produtos) .nossos-produtos .produtos {
     display: flex !important;
     justify-content: space-between !important;
   }
   .home-page:not(.padrao_produtos) .nossos-produtos .cartao {
-    border-radius: var(--borda-cartao) !important;
+    border-radius: 0.7rem !important;
     border: none !important;
   }
   .padrao_produtos .nossos-produtos .cartao {
-    border-radius: var(--borda-cartao) !important;
+    border-radius: 0.7rem !important;
     border: none !important;
   }
   .padrao_produtos .nossos-produtos .cartao .btn-primary {
@@ -212,10 +212,10 @@
     line-height: 1.85 !important;
   }
   /* 
-  ***********************
-  ***     Rodapé      ***
-  ***********************
-  */
+   ***********************
+   ***     Rodapé      ***
+   ***********************
+   */
   #rodape-principal {
     padding-left: 0px !important;
   }
@@ -369,15 +369,15 @@
     min-width: 520px !important;
   }
   /*
-  *****************************
-  ***     Landing-page      ***
-  *****************************
-  */
+   *****************************
+   ***     Landing-page      ***
+   *****************************
+   */
   #landing-pos-header {
     background: url(./../image/como-funciona-bg-3.svg) no-repeat, url(./../image/como-funciona-bg-1.svg) no-repeat, url(./../image/como-funciona-bg-3.svg) no-repeat, url(./../image/pkg-bg-left/bg-left-top.svg) no-repeat, url(./../image/pkg-bg-left/bg-left-middle.svg) no-repeat, url(./../image/pkg-bg-left/bg-left-bottom.svg) no-repeat, url(./../image/pkg-bg-bottom/left.svg) no-repeat, url(./../image/pkg-bg-right/bg-r-top.svg) no-repeat, url(./../image/pkg-bg-right/bg-r-middle.svg) no-repeat, url(./../image/pkg-bg-right/bg-r-bottom.svg) no-repeat, url(./../image/pkg-bg-bottom/right.svg) no-repeat, url(./../image/como-funciona-bg-4.svg) no-repeat, url(./../image/como-funciona-bg-6.svg) no-repeat, url(./../image/como-funciona-bg-4.svg) no-repeat;
-    background-position: left -1.7rem top calc(var(--altura-cabecalho) + 5%), left -0.7rem top calc(43% + var(--altura-cabecalho)), left -1.7rem bottom 5%, left 8% top calc(var(--altura-cabecalho) - 5%), left 10% top calc(40% + var(--altura-cabecalho)), left 11% bottom 5%, left 28% bottom, right 8% top calc(var(--altura-cabecalho) - 5%), right 10% top calc(40% + var(--altura-cabecalho)), right 11% bottom 5%, right 28% bottom, right -1.7rem top calc(var(--altura-cabecalho) + 5%), right -2rem top calc(43% + var(--altura-cabecalho)), right -1.7rem bottom 5% !important;
+    background-position: left -1.7rem top calc(var(--header-height) + 5%), left -0.7rem top calc(43% + var(--header-height)), left -1.7rem bottom 5%, left 8% top calc(var(--header-height) - 5%), left 10% top calc(40% + var(--header-height)), left 11% bottom 5%, left 28% bottom, right 8% top calc(var(--header-height) - 5%), right 10% top calc(40% + var(--header-height)), right 11% bottom 5%, right 28% bottom, right -1.7rem top calc(var(--header-height) + 5%), right -2rem top calc(43% + var(--header-height)), right -1.7rem bottom 5% !important;
     background-size: 2.7rem, 3rem, 2.7rem, 6.6rem, 2.9em, 6.6rem, 3rem, 6.6rem, 2.9em, 6.6rem, 3rem, 2.7rem, 4.1rem, 2.7rem !important;
-    background-color: var(--verde-principal);
+    background-color: #00cc66;
   }
   #landing-pos-header form {
     padding-top: 2rem !important;
@@ -455,7 +455,7 @@
     line-height: 2;
     text-align: center;
     color: #fff;
-    background: var(--verde-principal);
+    background: #00cc66;
   }
   /* Etiqueta do home */
   #menu-lateral .navegacao li:first-of-type#vizualizando:hover::after {
@@ -641,7 +641,7 @@
     border-radius: 50%;
     margin-left: auto;
     border: none;
-    background: url(./../image/back.svg) no-repeat center, var(--verde-principal);
+    background: url(./../image/back.svg) no-repeat center, #00cc66;
     background-size: 40%;
   }
   #cartao-produto {
