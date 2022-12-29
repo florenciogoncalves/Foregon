@@ -1933,9 +1933,6 @@ figure.artigo-usuario .descricao-artigo {
 	color: #df000d;
 }
 
-
-
-
 /* Breakpoint */
 ._texto--verde {
 	color: var(--verde-principal);
@@ -1948,13 +1945,14 @@ figure.artigo-usuario .descricao-artigo {
 }
 
 .texto-coluna {
-  display: flex;
-  width: max-content;
-  margin: auto;
+	display: flex;
+	width: max-content;
+	margin: auto;
 
 	font-size: 0.7rem;
+	font-weight: 500;
 	line-height: 116.6%;
-} 
+}
 
 ._icone--informacao {
 	position: relative;
@@ -1973,51 +1971,183 @@ figure.artigo-usuario .descricao-artigo {
 	background-size: contain;
 }
 
+.__elemento-pontos {
+  position: relative;
+}
+
+.__elemento-pontos::before {
+  position: absolute;
+  content: ' ';
+  top: .15em;
+  left: -1.5em;
+  width: 1em;
+  height: 1em;
+
+  background-image: url(./../image/troca.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
 .nivelador {
-  max-width: max-content;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: .3rem;
-  max-height: 3rem;
+	max-width: max-content;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 0.3rem;
+	max-height: 3rem;
 }
 
 .nivelador__nivel {
-  display: inline-flex;
-  width: .7rem;
-  padding: 0;
+	display: inline-flex;
+	width: 0.7rem;
+	padding: 0;
 }
 
 ._nivel--1 {
-  height: 50%;
-  background-color: #00FF80;
+	height: 50%;
+	background-color: #00ff80;
 }
 ._nivel--2 {
-  height: 75%;
-  background-color: #0E8D4E;
+	height: 75%;
+	background-color: #0e8d4e;
 }
 ._nivel--3 {
-  height: 100%;
-  background-color: #22E986;
+	height: 100%;
+	background-color: #22e986;
 }
 
 .container-informacoes__descubra {
-  display: block;
-  width: max-content;
-  position: relative;
-  margin: auto;
+	display: block;
+	width: max-content;
+	position: relative;
+	margin: auto;
 
-  color: var(--verde-principal) !important;
-  text-decoration: none;
+	color: var(--verde-principal) !important;
+	text-decoration: none;
 }
 
 .container-informacoes__descubra:hover {
-  color: var(--verde-principal);
-  cursor: pointer;
+	color: var(--verde-principal);
+	cursor: pointer;
 }
 
 .container-informacoes__descubra img {
-  width: .95em;
-  height: .95em;
-  display: inline-block;
-  padding-left: .15rem;
+	width: 0.95em;
+	height: 0.95em;
+	display: inline-block;
+	padding-left: 0.15rem;
+}
+
+/* Tabela */
+.container-tabela-comparacao {
+  position: relative;
+}
+.container-tabela-comparacao__overlay {
+position: absolute;
+bottom: 0;
+left: 0%;
+  height: 2.5rem;
+  width: 100%;
+  background: linear-gradient(rgba(255, 255, 255, 0), #f5f5f5);
+}
+
+.tabela-coparacao-cartoes {
+  box-sizing: border-box;
+}
+
+.tabela-coparacao-cartoes__cabecalho .container-cabecalho {
+	display: grid;
+	flex-direction: column;
+	width: 100%;
+	height: 200%;
+}
+
+.__titulo {
+	margin-top: 0;
+	height: 100%;
+
+	font-size: 1.35rem;
+	font-weight: 700;
+	line-height: 116.6%;
+}
+
+.__subtitulo {
+	margin: 0;
+	height: 100%;
+}
+
+.tabela-coparacao-cartoes__cartao .container-cartao {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	flex-direction: column;
+	align-items: center;
+}
+
+.__imagem-cartao {
+	max-height: 5rem;
+	max-width: 7rem;
+}
+
+.__nome-cartao {
+	font-size: 0.85rem;
+	font-weight: 700;
+}
+
+.__botao-solicitar-cartao {
+	border: none;
+	width: max-content;
+	height: max-content;
+	padding: 0;
+
+	font-size: 0.75rem;
+	font-weight: 600;
+	color: var(--verde-principal);
+	text-transform: uppercase;
+
+	background: none;
+}
+
+.__ver-analise-completa {
+  font-size: .7rem;
+}
+
+tr {
+  border-color: #C1BBBB;
+}
+
+.tabela-coparacao-cartoes__cartao {
+border-radius: 0;
+  border-top-left-radius: 12px;
+	border-top-right-radius: 12px;
+  border-collapse: separate;
+}
+
+._bg-cor--verde{
+	background: rgba(0, 204, 102, 0.19);
+	backdrop-filter: blur(2px);	
+}
+
+
+.__rotulo,
+.__dado {
+	font-weight: 600;
+	font-size: 0.85rem;
+}
+
+.__dado {
+text-align: center;
+}
+
+._fullscreen-main main {
+  padding: 1.5rem 0 0 !important;
+}
+
+._fullscreen-main main > *:not(:last-child) {
+  padding-right: 1.5rem !important;
+}
+
+.container-todas-informacoes-produto {
+  position: relative;
+  bottom: 0%;
+  left: 0;
 }
