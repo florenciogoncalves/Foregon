@@ -72,7 +72,7 @@ session_start();
 
           <span class="d-none d-sm-grid mt-3 mb-2 text-center">Não tem uma conta? Cadastre-se gratuitamente.</span>
 
-          <a class="d-flex mt-3 p-0 col-auto" href="./cadastro.html">Criar minha conta</a>
+          <a class="d-flex mt-3 p-0 col-auto" href="./cadastro.php">Criar minha conta</a>
         </div>
       </div>
       <a class="d-lg-none m-auto mt-3 mb-2 d-flex col-auto start-50 translate-middle" href="./esqueceu-a-senha.html" style="
