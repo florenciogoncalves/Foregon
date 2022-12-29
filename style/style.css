@@ -444,8 +444,7 @@ main {
 }
 
 /*Checkbox salvar login*/
-.iniciar-sessao .lado-direito input[type=checkbox],
-.iniciar-sessao .lado-direito input[type=checkbox]:checked {
+.iniciar-sessao .lado-direito input[type=checkbox], .iniciar-sessao .lado-direito input[type=checkbox]:checked {
   all: unset;
   border: 1px solid rgb(129, 129, 129);
   border-radius: 0.25em;
@@ -455,26 +454,22 @@ main {
   background-position: center;
   display: inline-block;
 }
-
-.iniciar-sessao label[for=salvar-login] + a {
-  width: max-content;
-  display: inline-block;
-}
-
 .iniciar-sessao .lado-direito input[type=checkbox]:checked {
   background: url(./../image/checked.png) no-repeat center;
   background-color: #00cc66;
   background-size: 85%;
   border: none;
 }
-
-.iniciar-sessao .lado-direito > span:last-of-type {
+.iniciar-sessao .lado-direito input[type=checkbox] > span:last-of-type {
   text-align: center;
   font-size: 0.6875rem;
 }
-
-.iniciar-sessao .lado-direito > span:last-of-type + a {
+.iniciar-sessao .lado-direito input[type=checkbox] > span:last-of-type + a {
   margin: auto;
+}
+.iniciar-sessao label[for=salvar-login] + a {
+  width: max-content;
+  display: inline-block;
 }
 
 /*
@@ -513,27 +508,18 @@ main {
   background-size: cover;
   background-attachment: fixed;
 }
-
 #cadastro #campos-cadastro {
   row-gap: 0.55rem;
   display: flex;
   flex-direction: column;
 }
-
-@media only screen and (max-width: 480px) {
-  .iniciar-sessao .lado-direito {
-    border-radius: 0;
-  }
-}
 #cadastro #campos-cadastro > fieldset {
   position: relative;
   width: 100%;
 }
-
 #cadastro #campos-cadastro > fieldset > input:first-of-type {
   padding-right: 33px;
 }
-
 #cadastro #campos-cadastro .mostrar-senha {
   border: none;
   background: url(./../image/nao-vizualizando-senha.svg) no-repeat;
@@ -545,11 +531,15 @@ main {
   top: 50%;
   transform: translateY(-50%);
 }
-
 #cadastro #campos-cadastro .mostrar-senha:checked {
   mix-blend-mode: difference;
 }
 
+@media only screen and (max-width: 480px) {
+  .iniciar-sessao .lado-direito {
+    border-radius: 0;
+  }
+}
 /*
 ***************************
 ***    landing-page     ***
@@ -564,13 +554,19 @@ main {
   box-sizing: border-box;
   display: flex;
 }
-
-#landing-pos-header > div form,
-#landing-pos-header > div #faca-seu-cadastro {
+#landing-pos-header > div form, #landing-pos-header > div #faca-seu-cadastro {
   background: #fff;
   margin: auto;
   border-radius: 15px;
   padding-bottom: 0.8rem !important;
+}
+#landing-pos-header #navegacao-carroussel li {
+  width: 0.36rem !important;
+  height: 0.36rem !important;
+}
+#landing-pos-header #slide-atual {
+  opacity: 0.5 !important;
+  background-color: #00cc66;
 }
 
 @media only screen and (max-width: 576px) {
@@ -578,16 +574,6 @@ main {
     max-width: 380px;
   }
 }
-#landing-pos-header #navegacao-carroussel li {
-  width: 0.36rem !important;
-  height: 0.36rem !important;
-}
-
-#landing-pos-header #slide-atual {
-  opacity: 0.5 !important;
-  background-color: #00cc66;
-}
-
 /*Details*/
 .accordion-item {
   border-left: 0.39rem solid #85e0a3 !important;
@@ -598,11 +584,7 @@ main {
   background-color: #fff;
   box-shadow: 0px 2px 30px rgba(0, 0, 0, 0.05);
 }
-
-.accordion-button:not(.colapsed),
-.accordion-button.colapsed,
-.accordion-button:focus,
-.accordion-button {
+.accordion-item .accordion-button:not(.colapsed), .accordion-item .accordion-button.colapsed, .accordion-item .accordion-button:focus, .accordion-item .accordion-button {
   border: none !important;
   background: none;
   color: #000 !important;
@@ -610,28 +592,7 @@ main {
   padding-left: 0.4rem;
   padding-right: 0.4rem;
 }
-
-.accordion-button::after {
-  color: #000;
-  filter: brightness(0);
-  background-size: 72%;
-}
-
-.accordion-item button {
-  font-weight: 700;
-  font-size: 0.8125rem;
-  list-style-type: none;
-}
-
-.landing-page .accordion-item .texto-pequeno {
-  text-align: start;
-}
-
-.landing-page .accordion-item .collapsed h3 {
-  display: none;
-}
-
-.landing-page .accordion-item .accordion-button:not(.collapsed) h3 {
+.accordion-item .accordion-button:not(.collapsed) h3 {
   color: #00cc66;
   font-size: 0.75rem;
   font-weight: 500;
@@ -640,8 +601,23 @@ main {
   position: absolute;
   bottom: 0;
 }
-
-.accordion-body {
+.accordion-item .accordion-button::after {
+  color: #000;
+  filter: brightness(0);
+  background-size: 72%;
+}
+.accordion-item button {
+  font-weight: 700;
+  font-size: 0.8125rem;
+  list-style-type: none;
+}
+.accordion-item .texto-pequeno {
+  text-align: start;
+}
+.accordion-item .collapsed h3 {
+  display: none;
+}
+.accordion-item .accordion-body {
   padding-left: 0.4rem;
   padding-right: 0.4rem;
 }
@@ -656,6 +632,17 @@ main {
   display: grid;
   grid-template-rows: 1fr max-content;
 }
+#quiz .titulo-da-categoria,
+#quiz .subtitulo-da-categoria {
+  text-align: start;
+  display: block;
+}
+#quiz .titulo-da-categoria {
+  font-size: 1.125rem;
+}
+#quiz .subtitulo-da-categoria {
+  font-size: 0.5625rem;
+}
 
 #quiz-form {
   padding-top: var(--header-height);
@@ -663,27 +650,11 @@ main {
   background-size: cover;
   background-position: bottom center;
 }
-
-#quiz .titulo-da-categoria,
-#quiz .subtitulo-da-categoria {
-  text-align: start;
-  display: block;
-}
-
-#quiz .titulo-da-categoria {
-  font-size: 1.125rem;
-}
-
-#quiz .subtitulo-da-categoria {
-  font-size: 0.5625rem;
-}
-
 #quiz-form form {
   background-color: #fff;
   margin: auto;
   border-radius: 0.5rem;
 }
-
 #quiz-form + footer {
   margin: 0 !important;
 }
@@ -709,7 +680,6 @@ body.home-page {
   grid-row: 0;
   position: absolute;
 }
-
 #menu-lateral button {
   width: max-content !important;
   height: max-content !important;
@@ -719,8 +689,7 @@ body.home-page {
   margin: auto;
   background: none !important;
 }
-
-#menu-lateral .navegacao img {
+#menu-lateral button .navegacao img {
   height: 1rem;
   max-width: 20px;
 }
@@ -744,8 +713,7 @@ body.home-page {
   text-align: start;
   margin: 0;
 }
-
-#mensagem-rececao .nome-do-usuario {
+#mensagem-rececao h1 .nome-do-usuario {
   font-size: 1rem;
   display: flex;
 }
@@ -777,8 +745,8 @@ body.home-page {
 #score {
   display: grid;
   grid-template-rows: max-content 1fr max-content !important;
+  /* Progrsso circular*/
 }
-
 #score .descricao-score {
   font-family: "Poppins";
   font-size: 0.65rem;
@@ -789,30 +757,27 @@ body.home-page {
   background: #a0facd;
   border-radius: 0.75rem;
 }
-
-/* Progrsso circular*/
-.skill {
+#score .skill {
   width: 60% !important;
   box-sizing: border-box;
   margin: auto;
   position: relative;
 }
-
 @media only screen and (max-width: 400px) {
-  .skill {
+  #score .skill {
     width: 85% !important;
   }
-  #numbers h4 {
+  #score #numbers h4 {
     font-size: 0.8rem !important;
   }
-  #numbers h5 {
+  #score #numbers h5 {
     font-size: 0.6rem !important;
   }
-  #score .descricao-score {
+  #score #score .descricao-score {
     font-size: 0.5rem;
   }
 }
-.outer {
+#score .outer {
   height: 100%;
   width: 100%;
   box-sizing: border-box;
@@ -820,8 +785,7 @@ body.home-page {
   border-radius: 50%;
   background-color: #eff3fe;
 }
-
-.inner {
+#score .inner {
   height: 100%;
   width: 100%;
   border-radius: 50%;
@@ -830,14 +794,12 @@ body.home-page {
   align-items: center;
   justify-content: center;
 }
-
-#numbers {
+#score #numbers {
   font-family: "Poppins" !important;
   height: max-content;
   width: max-content;
 }
-
-#numbers h4 {
+#score #numbers h4 {
   font-size: 1rem;
   font-weight: 700;
   line-height: 1.5;
@@ -845,8 +807,7 @@ body.home-page {
   color: #333333;
   margin-bottom: 0;
 }
-
-#numbers h5 {
+#score #numbers h5 {
   color: #6e6868;
   font-size: 0.8rem;
   font-weight: 400;
@@ -854,8 +815,7 @@ body.home-page {
   text-align: center;
   margin-bottom: 0;
 }
-
-.skill svg {
+#score .skill svg {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -864,8 +824,7 @@ body.home-page {
   overflow: visible;
   transform: rotate(-90deg);
 }
-
-.skill circle {
+#score .skill circle {
   fill: none;
   width: 100%;
   height: 100px;
@@ -906,14 +865,12 @@ figure.artigo-usuario {
   font-size: 0.75rem;
   color: #fff;
 }
-
 figure.artigo-usuario img {
   margin: 0 !important;
   width: 100%;
   object-fit: cover;
   max-height: 11rem;
 }
-
 figure.artigo-usuario figcaption {
   position: absolute;
   display: flex;
@@ -924,11 +881,9 @@ figure.artigo-usuario figcaption {
   background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(2.67219px);
 }
-
 figure.artigo-usuario figcaption a {
   margin: auto;
 }
-
 figure.artigo-usuario .descricao-artigo {
   position: absolute;
   font-size: 0.65rem;
@@ -945,39 +900,32 @@ figure.artigo-usuario .descricao-artigo {
   gap: 0.5rem;
   box-sizing: border-box;
 }
-
 .home-page .nossos-produtos .produtos {
   box-sizing: border-box;
   padding-bottom: 0.4rem !important;
 }
-
-/* home/index.html*/
-.home-page:not(.padrao_produtos) .nossos-produtos {
-  background: none !important;
-  border: none !important;
-  box-shadow: none;
-}
-
-.home-page:not(.padrao_produtos) .nossos-produtos .cartao {
-  border-radius: 0.7rem !important;
-}
-
-.home-page .nossos-produtos ul:first-child {
-  box-sizing: border-box;
-}
-
-.home-page .cartao {
+.home-page .nossos-produtos .produtos .cartao {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   border: none;
   border-radius: 0 !important;
   box-shadow: none;
   padding: 0;
 }
-
-.home-page .nossos-produtos .cartao button,
-.home-page .nossos-produtos .cartao a {
+.home-page .nossos-produtos .produtos .cartao button,
+.home-page .nossos-produtos .produtos .cartao a {
   line-height: 1.5 !important;
   width: auto;
+}
+.home-page .nossos-produtos ul:first-child {
+  box-sizing: border-box;
+}
+.home-page:not(.padrao_produtos) .nossos-produtos {
+  background: none !important;
+  border: none !important;
+  box-shadow: none;
+}
+.home-page:not(.padrao_produtos) .nossos-produtos .cartao {
+  border-radius: 0.7rem !important;
 }
 
 /* Classificado*/
@@ -990,7 +938,6 @@ figure.artigo-usuario .descricao-artigo {
   margin: 0.1rem 0 0;
   padding: 0;
 }
-
 .home-page .nossos-produtos .classificado ul,
 .classificado ul {
   display: grid;
@@ -999,16 +946,14 @@ figure.artigo-usuario .descricao-artigo {
   box-sizing: border-box;
   margin: 0;
 }
-
-.home-page .nossos-produtos .estrelar,
-.classificado ul .estrelar {
+.home-page .nossos-produtos .classificado .estrelar,
+.classificado .estrelar {
   box-sizing: border-box;
   background: url(./../image/estrela.svg) no-repeat center;
   background-size: contain;
 }
-
-.home-page .nossos-produtos .estrelado,
-.estrelado {
+.home-page .nossos-produtos .classificado .estrelado,
+.classificado .estrelado {
   background-image: url(./../image/estrelado.svg) !important;
 }
 
