@@ -93,3 +93,8 @@ function verifyHash(string $password, $hashUser): bool
 {
     return password_verify($password, $hashUser);
 }
+
+function codeGenerator(): int
+{
+    return random_int(1000, 9999);
+}
