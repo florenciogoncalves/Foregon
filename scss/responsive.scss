@@ -11,23 +11,23 @@
 		margin-right: auto !important;
 	}
 	/* Pagina inicial*/
-	.produtos ul,
+	.products ul,
 	#avaliacoes-dos-usuarios ul {
 		display: grid !important;
 		grid-template-columns: repeat(2, 1fr);
 		gap: 0.75rem;
 	}
 
-	.cartao {
+	.card {
 		width: 100%;
 	}
 
-	#avaliacoes-dos-usuarios .cartao {
+	#avaliacoes-dos-usuarios .card {
 		max-width: 100% !important;
 		min-width: 0;
 	}
 
-	.cartao h4 + span + p,
+	.card h4 + span + p,
 	#avaliacoes-dos-usuarios h4 ~ p {
 		overflow: hidden;
 		text-overflow: ellipsis;
@@ -61,7 +61,7 @@
 		padding: 0.05rem;
 	}
 
-	.cartao button {
+	.card button {
 		line-height: 1.5;
 	}
 
@@ -82,18 +82,18 @@
 	}
 
 	/* produto.html*/
-	#cartao-produto {
+	#card-produto {
 		background-size: 150%;
 		background-position: center;
 	}
 
-	.padrao_produtos #cartao-produto figure {
+	.padrao_produtos #card-produto figure {
 		display: grid;
 		grid-template-rows: auto auto;
 		gap: 12px;
 	}
 
-	.padrao_produtos #cartao-produto figure > * {
+	.padrao_produtos #card-produto figure > * {
 		width: 100%;
 	}
 
@@ -172,8 +172,8 @@
 }
 
 @media (min-width: 575.98px) {
-	.produtos .cartao {
-		border: 2px solid #85e0a3;
+	.products .card {
+		border: 2px solid $card-border-color;
 	}
 
 	#rodape-principal #caminhos > div > li {
@@ -209,37 +209,37 @@
 		top: 0;
 	}
 
-	.home-page .nossos-produtos ul {
+	.home-page .product-area ul {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 	}
 
-	.home-page .nossos-produtos .produtos ul > li {
+	.home-page .product-area .products ul > li {
 		width: 100%;
 	}
 
 	/* home/index.html*/
-	.home-page:not(.padrao_produtos) .nossos-produtos {
-		background: #fff !important;
+	.home-page:not(.padrao_produtos) .product-area {
+		background: $color-white !important;
 		box-shadow: $box-shadow !important;
 	}
 
-	.home-page:not(.padrao_produtos) .nossos-produtos .produtos {
+	.home-page:not(.padrao_produtos) .product-area .products {
 		display: flex !important;
 		justify-content: space-between !important;
 	}
 
-	.home-page:not(.padrao_produtos) .nossos-produtos .cartao {
+	.home-page:not(.padrao_produtos) .product-area .card {
 		border-radius: $border-card !important;
 		border: none !important;
 	}
 
-	.padrao_produtos .nossos-produtos .cartao {
+	.padrao_produtos .product-area .card {
 		border-radius: $border-card !important;
 		border: none !important;
 	}
 
-	.padrao_produtos .nossos-produtos .cartao .btn-primary {
+	.padrao_produtos .product-area .card .btn-primary {
 		margin-bottom: 0.35rem;
 	}
 
@@ -309,28 +309,28 @@
 /* Medium devices (tablets, less than 992px) */
 @media (min-width: 991.98px) {
 	/* Conteúdo pós-cabeçalho */
-	#carroussel-pos-header {
+	.main-carousel {
 		height: 580px;
 		padding-top: 60px !important;
 		margin-bottom: 70px !important;
-		box-shadow: 0px -45px 45px -10px #fff inset;
+		box-shadow: 0px -45px 45px -10px $color-white inset;
 	}
 
-	#conteudo-carroussel-container {
+	.container-all-slides {
 		display: flex;
 		padding-bottom: 10px;
 		position: relative;
 	}
 
-	#carroussel-pos-header h3 {
+	.main-carousel h3 {
 		font-size: 24px !important;
 	}
 
-	#carroussel-pos-header span {
+	.main-carousel span {
 		font-size: 16px;
 	}
 
-	#carroussel-pos-header button {
+	.main-carousel button {
 		font-size: 14px;
 		margin-top: 5%;
 		line-height: 250%;
@@ -351,54 +351,54 @@
 		height: 10px !important;
 	}
 
-	.titulo-da-categoria {
+	.category-title {
 		font-size: 26px;
 	}
 
-	.subtitulo-da-categoria {
+	.subcategory-title {
 		font-size: 14px;
 		margin-bottom: 30px;
 	}
 
-	.cartao {
+	.card {
 		box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.2);
 	}
 
-	.produtos .cartao {
+	.products .card {
 		border-radius: 1rem !important;
 		border-width: 2px;
 	}
 
-	.produtos .cartao figure {
+	.products .card figure {
 		padding: 15px 0 8px !important;
 	}
 
-	.produtos .cartao img {
+	.products .card img {
 		width: 100% !important;
 	}
 
-	.produtos .cartao h4,
+	.products .card h4,
 	#avaliacoes-dos-usuarios h4 {
 		font-size: 18px;
 	}
 
-	.produtos .cartao span {
+	.products .card span {
 		font-size: 12px;
 	}
 
-	.produtos .cartao p,
-	#avaliacoes-dos-usuarios .cartao p {
+	.products .card p,
+	#avaliacoes-dos-usuarios .card p {
 		font-size: 13px;
 		margin: 10px 0 13px;
 	}
 
-	.produtos .cartao button {
+	.products .card button {
 		font-size: 14px;
 		line-height: 250%;
 	}
 
 	/* Como-funcionamos */
-	#como-funcionamos {
+	.how-we-work {
 		height: 280px;
 		background-image: url(./../image/como-funciona-bg-1.svg),
 			url(./../image/como-funciona-bg-2.svg),
@@ -412,7 +412,7 @@
 		object-fit: scale-down;
 	}
 
-	#como-funcionamos p {
+	.how-we-work p {
 		font-size: 14px;
 		line-height: 1.5em;
 		padding-right: 90px;
@@ -424,7 +424,7 @@
 		margin-top: 30px !important;
 	}
 
-	#avaliacoes-dos-usuarios .cartao p {
+	#avaliacoes-dos-usuarios .card p {
 		margin-bottom: 0;
 	}
 
@@ -442,7 +442,7 @@
 
 	/* Iniciar sessao*/
 	.iniciar-sessao .lado-direito {
-		background: #fff !important;
+		background: $color-white !important;
 		box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.15);
 	}
 
@@ -509,7 +509,7 @@
 	/* Menu lateral */
 	body.home-page #menu-lateral {
 		display: grid;
-		background: #fff;
+		background: $color-white;
 		grid-template-rows: max-content max-content;
 		padding: 2rem 1rem !important;
 		box-shadow: 0px 0px 80px rgba(0, 204, 102, 0.12);
@@ -557,7 +557,7 @@
 
 		z-index: -1 !important;
 		border: none;
-		background: #000;
+		background: $color-black;
 	}
 
 	#menu-lateral #vizualizando:hover::after {
@@ -572,7 +572,7 @@
 		font-size: 0.52rem;
 		line-height: 2;
 		text-align: center;
-		color: #fff;
+		color: $color-white;
 
 		background: $primary-color;
 	}
@@ -708,7 +708,7 @@
 ***     Nossos produtos     ***
 *******************************
 */
-	.home-page .nossos-produtos .cartao {
+	.home-page .product-area .card {
 		filter: none;
 	}
 
@@ -727,11 +727,11 @@
 		margin-left: 0.2rem;
 	}
 
-	.padrao_produtos .produtos {
+	.padrao_produtos .products {
 		margin: 0.75rem 0 0 !important;
 	}
 
-	.padrao_produtos .produtos ul {
+	.padrao_produtos .products ul {
 		box-sizing: border-box !important;
 		gap: 2.6% !important;
 		display: grid;
@@ -743,7 +743,7 @@
 		max-width: 90% !important;
 	}
 
-	#conteudo-principal > .container-fluid .nossos-produtos .produtos > ul {
+	#conteudo-principal > .container-fluid .product-area .products > ul {
 		width: 100% !important;
 		justify-content: flex-start !important;
 	}
@@ -796,11 +796,11 @@
 	}
 
 	/* Nossos produtos*/
-	.produtos .cartao figure {
+	.products .card figure {
 		padding: 0.5rem 0.5rem 0 !important;
 	}
 
-	.produtos .cartao img {
+	.products .card img {
 		max-height: 6.5rem;
 	}
 
@@ -820,7 +820,7 @@
 		background-size: 40%;
 	}
 
-	#cartao-produto {
+	#card-produto {
 		background-size: 40%;
 	}
 }

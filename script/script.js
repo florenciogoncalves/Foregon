@@ -8,7 +8,7 @@ const erros = [];
 try {
 	document.body.style.setProperty(
 		"--header-height",
-		getComputedStyle(document.getElementById("cabecalho-principal")).height
+		getComputedStyle(document.getElementById("main-header")).height
 	);
 } catch (error) {
 	erros.push(error);
@@ -24,9 +24,7 @@ document.body.style.setProperty(
  ***********************************************
  */
 try {
-	const quantidadeCarrousseis = document.querySelectorAll(
-		".conteudo-carroussel"
-	);
+	const quantidadeCarrousseis = document.querySelectorAll(".carousel-slide");
 	const navegacaoCarroussel = document.querySelector("#navegacao-carroussel");
 
 	let contadorCarroussel = 0;
@@ -38,7 +36,7 @@ try {
 	}
 
 	//Mostra carroussel na posição X e seu repetivo indicativo
-	quantidadeCarrousseis[contadorCarroussel].id = "visible-slide";
+	quantidadeCarrousseis[contadorCarroussel].classList.add("current-slide");
 	navegacaoCarroussel.children[contadorCarroussel].id = "slide-atual";
 	contadorCarroussel = 1;
 
@@ -46,7 +44,9 @@ try {
 		//Aplicando a repetição por timer
 		timerCarroussel = setInterval(() => {
 			//Deixando para trás o slide anterior e partindo para um novo
-			document.querySelector("#visible-slide").removeAttribute("id");
+			document
+				.querySelector(".current-slide")
+				.classList.remove("current-slide");
 			document.querySelector("#slide-atual").removeAttribute("id");
 
 			//Resetando contador, caso tenha excedido o limite
@@ -55,7 +55,7 @@ try {
 			}
 
 			//Setando os valores de apresentação a outra posição de slide
-			quantidadeCarrousseis[contadorCarroussel].id = "visible-slide";
+			quantidadeCarrousseis[contadorCarroussel].classList.add("current-slide");
 			navegacaoCarroussel.children[contadorCarroussel].id = "slide-atual";
 
 			contadorCarroussel++;
@@ -71,11 +71,11 @@ try {
 			contadorCarroussel = evt.target.posicao;
 
 			//Deixando para trás o slide anterior e partindo para um novo
-			document.querySelector("#visible-slide").removeAttribute("id");
+			document.querySelector("#current-slide").removeAttribute("id");
 			document.querySelector("#slide-atual").removeAttribute("id");
 
 			//Mostra carroussel na posição X e seu repetivo indicativo
-			quantidadeCarrousseis[contadorCarroussel].id = "visible-slide";
+			quantidadeCarrousseis[contadorCarroussel].id = "current-slide";
 			navegacaoCarroussel.children[contadorCarroussel].id = "slide-atual";
 
 			clearInterval(timerCarroussel);
@@ -231,7 +231,7 @@ function setProgressVal(achieved, total) {
  */
 try {
 	const adquiridos = document.querySelectorAll(
-		".produto-adquirido .btn-primary"
+		".purchased-product .btn-primary"
 	);
 	adquiridos.forEach((elemento) => {
 		elemento.textContent = "Adquirido";

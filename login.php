@@ -21,8 +21,8 @@ session_start();
 </head>
 
 <body id="login" class="iniciar-sessao container-fluid d-grid" style="max-height: 100% !important">
-  <header id="cabecalho-principal" class="row pb-3">
-    <img class="img-fluid" src="./image/logo-minha-bufunfa.svg" alt="Minha Bufunfa - logo" />
+  <header class="main-header row pb-3">
+    <img class="main-header__logo img-fluid" src="./image/logo-minha-bufunfa.svg" alt="Minha Bufunfa - logo" />
   </header>
 
   <main class="container-fluid d-flex">

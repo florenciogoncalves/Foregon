@@ -45,7 +45,7 @@
 						><img
 							class="img-fluid m-auto d-flex"
 							src="./../image/icones-do-menu/produtos-white.svg"
-							alt="produtos"
+							alt="products"
 					/></a>
 				</li>
 				<li class="col px-0 py-2 rounded-3">
@@ -78,12 +78,12 @@
 		<main id="conteudo-principal" class="col p-3 p-sm-4 pb-5 mb-3 mb-lg-0">
 			<div class="container-fluid pb-5">
 				<!-- Cartão com os dados do produto -->
-				<div id="cartao-produto" class="area-de-conteudo p-2">
+				<div id="card-produto" class="area-de-conteudo p-2">
 					<figure class="p-0 pt-3 px-sm-0 px-lg-3 pb-1 row">
 						<img
 							src="./../image/produto-bg-img.png"
 							alt="Minha Bufunfa"
-							class="img-fluid col-6" />
+							class="card__image img-fluid col-6" />
 						<figcaption class="container col-6">
 							<h4>Cartão Pro lipsum<span class="visa">(Visa)</span></h4>
 
@@ -151,7 +151,9 @@
 						</colgroup>
 						<thead>
 							<tr>
-								<th class="tabela-coparacao-cartoes__cabecalho pe-4" scope="col">
+								<th
+									class="tabela-coparacao-cartoes__cabecalho pe-4"
+									scope="col">
 									<h2 class="__titulo _texto--verde">Comparação de cartões</h2>
 									<span class="__subtitulo texto-coluna"
 										>It is a long established fact that a reader will be
@@ -160,25 +162,25 @@
 									</span>
 								</th>
 								<th class="tabela-coparacao-cartoes__cartao" scope="col">
-									<div class="container-cartao px-3">
+									<div class="container-card px-3">
 										<img
-											class="__imagem-cartao mb-1"
-											src="./../image/cartao-mcx.svg"
+											class="card__image  __imagem-card mb-1"
+											src="./../image/card-mcx.svg"
 											alt="Imagem do cartão" />
-										<span class="__nome-cartao">Lorem Ipsum</span
-										><button class="__botao-solicitar-cartao mt-3 mb-1">
+										<span class="__nome-card">Lorem Ipsum</span
+										><button class="__botao-solicitar-card mt-3 mb-1">
 											solicitar cartão
 										</button>
 									</div>
 								</th>
 								<th class="tabela-coparacao-cartoes__cartao" scope="col">
-									<div class="container-cartao px-3">
+									<div class="container-card px-3">
 										<img
-											class="__imagem-cartao mb-1"
-											src="./../image/cartao-mcx.svg"
+											class="card__image  __imagem-card mb-1"
+											src="./../image/card-mcx.svg"
 											alt="Imagem do cartão" />
-										<span class="__nome-cartao">Lorem Ipsum</span
-										><button class="__botao-solicitar-cartao mt-3 mb-1">
+										<span class="__nome-card">Lorem Ipsum</span
+										><button class="__botao-solicitar-card mt-3 mb-1">
 											solicitar cartão
 										</button>
 									</div>
@@ -199,11 +201,11 @@
 						</tbody>
 					</table>
 
-          <div class="container-tabela-comparacao__overlay"></div>
+					<div class="container-tabela-comparacao__overlay"></div>
 				</div>
 				<div>
 					<button
-						class="__botao-solicitar-cartao __ver-analise-completa mt-3 mb-1 mx-auto row">
+						class="__botao-solicitar-card __ver-analise-completa mt-3 mb-1 mx-auto row">
 						Ver a análise completa
 					</button>
 				</div>
@@ -217,37 +219,61 @@
 					<div
 						id="faca-seu-cadastro"
 						class="form-group col-12 col-sm-8 col-md-7 col-lg-6 px-4 px-sm-5 pt-3 my-auto w-75">
-            <h2 class="texto-coluna subtitulo my-2">Saiba todas as informações do cartão</h2>
+						<h2 class="texto-coluna subtitulo my-2">
+							Saiba todas as informações do cartão
+						</h2>
 						<h1 class="_texto--verde">Foregon</h1>
 
-              <div class="container-diferencas">
-                <div class="contexto texto-coluna">
-                  <span class="contexto__informacao _contexto--esquerda">Lorem Ipsum</span>
-                  <span class="contexto__informacao _contexto--direita">Lorem Ipsum</span>
-                </div>
-                <div class="contexto texto-coluna">
-                  <span class="contexto__informacao _contexto--esquerda">Lorem Ipsum</span>
-                  <span class="contexto__informacao _contexto--direita">Lorem Ipsum</span>
-                </div>
-                <div class="contexto texto-coluna">
-                  <span class="contexto__informacao _contexto--esquerda">Lorem Ipsum</span>
-                  <span class="contexto__informacao _contexto--direita">Lorem Ipsum</span>
-                </div>
-                <div class="contexto texto-coluna">
-                  <span class="contexto__informacao _contexto--esquerda">Lorem Ipsum</span>
-                  <span class="contexto__informacao _contexto--direita">Lorem Ipsum</span>
-                </div>
-                <div class="contexto texto-coluna">
-                  <span class="contexto__informacao _contexto--esquerda">Lorem Ipsum</span>
-                  <span class="contexto__informacao _contexto--direita">Lorem Ipsum</span>
-                </div>
-                <div class="contexto texto-coluna">
-                  <span class="contexto__informacao _contexto--esquerda">Lorem Ipsum</span>
-                  <span class="contexto__informacao _contexto--direita">Lorem Ipsum</span>
-                </div>
-              </div>
-              
-						
+						<div class="container-diferencas">
+							<div class="contexto texto-coluna">
+								<span class="contexto__informacao _contexto--esquerda"
+									>Lorem Ipsum</span
+								>
+								<span class="contexto__informacao _contexto--direita"
+									>Lorem Ipsum</span
+								>
+							</div>
+							<div class="contexto texto-coluna">
+								<span class="contexto__informacao _contexto--esquerda"
+									>Lorem Ipsum</span
+								>
+								<span class="contexto__informacao _contexto--direita"
+									>Lorem Ipsum</span
+								>
+							</div>
+							<div class="contexto texto-coluna">
+								<span class="contexto__informacao _contexto--esquerda"
+									>Lorem Ipsum</span
+								>
+								<span class="contexto__informacao _contexto--direita"
+									>Lorem Ipsum</span
+								>
+							</div>
+							<div class="contexto texto-coluna">
+								<span class="contexto__informacao _contexto--esquerda"
+									>Lorem Ipsum</span
+								>
+								<span class="contexto__informacao _contexto--direita"
+									>Lorem Ipsum</span
+								>
+							</div>
+							<div class="contexto texto-coluna">
+								<span class="contexto__informacao _contexto--esquerda"
+									>Lorem Ipsum</span
+								>
+								<span class="contexto__informacao _contexto--direita"
+									>Lorem Ipsum</span
+								>
+							</div>
+							<div class="contexto texto-coluna">
+								<span class="contexto__informacao _contexto--esquerda"
+									>Lorem Ipsum</span
+								>
+								<span class="contexto__informacao _contexto--direita"
+									>Lorem Ipsum</span
+								>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

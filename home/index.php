@@ -34,7 +34,7 @@ if (isset($_SESSION['userActive'])) {
         <a href="./index.html"><img class="img-fluid m-auto d-flex" src="./../image/icones-do-menu/home-white.svg" alt="home" /></a>
       </li>
       <li class="col px-0 py-2 rounded-3">
-        <a href="./produtos.html"><img class="img-fluid m-auto d-flex" src="./../image/icones-do-menu/produtos.svg" alt="produtos" /></a>
+        <a href="./produtos.html"><img class="img-fluid m-auto d-flex" src="./../image/icones-do-menu/produtos.svg" alt="products" /></a>
       </li>
       <li class="col px-0 py-2 rounded-3">
         <a href="./configuracoes.html"><img class="img-fluid m-auto d-flex" src="./../image/icones-do-menu/configuracoes.svg" alt="configurações" /></a>
@@ -109,20 +109,20 @@ if (isset($_SESSION['userActive'])) {
         </div>
       </section>
 
-      <section id="nossos-produtos" class="nossos-produtos area-de-conteudo p-2 p-sm-3 mt-4" style="padding-top: 1rem !important;">
+      <section id="product-area" class="product-area area-de-conteudo p-2 p-sm-3 mt-4" style="padding-top: 1rem !important;">
         <h3 class="titulo">Nossos produtos</h3>
 
 
-        <div class="produtos container-fluid pb-3 px-0 mt-4 col-lg-11">
+        <div class="products container-fluid pb-3 px-0 mt-4 col-lg-11">
 
           <ul class="row gap-3 gap-sm-2 gap-md-3 col-12 col-xs-8 col-sm-12 col-lg-9 justify-content-center row-cols-3 p-sm-3">
             <!-- Item - Cartão produto -->
-            <li class="cartao col-10 col-sm rounded-1 row">
+            <li class="card col-10 col-sm rounded-1 row">
               <figure class="p-0 pt-3 px-sm-0 px-lg-3 pb-1">
-                <img src="./../image/cartao-mcx.svg" alt="Minha Bufunfa" class="img-fluid w-50" />
+                <img src="./../image/card-mcx.svg" alt="Minha Bufunfa" class="card__image img-fluid w-50" />
                 <figcaption class="container">
-                  <h4>Lorem Ipsum</h4>
-                  <span>Visa</span>
+                  <h4 class="card__title">Lorem Ipsum</h4>
+                  <span class="card__subtitle">Visa</span>
                   <div class="classificado">
                     <ul class="estrelas col-8 h-100">
                       <li class="estrelar estrelado col"></li>
@@ -145,12 +145,12 @@ if (isset($_SESSION['userActive'])) {
             </li>
 
             <!-- Item - Cartão produto -->
-            <li class="cartao col-10 col-sm rounded-1 row">
+            <li class="card col-10 col-sm rounded-1 row">
               <figure class="p-0 pt-3 pb-1 px-sm-0 px-lg-3">
-                <img src="./../image/cartao-mcx.svg" alt="Minha Bufunfa" class="img-fluid w-50" />
+                <img src="./../image/card-mcx.svg" alt="Minha Bufunfa" class="card__image img-fluid w-50" />
                 <figcaption class="container">
-                  <h4>Lorem Ipsum</h4>
-                  <span>Visa</span>
+                  <h4 class="card__title">Lorem Ipsum</h4>
+                  <span class="card__subtitle">Visa</span>
                   <div class="classificado">
                     <ul class="estrelas col-8 h-100">
                       <li class="estrelar estrelado col"></li>
@@ -173,12 +173,12 @@ if (isset($_SESSION['userActive'])) {
             </li>
 
             <!-- Item - Cartão produto -->
-            <li class="cartao col-10 col-sm rounded-1 row">
+            <li class="card col-10 col-sm rounded-1 row">
               <figure class="p-0 pt-3 pb-1 px-sm-0 px-lg-3">
-                <img src="./../image/cartao-mcx.svg" alt="Minha Bufunfa" class="img-fluid w-50" />
+                <img src="./../image/card-mcx.svg" alt="Minha Bufunfa" class="card__image img-fluid w-50" />
                 <figcaption class="container">
-                  <h4>Lorem Ipsum</h4>
-                  <span>Visa</span>
+                  <h4 class="card__title">Lorem Ipsum</h4>
+                  <span class="card__subtitle">Visa</span>
                   <div class="classificado">
                     <ul class="estrelas col-8 h-100">
                       <li class="estrelar estrelado col"></li>

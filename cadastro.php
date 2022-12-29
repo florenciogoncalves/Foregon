@@ -15,8 +15,8 @@
 </head>
 
 <body id="cadastro" class="iniciar-sessao container-fluid">
-  <header id="cabecalho-principal" class="row pb-3">
-    <img class="img-fluid" src="./image/logo-minha-bufunfa.svg" alt="Minha Bufunfa - logo" />
+  <header class="main-header row pb-3">
+    <img class="main-header__logo img-fluid" src="./image/logo-minha-bufunfa.svg" alt="Minha Bufunfa - logo" />
   </header>
 
   <!-- Conteúdo da direita -->
