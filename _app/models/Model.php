@@ -156,16 +156,8 @@ abstract class Model extends connect
 
             $values = ":" . implode(", :", array_keys($data));
 
-
-
-
-
             $stmt = $this->connect->prepare("INSERT INTO {$this->entity} ({$colums}) VALUES ({$values})");
             $stmt->execute($this->filter($data));
-
-
-
-
             return $this->connect->lastInsertId();
         } catch (\PDOException $exception) {
             return null;
