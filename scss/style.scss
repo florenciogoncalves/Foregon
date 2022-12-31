@@ -259,22 +259,23 @@ main {
 			max-height: max-content;
 		}
 	}
-	#caminhos {
+	.footer-links {
 		a {
 			font-size: 0.7rem;
 			font-weight: 500;
 		}
-		& > div {
+		.links-subcontainer {
 			padding: 0;
+			li {
+				word-wrap: nowrap;
+				white-space: nowrap;
+			}
+			li:first-of-type a {
+				font-weight: 700;
+				margin-bottom: 4px;
+			}
 		}
-		& > div > li {
-			word-wrap: nowrap;
-			white-space: nowrap;
-		}
-		& > div > li:first-of-type a {
-			font-weight: 700;
-			margin-bottom: 4px;
-		}
+
 		#main-footer a {
 			text-decoration: none;
 		}
@@ -859,6 +860,7 @@ figure.artigo-usuario {
 		width: 100%;
 
 		background: rgba(0, 0, 0, 0.3);
+		-webkit-backdrop-filter: blur(2.67219px);
 		backdrop-filter: blur(2.67219px);
 		a {
 			margin: auto;

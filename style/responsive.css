@@ -56,16 +56,16 @@
     line-height: 1.5;
   }
   /* Footer*/
-  #caminhos {
+  .footer-links {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
     flex: 1 1 auto;
     flex-shrink: 0.25;
   }
-  #caminhos > div {
+  .footer-links > div {
     max-width: max-content !important;
   }
-  #caminhos > div:last-of-type {
+  .footer-links > div:last-of-type {
     flex-grow: 0.25;
   }
   /* produto.html*/
@@ -145,13 +145,13 @@
   .products .card {
     border: 2px solid #85e0a3;
   }
-  #main-footer #caminhos > div > li {
+  #main-footer .footer-links > div > li {
     font-size: 11px;
   }
-  #main-footer #caminhos > div > li:first-of-type {
+  #main-footer .footer-links > div > li:first-of-type {
     margin-bottom: 7px;
   }
-  #main-footer #caminhos > div > li:not(li:last-of-type, li:first-of-type) {
+  #main-footer .footer-links > div > li:not(li:last-of-type, li:first-of-type) {
     margin: auto;
   }
   /*
@@ -239,11 +239,11 @@
     font-size: 13px;
   }
   /* Caminhos */
-  #main-footer #caminhos > div {
+  #main-footer .footer-links > div {
     display: flex;
     flex-direction: column;
   }
-  #main-footer #caminhos > div > li:first-of-type {
+  #main-footer .footer-links > div > li:first-of-type {
     margin-bottom: 10px;
   }
   #main-footer > span:last-of-type {

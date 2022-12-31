@@ -332,22 +332,22 @@ main {
   display: flex;
   max-height: max-content;
 }
-#main-footer #caminhos a {
+#main-footer .footer-links a {
   font-size: 0.7rem;
   font-weight: 500;
 }
-#main-footer #caminhos > div {
+#main-footer .footer-links .links-subcontainer {
   padding: 0;
 }
-#main-footer #caminhos > div > li {
+#main-footer .footer-links .links-subcontainer li {
   word-wrap: nowrap;
   white-space: nowrap;
 }
-#main-footer #caminhos > div > li:first-of-type a {
+#main-footer .footer-links .links-subcontainer li:first-of-type a {
   font-weight: 700;
   margin-bottom: 4px;
 }
-#main-footer #caminhos #main-footer a {
+#main-footer .footer-links #main-footer a {
   text-decoration: none;
 }
 #main-footer > span:last-of-type {
@@ -868,6 +868,7 @@ figure.artigo-usuario figcaption {
   height: 25%;
   width: 100%;
   background: rgba(0, 0, 0, 0.3);
+  -webkit-backdrop-filter: blur(2.67219px);
   backdrop-filter: blur(2.67219px);
 }
 figure.artigo-usuario figcaption a {
