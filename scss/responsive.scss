@@ -12,7 +12,7 @@
 	}
 	/* Pagina inicial*/
 	.products ul,
-	#avaliacoes-dos-usuarios ul {
+	.user-ratings ul {
 		display: grid !important;
 		grid-template-columns: repeat(2, 1fr);
 		gap: 0.75rem;
@@ -22,13 +22,13 @@
 		width: 100%;
 	}
 
-	#avaliacoes-dos-usuarios .card {
+	.user-ratings .card {
 		max-width: 100% !important;
 		min-width: 0;
 	}
 
 	.card h4 + span + p,
-	#avaliacoes-dos-usuarios h4 ~ p {
+	.user-ratings h4 ~ p {
 		overflow: hidden;
 		text-overflow: ellipsis;
 		display: -webkit-box;
@@ -36,12 +36,12 @@
 		-webkit-box-orient: vertical;
 	}
 
-	#avaliacoes-dos-usuarios img {
+	.user-ratings img {
 		max-width: 45% !important;
 		margin-top: 0.25rem !important;
 	}
 
-	#avaliacoes-dos-usuarios h4 {
+	.user-ratings h4 {
 		font-size: 0.72rem !important;
 		max-width: 75%;
 		margin-left: auto;
@@ -53,7 +53,7 @@
 		box-sizing: border-box;
 	}
 
-	#avaliacoes-dos-usuarios h4 ~ p {
+	.user-ratings h4 ~ p {
 		-webkit-line-clamp: 5;
 		font-size: 0.65rem !important;
 		line-height: 1.5 !important;
@@ -176,18 +176,15 @@
 		border: 2px solid $card-border-color;
 	}
 
-	#rodape-principal #caminhos > div > li {
+	#main-footer #caminhos > div > li {
 		font-size: 11px;
 	}
 
-	#rodape-principal #caminhos > div > li:first-of-type {
+	#main-footer #caminhos > div > li:first-of-type {
 		margin-bottom: 7px;
 	}
 
-	#rodape-principal
-		#caminhos
-		> div
-		> li:not(li:last-of-type, li:first-of-type) {
+	#main-footer #caminhos > div > li:not(li:last-of-type, li:first-of-type) {
 		margin: auto;
 	}
 
@@ -264,43 +261,43 @@
   ***********************
   */
 
-	#rodape-principal {
+	#main-footer {
 		padding-left: 0px !important;
 	}
 
-	#rodape-principal #contate-nos {
+	#main-footer #contate-nos {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
 		padding: 30px 20px !important;
 	}
-	#rodape-principal #contate-nos > div {
+	#main-footer #contate-nos > div {
 		align-items: center;
 		display: flex;
 		flex-direction: column;
 	}
 
-	#rodape-principal #contate-nos a img {
+	#main-footer #contate-nos a img {
 		margin: auto;
 	}
 
-	#rodape-principal #contate-nos span {
+	#main-footer #contate-nos span {
 		margin-top: 8px;
 		font-size: 13px;
 	}
 
 	/* Caminhos */
-	#rodape-principal #caminhos > div {
+	#main-footer #caminhos > div {
 		display: flex;
 		flex-direction: column;
 	}
 
-	#rodape-principal #caminhos > div > li:first-of-type {
+	#main-footer #caminhos > div > li:first-of-type {
 		margin-bottom: 10px;
 	}
 
-	#rodape-principal > span:last-of-type {
+	#main-footer > span:last-of-type {
 		font-size: 10px;
 		line-height: 2.3em;
 	}
@@ -346,7 +343,7 @@
 		height: 6px;
 	}
 
-	#navegacao-carroussel #slide-atual {
+	#navegacao-carroussel .current-slide__demarcation {
 		width: 10px !important;
 		height: 10px !important;
 	}
@@ -378,7 +375,7 @@
 	}
 
 	.products .card h4,
-	#avaliacoes-dos-usuarios h4 {
+	.user-ratings h4 {
 		font-size: 18px;
 	}
 
@@ -387,7 +384,7 @@
 	}
 
 	.products .card p,
-	#avaliacoes-dos-usuarios .card p {
+	.user-ratings .card p {
 		font-size: 13px;
 		margin: 10px 0 13px;
 	}
@@ -420,20 +417,20 @@
 	}
 
 	/* Avaliações dos usuários */
-	#avaliacoes-dos-usuarios {
+	.user-ratings {
 		margin-top: 30px !important;
 	}
 
-	#avaliacoes-dos-usuarios .card p {
+	.user-ratings .card p {
 		margin-bottom: 0;
 	}
 
-	#avaliacoes-dos-usuarios ul {
+	.user-ratings ul {
 		margin-top: 70px !important;
 		column-gap: 30px !important;
 	}
 
-	#avaliacoes-dos-usuarios img {
+	.user-ratings img {
 		width: 50% !important;
 		margin-bottom: 25px !important;
 		margin-top: 10px !important;

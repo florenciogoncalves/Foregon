@@ -85,7 +85,7 @@
 
 			background: #929292;
 			opacity: 0.5;
-			&#slide-atual {
+			&.current-slide__demarcation {
 				width: 7px;
 				height: 7px;
 
@@ -211,17 +211,17 @@ main {
 	}
 }
 
-/* #avaliacoes-dos-usuarios */
-#avaliacoes-dos-usuarios {
+/* .user-ratings */
+.user-ratings {
 	.card {
 		box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 		border-radius: 6px;
 		padding: 25px;
 		max-width: 320px;
-		img {
+		.card__image {
 			max-width: 70px;
 		}
-		p {
+		.card__description {
 			font-weight: 400;
 			font-size: 12px;
 			text-align: center;
@@ -234,7 +234,7 @@ main {
 }
 
 /* Rodapé */
-#rodape-principal {
+#main-footer {
 	position: relative;
 	bottom: 0;
 
@@ -258,25 +258,25 @@ main {
 			display: flex;
 			max-height: max-content;
 		}
-		#caminhos {
-			a {
-				font-size: 0.7rem;
-				font-weight: 500;
-			}
-			& > div {
-				padding: 0;
-			}
-			& > div > li {
-				word-wrap: nowrap;
-				white-space: nowrap;
-			}
-			& > div > li:first-of-type a {
-				font-weight: 700;
-				margin-bottom: 4px;
-			}
-			#rodape-principal a {
-				text-decoration: none;
-			}
+	}
+	#caminhos {
+		a {
+			font-size: 0.7rem;
+			font-weight: 500;
+		}
+		& > div {
+			padding: 0;
+		}
+		& > div > li {
+			word-wrap: nowrap;
+			white-space: nowrap;
+		}
+		& > div > li:first-of-type a {
+			font-weight: 700;
+			margin-bottom: 4px;
+		}
+		#main-footer a {
+			text-decoration: none;
 		}
 	}
 	& > span:last-of-type {
@@ -518,7 +518,7 @@ main {
 		width: 0.36rem !important;
 		height: 0.36rem !important;
 	}
-	#slide-atual {
+	.current-slide__demarcation {
 		opacity: 0.5 !important;
 		background-color: $primary-color;
 	}
