@@ -50,6 +50,7 @@ textarea:focus {
 
 a, a:visited, a:hover {
   color: currentColor;
+  text-decoration: none;
 }
 
 .row {
@@ -184,7 +185,7 @@ select option:first-child {
   background: #929292;
   opacity: 0.5;
 }
-.main-carousel #navegacao-carroussel li#slide-atual {
+.main-carousel #navegacao-carroussel li.current-slide__demarcation {
   width: 7px;
   height: 7px;
   opacity: 1;
@@ -288,68 +289,68 @@ main {
   margin-bottom: 0;
 }
 
-/* #avaliacoes-dos-usuarios */
-#avaliacoes-dos-usuarios .card {
+/* .user-ratings */
+.user-ratings .card {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   border-radius: 6px;
   padding: 25px;
   max-width: 320px;
 }
-#avaliacoes-dos-usuarios .card img {
+.user-ratings .card .card__image {
   max-width: 70px;
 }
-#avaliacoes-dos-usuarios .card p {
+.user-ratings .card .card__description {
   font-weight: 400;
   font-size: 12px;
   text-align: center;
 }
-#avaliacoes-dos-usuarios h4 {
+.user-ratings h4 {
   text-align: center;
   font-size: 15px;
 }
 
 /* Rodapé */
-#rodape-principal {
+#main-footer {
   position: relative;
   bottom: 0;
   background: #00cc66;
   color: #fff;
 }
-#rodape-principal #contate-nos > img {
+#main-footer #contate-nos > img {
   position: relative;
   object-fit: fill;
   filter: contrast(175%) brightness(3%) invert(1);
 }
-#rodape-principal #contate-nos span {
+#main-footer #contate-nos span {
   font-size: 0.625rem;
   margin-bottom: 2px;
   text-transform: uppercase;
 }
-#rodape-principal #contate-nos nav a {
+#main-footer #contate-nos nav a {
   padding: 0;
   align-items: center;
   display: flex;
   max-height: max-content;
 }
-#rodape-principal #contate-nos #caminhos a {
+#main-footer .footer-links a {
   font-size: 0.7rem;
   font-weight: 500;
 }
-#rodape-principal #contate-nos #caminhos > div {
+#main-footer .footer-links .links-subcontainer {
   padding: 0;
 }
-#rodape-principal #contate-nos #caminhos > div > li {
+#main-footer .footer-links .links-subcontainer li {
   word-wrap: nowrap;
   white-space: nowrap;
 }
-#rodape-principal #contate-nos #caminhos > div > li:first-of-type a {
+#main-footer .footer-links .links-subcontainer li:first-of-type a {
   font-weight: 700;
   margin-bottom: 4px;
 }
-#rodape-principal #contate-nos #caminhos #rodape-principal a {
+#main-footer .footer-links #main-footer a {
   text-decoration: none;
 }
-#rodape-principal > span:last-of-type {
+#main-footer > span:last-of-type {
   width: 100%;
   position: absolute;
   bottom: 0;
@@ -552,7 +553,7 @@ main {
   width: 0.36rem !important;
   height: 0.36rem !important;
 }
-#landing-pos-header #slide-atual {
+#landing-pos-header .current-slide__demarcation {
   opacity: 0.5 !important;
   background-color: #00cc66;
 }
@@ -867,6 +868,7 @@ figure.artigo-usuario figcaption {
   height: 25%;
   width: 100%;
   background: rgba(0, 0, 0, 0.3);
+  -webkit-backdrop-filter: blur(2.67219px);
   backdrop-filter: blur(2.67219px);
 }
 figure.artigo-usuario figcaption a {

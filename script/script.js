@@ -37,7 +37,9 @@ try {
 
 	//Mostra carroussel na posição X e seu repetivo indicativo
 	quantidadeCarrousseis[contadorCarroussel].classList.add("current-slide");
-	navegacaoCarroussel.children[contadorCarroussel].id = "slide-atual";
+	navegacaoCarroussel.children[contadorCarroussel].classList.add(
+		"current-slide__demarcation"
+	);
 	contadorCarroussel = 1;
 
 	function carroussel() {
@@ -47,7 +49,9 @@ try {
 			document
 				.querySelector(".current-slide")
 				.classList.remove("current-slide");
-			document.querySelector("#slide-atual").removeAttribute("id");
+			document
+				.querySelector(".current-slide__demarcation")
+				.classList.remove("current-slide__demarcation");
 
 			//Resetando contador, caso tenha excedido o limite
 			if (contadorCarroussel >= quantidadeCarrousseis.length) {
@@ -56,7 +60,9 @@ try {
 
 			//Setando os valores de apresentação a outra posição de slide
 			quantidadeCarrousseis[contadorCarroussel].classList.add("current-slide");
-			navegacaoCarroussel.children[contadorCarroussel].id = "slide-atual";
+			navegacaoCarroussel.children[contadorCarroussel].classList.add(
+				"current-slide__demarcation"
+			);
 
 			contadorCarroussel++;
 		}, 5000);
@@ -64,19 +70,23 @@ try {
 
 	carroussel();
 
-	//Evento de clique aos nodos do carroussel
+	//Evento de clique aos nós do carroussel
 	for (c = 0; c < navegacaoCarroussel.children.length; c++) {
 		navegacaoCarroussel.children[c].posicao = c;
 		navegacaoCarroussel.children[c].addEventListener("click", (evt) => {
 			contadorCarroussel = evt.target.posicao;
 
 			//Deixando para trás o slide anterior e partindo para um novo
-			document.querySelector("#current-slide").removeAttribute("id");
-			document.querySelector("#slide-atual").removeAttribute("id");
+			document
+				.querySelector(".current-slide")
+				.classList.remove("current-slide");
+			document
+				.querySelector(".current-slide__demarcation")
+				.classList.remove("current-slide__demarcation");
 
 			//Mostra carroussel na posição X e seu repetivo indicativo
-			quantidadeCarrousseis[contadorCarroussel].id = "current-slide";
-			navegacaoCarroussel.children[contadorCarroussel].id = "slide-atual";
+			quantidadeCarrousseis[contadorCarroussel].classList.add("current-slide");
+			navegacaoCarroussel.children[contadorCarroussel].classList.add("current-slide__demarcation");
 
 			clearInterval(timerCarroussel);
 			carroussel();
