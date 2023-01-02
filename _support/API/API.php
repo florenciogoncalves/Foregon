@@ -25,15 +25,15 @@ class API
 
     public function execute(): string|bool
     {
-        $curl = curl_init();
+        $curl = curl_init($this->baseURL);
         curl_setopt_array($curl, array(
-            'CURLOPT_URL' => $this->baseURL,
-            'CURLOPT_RETURNTRANSFER' => static::CURL_OPT_RETURNTRANSFER,
-            'CURLOPT_MAXREDIRS' => static::CURLOPT_MAXREDIRS,
-            'CURLOPT_TIMEOUT' => static::CURLOPT_TIMEOUT,
-            'CURLOPT_FOLLOWLOCATION' => static::CURLOPT_FOLLOWLOCATION,
-            'CURLOPT_HTTP_VERSION' => static::CURLOPT_HTTP_VERSION,
-            'CURLOPT_CUSTOMREQUEST' => static::CURLOPT_CUSTOMREQUEST,
+            CURLOPT_URL => $this->baseURL,
+            CURLOPT_RETURNTRANSFER => self::CURL_OPT_RETURNTRANSFER,
+            CURLOPT_MAXREDIRS => self::CURLOPT_MAXREDIRS,
+            CURLOPT_TIMEOUT => self::CURLOPT_TIMEOUT,
+            CURLOPT_FOLLOWLOCATION => self::CURLOPT_FOLLOWLOCATION,
+            CURLOPT_HTTP_VERSION => self::CURLOPT_HTTP_VERSION,
+            CURLOPT_CUSTOMREQUEST => self::CURLOPT_CUSTOMREQUEST,
             CURLOPT_POSTFIELDS => '{
                 "QuodReportRequest": {
                 "Options": {
@@ -51,9 +51,9 @@ class API
             }
             } 
             }',
-            'CURLOPT_HTTPHEADER' => array(
-                'Content-Type:' . static::CONTENT_TYPE,
-                'Authorization:' . $this->authType . $this->apiKey
+            CURLOPT_HTTPHEADER => array(
+                'Content-Type:' . self::CONTENT_TYPE,
+                'Authorization:' . $this->authType . " " . $this->apiKey
             ),
         ));
 

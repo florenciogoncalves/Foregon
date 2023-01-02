@@ -35,17 +35,6 @@ session_start();
       <!-- Conteúdo da direita -->
       <div class="col-md-9 col-lg-7 m-auto mt-5 mb-lg-auto justify-content-center p-0 my-lg-auto" style="padding-top: $header-height !important">
 
-        <?php
-        if (isset($_SESSION['message'])) :
-        ?>
-          <div class="alert alert-danger text-center">
-            <?= $_SESSION['message'];
-            unset($_SESSION['message']); ?>
-          </div>
-
-        <?php
-        endif;
-        ?>
         <div class="lado-direito col-sm-10 col-lg-9 h-50 row p-4 p-sm-5 pb-lg-4 pt-lg-4">
 
           <img class="img-fluid w-25" src="./image/favicon.svg" alt="minha-bufunfa" />
@@ -53,11 +42,23 @@ session_start();
           <span class="w-100 d-block">Lorem ipsum dolor sit amet, consectetur adipis cing elit
             consectetur adipis cing elit.</span>
           <form class="needs-validation row p-0" method="POST" action="./_app/controllers/loginController.php" novalidate>
+
+            <?php
+            if (isset($_SESSION['message'])) :
+            ?>
+              <div class="alert alert-danger text-center">
+                <?= $_SESSION['message'];
+                unset($_SESSION['message']); ?>
+              </div>
+
+            <?php
+            endif;
+            ?>
             <div class="mt-3 mb-3 form-group">
               <input type="email" name="email" id="email" placeholder="Endereço de email" class="form-control form-control-md" required value="" />
             </div>
             <div class="mb-2 form-group">
-              <input type="password" name="password" id="password" placeholder="*************" class="form-control form-control-md" required value="" />
+              <input type="password" name="password" id="password" placeholder="********" class="form-control form-control-md" required maxlength="8"/>
             </div>
 
             <div class="mb-3 d-sm-flex justify-content-between form-group form-check">
