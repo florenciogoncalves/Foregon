@@ -481,14 +481,14 @@
 			url(./../image/como-funciona-bg-4.svg) no-repeat,
 			url(./../image/como-funciona-bg-6.svg) no-repeat,
 			url(./../image/como-funciona-bg-4.svg) no-repeat;
-		background-position: left -1.7rem top calc(var(--header-height) + 5%),
-			left -0.7rem top calc(43% + var(--header-height)), left -1.7rem bottom 5%,
-			left 8% top calc(var(--header-height) - 5%),
-			left 10% top calc(40% + var(--header-height)), left 11% bottom 5%,
-			left 28% bottom, right 8% top calc(var(--header-height) - 5%),
-			right 10% top calc(40% + var(--header-height)), right 11% bottom 5%,
-			right 28% bottom, right -1.7rem top calc(var(--header-height) + 5%),
-			right -2rem top calc(43% + var(--header-height)), right -1.7rem bottom 5% !important;
+		background-position: left -1.7rem top calc(0px + 5%),
+			left -0.7rem top calc(43% + 0px), left -1.7rem bottom 5%,
+			left 8% top calc(0px - 5%),
+			left 10% top calc(40% + 0px), left 11% bottom 5%,
+			left 28% bottom, right 8% top calc(0px - 5%),
+			right 10% top calc(40% + 0px), right 11% bottom 5%,
+			right 28% bottom, right -1.7rem top calc(0px + 5%),
+			right -2rem top calc(43% + 0px), right -1.7rem bottom 5% !important;
 		background-size: 2.7rem, 3rem, 2.7rem, 6.6rem, 2.9em, 6.6rem, 3rem, 6.6rem,
 			2.9em, 6.6rem, 3rem, 2.7rem, 4.1rem, 2.7rem !important;
 		background-color: $primary-color;
@@ -753,6 +753,23 @@
 		width: 100% !important;
 		justify-content: flex-start !important;
 	}
+
+	// Produtos - home
+	.home-page .interative-area {
+		border-radius: 0 !important;
+		width: 75% !important;
+		margin: 2rem auto !important;
+		border-radius: 1.25rem !important;
+		
+		background: $color-white;
+
+		* {
+			color: $color-black;
+		}
+		.contexto {
+			border-color: $color-black;
+		}
+	}
 }
 
 @media only screen and (max-width: 1024px) {
@@ -768,6 +785,11 @@
 		max-width: 100%;
 		height: max-content !important;
 		padding: 0 !important;
+		@for $var from 4 to 6 {
+			.__cliente:nth-of-type(#{$var}) {
+				display: none;
+			}
+		}
 	}
 
 	.__admin .container-aside-clientes aside {
@@ -829,6 +851,11 @@
 	#card-produto {
 		background-size: 40%;
 	}
+
+	.estrelas {
+	width: 80%;
+	gap: .35rem !important;
+}
 }
 
 /* Large devices (desktops, less than 1200px) */

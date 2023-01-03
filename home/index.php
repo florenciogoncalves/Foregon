@@ -24,10 +24,12 @@ if (isset($_SESSION['userActive'])) {
 </head>
 <!-- Relativo ao 'Seu score': No evento onload da tag body, defina dois parametros, o primeiro referente ao total positivo, e o segundo referente ao somatorio total -->
 
-<body class="home-page container-fluid d-flex d-lg-grid" onload="setProgressVal(600, 1000)">
+<body class="home-page _loc--index container-fluid d-flex d-lg-grid" onload="setProgressVal(600, 1000)">
   <nav id="menu-lateral" class="navbar col sticky-bottom py-2 px-4">
     <div class="logo d-none d-lg-flex">
-      <img src="./../image/Minha-bufunfa-pequeno.svg" alt="Minha Bufunfa" />
+      <a href="./" class="logo d-none d-lg-flex">
+				<img src="./../image/Minha-bufunfa-pequeno.svg" alt="Minha Bufunfa" />
+			</a>
     </div>
     <ul class="navegacao row p-0 px-sm-4 mb-0 col-12 gap-2 justify-content-between">
       <li class="col px-0 py-2 rounded-3" id="vizualizando">

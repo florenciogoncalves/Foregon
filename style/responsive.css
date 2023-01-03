@@ -382,7 +382,7 @@
    */
   #landing-pos-header {
     background: url(./../image/como-funciona-bg-3.svg) no-repeat, url(./../image/como-funciona-bg-1.svg) no-repeat, url(./../image/como-funciona-bg-3.svg) no-repeat, url(./../image/pkg-bg-left/bg-left-top.svg) no-repeat, url(./../image/pkg-bg-left/bg-left-middle.svg) no-repeat, url(./../image/pkg-bg-left/bg-left-bottom.svg) no-repeat, url(./../image/pkg-bg-bottom/left.svg) no-repeat, url(./../image/pkg-bg-right/bg-r-top.svg) no-repeat, url(./../image/pkg-bg-right/bg-r-middle.svg) no-repeat, url(./../image/pkg-bg-right/bg-r-bottom.svg) no-repeat, url(./../image/pkg-bg-bottom/right.svg) no-repeat, url(./../image/como-funciona-bg-4.svg) no-repeat, url(./../image/como-funciona-bg-6.svg) no-repeat, url(./../image/como-funciona-bg-4.svg) no-repeat;
-    background-position: left -1.7rem top calc(var(--header-height) + 5%), left -0.7rem top calc(43% + var(--header-height)), left -1.7rem bottom 5%, left 8% top calc(var(--header-height) - 5%), left 10% top calc(40% + var(--header-height)), left 11% bottom 5%, left 28% bottom, right 8% top calc(var(--header-height) - 5%), right 10% top calc(40% + var(--header-height)), right 11% bottom 5%, right 28% bottom, right -1.7rem top calc(var(--header-height) + 5%), right -2rem top calc(43% + var(--header-height)), right -1.7rem bottom 5% !important;
+    background-position: left -1.7rem top calc(0px + 5%), left -0.7rem top calc(43% + 0px), left -1.7rem bottom 5%, left 8% top calc(0px - 5%), left 10% top calc(40% + 0px), left 11% bottom 5%, left 28% bottom, right 8% top calc(0px - 5%), right 10% top calc(40% + 0px), right 11% bottom 5%, right 28% bottom, right -1.7rem top calc(0px + 5%), right -2rem top calc(43% + 0px), right -1.7rem bottom 5% !important;
     background-size: 2.7rem, 3rem, 2.7rem, 6.6rem, 2.9em, 6.6rem, 3rem, 6.6rem, 2.9em, 6.6rem, 3rem, 2.7rem, 4.1rem, 2.7rem !important;
     background-color: #00cc66;
   }
@@ -591,6 +591,19 @@
     width: 100% !important;
     justify-content: flex-start !important;
   }
+  .home-page .interative-area {
+    border-radius: 0 !important;
+    width: 75% !important;
+    margin: 2rem auto !important;
+    border-radius: 1.25rem !important;
+    background: #fff;
+  }
+  .home-page .interative-area * {
+    color: #000;
+  }
+  .home-page .interative-area .contexto {
+    border-color: #000;
+  }
 }
 @media only screen and (max-width: 1024px) {
   main#conteudo-principal > div.container-fluid {
@@ -604,6 +617,12 @@
     max-width: 100%;
     height: max-content !important;
     padding: 0 !important;
+  }
+  .__admin .container-aside-clientes .__cliente:nth-of-type(4) {
+    display: none;
+  }
+  .__admin .container-aside-clientes .__cliente:nth-of-type(5) {
+    display: none;
   }
   .__admin .container-aside-clientes aside {
     width: 100% !important;
@@ -653,6 +672,10 @@
   }
   #card-produto {
     background-size: 40%;
+  }
+  .estrelas {
+    width: 80%;
+    gap: 0.35rem !important;
   }
 }
 /* Large devices (desktops, less than 1200px) */
