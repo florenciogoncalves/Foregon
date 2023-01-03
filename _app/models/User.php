@@ -27,6 +27,7 @@ class User extends connect
         if ($query->rowCount() > 0) {
             return $query->fetch(PDO::FETCH_ASSOC);
         }
+        return false;
     }
 
     public function login(string $email, string $senha): bool|User

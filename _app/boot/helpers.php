@@ -89,6 +89,7 @@ function hashPassword(string $value): string
 {
     return password_hash($value, PASSWORD_DEFAULT);
 }
+
 function verifyHash(string $password, $hashUser): bool
 {
     return password_verify($password, $hashUser);
@@ -96,5 +97,10 @@ function verifyHash(string $password, $hashUser): bool
 
 function codeGenerator(): int
 {
-    return random_int(1000, 9999);
+    return random_int(10000, 99999);
+}
+
+function generateToken()
+{
+    return sha1(uniqid(mt_rand(), true));
 }
