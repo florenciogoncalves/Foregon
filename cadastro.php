@@ -22,8 +22,8 @@
   <!-- Conteúdo da direita -->
   <div class="margem-topo h-100 col-md-10 col-lg-7 d-flex m-auto justify-content-center p-0">
     <div class="lado-direito col-sm-10 col-lg-8 row p-4 p-sm-5 pb-lg-4 pt-lg-4 mt-4 mt-lg-auto">
-      <img class="img-fluid w-25" src="./image/favicon.svg" alt="minha-bufunfa" />
-      <h1>Criar minha conta</h1>
+      <img class="img-fluid w-25 mt-4 mt-lg-0" src="./image/favicon.svg" alt="minha-bufunfa" />
+      <h1 class="mt-1 mt-lg-0">Criar minha conta</h1>
       <span>Insira abaixo seus dados de contato abaixo para que possamos entrar
         em contato:</span>
       <form class="needs-validation mt-4" method="POST" action="./_app/controllers/cadastroController.php" novalidate>

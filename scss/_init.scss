@@ -64,6 +64,15 @@ a {
 		color: currentColor;
 		text-decoration: none;
 	}
+	
+}
+
+._text--underline {
+		text-decoration: underline;
+	}
+
+._container--shadow {
+	box-shadow: $box-shadow;
 }
 
 .row {

@@ -53,6 +53,14 @@ a, a:visited, a:hover {
   text-decoration: none;
 }
 
+._text--underline {
+  text-decoration: underline;
+}
+
+._container--shadow {
+  box-shadow: 0px 0px 18px rgba(0, 0, 0, 0.1);
+}
+
 .row {
   margin-right: 0;
   margin-left: 0;
@@ -170,7 +178,8 @@ select option:first-child {
   margin: 10px auto;
   line-height: 1.5;
 }
-.main-carousel #navegacao-carroussel {
+
+#navegacao-carroussel {
   height: 20px;
   padding-left: 0;
   column-gap: 3px;
@@ -178,14 +187,14 @@ select option:first-child {
   justify-content: center;
   display: flex;
 }
-.main-carousel #navegacao-carroussel li {
+#navegacao-carroussel li {
   width: 5px;
   height: 5px;
-  border-radius: 5px;
+  border-radius: 50%;
   background: #929292;
   opacity: 0.5;
 }
-.main-carousel #navegacao-carroussel li.current-slide__demarcation {
+#navegacao-carroussel li.current-slide__demarcation {
   width: 7px;
   height: 7px;
   opacity: 1;
@@ -257,7 +266,7 @@ main {
   font-family: "Raleway";
   font-style: normal;
   font-weight: 400;
-  font-size: 10px;
+  font-size: 0.625rem;
   margin-top: 0.2rem;
   width: 100%;
   color: #455a64;
@@ -269,7 +278,7 @@ main {
   text-transform: uppercase;
   color: #00cc66;
   font-weight: 700;
-  font-size: 10px;
+  font-size: 0.65rem;
 }
 
 /*  Como funcionamos*/
@@ -285,7 +294,7 @@ main {
   text-align: left;
 }
 .how-we-work .__description {
-  font-size: 11px;
+  font-size: 0.6875rem;
   margin-bottom: 0;
 }
 
@@ -295,13 +304,14 @@ main {
   border-radius: 6px;
   padding: 25px;
   max-width: 320px;
+  border: none;
 }
 .user-ratings .card .card__image {
   max-width: 70px;
 }
 .user-ratings .card .card__description {
   font-weight: 400;
-  font-size: 12px;
+  font-size: 0.67rem;
   text-align: center;
 }
 .user-ratings h4 {
@@ -350,22 +360,18 @@ main {
 #main-footer .footer-links #main-footer a {
   text-decoration: none;
 }
-#main-footer > span:last-of-type {
+#main-footer ._mkti-brand {
   width: 100%;
   position: absolute;
   bottom: 0;
   left: 0;
-  font-size: 0.5rem;
+  font-size: 0.55rem;
   line-height: 2.5em;
   text-align: center;
   background: #8991a0;
 }
 
-/*
-************************************
-***            login             ***
-************************************
-*/
+/* =============== login =============== */
 .iniciar-sessao {
   overflow: hidden;
   max-height: 100% !important;
@@ -461,6 +467,11 @@ main {
   display: inline-block;
 }
 
+/* TODO: Div aparecendo em login!?*/
+#login > *:not(header, main) {
+  display: none !important;
+}
+
 /*
 *************************************
 ***     esqueci-a-senha.html      ***
@@ -468,12 +479,17 @@ main {
 */
 #esqueceu-a-senha main .lado-direito {
   height: max-content !important;
-  min-height: 75% !important;
 }
 
+#codigo-de-confirmacao {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.7rem !important;
+}
 #codigo-de-confirmacao input {
   max-width: 60px;
-  height: 5rem;
+  height: 4.5rem;
   margin: auto;
   max-height: 60px;
   text-align: center;
@@ -737,40 +753,41 @@ body.home-page {
   /* Progrsso circular*/
 }
 #score .descricao-score {
+  display: block;
+  width: 100%;
   font-family: "Poppins";
   font-size: 0.65rem;
   line-height: 2.5;
   text-align: center;
-  display: block;
-  width: 100%;
   background: #a0facd;
   border-radius: 0.75rem;
 }
-#score .skill {
-  width: 60% !important;
+#score .progress-circle {
   box-sizing: border-box;
-  margin: auto;
+}
+#score .skill {
+  width: 160px !important;
+  height: 160px !important;
+  box-sizing: border-box;
+  margin: 0.75rem auto;
   position: relative;
 }
 @media only screen and (max-width: 400px) {
-  #score .skill {
-    width: 85% !important;
-  }
   #score #numbers h4 {
-    font-size: 0.8rem !important;
+    font-size: 1.25rem !important;
   }
   #score #numbers h5 {
-    font-size: 0.6rem !important;
+    font-size: 1rem !important;
   }
   #score #score .descricao-score {
     font-size: 0.5rem;
   }
 }
 #score .outer {
-  height: 100%;
-  width: 100%;
+  height: 160px;
+  width: 160px;
   box-sizing: border-box;
-  padding: 15%;
+  padding: 25px;
   border-radius: 50%;
   background-color: #eff3fe;
 }
@@ -806,8 +823,9 @@ body.home-page {
 }
 #score .skill svg {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  box-sizing: border-box;
+  width: 160px;
+  height: 160px;
   top: 0;
   left: 0;
   overflow: visible;
@@ -815,21 +833,15 @@ body.home-page {
 }
 #score .skill circle {
   fill: none;
-  width: 100%;
-  height: 100px;
+  width: 180px;
+  height: 180px;
   stroke: url(#GradientColor);
-  stroke-width: 30px;
-  stroke-dasharray: 450;
-  stroke-dashoffset: 450;
+  stroke-width: 32px;
+  stroke-dasharray: 440;
+  stroke-dashoffset: var(--progresso-circular);
   /* stroke-linecap: round; */
-  animation: anim 2s linear forwards;
 }
 
-@keyframes anim {
-  100% {
-    stroke-dashoffset: var(--progresso-circular);
-  }
-}
 .informacao-sobre {
   position: absolute;
   top: 0.6rem;
@@ -846,8 +858,17 @@ body.home-page {
 ***     Ultimos artigos     ***
 *******************************
 */
+#ultimos-artigos > div {
+  height: 100%;
+  align-items: center;
+}
+#ultimos-artigos > div a {
+  text-decoration: underline;
+}
+
 figure.artigo-usuario {
   position: relative;
+  height: max-content;
   overflow: hidden;
   border-radius: 0.5rem;
   padding: 0;
@@ -897,9 +918,9 @@ figure.artigo-usuario .descricao-artigo {
 .home-page .product-area .products .card {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   border: none;
-  border-radius: 0 !important;
   box-shadow: none;
   padding: 0;
+  padding-bottom: 0.25rem;
 }
 .home-page .product-area .products .card button,
 .home-page .product-area .products .card a {
@@ -919,7 +940,6 @@ figure.artigo-usuario .descricao-artigo {
 }
 
 /* Classificado*/
-.home-page .product-area .classificado,
 .classificado {
   box-sizing: border-box;
   max-width: 90%;
@@ -928,27 +948,32 @@ figure.artigo-usuario .descricao-artigo {
   margin: 0.1rem 0 0;
   padding: 0;
 }
-.home-page .product-area .classificado ul,
 .classificado ul {
   display: grid;
   grid-template-columns: repeat(5, 1fr) !important;
+  gap: 0.25rem;
   max-height: 1.2rem;
   box-sizing: border-box;
   margin: 0;
 }
-.home-page .product-area .classificado .estrelar,
 .classificado .estrelar {
   box-sizing: border-box;
   background: url(./../image/estrela.svg) no-repeat center;
   background-size: contain;
 }
-.home-page .product-area .classificado .estrelado,
 .classificado .estrelado {
   background-image: url(./../image/estrelado.svg) !important;
 }
 
+.classificar li:hover {
+  cursor: pointer;
+}
+
 .home-page .product-area .classificacao-geral {
   font-size: 0.75rem;
+  white-space: nowrap;
+  color: #000;
+  min-width: max-content;
 }
 
 /*
@@ -1076,8 +1101,9 @@ figure.artigo-usuario .descricao-artigo {
 *****************************
 */
 #conf-page #graficos-usuario {
+  flex-wrap: nowrap;
   justify-content: space-between;
-  gap: 0 !important;
+  gap: 0.75rem !important;
 }
 
 #conf-page .area-de-conteudo {

@@ -98,24 +98,26 @@
 	}
 
 	/* Configuracooes*/
-	#conf-page #conteudo-principal #graficos-usuario > div:first-child {
-		padding: 0.5rem !important;
+	#conf-page {
+		#conteudo-principal #graficos-usuario > div:first-child {
+			padding: 0.5rem !important;
 
-		font-size: 1rem !important;
-		line-height: 1.5 !important;
-	}
+			font-size: 1rem !important;
+			line-height: 1.5 !important;
+		}
 
-	#conf-page .consulta {
-		padding: 0.75rem 0.5rem !important;
-	}
+		.consulta {
+			padding: 0.75rem 0.5rem !important;
+		}
 
-	#conf-page .nome-consulta {
-		margin: auto 0;
-		font-size: 0.85rem !important;
-	}
+		.nome-consulta {
+			margin: auto 0;
+			font-size: 0.85rem !important;
+		}
 
-	#conf-page .data-consulta {
-		width: max-content !important;
+		.data-consulta {
+			width: max-content !important;
+		}
 	}
 
 	/* artigo*/
@@ -173,7 +175,10 @@
 
 @media (min-width: 575.98px) {
 	.products .card {
-		border: 2px solid $card-border-color;
+		border: 2px solid $card-border-color !important	;
+		.card__image {
+			margin-top: 0.75rem;
+		}
 	}
 
 	#main-footer .footer-links > div > li {
@@ -297,14 +302,18 @@
 		margin-bottom: 10px;
 	}
 
-	#main-footer > span:last-of-type {
-		font-size: 10px;
-		line-height: 2.3em;
+	._mkti-brand {
+		font-size: 0.65rem !important;
+		line-height: 2.3em !important;
 	}
 }
 
 /* Medium devices (tablets, less than 992px) */
 @media (min-width: 991.98px) {
+	._container--shadow-md {
+		box-shadow: $box-shadow;
+		background: #000 !important;
+	}
 	/* Conteúdo pós-cabeçalho */
 	.main-carousel {
 		height: 580px;

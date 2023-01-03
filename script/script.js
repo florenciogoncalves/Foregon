@@ -8,7 +8,7 @@ const erros = [];
 try {
 	document.body.style.setProperty(
 		"--header-height",
-		getComputedStyle(document.getElementById("main-header")).height
+		getComputedStyle(document.querySelector(".main-header")).height
 	);
 } catch (error) {
 	erros.push(error);
@@ -86,7 +86,9 @@ try {
 
 			//Mostra carroussel na posição X e seu repetivo indicativo
 			quantidadeCarrousseis[contadorCarroussel].classList.add("current-slide");
-			navegacaoCarroussel.children[contadorCarroussel].classList.add("current-slide__demarcation");
+			navegacaoCarroussel.children[contadorCarroussel].classList.add(
+				"current-slide__demarcation"
+			);
 
 			clearInterval(timerCarroussel);
 			carroussel();
@@ -147,32 +149,13 @@ try {
 /*Setar altura de um quadrado*/
 try {
 	const progressContainer = document.querySelector(".skill");
-	let alturaContainer = getComputedStyle(progressContainer).width;
-	progressContainer.style.height = alturaContainer;
-	progressContainer
-		.querySelector("circle")
-		.setAttribute("cx", parseInt(alturaContainer) / 2);
-	progressContainer
-		.querySelector("circle")
-		.setAttribute("cy", parseInt(alturaContainer) / 2);
-	let raio = parseInt(alturaContainer) / 2;
-	progressContainer.querySelector("circle").setAttribute("r", raio);
-	console.log(raio);
-	progressContainer
-		.querySelector("circle")
-		.setAttribute(
-			"style",
-			"stroke-width: " +
-				(parseInt(alturaContainer) / 2) * 0.18 +
-				"px !important"
-		);
-	console.log(">" + parseInt(alturaContainer) * 0.1875);
-	progressContainer
-		.querySelector("circle")
-		.setAttribute("style", "stroke-dasharray: " + raio * 2 * Math.PI + "px");
-	progressContainer
-		.querySelector("circle")
-		.setAttribute("style", "stroke-dashoffset: " + raio * 2 * Math.PI + "px");
+	const progressFather = progressContainer.parentNode;
+	progressContainer.style.display = "none";
+	progressContainer.style.zoom =
+		parseInt(getComputedStyle(progressFather).width) / 220;
+	progressContainer.style.display = "flex";
+	if (parseInt(getComputedStyle(progressFather).width) / 220 > 1)
+		progressContainer.style.zoom = 1;
 
 	let addEvent = function (elem, type, eventHandle) {
 		if (elem == null || typeof elem == "undefined") return;
@@ -186,26 +169,10 @@ try {
 	};
 
 	addEvent(window, "resize", function () {
-		let alturaContainer = getComputedStyle(progressContainer).width;
-		progressContainer.style.height = alturaContainer;
-		progressContainer
-			.querySelector("circle")
-			.setAttribute("cx", parseInt(alturaContainer) / 2);
-		progressContainer
-			.querySelector("circle")
-			.setAttribute("cy", parseInt(alturaContainer) / 2);
-		let raio = parseInt(alturaContainer) / 2;
-		progressContainer.querySelector("circle").setAttribute("r", raio);
-		console.log(raio);
-		progressContainer
-			.querySelector("circle")
-			.setAttribute(
-				"style",
-				"stroke-width: " +
-					(parseInt(alturaContainer) / 2) * 0.18 +
-					"px !important"
-			);
-		console.log(">" + parseInt(alturaContainer) * 0.1875);
+		progressContainer.style.zoom =
+			parseInt(getComputedStyle(progressFather).width) / 260;
+		if (parseInt(getComputedStyle(progressFather).width) / 220 > 1)
+			progressContainer.style.zoom = 1;
 	});
 } catch (error) {
 	erros.push(error);
@@ -214,24 +181,11 @@ try {
 // Reajuste de tamanho do progresso circular
 function setProgressVal(achieved, total) {
 	const numbers = document.getElementById("numbers");
-	let percentual = 252 - (((achieved * 100) / 1000) * 252) / 100;
-	console.log(percentual);
+	let percentual = 440 - (((achieved * 100) / 1000) * 440) / 100;
 	document.body.style.setProperty("--progresso-circular", percentual);
 
-	count = 0;
-	setInterval(() => {
-		if (count >= 100) {
-			clearInterval;
-		} else {
-			count += 1;
-			numbers.querySelector("h4").innerHTML = `${Math.round(
-				(achieved / 100) * count
-			)}`;
-			numbers.querySelector("h5").innerHTML = `De ${Math.round(
-				(total / 100) * count
-			)}`;
-		}
-	}, 20);
+	numbers.querySelector("h4").innerHTML = `${achieved}`;
+	numbers.querySelector("h5").innerHTML = `De ${total}`;
 }
 
 /*

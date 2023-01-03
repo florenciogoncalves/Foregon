@@ -60,7 +60,7 @@ if (isset($_SESSION['userActive'])) {
       <section id="graficos-usuario" class="row p-0 gap-2 gap-sm-3 mt-4 mb-3">
         <div id="score" class="area-de-conteudo p-2 p-sm-3 col-5 col-lg-4 p-0 gap-2">
           <h3 class="titulo">Seu score</h3>
-          <div class="w-100 d-flex">
+          <div class="progress-circle w-100 d-flex">
             <div class="skill w-75">
               <div class="outer">
                 <div class="inner">
@@ -133,7 +133,7 @@ if (isset($_SESSION['userActive'])) {
                     </ul>
                     <span class="classificacao-geral col-2">4,2</span>
                   </div>
-                  <p>
+                  <p class="card__description">
                     Lorem ipsum dolor sit amet, consectetur adipis cing elit
                     consectetur adipis cing elit.
                   </p>
@@ -161,7 +161,7 @@ if (isset($_SESSION['userActive'])) {
                     </ul>
                     <span class="classificacao-geral col-2">4,2</span>
                   </div>
-                  <p>
+                  <p class="card__description">
                     Lorem ipsum dolor sit amet, consectetur adipis cing elit
                     consectetur adipis cing elit.
                   </p>
@@ -189,7 +189,7 @@ if (isset($_SESSION['userActive'])) {
                     </ul>
                     <span class="classificacao-geral col-2">4,2</span>
                   </div>
-                  <p>
+                  <p class="card__description">
                     Lorem ipsum dolor sit amet, consectetur adipis cing elit
                     consectetur adipis cing elit.
                   </p>
