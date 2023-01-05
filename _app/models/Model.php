@@ -80,6 +80,7 @@ abstract class Model extends connect
         return $this;
     }
 
+
     /**
      * @param int $id
      * @param string $columns
@@ -148,7 +149,7 @@ abstract class Model extends connect
         return $stmt->rowCount();
     }
 
-    protected function create(array $data): ?int
+    protected function create(array $data): PDOException|int
     {
         try {
 
@@ -160,12 +161,13 @@ abstract class Model extends connect
             $stmt->execute($this->filter($data));
             return $this->connect->lastInsertId();
         } catch (\PDOException $exception) {
-            return null;
+
+            return $exception;
         }
     }
 
 
-    protected function update(array $data, string $terms, string $params): ?int
+    protected function update(array $data, string $terms, string $params)
     {
         try {
 
@@ -176,12 +178,15 @@ abstract class Model extends connect
             $dataSet = implode(", ", $dataSet);
             parse_str($params, $params);
 
+    
+
 
             $stmt = $this->connect->prepare("UPDATE {$this->entity} SET {$dataSet} WHERE {$terms}");
             $stmt->execute($this->filter(array_merge($data, $params)));
             return ($stmt->rowCount() ?? 1);
         } catch (\PDOException $exception) {
-            return null;
+            // return null;
+            return $exception->getMessage();
         }
     }
 

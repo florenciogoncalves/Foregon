@@ -24,9 +24,7 @@
 		<link rel="stylesheet" href="./../style/responsive.css" />
 	</head>
 	<!-- Relativo ao 'Seu score': No evento onload da tag body, defina dois parametros, o primeiro referente ao total positivo, e o segundo referente ao somatorio total -->
-	<body
-		id="artigo-page"
-		class="__admin home-page container-fluid d-flex d-lg-grid">
+	<body id="artigo-page" class="home-page container-fluid d-flex d-lg-grid">
 		<nav id="menu-lateral" class="navbar col sticky-bottom py-2 px-4">
 			<div class="logo d-none d-lg-flex">
 				<a href="./" class="logo d-none d-lg-flex">
@@ -36,7 +34,7 @@
 			<ul
 				class="navegacao row p-0 px-sm-4 mb-0 col-12 gap-2 justify-content-between">
 				<li class="col px-0 py-2 rounded-3">
-					<a href="./index.html"
+					<a href="./index.php"
 						><img
 							class="img-fluid m-auto d-flex"
 							src="./../image/icones-do-menu/home.svg"
@@ -44,33 +42,15 @@
 					/></a>
 				</li>
 				<li class="col px-0 py-2 rounded-3">
-					<a href="./produtos.html"
+					<a href="./produtos.php"
 						><img
 							class="img-fluid m-auto d-flex"
 							src="./../image/icones-do-menu/produtos.svg"
 							alt="products"
 					/></a>
 				</li>
-
 				<li class="col px-0 py-2 rounded-3">
-					<a href="./clientes.html"
-						><img
-							class="img-fluid m-auto d-flex"
-							src="./../image/icones-do-menu/cliente.svg"
-							alt="Clientes"
-					/></a>
-				</li>
-				<li class="col px-0 py-2 rounded-3">
-					<a href="./consultas.html"
-						><img
-							class="img-fluid m-auto d-flex"
-							src="./../image/icones-do-menu/consulta.svg"
-							alt="Consulta"
-					/></a>
-				</li>
-
-				<li class="col px-0 py-2 rounded-3">
-					<a href="./configuracoes.html"
+					<a href="./configuracoes.php"
 						><img
 							class="img-fluid m-auto d-flex"
 							src="./../image/icones-do-menu/configuracoes.svg"
@@ -78,7 +58,7 @@
 					/></a>
 				</li>
 				<li class="col px-0 py-2 rounded-3" id="vizualizando">
-					<a href="./blog.html"
+					<a href="./blog.php"
 						><img
 							class="img-fluid m-auto d-flex"
 							src="./../image/icones-do-menu/blog-white.svg"
@@ -108,10 +88,9 @@
 							alt="Imagem do artigo" />
 						<figcaption>
 							<h3 class="nome">Lorem Ipsum exemplo</h3>
-							<span class="__author">Lorem Ipsum</span>
+							<a href="./autor.php" class="__author">Lorem Ipsum</a>
 							<span class="publicado-em">Publicado em 01/01/2004 ás 00:30</span>
 						</figcaption>
-						<button class="btn-editar-produto"></button>
 					</figure>
 
 					<p class="artigo-mensagem px-2 p-lg-0">
@@ -147,6 +126,10 @@
 						<button class="artigo-partilhas">150</button>
 					</div>
 				</section>
+
+				<div class="back-btn col-1 d-none mx-auto d-lg-flex">
+					<button onclick="window.history.back()" type="button"></button>
+				</div>
 
 				<section
 					id="graficos-usuario"
@@ -191,70 +174,6 @@
 				</section>
 			</div>
 		</main>
-
-		<div id="modal-editar-produto">
-			<div class="modal__container row m-auto">
-				<form id="card-produto" class="area-de-conteudo px-4 py-4 col-9 m-auto">
-					<figure class="p-0 m-0 row gap-2">
-						<div class="img on-produto col-12 px-0">
-							<img
-								src="./../image/artigo_admin.svg"
-								alt="Minha Bufunfa"
-								class="card__image img-fluid"
-								id="preview_image" />
-							<img
-								src="./../image/broken-image.svg"
-								alt="broken"
-								class="broken" />
-							<input id="imagem-produto" type="file" accept="image/*" />
-						</div>
-						<figcaption class="container col-12 px-0 px-lg-3">
-							<fieldset class="row mb-2">
-								<div class="col-7 row p-0">
-									<label class="valor-label px-0 col-12">Título</label>
-									<input
-										type="text"
-										name="titulo"
-										id="titulo"
-										placeholder="Lorem ipsum"
-										required />
-								</div>
-
-								<div class="col row p-0">
-									<label class="valor-label px-0 col-12">Escritor</label>
-									<input
-										type="text"
-										name="escritor"
-										id="escritor"
-										placeholder="Lorem ipsum"
-										required />
-								</div>
-							</fieldset>
-
-							<fieldset class="row mb-2">
-								<label class="p-0 valor-label" for="texto">Texto</label>
-								<textarea
-									name="texto"
-									id="texto"
-									rows="6"
-									required
-									placeholder="Lorem ipsum dolor sit amet. Non ullam Quis eos quisquam voluptatem quo molestiae quam ut molestiae doloribus aut animi culpa ut galisum quia ut obcaecati quia. Qui porro consequatur sed minima cupiditate aut aliquam labore ut asperiores exercitationem"></textarea>
-							</fieldset>
-
-							<fieldset class="gap-2 col-11 row mt-2 mt-lg-auto mx-auto">
-								<button
-									type="reset"
-									class="btn-primary btn btn-primary btn-editar-produto">
-									Cancelar
-								</button>
-								<button class="btn btn-primary" type="submit">Salvar</button>
-							</fieldset>
-						</figcaption>
-					</figure>
-				</form>
-				<button></button>
-			</div>
-		</div>
 
 		<script src="./../script/script.js"></script>
 	</body>

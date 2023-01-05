@@ -51,4 +51,28 @@ class User extends connect
     {
         return $this->logged;
     }
+    public function updateStore(string $descricao, int $valor, string $photo, int $id): bool
+    {
+        $query = $this->connect->prepare("UPDATE produtos SET descricao_produto = ?, valor = ?, foto_produto = ? WHERE id = ?");
+        $query->bindParam(1, $descricao);
+        $query->bindParam(2, $valor);
+        $query->bindParam(3, $photo);
+        $query->bindParam(4, $id);
+
+        if ($query->execute()) {
+            return true;
+        }
+        return false;
+    }
+
+    public function oldPic(int $id)
+    {
+        $query = $this->connect->prepare("SELECT foto_produto FROM produtos WHERE id = ?");
+        $query->bindParam(1, $id);
+        $query->execute();
+
+        foreach ($query->fetch(PDO::FETCH_ASSOC) as $pic) {
+            return $pic;
+        }
+    }
 }

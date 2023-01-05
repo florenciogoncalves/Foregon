@@ -39,9 +39,19 @@ function max_size_allowed($file): bool
     return true;
 }
 
-function rename_image($file): string
+function rename_image($file, $name = "FP", int $seconds = 60): string
 {
-    return time() . mb_strstr($file, '.');
+    return $name . " - " . date('Ymd') . time() + $seconds . mb_strstr($file, '.');
+}
+
+function createFolder(string $name = 'produtos'): bool
+{
+    if (is_file(__DIR__ . "/../../_storage/{$name}") || is_dir(__DIR__ . "/../../_storage/{$name}")) {
+        return false;
+    } else {
+        mkdir(__DIR__ . "/../../_storage/{$name}", 0755);
+        return true;
+    }
 }
 
 function uploader($origin, $destination): bool
@@ -59,10 +69,6 @@ function generateVerificationCode(): int
     return random_int(1000, 9999);
 }
 
-function UserAge(int $bornYear): int|null
-{
-    return date('Y') - $bornYear;
-}
 
 function dispatch()
 {
@@ -103,4 +109,13 @@ function codeGenerator(): int
 function generateToken()
 {
     return sha1(uniqid(mt_rand(), true));
+}
+function convertToBRL($number)
+{
+    return number_format($number, 2, ',', '.');
+}
+
+function remove(string $file)
+{
+    unlink(__DIR__ . "/../../_storage/produtos/{$file}");
 }
