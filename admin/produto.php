@@ -110,7 +110,7 @@ $_SESSION['id'] = $id;
 								<?= str_limit_words($Produto->descricao_produto, 50); ?>
 							</p>
 							<span class="valor-label">Valor:</span>
-							<h6 class="valor">R$ <span class="monetize"><?= $Produto->valor; ?></span></h6>
+							<h6 class="valor">R$ <span class="monetize"><?= convertToBRL($Produto->valor); ?></span></h6>
 							<button class="btn-primary btn btn-primary btn-editar-produto">
 								Editar
 							</button>

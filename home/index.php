@@ -3,6 +3,8 @@ session_start();
 if (isset($_SESSION['userActive'])) {
   $user = $_SESSION['userActive'];
 }
+require __DIR__ . "/app/Models/produtosModel.php";
+require __DIR__ . "/../_app/boot/helpers.php";
 ?>
 
 <!DOCTYPE html>
@@ -28,21 +30,21 @@ if (isset($_SESSION['userActive'])) {
   <nav id="menu-lateral" class="navbar col sticky-bottom py-2 px-4">
     <div class="logo d-none d-lg-flex">
       <a href="./" class="logo d-none d-lg-flex">
-				<img src="./../image/Minha-bufunfa-pequeno.svg" alt="Minha Bufunfa" />
-			</a>
+        <img src="./../image/Minha-bufunfa-pequeno.svg" alt="Minha Bufunfa" />
+      </a>
     </div>
     <ul class="navegacao row p-0 px-sm-4 mb-0 col-12 gap-2 justify-content-between">
       <li class="col px-0 py-2 rounded-3" id="vizualizando">
-        <a href="./index.html"><img class="img-fluid m-auto d-flex" src="./../image/icones-do-menu/home-white.svg" alt="home" /></a>
+        <a href="./index.php"><img class="img-fluid m-auto d-flex" src="./../image/icones-do-menu/home-white.svg" alt="home" /></a>
       </li>
       <li class="col px-0 py-2 rounded-3">
-        <a href="./produtos.html"><img class="img-fluid m-auto d-flex" src="./../image/icones-do-menu/produtos.svg" alt="products" /></a>
+        <a href="./produtos.php"><img class="img-fluid m-auto d-flex" src="./../image/icones-do-menu/produtos.svg" alt="products" /></a>
       </li>
       <li class="col px-0 py-2 rounded-3">
-        <a href="./configuracoes.html"><img class="img-fluid m-auto d-flex" src="./../image/icones-do-menu/configuracoes.svg" alt="configurações" /></a>
+        <a href="./configuracoes.php"><img class="img-fluid m-auto d-flex" src="./../image/icones-do-menu/configuracoes.svg" alt="configurações" /></a>
       </li>
       <li class="col px-0 py-2 rounded-3">
-        <a href="./blog.html"><img class="img-fluid m-auto d-flex" src="./../image/icones-do-menu/blog.svg" alt="blog" /></a>
+        <a href="./blog.php"><img class="img-fluid m-auto d-flex" src="./../image/icones-do-menu/blog.svg" alt="blog" /></a>
       </li>
       <li class="logout col px-0 py-2">
         <a href="./logout.php">
@@ -95,7 +97,7 @@ if (isset($_SESSION['userActive'])) {
             <figure class="artigo-usuario col-12 col-lg mb-2 my-3">
               <img class="img-fluid m-auto d-flex" src="./../arquivos-temporarios/artigo-img.png" alt="Imagem" />
               <figcaption>
-                <a href="./artigo.html" class="ver-mais">Ver mais</a>
+                <a href="./artigo.php" class="ver-mais">Ver mais</a>
               </figcaption>
               <span class="descricao-artigo">Post de lorem</span>
             </figure>
@@ -103,7 +105,7 @@ if (isset($_SESSION['userActive'])) {
             <figure class="artigo-usuario d-none d-lg-block col-12 col-lg mb-2 my-3">
               <img class="img-fluid m-auto d-flex" src="./../arquivos-temporarios/artigo-img.png" alt="Imagem" />
               <figcaption>
-                <a href="./artigo.html" class="ver-mais">Ver mais</a>
+                <a href="./artigo.php" class="ver-mais">Ver mais</a>
               </figcaption>
               <span class="descricao-artigo">Post de lorem</span>
             </figure>
@@ -118,89 +120,41 @@ if (isset($_SESSION['userActive'])) {
         <div class="products container-fluid pb-3 px-0 mt-4 col-lg-11">
 
           <ul class="row gap-3 gap-sm-2 gap-md-3 col-12 col-xs-8 col-sm-12 col-lg-9 justify-content-center row-cols-3 p-sm-3">
-            <!-- Item - Cartão produto -->
-            <li class="card col-10 col-sm rounded-1 row">
-              <figure class="p-0 pt-3 px-sm-0 px-lg-3 pb-1">
-                <img src="./../image/card-mcx.svg" alt="Minha Bufunfa" class="card__image img-fluid w-50" />
-                <figcaption class="container">
-                  <h4 class="card__title">Lorem Ipsum</h4>
-                  <span class="card__subtitle">Visa</span>
-                  <div class="classificado">
-                    <ul class="estrelas col-8 h-100">
-                      <li class="estrelar estrelado col"></li>
-                      <li class="estrelar estrelado col"></li>
-                      <li class="estrelar estrelado col"></li>
-                      <li class="estrelar estrelado col"></li>
-                      <li class="estrelar col"></li>
-                    </ul>
-                    <span class="classificacao-geral col-2">4,2</span>
-                  </div>
-                  <p class="card__description">
-                    Lorem ipsum dolor sit amet, consectetur adipis cing elit
-                    consectetur adipis cing elit.
-                  </p>
-                  <a href="./produto.html" class="btn-primary btn btn-primary">
-                    Adquirir
-                  </a>
-                </figcaption>
-              </figure>
-            </li>
 
-            <!-- Item - Cartão produto -->
-            <li class="card col-10 col-sm rounded-1 row">
-              <figure class="p-0 pt-3 pb-1 px-sm-0 px-lg-3">
-                <img src="./../image/card-mcx.svg" alt="Minha Bufunfa" class="card__image img-fluid w-50" />
-                <figcaption class="container">
-                  <h4 class="card__title">Lorem Ipsum</h4>
-                  <span class="card__subtitle">Visa</span>
-                  <div class="classificado">
-                    <ul class="estrelas col-8 h-100">
-                      <li class="estrelar estrelado col"></li>
-                      <li class="estrelar estrelado col"></li>
-                      <li class="estrelar estrelado col"></li>
-                      <li class="estrelar estrelado col"></li>
-                      <li class="estrelar col"></li>
-                    </ul>
-                    <span class="classificacao-geral col-2">4,2</span>
-                  </div>
-                  <p class="card__description">
-                    Lorem ipsum dolor sit amet, consectetur adipis cing elit
-                    consectetur adipis cing elit.
-                  </p>
-                  <a href="./produto.html" class="btn-primary btn btn-primary">
-                    Adquirir
-                  </a>
-                </figcaption>
-              </figure>
-            </li>
 
-            <!-- Item - Cartão produto -->
-            <li class="card col-10 col-sm rounded-1 row">
-              <figure class="p-0 pt-3 pb-1 px-sm-0 px-lg-3">
-                <img src="./../image/card-mcx.svg" alt="Minha Bufunfa" class="card__image img-fluid w-50" />
-                <figcaption class="container">
-                  <h4 class="card__title">Lorem Ipsum</h4>
-                  <span class="card__subtitle">Visa</span>
-                  <div class="classificado">
-                    <ul class="estrelas col-8 h-100">
-                      <li class="estrelar estrelado col"></li>
-                      <li class="estrelar estrelado col"></li>
-                      <li class="estrelar estrelado col"></li>
-                      <li class="estrelar estrelado col"></li>
-                      <li class="estrelar col"></li>
-                    </ul>
-                    <span class="classificacao-geral col-2">4,2</span>
-                  </div>
-                  <p class="card__description">
-                    Lorem ipsum dolor sit amet, consectetur adipis cing elit
-                    consectetur adipis cing elit.
-                  </p>
-                  <a href="./produto.html" class="btn-primary btn btn-primary">
-                    Adquirir
-                  </a>
-                </figcaption>
-              </figure>
-            </li>
+            <?php
+            $produtos = new produtosModel();
+            foreach ($produtos->findProducts(true) as $produto) :
+            ?>
+              <!-- Item - Cartão produto -->
+              <li class="card col-10 col-sm rounded-1 row">
+                <figure class="p-0 pt-3 pb-1 px-sm-0 px-lg-3">
+                  <img src="./../_storage/produtos/<?= $produto['foto_produto']; ?>" alt="Minha Bufunfa" class="card__image img-fluid w-50" />
+                  <figcaption class="container">
+                    <h4 class="card__title"><?= $produto['nome_produto']; ?></h4>
+                    <span class="card__subtitle">Visa</span>
+                    <div class="classificado">
+                      <ul class="estrelas col-8 h-100">
+                        <li class="estrelar estrelado col"></li>
+                        <li class="estrelar estrelado col"></li>
+                        <li class="estrelar estrelado col"></li>
+                        <li class="estrelar estrelado col"></li>
+                        <li class="estrelar col"></li>
+                      </ul>
+                      <span class="classificacao-geral col-2">4,2</span>
+                    </div>
+                    <p class="card__description">
+                      <?= str_limit_words($produto['descricao_produto'], 10); ?>
+                    </p>
+                    <a href="./produto.php?id=<?= $produto['id']; ?>" class="btn-primary btn btn-primary">
+                      Adquirir
+                    </a>
+                  </figcaption>
+                </figure>
+              </li>
+            <?php
+            endforeach;
+            ?>
           </ul>
         </div>
 
