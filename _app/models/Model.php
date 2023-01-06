@@ -28,6 +28,13 @@ abstract class Model extends connect
     protected $limit;
 
     /**
+     * @var int
+     */
+
+    protected $offset;
+
+
+    /**
      * @var string
      */
     protected $entity;
@@ -112,6 +119,12 @@ abstract class Model extends connect
         return $this;
     }
 
+    public function offset(int $offset): Model
+    {
+        $this->offset = " OFFSET {$offset}";
+        return $this;
+    }
+
     /**
      * @param bool $all
      * @return null|array|mixed|Model
@@ -120,7 +133,7 @@ abstract class Model extends connect
     public function fetch(bool $all = false)
     {
         try {
-            $stmt = $this->connect->prepare($this->query . $this->order . $this->limit);
+            $stmt = $this->connect->prepare($this->query . $this->order . $this->limit . $this->offset);
             $stmt->execute($this->params);
 
             if (!$stmt->rowCount()) {
@@ -178,7 +191,7 @@ abstract class Model extends connect
             $dataSet = implode(", ", $dataSet);
             parse_str($params, $params);
 
-    
+
 
 
             $stmt = $this->connect->prepare("UPDATE {$this->entity} SET {$dataSet} WHERE {$terms}");
