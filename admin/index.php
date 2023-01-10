@@ -41,7 +41,7 @@ session_start();
           <h1 class="mt-1 mt-lg-0">Acesse sua conta</h1>
           <span class="w-100 d-block">Lorem ipsum dolor sit amet, consectetur adipis cing elit
             consectetur adipis cing elit.</span>
-          <form class="needs-validation row p-0" method="POST" action="./../_app/controllers/loginController.php" novalidate>
+          <form class="needs-validation row p-0" method="POST" action="./app/Controllers/loginController.php" novalidate>
 
             <?php
             if (isset($_SESSION['message'])) :
@@ -58,12 +58,12 @@ session_start();
               <input type="email" name="email" id="email" placeholder="Endereço de email" class="form-control form-control-md" required value="" />
             </div>
             <div class="mb-2 form-group">
-              <input type="password" name="password" id="password" placeholder="********" class="form-control form-control-md" required maxlength="8"/>
+              <input type="password" name="password" id="password" placeholder="********" class="form-control form-control-md" required maxlength="8" />
             </div>
 
             <div class="mb-3 d-sm-flex justify-content-between form-group form-check">
               <label for="salvar-login"><input type="checkbox" name="salvar-login" class="form-check-input" id="salvar-login" />Salvar login</label>
-              <a class="d-none d-sm-flex _text--underline" href="./../esqueceu-a-senha.html">Esqueci minha senha</a>
+              <a class="d-none d-sm-flex _text--underline" href="./../esqueceu-a-senha.php">Esqueci minha senha</a>
             </div>
 
             <button type="submit" class="btn btn-md btn-primary m-auto mt-sm-2" name="submit" type="submit">
@@ -73,7 +73,7 @@ session_start();
 
           <span class="d-none d-sm-grid mt-3 mb-2 text-center">Não tem uma conta? Cadastre-se gratuitamente.</span>
 
-          <a class="d-flex mt-3 p-0 col-auto mx-auto _text--underline" href="./../cadastro.php">Criar minha conta</a>
+          <a class="d-flex mt-3 p-0 col-auto mx-auto _text--underline" href="./cadastro.php">Criar minha conta</a>
         </div>
       </div>
       <a class="d-lg-none m-auto mt-3 mb-2 d-flex col-auto start-50 translate-middle _text--underline" href="./../esqueceu-a-senha.html" style="

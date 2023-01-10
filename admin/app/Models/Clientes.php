@@ -13,6 +13,6 @@ class clientesModel extends Model
      */
     public function numOfUsers(): int
     {
-        return $this->find()->count();
+        return $this->find('level != 5')->count();
     }
 }

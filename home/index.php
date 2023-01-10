@@ -2,6 +2,8 @@
 session_start();
 if (isset($_SESSION['userActive'])) {
   $user = $_SESSION['userActive'];
+} else {
+  $user = 'Guest User';
 }
 require __DIR__ . "/app/Models/produtosModel.php";
 require __DIR__ . "/../_app/boot/helpers.php";
@@ -124,36 +126,38 @@ require __DIR__ . "/../_app/boot/helpers.php";
 
             <?php
             $produtos = new produtosModel();
-            foreach ($produtos->findProducts(true) as $produto) :
+            if ($produtos->findProducts(true)) :
+              foreach ($produtos->findProducts(true) as $produto) :
             ?>
-              <!-- Item - Cartão produto -->
-              <li class="card col-10 col-sm rounded-1 row">
-                <figure class="p-0 pt-3 pb-1 px-sm-0 px-lg-3">
-                  <img src="./../_storage/produtos/<?= $produto['foto_produto']; ?>" alt="Minha Bufunfa" class="card__image img-fluid w-50" />
-                  <figcaption class="container">
-                    <h4 class="card__title"><?= $produto['nome_produto']; ?></h4>
-                    <span class="card__subtitle">Visa</span>
-                    <div class="classificado">
-                      <ul class="estrelas col-8 h-100">
-                        <li class="estrelar estrelado col"></li>
-                        <li class="estrelar estrelado col"></li>
-                        <li class="estrelar estrelado col"></li>
-                        <li class="estrelar estrelado col"></li>
-                        <li class="estrelar col"></li>
-                      </ul>
-                      <span class="classificacao-geral col-2">4,2</span>
-                    </div>
-                    <p class="card__description">
-                      <?= str_limit_words($produto['descricao_produto'], 10); ?>
-                    </p>
-                    <a href="./produto.php?id=<?= $produto['id']; ?>" class="btn-primary btn btn-primary">
-                      Adquirir
-                    </a>
-                  </figcaption>
-                </figure>
-              </li>
+                <!-- Item - Cartão produto -->
+                <li class="card col-10 col-sm rounded-1 row">
+                  <figure class="p-0 pt-3 pb-1 px-sm-0 px-lg-3">
+                    <img src="./../_storage/produtos/<?= $produto['foto_produto']; ?>" alt="Minha Bufunfa" class="card__image img-fluid w-50" />
+                    <figcaption class="container">
+                      <h4 class="card__title"><?= $produto['nome_produto']; ?></h4>
+                      <span class="card__subtitle">Visa</span>
+                      <div class="classificado">
+                        <ul class="estrelas col-8 h-100">
+                          <li class="estrelar estrelado col"></li>
+                          <li class="estrelar estrelado col"></li>
+                          <li class="estrelar estrelado col"></li>
+                          <li class="estrelar estrelado col"></li>
+                          <li class="estrelar col"></li>
+                        </ul>
+                        <span class="classificacao-geral col-2">4,2</span>
+                      </div>
+                      <p class="card__description">
+                        <?= str_limit_words($produto['descricao_produto'], 10); ?>
+                      </p>
+                      <a href="./produto.php?id=<?= $produto['id']; ?>" class="btn-primary btn btn-primary">
+                        Adquirir
+                      </a>
+                    </figcaption>
+                  </figure>
+                </li>
             <?php
-            endforeach;
+              endforeach;
+            endif;
             ?>
           </ul>
         </div>

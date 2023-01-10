@@ -1,4 +1,5 @@
 <?php
+session_start();
 require __DIR__ . "/app/Models/produtosModel.php";
 require_once __DIR__ . "/../_app/boot/helpers.php";
 $produtos = new produtosModel();
@@ -47,7 +48,16 @@ $produtos = new produtosModel();
 		</ul>
 	</nav>
 
+
 	<main id="conteudo-principal" class="col p-3 p-sm-4 pb-5 mb-3 mb-lg-0">
+
+		<?php
+		if (!$produtos->findProducts(true)) {
+			echo "<div class='alert alert-info text-center'>{$_SESSION['emptyMessage']}</div>";
+		} else {
+			unset($_SESSION['emptyMessage']);
+		}
+		?>
 		<div class="container-fluid">
 			<section id="product-area" class="product-area p-2 p-sm-3">
 				<h3 class="titulo">Nossos produtos <a href="">Ver todos</a></h3>
@@ -55,35 +65,37 @@ $produtos = new produtosModel();
 				<div class="products container-fluid pb-3 px-0 mt-4 col-lg-11">
 					<ul class="row gap-3 gap-sm-2 gap-md-3 col-12 justify-content-center row-cols-3">
 						<?php
-						foreach ($produtos->findProducts(true, 4) as $produto) :
+						if ($produtos->findProducts(true)) :
+							foreach ($produtos->findProducts(true, 4) as $produto) :
 						?>
-							<!-- Item - Cartão produto -->
-							<li class="card col-10 col-sm rounded-1 row">
-								<figure class="p-0 pt-3 px-sm-0 px-lg-3 pb-1">
-									<img src="./../_storage/produtos/<?= $produto['foto_produto']; ?>" alt="Minha Bufunfa" class="card__image img-fluid w-50" />
-									<figcaption class="container">
-										<h4 class="card__title"><?= $produto['nome_produto']; ?></h4>
-										<span>Avalie:</span>
-										<div class="classificado classificar">
-											<ul class="estrelas col-8 h-100">
-												<li class="estrelar col"></li>
-												<li class="estrelar col"></li>
-												<li class="estrelar col"></li>
-												<li class="estrelar col"></li>
-												<li class="estrelar col"></li>
-											</ul>
-										</div>
-										<p class="card__description">
-											<?= str_limit_words($produto['descricao_produto'], 16); ?>
-										</p>
-										<a href="./produto.php?id=<?= $produto['id']; ?>" class="btn-primary btn btn-primary">
-											Adquirir
-										</a>
-									</figcaption>
-								</figure>
-							</li>
+								<!-- Item - Cartão produto -->
+								<li class="card col-10 col-sm rounded-1 row">
+									<figure class="p-0 pt-3 px-sm-0 px-lg-3 pb-1">
+										<img src="./../_storage/produtos/<?= $produto['foto_produto']; ?>" alt="Minha Bufunfa" class="card__image img-fluid w-50" />
+										<figcaption class="container">
+											<h4 class="card__title"><?= $produto['nome_produto']; ?></h4>
+											<span>Avalie:</span>
+											<div class="classificado classificar">
+												<ul class="estrelas col-8 h-100">
+													<li class="estrelar col"></li>
+													<li class="estrelar col"></li>
+													<li class="estrelar col"></li>
+													<li class="estrelar col"></li>
+													<li class="estrelar col"></li>
+												</ul>
+											</div>
+											<p class="card__description">
+												<?= str_limit_words($produto['descricao_produto'], 16); ?>
+											</p>
+											<a href="./produto.php?id=<?= $produto['id']; ?>" class="btn-primary btn btn-primary">
+												Adquirir
+											</a>
+										</figcaption>
+									</figure>
+								</li>
 						<?php
-						endforeach;
+							endforeach;
+						endif;
 						?>
 					</ul>
 				</div>
@@ -95,37 +107,41 @@ $produtos = new produtosModel();
 				<div class="products container-fluid pb-3 px-0 mt-4 col-lg-11">
 					<ul class="row gap-3 gap-sm-2 gap-md-3 col-12 justify-content-center row-cols-3">
 						<?php
-						foreach ($produtos->findProducts(true) as $produto) :
+						if ($produtos->findProducts(true)) :
+							foreach ($produtos->findProducts(true) as $produto) :
 						?>
 
-							<!-- Item - Cartão produto -->
-							<li class="card col-10 col-sm rounded-1 row">
-								<figure class="p-0 pt-3 px-sm-0 px-lg-3 pb-1">
-									<img src="./../_storage/produtos/<?= $produto['foto_produto']; ?>" alt="Minha Bufunfa" class="card__image img-fluid w-50" />
-									<figcaption class="container">
-										<h4 class="card__title"><?= $produto['nome_produto']; ?></h4>
-										<span class="card__subtitle">Visa</span>
-										<div class="classificado">
-											<ul class="estrelas col-8 h-100">
-												<li class="estrelar estrelado col"></li>
-												<li class="estrelar estrelado col"></li>
-												<li class="estrelar estrelado col"></li>
-												<li class="estrelar estrelado col"></li>
-												<li class="estrelar col"></li>
-											</ul>
-											<span class="classificacao-geral col-2">4,2</span>
-										</div>
-										<p class="card__description">
-											<?= str_limit_words($produto['descricao_produto'], 16); ?>
-										</p>
-										<a href="./produto.php?id=<?= $produto['id']; ?>" class="btn-primary btn btn-primary">
-											Adquirir
-										</a>
-									</figcaption>
-								</figure>
-							</li>
+								<!-- Item - Cartão produto -->
+								<li class="card col-10 col-sm rounded-1 row">
+									<figure class="p-0 pt-3 px-sm-0 px-lg-3 pb-1">
+										<img src="./../_storage/produtos/<?= $produto['foto_produto']; ?>" alt="Minha Bufunfa" class="card__image img-fluid w-50" />
+										<figcaption class="container">
+											<h4 class="card__title"><?= $produto['nome_produto']; ?></h4>
+											<span class="card__subtitle">Visa</span>
+											<div class="classificado">
+												<ul class="estrelas col-8 h-100">
+													<li class="estrelar estrelado col"></li>
+													<li class="estrelar estrelado col"></li>
+													<li class="estrelar estrelado col"></li>
+													<li class="estrelar estrelado col"></li>
+													<li class="estrelar col"></li>
+												</ul>
+												<span class="classificacao-geral col-2">4,2</span>
+											</div>
+											<p class="card__description">
+												<?= str_limit_words($produto['descricao_produto'], 16); ?>
+											</p>
+											<a href="./produto.php?id=<?= $produto['id']; ?>" class="btn-primary btn btn-primary">
+												Adquirir
+											</a>
+										</figcaption>
+									</figure>
+								</li>
 						<?php
-						endforeach;
+							endforeach;
+						else :
+							$_SESSION['emptyMessage'] = "Nenhum Produto foi adicionado ainda.";
+						endif;
 						?>
 					</ul>
 				</div>

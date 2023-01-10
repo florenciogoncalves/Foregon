@@ -1,3 +1,11 @@
+<?php
+
+session_start();
+
+require __DIR__ . "/app/Models/Clientes.php";
+$clientes = new clientesModel();
+
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -56,7 +64,7 @@
 		<div class="container-fluid col-12 col-lg-10 m-0">
 			<section id="mensagem-rececao">
 				<h1>Que bom vê-lo novamente</h1>
-				<span class="nome-do-usuario">*Nome do user*</span>
+				<span class="nome-do-usuario"><?= $_SESSION['userActive']; ?></span>
 			</section>
 
 			<section id="graficos-usuario" class="row p-0 gap-3 gap-sm-5 mt-4 mb-3">
@@ -97,7 +105,7 @@
 					<div class="area-de-conteudo p-2 text-center">
 						<h4>Clientes</h4>
 						<hr />
-						<span class="numero-de-consultas">999</span>
+						<span class="numero-de-consultas"><?= ($clientes->numOfUsers() ?? 0); ?></span>
 					</div>
 				</div>
 			</section>

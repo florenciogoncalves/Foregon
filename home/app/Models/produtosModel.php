@@ -32,6 +32,11 @@ class produtosModel extends Model
         return $this->count();
     }
 
+    public function numOfClients(): int
+    {
+        return $this->find();
+    }
+
     /**
      * @param integer $id
      * @return iterable|object

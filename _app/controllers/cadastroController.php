@@ -14,5 +14,5 @@ if (isset($_POST['submit'])) {
 
     ((new User))->createUserAccount($nome, $email, $celular, hashPassword($senha));
     $_SESSION['userActive'] = $nome;
-    header("Location: ../../home/index.html");
+    header("Location: ../../home/index.php");
 }

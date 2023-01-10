@@ -26,7 +26,7 @@
       <h1 class="mt-1 mt-lg-0">Criar minha conta</h1>
       <span>Insira abaixo seus dados de contato abaixo para que possamos entrar
         em contato:</span>
-      <form class="needs-validation mt-4" method="POST" action="./../_app/controllers/cadastroController.php" novalidate>
+      <form class="needs-validation mt-4" method="POST" action="./app/Controllers/cadastroController.php" novalidate>
         <!-- Entranda de senha retalhada -->
         <fieldset id="campos-cadastro">
           <input type="text" name="nome" placeholder="Nome" class="form-control" required />
