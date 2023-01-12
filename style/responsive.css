@@ -30,9 +30,12 @@
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
   }
-  .user-ratings img {
-    max-width: 45% !important;
+  .user-ratings .card__image {
     margin-top: 0.25rem !important;
+    width: 18vw !important;
+    height: 18vw;
+    max-width: 18vw !important;
+    max-height: 18vw;
   }
   .user-ratings h4 {
     font-size: 0.72rem !important;

@@ -9,7 +9,7 @@
 	<link rel="shortcut icon" href="./image/favicon.svg" type="image/x-icon" />
 	<link rel="stylesheet" href="./style/reset.css" />
 	<!-- CSS only -->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
+	<link rel="stylesheet" href="./style/bootstrap.min.css">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="./style/style.css" />
 	<link rel="stylesheet" href="./style/responsive.css" />
@@ -199,7 +199,7 @@
 				<!-- Item Cartão usuário -->
 				<li class="card col-10 col-sm p-2 px-lg-3 p-md-3">
 					<figure class="col col-lg-10 m-auto">
-						<img src="./arquivos-temporarios/Ellipse 142.svg" alt="magem-de-perfil" class="rounded-circle img-fluid d-flex m-auto mb-3" />
+						<img src="./arquivos-temporarios/Ellipse 142.svg" alt="magem-de-perfil" class="card__image rounded-circle img-fluid d-flex m-auto mb-3" />
 						<figcaption>
 							<h4 class="card__title mb-2">Luiza lipsum Dollor</h4>
 							<p class="card__description">
