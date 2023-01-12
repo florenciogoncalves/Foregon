@@ -6,23 +6,7 @@
 @import "init";
 
 /* =========== Cabecalho principal =========== */
-.main-header {
-	height: max-content;
-	width: 100%;
-	z-index: 2;
-	position: absolute;
-	padding: 0.7rem;
-	top: 0;
-	box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.1);
-	border-radius: 0px 0px 1rem 1rem;
-
-	background: $color-white;
-	// Logo img
-	.main-header__logo {
-		margin: 0 auto auto;
-		height: 1rem;
-	}
-}
+@import "header";
 
 /* =============== Carroussel =============== */
 .main-carousel {
@@ -55,14 +39,21 @@
 				margin: 0 auto;
 			}
 			.current-slide__subtitle {
-				padding: 15px 0;
+				display: -webkit-box;
+				-webkit-box-orient: vertical;
+				height: 100%;
+				padding: 15px 0 0;
 				box-sizing: border-box;
+				overflow: hidden;
 
 				text-align: center;
 				font-size: 0.8rem;
 				font-weight: 400;
-
-				height: 100%;
+				-webkit-line-clamp: 10;
+				text-overflow: ellipsis;
+				& + * {
+					margin-top: 15px !important;
+				}
 			}
 			.btn-primary {
 				margin: 10px auto;
@@ -1024,11 +1015,15 @@ figure.artigo-usuario {
 }
 
 /* Produto adquirido*/
-.purchased-product .btn-primary,
-.purchased-product .btn-primary:active {
-	color: $primary-color-medium;
-	background: none !important;
-	border: 1px solid $primary-color;
+.purchased-product .btn-primary, .btn-reverse {
+	&, &:active {
+		color: $primary-color-medium !important;
+		background: none !important;
+		border: 1px solid $primary-color;
+	}
+	&:hover {
+		border-color: $primary-color-medium;
+	}
 }
 
 /* 
@@ -2065,8 +2060,8 @@ a.__author {
 		left: 0;
 
 		content: " " !important;
-		width: .85rem !important;
-		height: .85rem !important;
+		width: 0.85rem !important;
+		height: 0.85rem !important;
 
 		background: url(./../image/pessoa.svg) no-repeat !important;
 		background-size: contain !important;
@@ -2074,17 +2069,17 @@ a.__author {
 	}
 }
 
-
-._loc--index {.card {
-	background: none;
-}
-.product-area {
-	box-shadow: none !important;
-}
+._loc--index {
+	.card {
+		background: none;
+	}
+	.product-area {
+		box-shadow: none !important;
+	}
 }
 
 .estrelas {
 	width: 95%;
-	gap: .35rem !important;
+	gap: 0.35rem !important;
 	grid-template-columns: repeat(5, 1fr);
 }

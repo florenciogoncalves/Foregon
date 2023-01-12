@@ -1,0 +1,82 @@
+.main-header {
+	height: max-content;
+	width: 100%;
+	z-index: 2;
+	position: absolute;
+	padding: 0.7rem 0rem;
+	top: 0;
+	box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.1);
+	border-radius: 0px 0px 1rem 1rem;
+
+	background: $color-white;
+	// Logo img
+	.main-header__logo {
+		margin: 0 auto auto;
+		height: 1rem;
+	}
+
+	&._status--not-logged-in {
+		display: grid;
+		grid-template-columns: 1fr auto;
+		padding: 0.7rem 2.75rem !important;
+		.main-header__logo {
+			width: max-content;
+			margin: auto;
+			margin-left: 0;
+		}
+		.acess-buttons {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 0.5rem;
+			height: max-content;
+			margin: auto;
+		}
+		.btn {
+			font-size: 0.675rem;
+			font-weight: 600;
+			line-height: 2.25 !important;
+			word-wrap: nowrap;
+
+			height: max-content;
+			padding-bottom: 0rem;
+			padding-top: 0rem;
+			border-radius: var(--bs-border-radius-2xl);
+			&.btn-primary {
+				color: $color-white;
+				border: 1px solid $primary-color;
+			}
+		}
+	}
+}
+
+/* ============ Width >= 420px ============ */
+
+@media only screen and (max-width: 420px) {
+	.main-header {
+		&._status--not-logged-in {
+		padding-left: .5rem !important;
+		padding-right: .5rem !important;
+			.main-header__logo {
+				margin: auto 0 !important;
+			}
+			.acess-buttons {
+				width: 75%;
+
+				.btn {
+					width: max-content !important;
+					padding: 0 !important;
+					border: none;
+
+					font-size: 0.77rem;
+					font-weight: 500;
+					line-height: 1 !important;
+					color: #535353 !important;
+					text-decoration: underline;
+					letter-spacing: 0.025rem;
+
+					background: none;
+				}
+			}
+		}
+	}
+}

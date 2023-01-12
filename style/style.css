@@ -126,7 +126,7 @@ select option:first-child {
   width: 100%;
   z-index: 2;
   position: absolute;
-  padding: 0.7rem;
+  padding: 0.7rem 0rem;
   top: 0;
   box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.1);
   border-radius: 0px 0px 1rem 1rem;
@@ -136,7 +136,63 @@ select option:first-child {
   margin: 0 auto auto;
   height: 1rem;
 }
+.main-header._status--not-logged-in {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  padding: 0.7rem 2.75rem !important;
+}
+.main-header._status--not-logged-in .main-header__logo {
+  width: max-content;
+  margin: auto;
+  margin-left: 0;
+}
+.main-header._status--not-logged-in .acess-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+  height: max-content;
+  margin: auto;
+}
+.main-header._status--not-logged-in .btn {
+  font-size: 0.675rem;
+  font-weight: 600;
+  line-height: 2.25 !important;
+  word-wrap: nowrap;
+  height: max-content;
+  padding-bottom: 0rem;
+  padding-top: 0rem;
+  border-radius: var(--bs-border-radius-2xl);
+}
+.main-header._status--not-logged-in .btn.btn-primary {
+  color: #fff;
+  border: 1px solid #00cc66;
+}
 
+/* ============ Width >= 420px ============ */
+@media only screen and (max-width: 420px) {
+  .main-header._status--not-logged-in {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+  .main-header._status--not-logged-in .main-header__logo {
+    margin: auto 0 !important;
+  }
+  .main-header._status--not-logged-in .acess-buttons {
+    width: 75%;
+  }
+  .main-header._status--not-logged-in .acess-buttons .btn {
+    width: max-content !important;
+    padding: 0 !important;
+    border: none;
+    font-size: 0.77rem;
+    font-weight: 500;
+    line-height: 1 !important;
+    color: #535353 !important;
+    text-decoration: underline;
+    letter-spacing: 0.025rem;
+    background: none;
+  }
+}
 /* =============== Carroussel =============== */
 .main-carousel {
   display: grid;
@@ -167,12 +223,20 @@ select option:first-child {
   margin: 0 auto;
 }
 .main-carousel .container-all-slides .carousel-slide .current-slide__subtitle {
-  padding: 15px 0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  height: 100%;
+  padding: 15px 0 0;
   box-sizing: border-box;
+  overflow: hidden;
   text-align: center;
   font-size: 0.8rem;
   font-weight: 400;
-  height: 100%;
+  -webkit-line-clamp: 10;
+  text-overflow: ellipsis;
+}
+.main-carousel .container-all-slides .carousel-slide .current-slide__subtitle + * {
+  margin-top: 15px !important;
 }
 .main-carousel .container-all-slides .carousel-slide .btn-primary {
   margin: 10px auto;
@@ -1036,11 +1100,13 @@ figure.artigo-usuario .descricao-artigo {
 }
 
 /* Produto adquirido*/
-.purchased-product .btn-primary,
-.purchased-product .btn-primary:active {
-  color: #02b85d;
+.purchased-product .btn-primary, .purchased-product .btn-primary:active, .btn-reverse, .btn-reverse:active {
+  color: #02b85d !important;
   background: none !important;
   border: 1px solid #00cc66;
+}
+.purchased-product .btn-primary:hover, .btn-reverse:hover {
+  border-color: #02b85d;
 }
 
 /* 
