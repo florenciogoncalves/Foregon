@@ -23,27 +23,21 @@
   <div class="margem-topo h-100 col-md-10 col-lg-7 d-flex m-auto justify-content-center p-0">
     <div class="lado-direito col-sm-10 col-lg-8 row p-4 p-sm-5 pb-lg-4 pt-lg-4 mt-4 mt-lg-auto">
       <img class="img-fluid w-25 mt-4 mt-lg-0" src="./image/favicon.svg" alt="minha-bufunfa" />
-      <h1 class="mt-1 mt-lg-0">Criar minha conta</h1>
-      <span>Insira abaixo seus dados de contato abaixo para que possamos entrar
-        em contato:</span>
+      <h1 class="mt-1 mt-lg-2">Escolha sua senha</h1>
+      <span>Insira abaixo seus dados de contato abaixo para que possamos entrar em contato:</span>
       <form class="needs-validation mt-4" method="POST" action="./_app/controllers/cadastroController.php" novalidate>
         <!-- Entranda de senha retalhada -->
-        <fieldset id="campos-cadastro">
-          <input type="text" name="nome" placeholder="Nome" class="form-control" required />
-          <input type="email" name="email" placeholder="E-mail" class="form-control" required />
-          <input type="tel" name="celular" placeholder="Celular" class="form-control" required />
+        <fieldset id="campos-cadastro" class="mt-2 mb-1">
           <fieldset>
             <input type="password" name="senha" id="password" placeholder="Senha" class="form-control" required minlength="6" />
             <div class="invalid-feedback">A senha deve ter um mínimo de 6 caracteres</div>
-            <input type="checkbox" class="mostrar-senha" />
           </fieldset>
           <fieldset>
             <input id="confirmar-password" type="password" class="form-control" placeholder="Confirmação de senha" required minlength="6" />
-            <input type="checkbox" class="mostrar-senha" />
           </fieldset>
         </fieldset>
 
-        <button id="btn_cadastrar" class="btn btn-primary mt-4" name="submit" type="submit">Prosseguir</button>
+        <button id="btn_cadastrar" class="btn btn-primary mt-4 mb-2" name="submit" type="submit">Prosseguir</button>
       </form>
     </div>
   </div>
