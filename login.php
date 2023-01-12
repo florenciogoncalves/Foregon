@@ -15,7 +15,7 @@ session_start();
   <link rel="shortcut icon" href="./image/favicon.svg" type="image/x-icon" />
   <link rel="stylesheet" href="./style/reset.css" />
   <!-- CSS only -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
+  <link href="./../style/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="./style/style.css" />
   <link rel="stylesheet" href="./style/responsive.css" />
 </head>
@@ -58,7 +58,7 @@ session_start();
               <input type="email" name="email" id="email" placeholder="Endereço de email" class="form-control form-control-md" required value="" />
             </div>
             <div class="mb-2 form-group">
-              <input type="password" name="password" id="password" placeholder="********" class="form-control form-control-md" required maxlength="8"/>
+              <input type="password" name="password" id="password" placeholder="********" class="form-control form-control-md" required maxlength="8" />
             </div>
 
             <div class="mb-3 d-sm-flex justify-content-between form-group form-check">
