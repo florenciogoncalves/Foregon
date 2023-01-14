@@ -1147,17 +1147,23 @@ figure.artigo-usuario {
 
 .user-configurations {
 	display: flex;
+	position: relative;
 	align-items: center;
 	flex-direction: column;
+	box-sizing: border-box;
 	margin: auto;
 	height: max-content;
 	width: 50%;
 	min-width: 200px;
 	max-width: 480px;
 	.data-container {
+		position: relative;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		width: 100%;
+		box-sizing: border-box;
+		overflow: hidden;
 		input {
 			line-height: 1;
 			width: max-content;
@@ -1180,6 +1186,13 @@ figure.artigo-usuario {
 	}
 	.__user-name {
 		font-size: 1.45rem;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		max-width: 100%;
+		box-sizing: border-box;
+		text-align: left !important;
+		align-items: flex-start;
 	}
 	.__user-data {
 		display: block;
@@ -1189,6 +1202,18 @@ figure.artigo-usuario {
 	}
 	.btn-primary {
 		font-size: 0.75rem;
+		max-width: 420px;
+	}
+	&._status--edit {
+		.__user-data {
+			border-bottom: 1px solid $color-black;
+			display: grid;
+			grid-template-columns: auto 1fr;
+			margin-left: 0 !important;
+			padding-left: 0 !important;
+			width: 100%;
+			max-width: 60%;
+		}
 	}
 }
 

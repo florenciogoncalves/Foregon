@@ -349,14 +349,3 @@ try {
 	erros.push(error);
 }
 
-/* ================ Imagem quebrada ================  */
-try {
-	document.querySelector(".__user-image").addEventListener("error", function (_, el = document.querySelector(".__user-image")) {
-		const newEl = document.createElement('div')
-		newEl.classList.add('_status--broken', '__user-image', 'mb-4')
-		el.parentNode.insertBefore(newEl, el.nextSibling);
-		el.parentNode.removeChild(el)
-	});
-} catch (error) {
-	erros.push(error);
-}
