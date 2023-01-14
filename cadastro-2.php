@@ -28,8 +28,8 @@
       <form class="needs-validation mt-4" method="POST" action="./_app/controllers/cadastroController.php" novalidate>
         <!-- Entranda de senha retalhada -->
 
-        <div class="upload-image">
-          <input type="file" class="upload-image__input">
+        <div id="preview_image" class="upload-image _set-in--bg">
+          <input type="file" name="foto-de-perfil" id="imagem-produto" class="upload-image__input" accept="image/*">
         </div>
 
         <button id="btn_cadastrar" class="btn btn-primary mt-4" name="submit" type="submit">Prosseguir</button>

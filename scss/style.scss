@@ -1126,6 +1126,23 @@ figure.artigo-usuario {
 	text-align: center;
 }
 
+.user-configurations {
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+	height: max-content;
+	width: max-content;
+	.__user-data {
+		display: block;
+	}
+}
+
+._status--uploaded {
+background-repeat: no-repeat !important;
+	background-position: center !important;
+	background-size: contain !important;
+}
+
 /* Historico e consulta*/
 #conf-page #historico-de-consulta h3 {
 	margin-bottom: 0.65rem;

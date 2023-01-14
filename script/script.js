@@ -265,11 +265,21 @@ try {
 					preview.src = e.target.result;
 
 					/*Estiliza a card contendo a imagem, quando possui um caminho*/
-					preview.src = e.target.result;
-					current.parentNode.style.boxShadow = "0px 0px 9px rgba(0, 0, 0, .1)";
+					if (preview.classList.contains("_set-in--bg")) {
+						preview.style.background = `url(${e.target.result})`;
+						preview.classList.add('_status--uploaded')
+					} else {
+						preview.src = e.target.result;
+						current.parentNode.style.boxShadow =
+							"0px 0px 9px rgba(0, 0, 0, .1)";
+					}
 				};
 
-				document.querySelector(".broken").style.display = "none";
+				try {
+					document.querySelector(".broken").style.display = "none";
+				} catch (error) {
+					erros.push(error);
+				}
 
 				file.readAsDataURL(current.files[0]);
 			}
