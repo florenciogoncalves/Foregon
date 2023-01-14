@@ -625,7 +625,7 @@ main {
   margin: 0 auto;
   height: 13rem;
   border-radius: 0.5rem;
-  background: url(./../image/add-image.svg) no-repeat, #D9D9D9;
+  background: url(./../image/add-image.svg) no-repeat, #d9d9d9;
   background-size: 5rem;
   background-position: center;
 }
@@ -1131,12 +1131,15 @@ figure.artigo-usuario .descricao-artigo {
 }
 
 /* Produto adquirido*/
-.purchased-product .btn-primary, .purchased-product .btn-primary:active, .btn-reverse, .btn-reverse:active {
+.purchased-product .btn-primary, .purchased-product .btn-primary:active,
+.btn-reverse,
+.btn-reverse:active {
   color: #02b85d !important;
   background: none !important;
   border: 1px solid #00cc66;
 }
-.purchased-product .btn-primary:hover, .btn-reverse:hover {
+.purchased-product .btn-primary:hover,
+.btn-reverse:hover {
   border-color: #02b85d;
 }
 
@@ -1222,16 +1225,50 @@ figure.artigo-usuario .descricao-artigo {
 
 .user-configurations {
   display: flex;
+  align-items: center;
   flex-direction: column;
   margin: auto;
   height: max-content;
+  width: 50%;
+  min-width: 200px;
+  max-width: 480px;
+}
+.user-configurations .data-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.user-configurations .data-container input {
+  line-height: 1;
   width: max-content;
+  border: none;
+  background: none;
+}
+.user-configurations .__user-image {
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+  margin: auto;
+}
+.user-configurations .__user-image._status--broken {
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+  background-color: #d9d9d9;
+}
+.user-configurations .__user-name {
+  font-size: 1.45rem;
 }
 .user-configurations .__user-data {
   display: block;
+  font-size: 0.85rem;
+  line-height: 1.75;
+}
+.user-configurations .btn-primary {
+  font-size: 0.75rem;
 }
 
-._status--uploaded {
+.__user ._status--uploaded {
   background-repeat: no-repeat !important;
   background-position: center !important;
   background-size: contain !important;

@@ -485,9 +485,9 @@ main {
 	width: 90%;
 	margin: 0 auto;
 	height: 13rem;
-	border-radius: .5rem;
+	border-radius: 0.5rem;
 
-	background: url(./../image/add-image.svg) no-repeat, #D9D9D9;
+	background: url(./../image/add-image.svg) no-repeat, #d9d9d9;
 	background-size: 5rem;
 	background-position: center;
 	.upload-image__input {
@@ -1049,8 +1049,10 @@ figure.artigo-usuario {
 }
 
 /* Produto adquirido*/
-.purchased-product .btn-primary, .btn-reverse {
-	&, &:active {
+.purchased-product .btn-primary,
+.btn-reverse {
+	&,
+	&:active {
 		color: $primary-color-medium !important;
 		background: none !important;
 		border: 1px solid $primary-color;
@@ -1145,17 +1147,53 @@ figure.artigo-usuario {
 
 .user-configurations {
 	display: flex;
+	align-items: center;
 	flex-direction: column;
 	margin: auto;
 	height: max-content;
-	width: max-content;
+	width: 50%;
+	min-width: 200px;
+	max-width: 480px;
+	.data-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		input {
+			line-height: 1;
+			width: max-content;
+			border: none;
+
+			background: none;
+		}
+	}
+	.__user-image {
+		width: 12rem;
+		height: 12rem;
+		border-radius: 50%;
+		margin: auto;
+		&._status--broken {
+			width: 12rem;
+			height: 12rem;
+			border-radius: 50%;
+			background-color: #d9d9d9;
+		}
+	}
+	.__user-name {
+		font-size: 1.45rem;
+	}
 	.__user-data {
 		display: block;
+
+		font-size: 0.85rem;
+		line-height: 1.75;
+	}
+	.btn-primary {
+		font-size: 0.75rem;
 	}
 }
 
-._status--uploaded {
-background-repeat: no-repeat !important;
+.__user ._status--uploaded {
+	background-repeat: no-repeat !important;
 	background-position: center !important;
 	background-size: contain !important;
 }
