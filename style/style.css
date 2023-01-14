@@ -488,6 +488,21 @@ main {
   display: flex;
 }
 
+._translate-to--left .container-all-slides {
+  margin: auto auto 1.5rem 2.5rem !important;
+  width: 75% !important;
+}
+._translate-to--left .container-all-slides .current-slide__title,
+._translate-to--left .container-all-slides .current-slide__subtitle {
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+  text-align: left !important;
+}
+._translate-to--left .container-all-slides .btn-primary {
+  width: 13rem;
+  margin-left: 0 !important;
+}
+
 .campo,
 .iniciar-sessao .lado-direito input:not([type=checkbox]) {
   background: #fff;
