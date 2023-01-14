@@ -14,4 +14,5 @@ class UserModel extends Model
     {
         return $this->create($data);
     }
+
 }
