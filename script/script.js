@@ -180,12 +180,16 @@ try {
 
 // Reajuste de tamanho do progresso circular
 function setProgressVal(achieved, total) {
-	const numbers = document.getElementById("numbers");
+	try {
+		const numbers = document.getElementById("numbers");
 	let percentual = 440 - (((achieved * 100) / 1000) * 440) / 100;
 	document.body.style.setProperty("--progresso-circular", percentual);
 
 	numbers.querySelector("h4").innerHTML = `${achieved}`;
 	numbers.querySelector("h5").innerHTML = `De ${total}`;
+	} catch (error) {
+		erros.push(error)
+	}
 }
 
 /*
@@ -265,11 +269,21 @@ try {
 					preview.src = e.target.result;
 
 					/*Estiliza a card contendo a imagem, quando possui um caminho*/
-					preview.src = e.target.result;
-					current.parentNode.style.boxShadow = "0px 0px 9px rgba(0, 0, 0, .1)";
+					if (preview.classList.contains("_set-in--bg")) {
+						preview.style.background = `url(${e.target.result})`;
+						preview.classList.add("_status--uploaded");
+					} else {
+						preview.src = e.target.result;
+						current.parentNode.style.boxShadow =
+							"0px 0px 9px rgba(0, 0, 0, .1)";
+					}
 				};
 
-				document.querySelector(".broken").style.display = "none";
+				try {
+					document.querySelector(".broken").style.display = "none";
+				} catch (error) {
+					erros.push(error);
+				}
 
 				file.readAsDataURL(current.files[0]);
 			}
@@ -330,6 +344,18 @@ try {
 			star.parentElement.value =
 				star.parentElement.querySelectorAll(".estrelado").length;
 		});
+	});
+} catch (error) {
+	erros.push(error);
+}
+
+/* ================ Imagem quebrada ================  */
+try {
+	document.querySelector(".__user-image").addEventListener("error", function (_, el = document.querySelector(".__user-image")) {
+		const newEl = document.createElement('div')
+		newEl.classList.add('_status--broken', '__user-image', 'mb-4')
+		el.parentNode.insertBefore(newEl, el.nextSibling);
+		el.parentNode.removeChild(el)
 	});
 } catch (error) {
 	erros.push(error);

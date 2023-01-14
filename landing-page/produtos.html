@@ -20,36 +20,63 @@
 	</head>
 	<body class="landing-page">
 		<header class="main-header _status--not-logged-in row pb-3">
-			<img class="main-header__logo img-fluid" src="./../image/logo-minha-bufunfa.svg" alt="Minha Bufunfa - logo" />
+			<img
+				class="main-header__logo img-fluid"
+				src="./../image/logo-minha-bufunfa.svg"
+				alt="Minha Bufunfa - logo" />
 			<div class="acess-buttons">
 				<a class="btn btn-reverse" href="./login.php">Entrar</a>
 				<a class="btn btn-primary" href="./cadastro.php">Cadastrar-se</a>
 			</div>
 		</header>
 
-		<div id="landing-pos-header" class="margem-topo row">
-			<div class="container-fluid py-3 py-md-4">
-				<form
-					class="interative-area form-group col-12 col-sm-8 col-md-7 col-lg-6 px-4 px-sm-5 pt-3 my-auto">
-					<h1>Faça seu cadastro!</h1>
-					<span
-						>Lorem ipsum dolor sit amet, consectetur adipis cing elit
-						consectetur adipis cing elit.</span
-					>
-					<fieldset class="mt-3 mb-md-2">
-						<input type="number" placeholder="CPF" class="campo form-control" />
-					</fieldset>
+		<section class="main-carousel p-4 pb-1 container-fluid mb-5 _translate-to--left">
+			<!-- container do carroussel -->
+			<section
+				class="container-all-slides col-11 col-sm-7 col-lg-6 m-auto h-auto pt-2">
+				<div class="container-fluid">
+					<!-- Item do carroussel -->
+					<div class="carousel-slide row col-12 col-lg-10 m-auto">
+						<h3 class="current-slide__title text-center">Lorem ipsum 1</h3>
+						<span class="current-slide__subtitle col-12">
+							It is a long established fact that a reader will be distracted by
+							the readable content of a page when looking at its layout. The
+							point of using Lorem Ipsum is that it has a more-or-less normal
+							distribution of letters, as oppos
+						</span>
+						<button class="btn btn-primary">Lorem Ipsum</button>
+					</div>
 
-					<!-- Remover a tag a depois de adicionar a rota, mantendo apenas o seu texto -->
-					<button type="submit" class="btn btn-primary my-2 mb-3">
-						Prosseguir</button>
-					<ul id="navegacao-carroussel" class="m-0 p-0">
-						<li class="current-slide__demarcation"></li>
-						<li></li>
-					</ul>
-				</form>
-			</div>
-		</div>
+					<!-- Item do carroussel -->
+					<div class="carousel-slide row col-12 col-lg-10 m-auto">
+						<h3 class="current-slide__title text-center">Lorem ipsum 2</h3>
+						<span class="current-slide__subtitle col-12">
+							It is a long established fact that a reader will be distracted by
+							the readable content of a page when looking at its layout. The
+							point of using Lorem Ipsum is that it has a more-or-less normal
+							distribution of letters, as oppos
+						</span>
+						<button class="btn btn-primary">Lorem Ipsum</button>
+					</div>
+
+					<!-- Item do carroussel -->
+					<div class="carousel-slide row col-12 col-lg-10 m-auto">
+						<h3 class="current-slide__title text-center">Lorem ipsum 3</h3>
+						<span class="current-slide__subtitle col-12">
+							It is a long established fact that a reader will be distracted by
+							the readable content of a page when looking at its layout. The
+							point of using Lorem Ipsum is that it has a more-or-less normal
+							distribution of letters, as oppos
+						</span>
+						<button class="btn btn-primary">Lorem Ipsum</button>
+					</div>
+				</div>
+			</section>
+
+			<ul id="navegacao-carroussel">
+				<!-- <li class="current-slide__demarcation"></li> Corresponde ao slide atual -->
+			</ul>
+		</section>
 
 		<main id="conteudo-principal">
 			<div
@@ -206,7 +233,9 @@
 									consectetur adipis cing elit. Dolor sit amet, consectetur
 									adipis cing elit consectetur adipis cing elit.
 								</p>
-								<a href="./../home/produto.html" class="btn-primary btn btn-primary">
+								<a
+									href="./../home/produto.html"
+									class="btn-primary btn btn-primary">
 									Conferir cartão
 								</a>
 							</figcaption>
@@ -229,7 +258,9 @@
 									consectetur adipis cing elit. Dolor sit amet, consectetur
 									adipis cing elit consectetur adipis cing elit.
 								</p>
-								<a href="./../home/produto.html" class="btn-primary btn btn-primary">
+								<a
+									href="./../home/produto.html"
+									class="btn-primary btn btn-primary">
 									Conferir cartão
 								</a>
 							</figcaption>
@@ -252,7 +283,9 @@
 									consectetur adipis cing elit. Dolor sit amet, consectetur
 									adipis cing elit consectetur adipis cing elit.
 								</p>
-								<a href="./../home/produto.html" class="btn-primary btn btn-primary">
+								<a
+									href="./../home/produto.html"
+									class="btn-primary btn btn-primary">
 									Conferir cartão
 								</a>
 							</figcaption>
@@ -274,31 +307,51 @@
 				<div class="container-fluid p-0 d-none d-sm-flex">
 					<span>Acesse nossas redes</span>
 					<nav class="row p-0 gap-1 col-5 col-md-8">
-						<a class="col-2" href="https://pt-br.facebook.com/" target="_blank" rel="noopener noreferrer"
+						<a
+							class="col-2"
+							href="https://pt-br.facebook.com/"
+							target="_blank"
+							rel="noopener noreferrer"
 							><img
 								class="img-fluid h-50"
 								src="./../image/redes-sociais/Facebook.svg"
 								alt="Facebook"
 						/></a>
-						<a class="col-2" href="https://twitter.com/" target="_blank" rel="noopener noreferrer"
+						<a
+							class="col-2"
+							href="https://twitter.com/"
+							target="_blank"
+							rel="noopener noreferrer"
 							><img
 								class="img-fluid h-50"
 								src="./../image/redes-sociais/Twitter.svg"
 								alt="Twitter"
 						/></a>
-						<a class="col-2" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"
+						<a
+							class="col-2"
+							href="https://www.instagram.com/"
+							target="_blank"
+							rel="noopener noreferrer"
 							><img
 								class="img-fluid h-50"
 								src="./../image/redes-sociais/Instagram.svg"
 								alt="Instagram"
 						/></a>
-						<a class="col-2" href="https://pt.linkedin.com/" target="_blank" rel="noopener noreferrer"
+						<a
+							class="col-2"
+							href="https://pt.linkedin.com/"
+							target="_blank"
+							rel="noopener noreferrer"
 							><img
 								class="img-fluid h-50"
 								src="./../image/redes-sociais/LinkedIn.svg"
 								alt="Linkedin"
 						/></a>
-						<a class="col-2" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"
+						<a
+							class="col-2"
+							href="https://www.youtube.com/"
+							target="_blank"
+							rel="noopener noreferrer"
 							><img
 								class="img-fluid h-50"
 								src="./../image/redes-sociais/YouTube.svg"
@@ -348,7 +401,7 @@
 					<li class="caminho-rodape"><a href="">Lorem Ipsum</a></li>
 					<li class="caminho-rodape"><a href="">Lorem Ipsum</a></li>
 				</ul>
-			</d>
+			</div>
 
 			<span class="_mkti-brand"
 				>Minhabufanfa - © 2022 All Rights Reserved Feito com ♥ pela MKTI</span

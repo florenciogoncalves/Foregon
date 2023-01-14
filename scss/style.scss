@@ -6,23 +6,7 @@
 @import "init";
 
 /* =========== Cabecalho principal =========== */
-.main-header {
-	height: max-content;
-	width: 100%;
-	z-index: 2;
-	position: absolute;
-	padding: 0.7rem;
-	top: 0;
-	box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.1);
-	border-radius: 0px 0px 1rem 1rem;
-
-	background: $color-white;
-	// Logo img
-	.main-header__logo {
-		margin: 0 auto auto;
-		height: 1rem;
-	}
-}
+@import "header";
 
 /* =============== Carroussel =============== */
 .main-carousel {
@@ -55,14 +39,21 @@
 				margin: 0 auto;
 			}
 			.current-slide__subtitle {
-				padding: 15px 0;
+				display: -webkit-box;
+				-webkit-box-orient: vertical;
+				height: 100%;
+				padding: 15px 0 0;
 				box-sizing: border-box;
+				overflow: hidden;
 
 				text-align: center;
 				font-size: 0.8rem;
 				font-weight: 400;
-
-				height: 100%;
+				-webkit-line-clamp: 10;
+				text-overflow: ellipsis;
+				& + * {
+					margin-top: 15px !important;
+				}
 			}
 			.btn-primary {
 				margin: 10px auto;
@@ -220,6 +211,7 @@ main {
 		border: none;
 		.card__image {
 			max-width: 70px;
+			object-fit: cover;
 		}
 		.card__description {
 			font-weight: 400;
@@ -348,6 +340,23 @@ main {
 	display: flex;
 }
 
+._translate-to--left {
+	.container-all-slides {
+		margin: auto auto 1.5rem 2.5rem !important;
+		width: 75% !important;
+		.current-slide__title,
+		.current-slide__subtitle {
+			padding-left: 0 !important;
+			margin-left: 0 !important;
+			text-align: left !important;
+		}
+		.btn-primary {
+			width: 13rem;
+			margin-left: 0 !important;
+		}
+	}
+}
+
 .campo,
 .iniciar-sessao .lado-direito input:not([type="checkbox"]) {
 	background: $color-white;
@@ -469,6 +478,22 @@ main {
 				mix-blend-mode: difference;
 			}
 		}
+	}
+}
+
+.upload-image {
+	width: 90%;
+	margin: 0 auto;
+	height: 13rem;
+	border-radius: 0.5rem;
+
+	background: url(./../image/add-image.svg) no-repeat, #d9d9d9;
+	background-size: 5rem;
+	background-position: center;
+	.upload-image__input {
+		height: 100%;
+		width: 100%;
+		opacity: 0;
 	}
 }
 
@@ -1025,10 +1050,16 @@ figure.artigo-usuario {
 
 /* Produto adquirido*/
 .purchased-product .btn-primary,
-.purchased-product .btn-primary:active {
-	color: $primary-color-medium;
-	background: none !important;
-	border: 1px solid $primary-color;
+.btn-reverse {
+	&,
+	&:active {
+		color: $primary-color-medium !important;
+		background: none !important;
+		border: 1px solid $primary-color;
+	}
+	&:hover {
+		border-color: $primary-color-medium;
+	}
 }
 
 /* 
@@ -1112,6 +1143,59 @@ figure.artigo-usuario {
 	font-size: 1.2rem;
 	line-height: 3 !important;
 	text-align: center;
+}
+
+.user-configurations {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	margin: auto;
+	height: max-content;
+	width: 50%;
+	min-width: 200px;
+	max-width: 480px;
+	.data-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		input {
+			line-height: 1;
+			width: max-content;
+			border: none;
+
+			background: none;
+		}
+	}
+	.__user-image {
+		width: 12rem;
+		height: 12rem;
+		border-radius: 50%;
+		margin: auto;
+		&._status--broken {
+			width: 12rem;
+			height: 12rem;
+			border-radius: 50%;
+			background-color: #d9d9d9;
+		}
+	}
+	.__user-name {
+		font-size: 1.45rem;
+	}
+	.__user-data {
+		display: block;
+
+		font-size: 0.85rem;
+		line-height: 1.75;
+	}
+	.btn-primary {
+		font-size: 0.75rem;
+	}
+}
+
+.__user ._status--uploaded {
+	background-repeat: no-repeat !important;
+	background-position: center !important;
+	background-size: contain !important;
 }
 
 /* Historico e consulta*/
@@ -2065,8 +2149,8 @@ a.__author {
 		left: 0;
 
 		content: " " !important;
-		width: .85rem !important;
-		height: .85rem !important;
+		width: 0.85rem !important;
+		height: 0.85rem !important;
 
 		background: url(./../image/pessoa.svg) no-repeat !important;
 		background-size: contain !important;
@@ -2074,17 +2158,17 @@ a.__author {
 	}
 }
 
-
-._loc--index {.card {
-	background: none;
-}
-.product-area {
-	box-shadow: none !important;
-}
+._loc--index {
+	.card {
+		background: none;
+	}
+	.product-area {
+		box-shadow: none !important;
+	}
 }
 
 .estrelas {
 	width: 95%;
-	gap: .35rem !important;
+	gap: 0.35rem !important;
 	grid-template-columns: repeat(5, 1fr);
 }

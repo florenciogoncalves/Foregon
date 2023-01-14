@@ -59,50 +59,8 @@
 		}
 		?>
 		<div class="container-fluid">
-			<section id="product-area" class="product-area p-2 p-sm-3">
-				<h3 class="titulo">Meus produtos</h3>
-
-				<div class="products container-fluid pb-3 px-0 mt-4 col-lg-11">
-					<ul class="row gap-3 gap-sm-2 gap-md-3 col-12 justify-content-center row-cols-3">
-						<?php
-						if ($produtos->findProducts(true)) :
-							foreach ($produtos->findProducts(true, 4) as $produto) :
-						?>
-								<!-- Item - Cartão produto -->
-								<li class="card col-10 col-sm rounded-1 row">
-									<figure class="p-0 pt-3 px-sm-0 px-lg-3 pb-1">
-										<img src="./../_storage/produtos/<?= $produto['foto_produto']; ?>" alt="Minha Bufunfa" class="card__image img-fluid w-50" />
-										<figcaption class="container">
-											<h4 class="card__title"><?= $produto['nome_produto']; ?></h4>
-											<span>Avalie:</span>
-											<div class="classificado classificar">
-												<ul class="estrelas col-8 h-100">
-													<li class="estrelar col"></li>
-													<li class="estrelar col"></li>
-													<li class="estrelar col"></li>
-													<li class="estrelar col"></li>
-													<li class="estrelar col"></li>
-												</ul>
-											</div>
-											<p class="card__description">
-												<?= str_limit_words($produto['descricao_produto'], 16); ?>
-											</p>
-											<a href="./produto.php?id=<?= $produto['id']; ?>" class="btn-primary btn btn-primary">
-												Adquirir
-											</a>
-										</figcaption>
-									</figure>
-								</li>
-						<?php
-							endforeach;
-						endif;
-						?>
-					</ul>
-				</div>
-			</section>
-
 			<section id="todos-produtos" class="product-area p-2 p-sm-3 mt-4">
-				<h3 class="titulo">Todos os produtos <a href="./todos-produtos.php">Ver todos</a></h3>
+				<h3 class="titulo">Todos os produtos</h3>
 
 				<div class="products container-fluid pb-3 px-0 mt-4 col-lg-11">
 					<ul class="row gap-3 gap-sm-2 gap-md-3 col-12 justify-content-center row-cols-3">

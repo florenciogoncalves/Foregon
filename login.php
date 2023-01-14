@@ -15,7 +15,7 @@ session_start();
   <link rel="shortcut icon" href="./image/favicon.svg" type="image/x-icon" />
   <link rel="stylesheet" href="./style/reset.css" />
   <!-- CSS only -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
+  <link href="./../style/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="./style/style.css" />
   <link rel="stylesheet" href="./style/responsive.css" />
 </head>
@@ -33,7 +33,7 @@ session_start();
       <img class="col-lg-5 d-none d-lg-block h-100 mh-100" src="./image/background-login.png" alt="Minha Bufunfa" />
 
       <!-- Conteúdo da direita -->
-      <div class="col-md-9 col-lg-7 m-auto  mb-lg-auto justify-content-center p-0 my-lg-auto" style="padding-top: $header-height !important">
+      <div class="col-md-9 col-lg-7 m-auto  mb-lg-auto justify-content-center p-0 my-lg-auto">
 
         <div class="lado-direito col-sm-10 col-lg-9 h-50 row p-4 p-sm-5 pb-lg-4 pt-lg-4">
 
@@ -58,7 +58,7 @@ session_start();
               <input type="email" name="email" id="email" placeholder="Endereço de email" class="form-control form-control-md" required value="" />
             </div>
             <div class="mb-2 form-group">
-              <input type="password" name="password" id="password" placeholder="********" class="form-control form-control-md" required maxlength="8"/>
+              <input type="password" name="password" id="password" placeholder="********" class="form-control form-control-md" required maxlength="8" />
             </div>
 
             <div class="mb-3 d-sm-flex justify-content-between form-group form-check">

@@ -19,18 +19,21 @@
 		<link rel="stylesheet" href="./../style/responsive.css" />
 	</head>
 	<body id="quiz" class="landing-page">
-		<header class="main-header row pb-3">
+		<header class="main-header _status--not-logged-in row pb-3">
 			<img
 				class="main-header__logo img-fluid"
 				src="./../image/logo-minha-bufunfa.svg"
 				alt="Minha Bufunfa - logo" />
+			<div class="acess-buttons">
+				<a class="btn btn-reverse" href="./login.php">Entrar</a>
+				<a class="btn btn-primary" href="./cadastro.php">Cadastrar-se</a>
+			</div>
 		</header>
 
 		<main id="quiz-form" class="row">
 			<div
 				class="container-fluid d-flex p-0 p-sm-3 col-12 col-sm-10 col-md-9 col-lg-8">
-				<form
-					class="interative-area form-group col-12 p-4 p-md-5 pb-3 my-auto">
+				<form class="interative-area form-group col-12 p-4 p-md-5 pb-3 my-auto">
 					<h1 class="category-title">Etapa 1</h1>
 					<span class="subcategory-title"
 						>Lorem ipsum dolor sit amet, consectetur adipis cing elit
