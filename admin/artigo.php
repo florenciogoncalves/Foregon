@@ -87,12 +87,14 @@
 					temporibus voluptates
 				</p>
 
-				<div class="artigo-interacao">
-					<!-- Setar 'true' ou 'false' no value do botão a seguir, ele define o estado do botão, se sim ou não curtido -->
-					<button class="artigo-reacao" value="false" onclick="this.value == 'false' ? this.value = 'true' : this.value = 'false'">
-						150
-					</button>
-					<button class="artigo-partilhas">150</button>
+				<div class="saiba-tambem">
+					<div class="artigo-interacao">
+						<!-- Setar 'true' ou 'false' no value do botão a seguir, ele define o estado do botão, se sim ou não curtido -->
+						<button class="artigo-reacao" value="false" onclick="this.value == 'false' ? this.value = 'true' : this.value = 'false'">
+							150
+						</button>
+						<button class="artigo-partilhas">150</button>
+					</div>
 				</div>
 			</section>
 
