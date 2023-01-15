@@ -88,6 +88,7 @@
 				</p>
 
 				<div class="saiba-tambem">
+					<div class="referencia"><span class="_texto--verde">Referencia: </span>Lorem ipsum exemplo dollor</div>
 					<div class="artigo-interacao">
 						<!-- Setar 'true' ou 'false' no value do botão a seguir, ele define o estado do botão, se sim ou não curtido -->
 						<button class="artigo-reacao" value="false" onclick="this.value == 'false' ? this.value = 'true' : this.value = 'false'">
