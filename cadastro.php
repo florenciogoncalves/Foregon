@@ -31,7 +31,8 @@
         <fieldset id="campos-cadastro">
           <input type="text" name="nome" placeholder="Nome" class="form-control" required />
           <input type="email" name="email" placeholder="E-mail" class="form-control" required />
-          <input type="tel" name="celular" placeholder="Celular" class="form-control" required />
+          <input type="tel" name="celular" placeholder="Celular" class="form-control" required onkeypress="return event.charCode >= 48 && event.charCode <= 57"/>
+          <input type="number" name="cpf" placeholder="CPF" class="form-control" required  onkeypress="return event.charCode >= 48 && event.charCode <= 57"/>
           <fieldset>
             <input type="password" name="senha" id="password" placeholder="Senha" class="form-control" required minlength="6" />
             <div class="invalid-feedback">A senha deve ter um mínimo de 6 caracteres</div>
