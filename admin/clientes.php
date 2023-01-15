@@ -1,4 +1,10 @@
+<?php
+
+require __DIR__ . "/../_support/paginator/src/Paginator.php";
+
+?>
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 
 <head>
@@ -13,6 +19,41 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="./../style/style.css" />
 	<link rel="stylesheet" href="./../style/responsive.css" />
+
+	<style type="text/css">
+		.paginator {
+			list-style: none;
+			padding: 0;
+			margin-top: 30px;
+		}
+
+		.paginator_item {
+			display: inline-block;
+			margin: 0 10px;
+			padding: 4px 12px;
+			background: #A287E7;
+			color: #fff;
+			text-decoration: none;
+			-webkit-border-radius: 4px;
+			-moz-border-radius: 4px;
+			border-radius: 4px;
+		}
+
+		.paginator_item:hover {
+			background: #8A6ED5;
+		}
+
+		.paginator_active,
+		.paginator_active:hover {
+			background: #cccccc;
+		}
+
+		pre {
+			margin-top: 30px;
+			background: #EEEEEE;
+			padding: 10px;
+		}
+	</style>
 </head>
 <!-- Relativo ao 'Seu score': No evento onload da tag body, defina dois parametros, o primeiro referente ao total positivo, e o segundo referente ao somatorio total -->
 
@@ -175,11 +216,25 @@
 							<td><button class="btn__ver btn"></button></td>
 							<td><button class="btn__imprimir btn btn-primary"></button></td>
 						</tr>
+
+						<?php
+						// // echo "<pre>";
+						// $page = filter_input(INPUT_GET, "page", FILTER_VALIDATE_INT);
+						// $pager = new \CoffeeCode\Paginator\Paginator();
+						// $pager->pager(500, 10, $page);
+						// echo $pager->render(null, false);
+						// // print_r($page);
+						// echo "</pre>";
+						?>
 					</tbody>
+
+
 				</table>
 			</div>
 		</section>
 	</main>
+
+
 
 	<script src="./../script/script.js"></script>
 	<script>
