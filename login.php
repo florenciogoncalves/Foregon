@@ -15,7 +15,7 @@ session_start();
   <link rel="shortcut icon" href="./image/favicon.svg" type="image/x-icon" />
   <link rel="stylesheet" href="./style/reset.css" />
   <!-- CSS only -->
-  <link href="./../style/bootstrap.min.css" rel="stylesheet" />
+  <link href="./style/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="./style/style.css" />
   <link rel="stylesheet" href="./style/responsive.css" />
 </head>

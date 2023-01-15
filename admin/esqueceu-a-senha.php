@@ -31,87 +31,27 @@
 		<main class="h-100 container-fluid">
 			<div class="row col-md-12 h-100">
 				<!-- Conteúdo da esquerda -->
-				<div
-					class="margem-topo col-md-10 col-lg-7 d-flex mx-auto justify-content-center p-0">
-					<div
-						class="lado-direito _container--shadow-md col-sm-10 col-lg-9 h-75 row p-4 p-sm-4 p-md-5 pb-lg-4 pt-lg-4 mt-sm-auto"
-						style="max-height: 540px">
-						<img
-							class="img-fluid w-25 mb-3 mt-lg-3"
-							src="./../image/favicon.svg"
-							alt="minha-bufunfa" />
-						<h1>Esqueceu sua senha?</h1>
-						<span class="col-10 m-auto mt-2"
-							>Lorem ipsum dolor sit amet, consectetur adipis cing elit
-							consectetur adipis cing elit.</span
-						>
-						<form class="needs-validation" novalidate>
-							<!-- Entranda de senha retalhada -->
-							<fieldset
-								id="codigo-de-confirmacao"
-								class="m-auto col-11 col-sm-10 col-lg-11 col-xl-10 gap-1 gap-xs-0 row mt-4 mb-5">
-								<input
-									type="text"
-									id="campo"
-									class="col form-control"
-									maxlength="1"
-									placeholder="-"
-									required
-									value=""
-									onkeypress="return event.charCode >= 48 && event.charCode <= 57" />
-								<input
-									type="text"
-									id="campo-senha-2"
-									class="col form-control"
-									maxlength="1"
-									placeholder="-"
-									required
-									value=""
-									onkeypress="return event.charCode >= 48 && event.charCode <= 57" />
-								<input
-									type="text"
-									id="campo-senha-3"
-									class="col form-control"
-									maxlength="1"
-									placeholder="-"
-									required
-									value=""
-									onkeypress="return event.charCode >= 48 && event.charCode <= 57" />
-								<input
-									type="text"
-									id="campo-senha-4"
-									class="col form-control"
-									maxlength="1"
-									placeholder="-"
-									required
-									value=""
-									onkeypress="return event.charCode >= 48 && event.charCode <= 57" />
-								<input
-									type="text"
-									id="campo-senha-5"
-									class="col form-control"
-									maxlength="1"
-									placeholder="-"
-									required
-									value=""
-									onkeypress="return event.charCode >= 48 && event.charCode <= 57" />
-								<div class="invalid-feedback text-center">
-									Preencha todos os campos, por favor!
-								</div>
-							</fieldset>
+				<div class="margem-topo col-md-10 col-lg-7 d-flex mx-auto justify-content-center p-0">
+				<div class="lado-direito _container--shadow-md col-sm-10 col-lg-9 h-75 row p-4 p-sm-4 p-md-5 pb-lg-4 pt-lg-4 px-lg-5 mt-sm-auto" style="max-height: 540px">
+					<img class="img-fluid w-25 mb-3 mt-lg-3" src="./../image/favicon.svg" alt="minha-bufunfa" />
+					<h1>Esqueceu sua senha?</h1>
+					<span class="col-10 m-auto mt-2">Lorem ipsum dolor sit amet, consectetur adipis cing elit
+						consectetur adipis cing elit.</span>
+					<form class="needs-validation" novalidate>
 
-							<!-- Contem a senha completa no seu atributo value -->
-							<input
-								type="text"
-								id="senha-completa"
-								style="display: none !important" />
+						<fieldset class="my-4">
+						<input type="email" class="col form-control my-1 py-2" name="email" placeholder="Endereço de e-mail" required />
+						<div class="invalid-feedback text-center">
+							Endereço de e-mail incorreto!
+						</div>
+						</fieldset>
 
-							<button class="btn btn-md btn-primary mb-3" type="submit">
-								Efectuar login
-							</button>
-						</form>
-					</div>
+						<button class="btn btn-md btn-primary mb-3 py-2" type="submit">
+							Enviar código
+						</button>
+					</form>
 				</div>
+			</div>
 
 				<img
 					class="bg-img img-fluid col-md-5 d-none d-lg-block"
