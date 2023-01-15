@@ -168,7 +168,7 @@
 					</figcaption>
 				</figure>
 			</form>
-			<button></button>
+			<button class="btn-close-modal"></button>
 		</div>
 	</div>
 

@@ -2082,7 +2082,13 @@ figure.artigo-usuario .descricao-artigo {
 
 #modal-editar-produto #card-produto .img.on-produto img:first-of-type {
   max-height: 32vh !important;
-  object-fit: contain !important;
+  object-fit: cover !important;
+  width: 100%;
+  border-radius: 10px;
+}
+
+#preview_image {
+  object-fit: cover;
 }
 
 #modal-editar-produto #card-produto .broken {
@@ -2221,17 +2227,18 @@ figure.artigo-usuario .descricao-artigo {
   border-radius: 0.5rem;
 }
 
-#artigo-page.__admin #modal-editar-produto .modal__container {
+#modal-editar-produto .modal__container {
   position: relative;
+  max-width: 800px;
 }
 
-#artigo-page.__admin #modal-editar-produto form {
+#modal-editar-produto form {
   min-width: 320px !important;
   width: 100%;
   max-width: 90vw !important;
 }
 
-#artigo-page.__admin #modal-editar-produto form + button {
+#artigo-page.__admin #modal-editar-produto form + button, .btn-close-modal {
   position: absolute;
   width: 1.25rem;
   height: 1.25rem;

@@ -60,7 +60,7 @@
 					<span>Lorem Ipsum is simply dummy text of the printing and typesetting
 						industry</span>
 				</div>
-				<button class="btn-add-produto btn btn-primary h-mc">
+				<button class="btn-add-produto btn btn-primary h-mc py-1">
 					Adicionar produto
 				</button>
 			</section>
@@ -144,6 +144,55 @@
 			</section>
 		</div>
 	</main>
+
+
+	<div id="modal-editar-produto">
+		<div class="modal__container row m-auto">
+			<form id="card-produto" class="area-de-conteudo px-4 py-4 col-9 m-auto">
+				<figure class="p-0 m-0 row gap-2">
+					<div class="img on-produto col-12 px-0">
+						<img src="./../image/artigo_admin.svg" alt="Minha Bufunfa" class="card__image img-fluid" id="preview_image" />
+						<img src="./../image/broken-image.svg" alt="broken" class="broken" />
+						<input id="imagem-produto" type="file" accept="image/*" />
+					</div>
+					<figcaption class="container col-12 px-0 px-lg-3">
+						<fieldset class="row mb-2">
+							<div class="col-7 row p-0">
+								<label class="valor-label px-0 col-12">Título</label>
+								<input type="text" name="titulo" id="titulo" placeholder="Lorem ipsum" required />
+							</div>
+
+							<div class="col row p-0">
+								<label class="valor-label px-0 col-12">Escritor</label>
+								<input type="text" name="escritor" id="escritor" placeholder="Lorem ipsum" required />
+							</div>
+						</fieldset>
+
+						<fieldset class="row mb-2">
+							<label class="p-0 valor-label" for="texto">Texto</label>
+							<textarea name="texto" id="texto" rows="6" required placeholder="Lorem ipsum dolor sit amet. Non ullam Quis eos quisquam voluptatem quo molestiae quam ut molestiae doloribus aut animi culpa ut galisum quia ut obcaecati quia. Qui porro consequatur sed minima cupiditate aut aliquam labore ut asperiores exercitationem"></textarea>
+						</fieldset>
+
+						<fieldset class="row mb-2 mb-3">
+							<div class="col row p-0">
+								<label class="valor-label px-0 col-12">Referência</label>
+								<input type="text" name="referencia" id="referencia" placeholder="Lorem ipsum" required />
+							</div>
+						</fieldset>
+
+						<fieldset class="gap-2 col-11 row mt-2 mt-lg-auto mx-auto">
+							<button type="reset" class="btn-primary btn btn-primary btn-editar-produto col">
+								Cancelar
+							</button>
+							<button class="btn btn-primary col" type="submit">Salvar</button>
+						</fieldset>
+					</figcaption>
+				</figure>
+			</form>
+			<button class="btn-close-modal"></button>
+		</div>
+	</div>
+
 
 	<script src="./../script/script.js"></script>
 </body>
