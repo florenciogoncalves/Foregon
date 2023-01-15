@@ -53,11 +53,16 @@
 	</nav>
 
 	<main id="conteudo-principal" class="col p-3 p-sm-4 pb-5 mb-3 mb-lg-0">
-		<div class="container-fluid">
-			<section id="mensagem-rececao" class="mt-2">
-				<h1>Blog</h1>
-				<span>Lorem Ipsum is simply dummy text of the printing and typesetting
-					industry</span>
+		<div class="container-fluid _max-width--85">
+			<section id="mensagem-rececao" class="mt-2 row">
+				<div class="col">
+					<h1>Blog</h1>
+					<span>Lorem Ipsum is simply dummy text of the printing and typesetting
+						industry</span>
+				</div>
+				<button class="btn-add-produto btn btn-primary h-mc">
+					Adicionar produto
+				</button>
 			</section>
 
 			<section id="graficos-usuario" class="row p-0 gap-2 gap-sm-3 mb-3">

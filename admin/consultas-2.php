@@ -163,7 +163,7 @@
 					</tbody>
 				</table>
 			</div>
-				<button class="btn btn-primary px-5 mx-auto w--35">Cadastrar</button>
+				<button class="btn btn-primary px-5 mx-auto w--35 sticky-bottom">Cadastrar</button>
 
 		</section>
 	</main>

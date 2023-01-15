@@ -16,6 +16,10 @@
   color: #85e0a3;
 }
 
+.h-mc {
+  height: max-content !important;
+}
+
 .w--1 {
   width: 1% !important;
 }
@@ -1753,7 +1757,7 @@ figure.artigo-usuario .descricao-artigo {
 
 #blog-page #ultimos-artigos > div {
   display: grid;
-  grid-template-columns: repeat(3, 28%);
+  grid-template-columns: repeat(3, 1fr);
   column-gap: 1.5rem !important;
   row-gap: 0.2rem !important;
 }

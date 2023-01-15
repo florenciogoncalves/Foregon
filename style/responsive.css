@@ -14,6 +14,10 @@
   color: #85e0a3;
 }
 
+.h-mc {
+  height: max-content !important;
+}
+
 .w--1 {
   width: 1% !important;
 }
@@ -713,7 +717,7 @@
     font-size: 26px;
   }
   .subcategory-title {
-    font-size: 14px;
+    font-size: 0.65rem !important;
     margin-bottom: 30px;
   }
   .card {

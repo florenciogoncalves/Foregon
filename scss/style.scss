@@ -1269,7 +1269,7 @@ figure.artigo-usuario {
 
 #blog-page #ultimos-artigos > div {
 	display: grid;
-	grid-template-columns: repeat(3, 28%);
+	grid-template-columns: repeat(3, 1fr);
 	column-gap: 1.5rem !important;
 	row-gap: 0.2rem !important;
 }
