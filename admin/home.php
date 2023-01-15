@@ -93,7 +93,9 @@ $clientes = new clientesModel();
 						</div>
 					</div>
 					<span class="descricao-score">Boa avaliação</span>
-					<button class="informacao-sobre"></button>
+					<button class="informacao-sobre">
+						<span class="_tooltip">Aqui vai a mensagem descritiva.</span>
+					</button>
 				</div>
 
 				<div class="p-0 col p-0">

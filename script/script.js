@@ -348,4 +348,3 @@ try {
 } catch (error) {
 	erros.push(error);
 }
-

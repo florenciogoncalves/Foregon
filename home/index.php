@@ -89,7 +89,9 @@ require __DIR__ . "/../_app/boot/helpers.php";
             </div>
           </div>
           <span class="descricao-score">Boa avaliação</span>
-          <button class="informacao-sobre"></button>
+          <button class="informacao-sobre">
+						<span class="_tooltip">Aqui vai a mensagem descritiva.</span>
+          </button>
         </div>
 
         <div id="ultimos-artigos" class="area-de-conteudo p-2 p-sm-3 col p-0">
@@ -165,7 +167,9 @@ require __DIR__ . "/../_app/boot/helpers.php";
 
 
 
-        <button class="informacao-sobre"></button>
+        <button class="informacao-sobre">
+          <span class="_tooltip">Aqui vai a mensagem descritiva.</span>
+        </button>
       </section>
     </div>
   </main>

@@ -33,7 +33,7 @@ session_start();
       <img class="col-lg-5 d-none d-lg-block h-100 mh-100" src="./../image/background-login.png" alt="Minha Bufunfa" />
 
       <!-- Conteúdo da direita -->
-      <div class="col-md-9 col-lg-7 m-auto  mb-lg-auto justify-content-center p-0 my-lg-auto" style="padding-top: $header-height !important">
+      <div class="col-md-9 col-lg-7 m-auto  mb-lg-auto justify-content-center p-0 my-lg-auto">
 
         <div class="lado-direito col-sm-10 col-lg-9 h-50 row p-4 p-sm-5 pb-lg-4 pt-lg-4">
 

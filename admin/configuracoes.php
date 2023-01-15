@@ -89,7 +89,9 @@
 						</div>
 					</div>
 					<span class="descricao-score">Boa avaliação</span>
-					<button class="informacao-sobre"></button>
+					<button class="informacao-sobre">
+						<span class="_tooltip">Aqui vai a mensagem descritiva.</span>
+					</button>
 				</div>
 			</section>
 
