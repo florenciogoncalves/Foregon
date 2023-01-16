@@ -1,3 +1,15 @@
+<?php
+require __DIR__ . "/app/Models/Blog.php";
+include_once __DIR__ . "/../_app/boot/helpers.php";
+$Blog = new Blog();
+
+if (isset($_GET['id'])) {
+	$id = $_GET['id'];
+} else {
+	$id = 1;
+}
+
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -52,43 +64,31 @@
 		</ul>
 	</nav>
 
+	<?php
+	$post = $Blog->getPost($id);
+	?>
+
 	<main id="conteudo-principal" class="col p-3 p-sm-4 pb-5 mb-3 mb-lg-0 container-fluid">
+
+
 		<div class="row">
 			<section id="leia-artigo" class="col-12 col-lg-9 p-0">
 				<figure>
-					<img class="img-fluid" src="./../image/foto-do-artigo.png" alt="Imagem do artigo" />
+					<img class="img-fluid" src="./../_storage/blogImages/<?= $post->photo_post; ?>" alt="Imagem do artigo" />
 					<figcaption>
-						<h3 class="nome">Lorem Ipsum exemplo</h3>
-						<span class="__author">Lorem Ipsum</span>
-						<span class="publicado-em">Publicado em 01/01/2004 ás 00:30</span>
+						<h3 class="nome"><?= $post->titulo; ?></h3>
+						<span class="__author"><?= $post->escritor; ?></span>
+						<span class="publicado-em">Publicado <?= formatDate(str_replace('-', '/', $post->created_at)); ?> ás <?= formatHours($post->created_at); ?></span>
 					</figcaption>
 					<button class="btn-editar-produto"></button>
 				</figure>
 
 				<p class="artigo-mensagem px-2 p-lg-0">
-					Lorem ipsum dolor sit amet. Non ullam Quis eos quisquam voluptatem
-					quo molestiae quam ut molestiae doloribus aut animi culpa ut galisum
-					quia ut obcaecati quia. Qui porro consequatur sed minima cupiditate
-					aut aliquam labore ut asperiores exercitationem hic voluptatem
-					voluptatem in autem tempore qui libero excepturi. Ad reiciendis
-					provident aut itaque ratione cum sunt accusantium est omnis nobis?
-					Qui voluptas rerum et voluptates eligendi ut aliquam quia aut iusto
-					inventore et voluptatem rerum et explicabo delectus ad nisi eaque.
-					Est dolorem possimus vel consequuntur consequatur eos eaque dolorem
-					aut commodi facilis sed veritatis excepturi sit obcaecati vitae sit
-					velit repudiandae. Qui voluptatem quos sed nulla nulla aut
-					consequatur ipsa quo nihil rerum vel eligendi quae ut galisum quasi
-					non voluptatum autem. Ex debitis dolor id consectetur suscipit et
-					maiores veritatis a beatae repellendus! Id vitae porro ut nihil
-					laborum ut rerum minima. Id sint galisum sit optio voluptas in
-					dolores consequuntur eos unde possimus qui reiciendis ipsum vel
-					nihil rerum eos natus quam. Sit corrupti voluptatem et fugiat labore
-					qui necessitatibus beatae et quibusdam beatae et ipsam rerum ut
-					temporibus voluptates
+					<?= $post->texto; ?>
 				</p>
 
 				<div class="saiba-tambem">
-					<div class="referencia"><span class="_texto--verde">Referencia: </span>Lorem ipsum exemplo dollor</div>
+					<div class="referencia"><span class="_texto--verde">Referencia: </span><?= $post->referencia; ?></div>
 					<div class="artigo-interacao">
 						<!-- Setar 'true' ou 'false' no value do botão a seguir, ele define o estado do botão, se sim ou não curtido -->
 						<button class="artigo-reacao" value="false" onclick="this.value == 'false' ? this.value = 'true' : this.value = 'false'">
@@ -103,29 +103,24 @@
 				<div id="ultimos-artigos" class="col p-0">
 					<h3 class="titulo">Leia também</h3>
 					<div class="container row gap-3 p-0">
-						<figure class="artigo-usuario col col-lg mb-2 my-3">
-							<img class="img-fluid m-auto d-flex" src="./../arquivos-temporarios/artigo-img.png" alt="Imagem" />
-							<figcaption>
-								<a href="" class="ver-mais">Ver mais</a>
-							</figcaption>
-							<span class="descricao-artigo">Post de lorem</span>
-						</figure>
 
-						<figure class="artigo-usuario col col-lg mb-2 my-3">
-							<img class="img-fluid m-auto d-flex" src="./../arquivos-temporarios/artigo-img.png" alt="Imagem" />
-							<figcaption>
-								<a href="" class="ver-mais">Ver mais</a>
-							</figcaption>
-							<span class="descricao-artigo">Post de lorem</span>
-						</figure>
+						<?php
+						if ($Blog->getMorePosts($id)) :
+							foreach ($Blog->getMorePosts($id) as $posts) :
+						?>
 
-						<figure class="artigo-usuario col col-lg mb-2 my-3">
-							<img class="img-fluid m-auto d-flex" src="./../arquivos-temporarios/artigo-img.png" alt="Imagem" />
-							<figcaption>
-								<a href="" class="ver-mais">Ver mais</a>
-							</figcaption>
-							<span class="descricao-artigo">Post de lorem</span>
-						</figure>
+								<figure class="artigo-usuario col col-lg mb-2 my-3">
+									<img class="img-fluid m-auto d-flex" src="./../_storage/blogImages/<?= $posts['photo_post']; ?>" alt="Imagem" />
+									<figcaption>
+										<a href="./artigo.php?id=<?= $posts['id']; ?>" class="ver-mais">Ver mais</a>
+									</figcaption>
+									<span class="descricao-artigo">Post de <?= $posts['escritor']; ?></span>
+								</figure>
+						<?php
+							endforeach;
+						endif;
+						?>
+
 					</div>
 				</div>
 			</section>

@@ -1,8 +1,8 @@
 <?php
-	session_start();
-	require __DIR__ . "/app/Models/produtosModel.php";
-	require_once __DIR__ . "/../_app/boot/helpers.php";
-	$produtos = new produtosModel();
+session_start();
+require __DIR__ . "/app/Models/produtosModel.php";
+require_once __DIR__ . "/../_app/boot/helpers.php";
+$produtos = new produtosModel();
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -42,7 +42,9 @@
 			</li>
 			<li class="logout col px-0 py-2">
 				<button>
-					<img class="img-fluid m-auto d-flex" src="./../image/icones-do-menu/logout.svg" alt="logout" />
+					<a href="./logout.php">
+						<img class="img-fluid m-auto d-flex" src="./../image/icones-do-menu/logout.svg" alt="logout" />
+					</a>
 				</button>
 			</li>
 		</ul>
@@ -52,11 +54,13 @@
 	<main id="conteudo-principal" class="col p-3 p-sm-4 pb-5 mb-3 mb-lg-0">
 
 		<?php
-		if (!$produtos->findProducts(true)) {
-			echo "<div class='alert alert-info text-center'>{$_SESSION['emptyMessage']}</div>";
-		} else {
-			unset($_SESSION['emptyMessage']);
-		}
+		if (isset($_SESSION['emptyMessage'])) :
+			if (!$produtos->findProducts(true)) {
+				echo "<div class='alert alert-info text-center'>{$_SESSION['emptyMessage']}</div>";
+			} else {
+				unset($_SESSION['emptyMessage']);
+			}
+		endif;
 		?>
 		<div class="container-fluid">
 			<section id="product-area" class="product-area p-2 p-sm-3">

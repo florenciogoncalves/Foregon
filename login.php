@@ -63,7 +63,7 @@ session_start();
 
             <div class="mb-3 d-sm-flex justify-content-between form-group form-check">
               <label for="salvar-login"><input type="checkbox" name="salvar-login" class="form-check-input" id="salvar-login" />Salvar login</label>
-              <a class="d-none d-sm-flex _text--underline" href="./esqueceu-a-senha.html">Esqueci minha senha</a>
+              <a class="d-none d-sm-flex _text--underline" href="./esqueceu-a-senha.php">Esqueci minha senha</a>
             </div>
 
             <button type="submit" class="btn btn-md btn-primary m-auto mt-sm-2" name="submit" type="submit">
@@ -76,7 +76,7 @@ session_start();
           <a class="d-flex mt-3 p-0 col-auto mx-auto _text--underline" href="./cadastro.php">Criar minha conta</a>
         </div>
       </div>
-      <a class="d-lg-none m-auto mt-3 mb-2 d-flex col-auto start-50 translate-middle _text--underline" href="./esqueceu-a-senha.html" style="
+      <a class="d-lg-none m-auto mt-3 mb-2 d-flex col-auto start-50 translate-middle _text--underline" href="./esqueceu-a-senha.php" style="
             font-size: 0.75rem !important;
             position: absolute;
             bottom: 2rem;

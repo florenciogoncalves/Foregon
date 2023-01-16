@@ -39,7 +39,7 @@ function max_size_allowed($file): bool
     return true;
 }
 
-function rename_image($file, $name = "FP", int $seconds = 60): string
+function rename_image($file, $name, int $seconds = 60): string
 {
     return $name . " - " . date('Ymd') . time() + $seconds . mb_strstr($file, '.');
 }
@@ -118,4 +118,14 @@ function convertToBRL($number)
 function remove(string $file)
 {
     unlink(__DIR__ . "/../../_storage/produtos/{$file}");
+}
+
+function formatDate(string $string): string
+{
+    return mb_strcut($string, 0, 10);
+}
+
+function formatHours(string $string): string
+{
+    return mb_strcut($string, 10, 6);
 }

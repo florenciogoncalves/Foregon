@@ -25,20 +25,22 @@
 		</div>
 		<ul class="navegacao row p-0 px-sm-4 mb-0 col-12 gap-2 justify-content-between">
 			<li class="col px-0 py-2 rounded-3">
-				<a href="./index.html"><img class="img-fluid m-auto d-flex" src="./../image/icones-do-menu/home.svg" alt="home" /></a>
+				<a href="./index.php"><img class="img-fluid m-auto d-flex" src="./../image/icones-do-menu/home.svg" alt="home" /></a>
 			</li>
 			<li class="col px-0 py-2 rounded-3">
-				<a href="./produtos.html"><img class="img-fluid m-auto d-flex" src="./../image/icones-do-menu/produtos.svg" alt="products" /></a>
+				<a href="./produtos.php"><img class="img-fluid m-auto d-flex" src="./../image/icones-do-menu/produtos.svg" alt="products" /></a>
 			</li>
 			<li class="col px-0 py-2 rounded-3" id="vizualizando">
-				<a href="./configuracoes.html"><img class="img-fluid m-auto d-flex" src="./../image/icones-do-menu/configuracoes-white.svg" alt="configurações" /></a>
+				<a href="./configuracoes.php"><img class="img-fluid m-auto d-flex" src="./../image/icones-do-menu/configuracoes-white.svg" alt="configurações" /></a>
 			</li>
 			<li class="col px-0 py-2 rounded-3">
-				<a href="./blog.html"><img class="img-fluid m-auto d-flex" src="./../image/icones-do-menu/blog.svg" alt="blog" /></a>
+				<a href="./blog.php"><img class="img-fluid m-auto d-flex" src="./../image/icones-do-menu/blog.svg" alt="blog" /></a>
 			</li>
 			<li class="logout col px-0 py-2">
 				<button>
-					<img class="img-fluid m-auto d-flex" src="./../image/icones-do-menu/logout.svg" alt="logout" />
+					<a href="./logout.php">
+						<img class="img-fluid m-auto d-flex" src="./../image/icones-do-menu/logout.svg" alt="logout" />
+					</a>
 				</button>
 			</li>
 		</ul>

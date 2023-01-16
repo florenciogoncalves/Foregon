@@ -1,28 +1,22 @@
 <?php
-require __DIR__ . "/../../../_app/models/Model.php";
+include_once __DIR__ . "/../../../_app/models/Model.php";
 
-class Blog extends Model
+class blogModel extends Model
 {
     public function __construct()
     {
-        parent::__construct("blog", ['photo_post', 'titulo', 'escritor', 'texto', 'referencia']);
-    }
-
-    /**
-     * @param array $data
-     * @return void|int|PDOException
-     */
-    public function createPost(array $data)
-    {
-        return $this->create($data);
+        parent::__construct('blog', ['photo_post', 'titulo', 'escritor', 'texto', 'referencia']);
     }
 
     /**
      * @param integer $LIMIT
      * @return iterable|object
      */
-    public function showBlogPosts(int $LIMIT = 9)
+    public function showBlogPosts(bool $order = false, int $LIMIT = 9)
     {
+        if ($order) {
+            return $this->find()->order('id DESC')->limit($LIMIT)->fetch(true);
+        }
         return $this->find()->limit($LIMIT)->fetch(true);
     }
 
@@ -49,8 +43,8 @@ class Blog extends Model
      * @param integer $LIMIT
      * @return iterable|object
      */
-    public function getMorePosts(int $id, int $LIMIT = 3)
+    public function getMorePosts(string $author, int $id, int $LIMIT = 3)
     {
-        return $this->find("id != :id", "id={$id}")->order(rand(1, $this->count()))->limit($LIMIT)->fetch(true);
+        return $this->find("escritor = :escritor AND id != :id", "escritor={$author}&id={$id}")->order(rand(1, $this->count()))->limit($LIMIT)->fetch(true);
     }
 }

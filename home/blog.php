@@ -1,3 +1,8 @@
+<?php
+
+require __DIR__ . "/app/Models/blogModel.php";
+$Blog = new blogModel();
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -25,20 +30,22 @@
 		</div>
 		<ul class="navegacao row p-0 px-sm-4 mb-0 col-12 gap-2 justify-content-between">
 			<li class="col px-0 py-2 rounded-3">
-				<a href="./index.html"><img class="img-fluid m-auto d-flex" src="./../image/icones-do-menu/home.svg" alt="home" /></a>
+				<a href="./index.php"><img class="img-fluid m-auto d-flex" src="./../image/icones-do-menu/home.svg" alt="home" /></a>
 			</li>
 			<li class="col px-0 py-2 rounded-3">
-				<a href="./produtos.html"><img class="img-fluid m-auto d-flex" src="./../image/icones-do-menu/produtos.svg" alt="products" /></a>
+				<a href="./produtos.php"><img class="img-fluid m-auto d-flex" src="./../image/icones-do-menu/produtos.svg" alt="products" /></a>
 			</li>
 			<li class="col px-0 py-2 rounded-3">
-				<a href="./configuracoes.html"><img class="img-fluid m-auto d-flex" src="./../image/icones-do-menu/configuracoes.svg" alt="configurações" /></a>
+				<a href="./configuracoes.php"><img class="img-fluid m-auto d-flex" src="./../image/icones-do-menu/configuracoes.svg" alt="configurações" /></a>
 			</li>
 			<li class="col px-0 py-2 rounded-3" id="vizualizando">
-				<a href="./blog.html"><img class="img-fluid m-auto d-flex" src="./../image/icones-do-menu/blog-white.svg" alt="blog" /></a>
+				<a href="./blog.php"><img class="img-fluid m-auto d-flex" src="./../image/icones-do-menu/blog-white.svg" alt="blog" /></a>
 			</li>
 			<li class="logout col px-0 py-2">
 				<button>
-					<img class="img-fluid m-auto d-flex" src="./../image/icones-do-menu/logout.svg" alt="logout" />
+					<a href="./logout.php">
+						<img class="img-fluid m-auto d-flex" src="./../image/icones-do-menu/logout.svg" alt="logout" />
+					</a>
 				</button>
 			</li>
 		</ul>
@@ -55,77 +62,23 @@
 			<section id="graficos-usuario" class="row p-0 gap-2 gap-sm-3 mb-3">
 				<div id="ultimos-artigos" class="col p-0">
 					<div class="container row gap-3 p-0">
-						<figure class="artigo-usuario col-12 col-lg mb-2 my-3">
-							<img class="img-fluid m-auto d-flex" src="./../arquivos-temporarios/artigo-img.png" alt="Imagem" />
-							<figcaption>
-								<a href="./artigo.html" class="ver-mais">Ver mais</a>
-							</figcaption>
-							<span class="descricao-artigo">Post de lorem</span>
-						</figure>
+						<?php
+						if ($Blog->showBlogPosts()) :
+							foreach ($Blog->showBlogPosts() as $Post) :
+						?>
 
-						<figure class="artigo-usuario col-12 col-lg mb-2 my-3">
-							<img class="img-fluid m-auto d-flex" src="./../arquivos-temporarios/artigo-img.png" alt="Imagem" />
-							<figcaption>
-								<a href="./artigo.html" class="ver-mais">Ver mais</a>
-							</figcaption>
-							<span class="descricao-artigo">Post de lorem</span>
-						</figure>
+								<figure class="artigo-usuario col-12 col-lg mb-2 my-3">
+									<img class="img-fluid m-auto d-flex" src="./../_storage/blogImages/<?= $Post['photo_post']; ?>" alt="Imagem" />
+									<figcaption>
+										<a href="./artigo.php?id=<?= $Post['id']; ?>" class="ver-mais">Ver mais</a>
+									</figcaption>
+									<span class="descricao-artigo">Post de <?= $Post['escritor']; ?></span>
+								</figure>
+						<?php
+							endforeach;
+						endif;
+						?>
 
-						<figure class="artigo-usuario col-12 col-lg mb-2 my-3">
-							<img class="img-fluid m-auto d-flex" src="./../arquivos-temporarios/artigo-img.png" alt="Imagem" />
-							<figcaption>
-								<a href="./artigo.html" class="ver-mais">Ver mais</a>
-							</figcaption>
-							<span class="descricao-artigo">Post de lorem</span>
-						</figure>
-
-						<figure class="artigo-usuario col-12 col-lg mb-2 my-3">
-							<img class="img-fluid m-auto d-flex" src="./../arquivos-temporarios/artigo-img.png" alt="Imagem" />
-							<figcaption>
-								<a href="./artigo.html" class="ver-mais">Ver mais</a>
-							</figcaption>
-							<span class="descricao-artigo">Post de lorem</span>
-						</figure>
-
-						<figure class="artigo-usuario col-12 col-lg mb-2 my-3">
-							<img class="img-fluid m-auto d-flex" src="./../arquivos-temporarios/artigo-img.png" alt="Imagem" />
-							<figcaption>
-								<a href="./artigo.html" class="ver-mais">Ver mais</a>
-							</figcaption>
-							<span class="descricao-artigo">Post de lorem</span>
-						</figure>
-
-						<figure class="artigo-usuario col-12 col-lg mb-2 my-3">
-							<img class="img-fluid m-auto d-flex" src="./../arquivos-temporarios/artigo-img.png" alt="Imagem" />
-							<figcaption>
-								<a href="./artigo.html" class="ver-mais">Ver mais</a>
-							</figcaption>
-							<span class="descricao-artigo">Post de lorem</span>
-						</figure>
-
-						<figure class="artigo-usuario col-12 col-lg mb-2 my-3">
-							<img class="img-fluid m-auto d-flex" src="./../arquivos-temporarios/artigo-img.png" alt="Imagem" />
-							<figcaption>
-								<a href="./artigo.html" class="ver-mais">Ver mais</a>
-							</figcaption>
-							<span class="descricao-artigo">Post de lorem</span>
-						</figure>
-
-						<figure class="artigo-usuario col-12 col-lg mb-2 my-3">
-							<img class="img-fluid m-auto d-flex" src="./../arquivos-temporarios/artigo-img.png" alt="Imagem" />
-							<figcaption>
-								<a href="./artigo.html" class="ver-mais">Ver mais</a>
-							</figcaption>
-							<span class="descricao-artigo">Post de lorem</span>
-						</figure>
-
-						<figure class="artigo-usuario col-12 col-lg mb-2 my-3">
-							<img class="img-fluid m-auto d-flex" src="./../arquivos-temporarios/artigo-img.png" alt="Imagem" />
-							<figcaption>
-								<a href="./artigo.html" class="ver-mais">Ver mais</a>
-							</figcaption>
-							<span class="descricao-artigo">Post de lorem</span>
-						</figure>
 					</div>
 				</div>
 			</section>

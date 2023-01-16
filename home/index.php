@@ -5,8 +5,12 @@ if (isset($_SESSION['userActive'])) {
 } else {
   $user = 'Guest User';
 }
-require __DIR__ . "/app/Models/produtosModel.php";
+include_once __DIR__ . "/app/Models/blogModel.php";
+include_once __DIR__ . "/app/Models/produtosModel.php";
 require __DIR__ . "/../_app/boot/helpers.php";
+
+$blog = new blogModel();
+
 ?>
 
 <!DOCTYPE html>
@@ -90,7 +94,7 @@ require __DIR__ . "/../_app/boot/helpers.php";
           </div>
           <span class="descricao-score">Boa avaliação</span>
           <button class="informacao-sobre">
-						<span class="_tooltip">Aqui vai a mensagem descritiva.</span>
+            <span class="_tooltip">Aqui vai a mensagem descritiva.</span>
           </button>
         </div>
 
@@ -98,21 +102,26 @@ require __DIR__ . "/../_app/boot/helpers.php";
           <h3 class="titulo">Últimos artigos</h3>
 
           <div class="container row gap-3 p-0">
-            <figure class="artigo-usuario col-12 col-lg mb-2 my-3">
-              <img class="img-fluid m-auto d-flex" src="./../arquivos-temporarios/artigo-img.png" alt="Imagem" />
-              <figcaption>
-                <a href="./artigo.php" class="ver-mais">Ver mais</a>
-              </figcaption>
-              <span class="descricao-artigo">Post de lorem</span>
-            </figure>
 
-            <figure class="artigo-usuario d-none d-lg-block col-12 col-lg mb-2 my-3">
-              <img class="img-fluid m-auto d-flex" src="./../arquivos-temporarios/artigo-img.png" alt="Imagem" />
-              <figcaption>
-                <a href="./artigo.php" class="ver-mais">Ver mais</a>
-              </figcaption>
-              <span class="descricao-artigo">Post de lorem</span>
-            </figure>
+            <?php
+            if ($blog->showBlogPosts(true, 2)) :
+              foreach ($blog->showBlogPosts(true, 2) as $artigo) :
+            ?>
+
+                <figure class="artigo-usuario col-12 col-lg mb-2 my-3">
+                  <img class="img-fluid m-auto d-flex" src="./../_storage/blogImages/<?= $artigo['photo_post']; ?>" alt="Imagem" />
+                  <figcaption>
+                    <a href="./artigo.php?id=<?= $artigo['id']; ?>" class="ver-mais">Ver mais</a>
+                  </figcaption>
+                  <span class="descricao-artigo">Post de <?= $artigo['escritor']; ?></span>
+                </figure>
+
+
+            <?php
+              endforeach;
+            endif;
+            ?>
+
           </div>
         </div>
       </section>

@@ -15,7 +15,7 @@ class Uploader
         "imgage/jpg"
     ];
     public $name;
-
+    public $namePhoto;
     /**
      * @param array $Photo
      */
@@ -38,9 +38,13 @@ class Uploader
     /**
      * @return string
      */
-    public function renamePhoto(): string
+    public function renamePhoto(bool $rename = false, string $name = 'FP'): string
     {
-        return rename_image($this->photo[$this->name]['name']);
+        if ($rename) {
+            return $this->namePhoto = rename_image($this->photo[$this->name]['name'], 'foregon_user_profile_picture');
+        }
+        return $this->namePhoto = rename_image($this->photo[$this->name]['name'], $name);
+        // return rename_image($this->photo[$this->name]['name'], $name);
     }
 
     public function message()
@@ -50,12 +54,12 @@ class Uploader
     /**
      * @return void
      */
-    public function save()
+    public function save(string $dir = 'produtos', bool $rename = false)
     {
 
         if (in_array($this->photo[$this->name]['type'], self::AllowedTypes)) {
             if ($this->sizeVerification()) {
-                if (uploader($this->photo[$this->name]['tmp_name'], __DIR__ . "/../../_storage/produtos/{$this->renamePhoto()}")) {
+                if (uploader($this->photo[$this->name]['tmp_name'], __DIR__ . "/../../_storage/{$dir}/{$this->namePhoto}")) {
                     return true;
                 }
             } else {

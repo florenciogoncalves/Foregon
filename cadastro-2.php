@@ -25,7 +25,7 @@
       <img class="img-fluid w-25 mt-4 mt-lg-0" src="./image/favicon.svg" alt="minha-bufunfa" />
       <h1 class="mt-1 mt-lg-2">Escolher foto</h1>
       <span class="w-75 mx-auto">Lorem Ipsum is simply dummy text of the printing and typesetting industry. L</span>
-      <form class="needs-validation mt-4" method="POST" action="./_app/controllers/cadastroController.php" novalidate>
+      <form class="needs-validation mt-4" method="POST" action="./_app/controllers/cadastro2Controller.php" enctype="multipart/form-data" novalidate>
         <!-- Entranda de senha retalhada -->
 
         <div id="preview_image" class="upload-image _set-in--bg">

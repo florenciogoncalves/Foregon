@@ -6,13 +6,14 @@ class User extends connect
 {
     public $logged = null;
 
-    public function createUserAccount(string $nome, string $email, string $celular, string $senha): bool
+    public function createUserAccount(string $nome, string $email, string $celular, string $cpf, string $senha): bool
     {
-        $query = $this->connect->prepare("INSERT INTO users (nome, email, celular, senha) VALUES (?, ?, ?, ?)");
+        $query = $this->connect->prepare("INSERT INTO users (nome, email, celular, cpf,senha) VALUES (?, ?, ?, ?, ?)");
         $query->bindParam(1, $nome);
         $query->bindParam(2, $email);
         $query->bindParam(3, $celular);
-        $query->bindParam(4, $senha);
+        $query->bindParam(4, $cpf);
+        $query->bindParam(5, $senha);
         if ($query->execute()) {
             return true;
         }

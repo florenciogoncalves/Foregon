@@ -90,11 +90,13 @@ $Produtos = new produtosModel();
       ?>
 
       <?php
-      if (!$Produtos->showProducts(true)) {
-        echo $_SESSION['emptyMessage'];
-      } else {
-        unset($_SESSION['emptyMessage']);
-      }
+      if (isset($_SESSION['emptyMessage'])) :
+        if (!$Produtos->showProducts(true)) {
+          echo $_SESSION['emptyMessage'];
+        } else {
+          unset($_SESSION['emptyMessage']);
+        }
+      endif;
       ?>
 
       <div class="container-fluid px-0">

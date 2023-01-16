@@ -1,8 +1,8 @@
 <?php
-	session_start();
-	require __DIR__ . "/app/Models/produtosModel.php";
-	require_once __DIR__ . "/../_app/boot/helpers.php";
-	$produtos = new produtosModel();
+session_start();
+require __DIR__ . "/app/Models/produtosModel.php";
+require_once __DIR__ . "/../_app/boot/helpers.php";
+$produtos = new produtosModel();
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -42,7 +42,9 @@
 			</li>
 			<li class="logout col px-0 py-2">
 				<button>
-					<img class="img-fluid m-auto d-flex" src="./../image/icones-do-menu/logout.svg" alt="logout" />
+					<a href="./logout.php">
+						<img class="img-fluid m-auto d-flex" src="./../image/icones-do-menu/logout.svg" alt="logout" />
+					</a>
 				</button>
 			</li>
 		</ul>

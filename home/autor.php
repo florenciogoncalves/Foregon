@@ -38,7 +38,9 @@
 			</li>
 			<li class="logout col px-0 py-2">
 				<button>
-					<img class="img-fluid m-auto d-flex" src="./../image/icones-do-menu/logout.svg" alt="logout" />
+					<a href="./logout.php">
+						<img class="img-fluid m-auto d-flex" src="./../image/icones-do-menu/logout.svg" alt="logout" />
+					</a>
 				</button>
 			</li>
 		</ul>

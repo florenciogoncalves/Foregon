@@ -1,11 +1,9 @@
 <?php
-// require __DIR__ . "/../Models/Produtos.php";
 require __DIR__ . "/../../../_app/models/User.php";
 require __DIR__ . "/../../../_app/core/Session.php";
 require_once __DIR__ . "/../../../_app/core/Uploader.php";
 
 $Session = new Session();
-// $ProdutosModel = new produtosModel();
 $Uploader = new Uploader($_FILES, 'imagem-produto');
 $User = new User();
 
@@ -29,7 +27,7 @@ if (in_array("", $FILTER) || empty($_FILES['imagem-produto']['name'])) {
 } else {
     $form = [];
     $form['descricao_produto'] = filter($_POST['descricao']);
-    $form['valor'] = filter_var($_POST['valor'], FILTER_VALIDATE_INT);
+    $form['valor'] = $_POST['valor'];
     $form['foto_produto'] = rename_image($_FILES['imagem-produto']['name']);
 
 

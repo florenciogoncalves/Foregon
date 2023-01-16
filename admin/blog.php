@@ -1,3 +1,8 @@
+<?php
+session_start();
+require __DIR__ . "/app/Models/Blog.php";
+$Blog = new Blog();
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -61,84 +66,45 @@
 						industry</span>
 				</div>
 				<button class="btn-add-produto btn btn-primary h-mc py-1">
-					Adicionar produto
+					Criar Nova Postagem
 				</button>
 			</section>
+
+			<?php
+			if (isset($_SESSION['message'])) :
+			?>
+				<div class="alert alert-<?= $_SESSION['type']; ?> text-center">
+					<?= $_SESSION['message'];
+					unset($_SESSION['message']); ?>
+				</div>
+
+			<?php
+			endif;
+			?>
+
 
 			<section id="graficos-usuario" class="row p-0 gap-2 gap-sm-3 mb-3">
 				<div id="ultimos-artigos" class="col p-0">
 					<div class="container row gap-3 p-0">
-						<figure class="artigo-usuario col-12 col-lg mb-2 my-3">
-							<img class="img-fluid m-auto d-flex" src="./../arquivos-temporarios/artigo-img.png" alt="Imagem" />
-							<figcaption>
-								<a href="./artigo.php" class="ver-mais">Ver mais</a>
-							</figcaption>
-							<span class="descricao-artigo">Post de lorem</span>
-						</figure>
+						<?php
 
-						<figure class="artigo-usuario col-12 col-lg mb-2 my-3">
-							<img class="img-fluid m-auto d-flex" src="./../arquivos-temporarios/artigo-img.png" alt="Imagem" />
-							<figcaption>
-								<a href="./artigo.php" class="ver-mais">Ver mais</a>
-							</figcaption>
-							<span class="descricao-artigo">Post de lorem</span>
-						</figure>
 
-						<figure class="artigo-usuario col-12 col-lg mb-2 my-3">
-							<img class="img-fluid m-auto d-flex" src="./../arquivos-temporarios/artigo-img.png" alt="Imagem" />
-							<figcaption>
-								<a href="./artigo.php" class="ver-mais">Ver mais</a>
-							</figcaption>
-							<span class="descricao-artigo">Post de lorem</span>
-						</figure>
 
-						<figure class="artigo-usuario col-12 col-lg mb-2 my-3">
-							<img class="img-fluid m-auto d-flex" src="./../arquivos-temporarios/artigo-img.png" alt="Imagem" />
-							<figcaption>
-								<a href="./artigo.php" class="ver-mais">Ver mais</a>
-							</figcaption>
-							<span class="descricao-artigo">Post de lorem</span>
-						</figure>
+						if ($Blog->showBlogPosts()) :
+							foreach ($Blog->showBlogPosts() as $Post) :
 
-						<figure class="artigo-usuario col-12 col-lg mb-2 my-3">
-							<img class="img-fluid m-auto d-flex" src="./../arquivos-temporarios/artigo-img.png" alt="Imagem" />
-							<figcaption>
-								<a href="./artigo.php" class="ver-mais">Ver mais</a>
-							</figcaption>
-							<span class="descricao-artigo">Post de lorem</span>
-						</figure>
-
-						<figure class="artigo-usuario col-12 col-lg mb-2 my-3">
-							<img class="img-fluid m-auto d-flex" src="./../arquivos-temporarios/artigo-img.png" alt="Imagem" />
-							<figcaption>
-								<a href="./artigo.php" class="ver-mais">Ver mais</a>
-							</figcaption>
-							<span class="descricao-artigo">Post de lorem</span>
-						</figure>
-
-						<figure class="artigo-usuario col-12 col-lg mb-2 my-3">
-							<img class="img-fluid m-auto d-flex" src="./../arquivos-temporarios/artigo-img.png" alt="Imagem" />
-							<figcaption>
-								<a href="./artigo.php" class="ver-mais">Ver mais</a>
-							</figcaption>
-							<span class="descricao-artigo">Post de lorem</span>
-						</figure>
-
-						<figure class="artigo-usuario col-12 col-lg mb-2 my-3">
-							<img class="img-fluid m-auto d-flex" src="./../arquivos-temporarios/artigo-img.png" alt="Imagem" />
-							<figcaption>
-								<a href="./artigo.php" class="ver-mais">Ver mais</a>
-							</figcaption>
-							<span class="descricao-artigo">Post de lorem</span>
-						</figure>
-
-						<figure class="artigo-usuario col-12 col-lg mb-2 my-3">
-							<img class="img-fluid m-auto d-flex" src="./../arquivos-temporarios/artigo-img.png" alt="Imagem" />
-							<figcaption>
-								<a href="./artigo.php" class="ver-mais">Ver mais</a>
-							</figcaption>
-							<span class="descricao-artigo">Post de lorem</span>
-						</figure>
+						?>
+								<figure class="artigo-usuario col-12 col-lg mb-2 my-3">
+									<img class="img-fluid m-auto d-flex" src="./../_storage/blogImages/<?= $Post['photo_post']; ?>" alt="Imagem" />
+									<figcaption>
+										<a href="./artigo.php?id=<?= $Post['id']; ?>" class="ver-mais">Ver mais</a>
+									</figcaption>
+									<span class="descricao-artigo">Post de <?= $Post['escritor']; ?></span>
+								</figure>
+						<?php
+							endforeach;
+						endif;
+						?>
 					</div>
 				</div>
 			</section>
@@ -148,12 +114,12 @@
 
 	<div id="modal-editar-produto">
 		<div class="modal__container row m-auto">
-			<form id="card-produto" class="area-de-conteudo px-4 py-4 col-9 m-auto">
+			<form id="card-produto" class="area-de-conteudo px-4 py-4 col-9 m-auto" method="post" action="./app/Controllers/BlogController.php" enctype="multipart/form-data" novalidate>
 				<figure class="p-0 m-0 row gap-2">
 					<div class="img on-produto col-12 px-0">
 						<img src="./../image/artigo_admin.svg" alt="Minha Bufunfa" class="card__image img-fluid" id="preview_image" />
 						<img src="./../image/broken-image.svg" alt="broken" class="broken" />
-						<input id="imagem-produto" type="file" accept="image/*" />
+						<input id="imagem-produto" type="file" accept="image/*" name="postImage" />
 					</div>
 					<figcaption class="container col-12 px-0 px-lg-3">
 						<fieldset class="row mb-2">
