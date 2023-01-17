@@ -3,7 +3,8 @@ session_start();
 if (isset($_SESSION['userActive'])) {
   $user = $_SESSION['userActive'];
 } else {
-  $user = 'Guest User';
+  header("Location: ../login.php");
+  $_SESSION['message'] = "Você precisa fazer login primeiro!";
 }
 include_once __DIR__ . "/app/Models/blogModel.php";
 include_once __DIR__ . "/app/Models/produtosModel.php";
