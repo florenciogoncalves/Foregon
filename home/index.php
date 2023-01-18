@@ -5,6 +5,7 @@ if (isset($_SESSION['userActive'])) {
 } else {
   header("Location: ../login.php");
   $_SESSION['message'] = "Você precisa fazer login primeiro!";
+  $_SESSION['type'] = 'danger';
 }
 include_once __DIR__ . "/app/Models/blogModel.php";
 include_once __DIR__ . "/app/Models/produtosModel.php";

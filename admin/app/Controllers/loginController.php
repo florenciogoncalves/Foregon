@@ -1,10 +1,11 @@
 <?php
 
-require_once __DIR__ . "/../models/User.php";
-include_once __DIR__ . "/../core/Session.php";
-include_once __DIR__ . "/../boot/helpers.php";
+require __DIR__ . "/../../../_app/models/User.php";
+include_once __DIR__ . "/../../../_app/core/Session.php";
+include_once __DIR__ . "/../../../_app/boot/helpers.php";
 
 $Session = new Session();
+$model = new User();
 
 if (isset($_POST['submit'])) {
 
@@ -13,10 +14,10 @@ if (isset($_POST['submit'])) {
 
     if (empty($email) || empty($senha)) {
         $Session->set('message', 'Preencha todos os campos!');
-        header("Location: ../../login.php");
+        $Session->set('type', 'danger');
+        header("Location: ../../index.php");
     } else {
 
-        $model = new User();
         $password = $model->getUserPassword($email);
         foreach ($password as $passHash) {
             $userPassword = $passHash;
@@ -24,13 +25,21 @@ if (isset($_POST['submit'])) {
 
         if (verifyHash($senha, $userPassword)) {
             $login = $model->login($email, $userPassword);
-            if ($login) {
-                $_SESSION['userActive'] = $model->sessionUsername();
-                header("Location: ../../home");
+
+            if ($model->userLevel($email) > 4) {
+                if ($login) {
+                    $_SESSION['userActive'] = $model->sessionUsername();
+                    header("Location: ../../home");
+                }
+            } else {
+                $Session->set('message', 'Erro! Você não tem permissão suficiente para logar!');
+                $Session->set('type', 'danger');
+                header("Location: ../../index.php");
             }
         } else {
-            $_SESSION['message'] = 'Email ou Senha Incorretos! Verifique e tente novamente.';
-            header("Location: ../../login.php");
+            $Session->set('message', 'Email ou Senha Incorretos! Verifique e tente novamente.');
+            $Session->set('type', 'danger');
+            header("Location: ../../index.php");
         }
     }
 }

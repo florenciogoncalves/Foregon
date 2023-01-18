@@ -31,6 +31,17 @@ class User extends connect
         return false;
     }
 
+    public function userLevel(string $email): int
+    {
+        $query = $this->connect->prepare("SELECT level FROM users WHERE email = ?");
+        $query->bindParam(1, $email);
+        $query->execute();
+
+        foreach ($query->fetch(PDO::FETCH_ASSOC) as $level) {
+            return $level;
+        }
+    }
+
     public function login(string $email, string $senha): bool|User
     {
         $query = $this->connect->prepare("SELECT * FROM users WHERE email = ? AND senha = ?");
@@ -76,6 +87,4 @@ class User extends connect
             return $pic;
         }
     }
-
-    
 }
