@@ -27,9 +27,15 @@ if (isset($_POST['submit'])) {
 
         if (verifyHash($senha, $userPassword)) {
             $login = $model->login($email, $userPassword);
-            if ($login) {
-                $_SESSION['userActive'] = $model->sessionUsername();
-                header("Location: ../../home");
+            if ($model->userLevel($email) > 4) {
+                $Session->set('message', 'Erro! Você não tem permissão para logar com essas credenciais!');
+                $Session->set('type', 'danger');
+                header("Location: ../../login.php");
+            } else {
+                if ($login) {
+                    $_SESSION['userActive'] = $model->sessionUsername();
+                    header("Location: ../../home");
+                }
             }
         } else {
             $Session->set('message', 'Email ou Senha Incorretos! Verifique e tente novamente.');

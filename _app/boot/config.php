@@ -22,14 +22,14 @@ define("CONF_PASSWD_OPTION", ["cost" => 10]);
 /**
  * MAIL
  */
-define("CONF_MAIL_HOST", "");
-define("CONF_MAIL_PORT", "");
-define("CONF_MAIL_USER", "");
-define("CONF_MAIL_PASS", "");
-define("CONF_MAIL_SENDER", ["name" => "Equipe Foregon", "address" => ""]);
-define("CONF_MAIL_SUPPORT", "");
+define("CONF_MAIL_HOST", "p3plzcpnl487237.prod.phx3.secureserver.net");
+define("CONF_MAIL_PORT", "465");
+define("CONF_MAIL_USER", "noreply@aplicativo2.store");
+define("CONF_MAIL_PASS", "UNd9+(V(NSKJ");
+define("CONF_MAIL_SENDER", ["name" => "Equipe Foregon", "address" => "noreply@aplicativo2.store"]);
+define("CONF_MAIL_SUPPORT", "noreply@aplicativo2.store");
 define("CONF_MAIL_OPTION_LANG", "br");
 define("CONF_MAIL_OPTION_HTML", true);
 define("CONF_MAIL_OPTION_AUTH", true);
-define("CONF_MAIL_OPTION_SECURE", "tls");
+define("CONF_MAIL_OPTION_SECURE", "ssl");
 define("CONF_MAIL_OPTION_CHARSET", "utf-8");

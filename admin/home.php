@@ -2,8 +2,19 @@
 
 session_start();
 
-require __DIR__ . "/app/Models/Clientes.php";
+include_once __DIR__ . "/app/Models/Clientes.php";
+include_once __DIR__ . "/app/Models/fotoUsers.php";
+include_once __DIR__ . "/app/Models/Blog.php";
+
+$blog = new Blog();
 $clientes = new clientesModel();
+$photo = new fotoUsers();
+
+if (!isset($_SESSION['userActive'])) {
+	$_SESSION['message'] = "Você precisa logar primeiro!";
+	$_SESSION['type'] = "danger";
+	header("Location: ./index.php");
+}
 
 ?>
 <!DOCTYPE html>
@@ -119,29 +130,22 @@ $clientes = new clientesModel();
 
 				<div class="products container-fluid pb-3 px-0 mt-3 col-lg-11">
 					<div class="container row gap-3 p-0">
-						<figure class="artigo-usuario col col-lg mb-2 my-3">
-							<img class="img-fluid m-auto d-flex" src="./../arquivos-temporarios/artigo-img.png" alt="Imagem" />
-							<figcaption>
-								<a href="./artigo.php" class="ver-mais">Ver mais</a>
-							</figcaption>
-							<span class="descricao-artigo">Post de lorem</span>
-						</figure>
+						<?php
+						if ($blog->showBlogPosts(true, 3)) :
+							foreach ($blog->showBlogPosts(true, 3) as $artigo) :
+						?>
+								<figure class="artigo-usuario col col-lg mb-2 my-3">
+									<img class="img-fluid m-auto d-flex" src="./../_storage/blogImages/<?= $artigo['photo_post']; ?>" alt="Imagem" />
+									<figcaption>
+										<a href="./artigo.php?id=<?= $artigo['id']; ?>" class="ver-mais">Ver mais</a>
+									</figcaption>
+									<span class="descricao-artigo">Post de <?= $artigo['escritor']; ?></span>
+								</figure>
 
-						<figure class="artigo-usuario col col-lg mb-2 my-3">
-							<img class="img-fluid m-auto d-flex" src="./../arquivos-temporarios/artigo-img.png" alt="Imagem" />
-							<figcaption>
-								<a href="./artigo.php" class="ver-mais">Ver mais</a>
-							</figcaption>
-							<span class="descricao-artigo">Post de lorem</span>
-						</figure>
-
-						<figure class="artigo-usuario col col-lg mb-2 my-3">
-							<img class="img-fluid m-auto d-flex" src="./../arquivos-temporarios/artigo-img.png" alt="Imagem" />
-							<figcaption>
-								<a href="./artigo.php" class="ver-mais">Ver mais</a>
-							</figcaption>
-							<span class="descricao-artigo">Post de lorem</span>
-						</figure>
+						<?php
+							endforeach;
+						endif;
+						?>
 					</div>
 				</div>
 			</section>
@@ -151,35 +155,27 @@ $clientes = new clientesModel();
 			<aside class="aside-clientes area-de-conteudo p-0 p-lg-2 h-100 w-75 my-3">
 				<h5 class="mt-2 mt-lg-0">Clientes</h5>
 				<div class="px-3 px-sm-4 p-lg-0">
-					<div class="__cliente">
-						<img class="img-fluid w-75" src="./../arquivos-temporarios/foto-cliente.png" alt="Foto do cliente" class="__cliente-imagem" />
-						<span class="__cliente-nome-cliente">Lorem ipsum silva</span>
-					</div>
 
-					<div class="__cliente">
-						<img class="img-fluid w-75" src="./../arquivos-temporarios/foto-cliente.png" alt="Foto do cliente" class="__cliente-imagem" />
-						<span class="__cliente-nome-cliente">Lorem ipsum silva</span>
-					</div>
+			
 
-					<div class="__cliente">
-						<img class="img-fluid w-75" src="./../arquivos-temporarios/foto-cliente.png" alt="Foto do cliente" class="__cliente-imagem" />
-						<span class="__cliente-nome-cliente">Lorem ipsum silva</span>
-					</div>
+					<?php
 
-					<div class="__cliente">
-						<img class="img-fluid w-75" src="./../arquivos-temporarios/foto-cliente.png" alt="Foto do cliente" class="__cliente-imagem" />
-						<span class="__cliente-nome-cliente">Lorem ipsum silva</span>
-					</div>
+					if ($clientes->getUsers()) :
+						// foreach ($clientes->getUsers() as $user) :
+						foreach ($photo->photo() as $userPhoto) :
+					?>
+							<div class="__cliente">
+								<img class="img-fluid w-75" src="./../_storage/users/<?= $userPhoto['photo'] ?>" alt="Foto do cliente" class="__cliente-imagem" />
+								<span class="__cliente-nome-cliente"><?= $userPhoto['user']; ?></span>
+							</div>
 
-					<div class="__cliente">
-						<img class="img-fluid w-75" src="./../arquivos-temporarios/foto-cliente.png" alt="Foto do cliente" class="__cliente-imagem" />
-						<span class="__cliente-nome-cliente">Lorem ipsum silva</span>
-					</div>
+					<?php
+						endforeach;
+					// endforeach;
+					endif;
+					?>
 
-					<div class="__cliente">
-						<img class="img-fluid w-75" src="./../arquivos-temporarios/foto-cliente.png" alt="Foto do cliente" class="__cliente-imagem" />
-						<span class="__cliente-nome-cliente">Lorem ipsum silva</span>
-					</div>
+
 				</div>
 				<a href="./clientes.php" class="__ver-mais">Ver mais</a>
 			</aside>

@@ -42,10 +42,16 @@ if (in_array("", $FILTER)) {
                 </body>
                 ";
 
-            $Support->saveVerificationCode($email, $verificationCode);
 
-            // $Mailer->bootstrap("Recupere a sua senha", $body, $email, $User); A ser usado...
-            header("Location: ../../esqueceu-a-senha-2.php");
+            $Mailer->bootstrap("Recupere a sua senha", $body, $email, $User);
+            if ($Mailer->send()) {
+                $Support->saveVerificationCode($email, $verificationCode);
+                header("Location: ../../esqueceu-a-senha-2.php");
+            } else {
+                $Session->set('message', 'Whoops! Infelizmente não conseguimos enviar o e-mail! Por favor, tente novamente.');
+                $Session->set('type', 'warning');
+                header("Location: ../../esqueceu-a-senha.php");
+            }
         }
     } else {
         $Session->set('message', 'Lamentamos, mas o e-mail informado não está cadastrado! Tente novamente.');

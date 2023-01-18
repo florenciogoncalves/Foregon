@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . "/../../../_app/models/Model.php";
+include_once __DIR__ . "/../../../_app/models/Model.php";
 
 class Blog extends Model
 {
@@ -21,8 +21,11 @@ class Blog extends Model
      * @param integer $LIMIT
      * @return iterable|object
      */
-    public function showBlogPosts(int $LIMIT = 9)
+    public function showBlogPosts(bool $sort = false, int $LIMIT = 9)
     {
+        if ($sort) {
+            return $this->find()->order('id DESC')->limit($LIMIT)->fetch(true);
+        }
         return $this->find()->limit($LIMIT)->fetch(true);
     }
 

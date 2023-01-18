@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . "/Model.php";
+include_once __DIR__ . "/Model.php";
 
 class FotoUserModel extends Model
 {
