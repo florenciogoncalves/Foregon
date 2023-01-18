@@ -43,10 +43,12 @@ session_start();
             consectetur adipis cing elit.</span>
           <form class="needs-validation row p-0" method="POST" action="./_app/controllers/loginController.php" novalidate>
 
+  
+
             <?php
             if (isset($_SESSION['message'])) :
             ?>
-              <div class="alert alert-danger text-center">
+              <div class="alert alert-<?= $_SESSION['type']; ?> text-center">
                 <?= $_SESSION['message'];
                 unset($_SESSION['message']); ?>
               </div>

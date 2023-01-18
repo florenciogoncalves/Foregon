@@ -1,3 +1,9 @@
+<?php
+
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -25,7 +31,20 @@
       <img class="img-fluid w-25 mt-4 mt-lg-0" src="./image/favicon.svg" alt="minha-bufunfa" />
       <h1 class="mt-1 mt-lg-2">Escolha sua senha</h1>
       <span>Insira abaixo seus dados de contato abaixo para que possamos entrar em contato:</span>
-      <form class="needs-validation mt-4" method="POST" action="./_app/controllers/cadastroController.php" novalidate>
+
+      <?php
+      if (isset($_SESSION['message'])) :
+      ?>
+        <div class="alert alert-<?= $_SESSION['type']; ?> text-center">
+          <?= $_SESSION['message'];
+          unset($_SESSION['message']); ?>
+        </div>
+
+      <?php
+      endif;
+      ?>
+
+      <form class="needs-validation mt-4" method="POST" action="./_app/controllers/updatePassword.php" novalidate>
         <!-- Entranda de senha retalhada -->
         <fieldset id="campos-cadastro" class="mt-2 mb-1">
           <fieldset>
@@ -33,11 +52,11 @@
             <div class="invalid-feedback">A senha deve ter um mínimo de 6 caracteres</div>
           </fieldset>
           <fieldset>
-            <input id="confirmar-password" type="password" class="form-control" placeholder="Confirmação de senha" required minlength="6" />
+            <input id="confirmar-password" type="password" name="conf-senha" class="form-control" placeholder="Confirmação de senha" required minlength="6" />
           </fieldset>
         </fieldset>
 
-        <button id="btn_cadastrar" class="btn btn-primary mt-4 mb-2" name="submit" type="submit">Prosseguir</button>
+        <button id="btn_cadastrar" class="btn btn-primary mt-4 mb-2" type="submit">Prosseguir</button>
       </form>
     </div>
   </div>

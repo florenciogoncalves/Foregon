@@ -1,123 +1,84 @@
+<?php
+
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Recuperar senha | Foregon</title>
-		<link rel="shortcut icon" href="./image/favicon.svg" type="image/x-icon" />
-		<link rel="stylesheet" href="./style/reset.css" />
-		<!-- CSS only -->
-		<link href="./style/bootstrap.min.css" rel="stylesheet"/>
-		<script
-			src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-			integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-			crossorigin="anonymous"></script>
-		<link rel="stylesheet" href="./style/style.css" />
-		<link rel="stylesheet" href="./style/responsive.css" />
-	</head>
-	<body id="esqueceu-a-senha" class="iniciar-sessao">
-		<header class="main-header row pb-3">
-			<img
-				class="main-header__logo img-fluid"
-				src="./image/logo-minha-bufunfa.svg"
-				alt="Minha Bufunfa - logo" />
-		</header>
 
-		<main class="h-100 container-fluid">
-			<div class="row col-md-12 h-100">
-				<!-- Conteúdo da esquerda -->
-				<div
-					class="margem-topo col-md-10 col-lg-7 d-flex mx-auto justify-content-center p-0">
-					<div
-						class="lado-direito _container--shadow-md col-sm-10 col-lg-9 h-75 row p-4 p-sm-4 p-md-5 pb-lg-4 pt-lg-4 mt-sm-auto"
-						style="max-height: 540px">
-						<img
-							class="img-fluid w-25 mb-3 mt-lg-3"
-							src="./image/favicon.svg"
-							alt="minha-bufunfa" />
-						<h1>Esqueceu sua senha?</h1>
-						<span class="col-10 m-auto mt-2"
-							>Lorem ipsum dolor sit amet, consectetur adipis cing elit
-							consectetur adipis cing elit.</span
-						>
-						<form class="needs-validation" novalidate>
-							<!-- Entranda de senha retalhada -->
-							<fieldset
-								id="codigo-de-confirmacao"
-								class="m-auto col-11 col-sm-10 col-lg-11 col-xl-10 gap-1 gap-xs-0 row mt-4 mb-5">
-								<input
-									type="text"
-									id="campo"
-									class="col form-control"
-									maxlength="1"
-									placeholder="-"
-									required
-									value=""
-									onkeypress="return event.charCode >= 48 && event.charCode <= 57" />
-								<input
-									type="text"
-									id="campo-senha-2"
-									class="col form-control"
-									maxlength="1"
-									placeholder="-"
-									required
-									value=""
-									onkeypress="return event.charCode >= 48 && event.charCode <= 57" />
-								<input
-									type="text"
-									id="campo-senha-3"
-									class="col form-control"
-									maxlength="1"
-									placeholder="-"
-									required
-									value=""
-									onkeypress="return event.charCode >= 48 && event.charCode <= 57" />
-								<input
-									type="text"
-									id="campo-senha-4"
-									class="col form-control"
-									maxlength="1"
-									placeholder="-"
-									required
-									value=""
-									onkeypress="return event.charCode >= 48 && event.charCode <= 57" />
-								<input
-									type="text"
-									id="campo-senha-5"
-									class="col form-control"
-									maxlength="1"
-									placeholder="-"
-									required
-									value=""
-									onkeypress="return event.charCode >= 48 && event.charCode <= 57" />
-								<div class="invalid-feedback text-center">
-									Preencha todos os campos, por favor!
-								</div>
-							</fieldset>
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Recuperar senha | Foregon</title>
+	<link rel="shortcut icon" href="./image/favicon.svg" type="image/x-icon" />
+	<link rel="stylesheet" href="./style/reset.css" />
+	<!-- CSS only -->
+	<link href="./style/bootstrap.min.css" rel="stylesheet" />
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="./style/style.css" />
+	<link rel="stylesheet" href="./style/responsive.css" />
+</head>
 
-							<!-- Contem a senha completa no seu atributo value -->
-							<input
-								type="text"
-								id="senha-completa"
-								style="display: none !important" />
+<body id="esqueceu-a-senha" class="iniciar-sessao">
+	<header class="main-header row pb-3">
+		<img class="main-header__logo img-fluid" src="./image/logo-minha-bufunfa.svg" alt="Minha Bufunfa - logo" />
+	</header>
 
-							<button class="btn btn-md btn-primary mb-3" type="submit">
-								Trocar Senha
-							</button>
-						</form>
-					</div>
+	<main class="h-100 container-fluid">
+
+		<div class="row col-md-12 h-100">
+
+			<!-- Conteúdo da esquerda -->
+			<div class="margem-topo col-md-10 col-lg-7 d-flex mx-auto justify-content-center p-0">
+				<div class="lado-direito _container--shadow-md col-sm-10 col-lg-9 h-75 row p-4 p-sm-4 p-md-5 pb-lg-4 pt-lg-4 mt-sm-auto" style="max-height: 540px">
+					<img class="img-fluid w-25 mb-3 mt-lg-3" src="./image/favicon.svg" alt="minha-bufunfa" />
+
+					<h1>Esqueceu sua senha?</h1>
+					<span class="col-10 m-auto mt-2">Lorem ipsum dolor sit amet, consectetur adipis cing elit
+						consectetur adipis cing elit.</span>
+
+
+					<form class="needs-validation" method="post" action="./_app/controllers/newPassowrd.php" novalidate>
+						<?php
+						if (isset($_SESSION['message'])) :
+						?>
+							<div class="alert alert-<?= $_SESSION['type']; ?> text-center">
+								<?= $_SESSION['message'];
+								unset($_SESSION['message']); ?>
+							</div>
+
+						<?php
+						endif;
+						?>
+						<!-- Entranda de senha retalhada -->
+						<fieldset id="codigo-de-confirmacao" class="m-auto col-11 col-sm-10 col-lg-11 col-xl-10 gap-1 gap-xs-0 row mt-4 mb-5">
+							<input type="text" id="campo" class="col form-control" maxlength="1" placeholder="-" required value="" name="code1" onkeypress="return event.charCode >= 48 && event.charCode <= 57" />
+							<input type="text" id="campo-senha-2" class="col form-control" maxlength="1" placeholder="-" required value="" name="code2" onkeypress="return event.charCode >= 48 && event.charCode <= 57" />
+							<input type="text" id="campo-senha-3" class="col form-control" maxlength="1" placeholder="-" required value="" name="code3" onkeypress="return event.charCode >= 48 && event.charCode <= 57" />
+							<input type="text" id="campo-senha-4" class="col form-control" maxlength="1" placeholder="-" required value="" name="code4" onkeypress="return event.charCode >= 48 && event.charCode <= 57" />
+							<input type="text" id="campo-senha-5" class="col form-control" maxlength="1" placeholder="-" required value="" name="code5" onkeypress="return event.charCode >= 48 && event.charCode <= 57" />
+							<div class="invalid-feedback text-center">
+								Preencha todos os campos, por favor!
+							</div>
+						</fieldset>
+
+						<!-- Contem a senha completa no seu atributo value -->
+						<input type="text" id="senha-completa" style="display: none !important" />
+
+						<button class="btn btn-md btn-primary mb-3" type="submit">
+							Trocar Senha
+						</button>
+					</form>
 				</div>
-
-				<img
-					class="bg-img img-fluid col-md-5 d-none d-lg-block"
-					style="padding-right: 1rem"
-					src="./image/bg-esqueceu-a-senha.svg"
-					alt="Esqueceu a senha" />
 			</div>
-		</main>
 
-		<script src="./script/script.js"></script>
-		<script src="./script/validacoes_formularios.js"></script>
-	</body>
+			<img class="bg-img img-fluid col-md-5 d-none d-lg-block" style="padding-right: 1rem" src="./image/bg-esqueceu-a-senha.svg" alt="Esqueceu a senha" />
+		</div>
+	</main>
+
+	<script src="./script/script.js"></script>
+	<script src="./script/validacoes_formularios.js"></script>
+</body>
+
 </html>

@@ -66,7 +66,7 @@ function uploader($origin, $destination): bool
 
 function generateVerificationCode(): int
 {
-    return random_int(1000, 9999);
+    return random_int(10000, 99999);
 }
 
 
@@ -101,10 +101,6 @@ function verifyHash(string $password, $hashUser): bool
     return password_verify($password, $hashUser);
 }
 
-function codeGenerator(): int
-{
-    return random_int(10000, 99999);
-}
 
 function generateToken()
 {
@@ -128,4 +124,10 @@ function formatDate(string $string): string
 function formatHours(string $string): string
 {
     return mb_strcut($string, 10, 6);
+}
+
+function getHour(string $time): string
+{
+
+    return mb_strcut($time, 0, 5);
 }

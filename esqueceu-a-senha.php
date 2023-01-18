@@ -1,3 +1,8 @@
+<?php
+
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -18,24 +23,46 @@
 <body id="esqueceu-a-senha" class="iniciar-sessao">
 	<header class="main-header row pb-3">
 		<img class="main-header__logo img-fluid" src="./image/logo-minha-bufunfa.svg" alt="Minha Bufunfa - logo" />
+
+
 	</header>
 
 	<main class="h-100 container-fluid">
+
+
 		<div class="row col-md-12 h-100">
+
+
+
 			<!-- Conteúdo da esquerda -->
 			<div class="margem-topo col-md-10 col-lg-7 d-flex mx-auto justify-content-center p-0">
 				<div class="lado-direito _container--shadow-md col-sm-10 col-lg-9 h-75 row p-4 p-sm-4 p-md-5 pb-lg-4 pt-lg-4 px-lg-5 mt-sm-auto" style="max-height: 540px">
 					<img class="img-fluid w-25 mb-3 mt-lg-3" src="./image/favicon.svg" alt="minha-bufunfa" />
+
 					<h1>Esqueceu sua senha?</h1>
+
+
+
 					<span class="col-10 m-auto mt-2">Lorem ipsum dolor sit amet, consectetur adipis cing elit
 						consectetur adipis cing elit.</span>
-					<form class="needs-validation" novalidate>
 
+					<form class="needs-validation" method="post" action="./_app/controllers/resetPassword.php" novalidate>
+						<?php
+						if (isset($_SESSION['message'])) :
+						?>
+							<div class="alert alert-<?= $_SESSION['type']; ?> text-center">
+								<?= $_SESSION['message'];
+								unset($_SESSION['message']); ?>
+							</div>
+
+						<?php
+						endif;
+						?>
 						<fieldset class="my-4">
-						<input type="email" class="col form-control my-1 py-2" name="email" placeholder="Endereço de e-mail" required />
-						<div class="invalid-feedback text-center">
-							Endereço de e-mail incorreto!
-						</div>
+							<input type="email" class="col form-control my-1 py-2" name="email" placeholder="Endereço de e-mail" required />
+							<div class="invalid-feedback text-center">
+								Endereço de e-mail incorreto!
+							</div>
 						</fieldset>
 
 						<button class="btn btn-md btn-primary mb-3 py-2" type="submit">

@@ -15,6 +15,7 @@ if (isset($_POST['submit'])) {
 
     if (empty($email) || empty($senha)) {
         $Session->set('message', 'Preencha todos os campos!');
+        $Session->set('type', 'danger');
         header("Location: ../../login.php");
     } else {
 
@@ -31,7 +32,8 @@ if (isset($_POST['submit'])) {
                 header("Location: ../../home");
             }
         } else {
-            $_SESSION['message'] = 'Email ou Senha Incorretos! Verifique e tente novamente.';
+            $Session->set('message', 'Email ou Senha Incorretos! Verifique e tente novamente.');
+            $Session->set('type', 'danger');
             header("Location: ../../login.php");
         }
     }

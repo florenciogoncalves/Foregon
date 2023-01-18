@@ -76,4 +76,6 @@ class User extends connect
             return $pic;
         }
     }
+
+    
 }
