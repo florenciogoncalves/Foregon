@@ -13,7 +13,7 @@ $FILTER = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 $form = [];
 $form['descricao_produto'] = filter($_POST['descricao']);
 $form['valor'] = filter_var($_POST['valor'], FILTER_VALIDATE_INT);
-$form['foto_produto'] = rename_image($_FILES['imagem-produto']['name']);
+$form['foto_produto'] = rename_image($_FILES['imagem-produto']['name'], 'FP');
 
 if ($Session->has('id')) {
     $oldPicId = $_SESSION['id'];
@@ -28,7 +28,7 @@ if (in_array("", $FILTER) || empty($_FILES['imagem-produto']['name'])) {
     $form = [];
     $form['descricao_produto'] = filter($_POST['descricao']);
     $form['valor'] = $_POST['valor'];
-    $form['foto_produto'] = rename_image($_FILES['imagem-produto']['name']);
+    $form['foto_produto'] = $Uploader->renamePhoto(false);
 
 
     if ($Uploader->save()) {
