@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . "/../core/connect.php";
+include_once __DIR__ . "/../core/connect.php";
 
 class User extends connect
 {

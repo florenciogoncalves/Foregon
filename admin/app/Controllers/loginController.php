@@ -29,7 +29,7 @@ if (isset($_POST['submit'])) {
             if ($model->userLevel($email) > 4) {
                 if ($login) {
                     $_SESSION['userActive'] = $model->sessionUsername();
-                    header("Location: ../../home");
+                    header("Location: ../../home.php");
                 }
             } else {
                 $Session->set('message', 'Erro! Você não tem permissão suficiente para logar!');
