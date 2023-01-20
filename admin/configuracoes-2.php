@@ -1,3 +1,14 @@
+<?php
+
+session_start();
+
+if (!isset($_SESSION['userActive'])) {
+	$_SESSION['message'] = "Você precisa logar primeiro!";
+	$_SESSION['type'] = "danger";
+	header("Location: ./index.php");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -56,7 +67,7 @@
 		<form class="user-configurations">
 			<img src="" class="__user-image mb-2">
 			<fieldset class="data-container">
-				<h2 class="__user-name">Lorem ipsum silva	</h2>
+				<h2 class="__user-name">Lorem ipsum silva </h2>
 				<span class="__user-data">Email: <span name="user-email">Set the email here</span></span>
 				<span class="__user-data">Senha: <span name="user-password">Set password value here</span></span>
 				<span class="__user-data">CPF: <span name="user-cpf">Set CPF value here</span></span>

@@ -1,3 +1,15 @@
+<?php
+session_start();
+
+
+if (!isset($_SESSION['userActive'])) {
+	$_SESSION['message'] = "Você precisa logar primeiro!";
+	$_SESSION['type'] = "danger";
+	header("Location: ./index.php");
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -16,7 +28,7 @@
 </head>
 <!-- Relativo ao 'Seu score': No evento onload da tag body, defina dois parametros, o primeiro referente ao total positivo, e o segundo referente ao somatorio total -->
 
-<body id="conf-page" class="home-page __admin container-fluid d-flex d-lg-grid" onload="setProgressVal(600, 1000)">
+<body id="conf-page" class="home-page __admin container-fluid d-flex d-lg-grid" onload="setProgressVal(0, 1000)">
 	<nav id="menu-lateral" class="navbar col sticky-bottom py-2 px-4">
 		<div class="logo d-none d-lg-flex">
 			<a href="./" class="logo d-none d-lg-flex">
@@ -46,7 +58,9 @@
 			</li>
 			<li class="logout col px-0 py-2">
 				<button>
-					<img class="img-fluid m-auto d-flex" src="./../image/icones-do-menu/logout.svg" alt="logout" />
+					<a href="./logout.php">
+						<img class="img-fluid m-auto d-flex" src="./../image/icones-do-menu/logout.svg" alt="logout" />
+					</a>
 				</button>
 			</li>
 		</ul>

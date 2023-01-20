@@ -2,7 +2,18 @@
 session_start();
 require __DIR__ . "/app/Models/produtosModel.php";
 require_once __DIR__ . "/../_app/boot/helpers.php";
+include_once __DIR__ . "/app/Models/getProdutoModel.php";
 $produtos = new produtosModel();
+$Model = new getProdutosModel();
+
+
+if (isset($_SESSION['userActive'])) {
+	$user = $_SESSION['userActive'];
+} else {
+	header("Location: ../login.php");
+	$_SESSION['message'] = "Você precisa fazer login primeiro!";
+	$_SESSION['type'] = 'danger';
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -68,16 +79,22 @@ $produtos = new produtosModel();
 
 				<div class="products container-fluid pb-3 px-0 mt-4 col-lg-11">
 					<ul class="row gap-3 gap-sm-2 gap-md-3 col-12 justify-content-center row-cols-3">
+
 						<?php
+
+						$clienteProdutos = $Model->getByClientes($_SESSION['userActive']);
+
 						if ($produtos->findProducts(true)) :
-							foreach ($produtos->findProducts(true, 4) as $produto) :
+							// foreach ($produtos->findProducts(true, 4) as $produto) :
+							foreach ($clienteProdutos as $produto) :
+								// $produto = $Model->getByClientes($_SESSION['userActive']);
 						?>
 								<!-- Item - Cartão produto -->
 								<li class="card col-10 col-sm rounded-1 row">
 									<figure class="p-0 pt-3 px-sm-0 px-lg-3 pb-1">
-										<img src="./../_storage/produtos/<?= $produto['foto_produto']; ?>" alt="Minha Bufunfa" class="card__image img-fluid w-50" />
+										<img src="./../_storage/produtos/<?= $produto['photo']; ?>" alt="Minha Bufunfa" class="card__image img-fluid w-50" />
 										<figcaption class="container">
-											<h4 class="card__title"><?= $produto['nome_produto']; ?></h4>
+											<h4 class="card__title"><?= $produto['produto']; ?></h4>
 											<span>Avalie:</span>
 											<div class="classificado classificar">
 												<ul class="estrelas col-8 h-100">
@@ -89,10 +106,10 @@ $produtos = new produtosModel();
 												</ul>
 											</div>
 											<p class="card__description">
-												<?= str_limit_words($produto['descricao_produto'], 16); ?>
+												<?= str_limit_words($produto['descricao'], 16); ?>
 											</p>
-											<a href="./produto.php?id=<?= $produto['id']; ?>" class="btn-primary btn btn-primary">
-												Adquirir
+											<a href="./produto.php?id=<?= $produto['produto_id']; ?>" class="btn-primary btn btn-reverse">
+												Adquirido
 											</a>
 										</figcaption>
 									</figure>

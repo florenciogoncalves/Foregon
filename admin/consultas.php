@@ -1,3 +1,15 @@
+<?php
+
+session_start();
+
+require __DIR__ . "/../_support/paginator/src/Paginator.php";
+if (!isset($_SESSION['userActive'])) {
+	$_SESSION['message'] = "Você precisa logar primeiro!";
+	$_SESSION['type'] = "danger";
+	header("Location: ./index.php");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -13,6 +25,42 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="./../style/style.css" />
 	<link rel="stylesheet" href="./../style/responsive.css" />
+
+	<style type="text/css">
+		.paginator {
+			list-style: none;
+			padding: 0;
+			margin-top: 30px;
+		}
+
+		.paginator_item {
+			display: inline-block;
+			margin: 0 10px;
+			padding: 4px 12px;
+			background: #00cc66;
+			color: #fff;
+			text-decoration: none;
+			-webkit-border-radius: 4px;
+			-moz-border-radius: 4px;
+			border-radius: 4px;
+		}
+
+		.paginator_item:hover {
+			background: #00cc66;
+		}
+
+		.paginator_active,
+		.paginator_active:hover {
+			background: #cccccc;
+		}
+
+		pre {
+			margin-top: 30px;
+			background: #EEEEEE;
+			padding: 10px;
+		}
+	</style>
+
 </head>
 <!-- Relativo ao 'Seu score': No evento onload da tag body, defina dois parametros, o primeiro referente ao total positivo, e o segundo referente ao somatorio total -->
 
@@ -46,7 +94,9 @@
 			</li>
 			<li class="logout col px-0 py-2">
 				<button>
-					<img class="img-fluid m-auto d-flex" src="./../image/icones-do-menu/logout.svg" alt="logout" />
+					<a href="./logout.php">
+						<img class="img-fluid m-auto d-flex" src="./../image/icones-do-menu/logout.svg" alt="logout" />
+					</a>
 				</button>
 			</li>
 		</ul>
@@ -96,73 +146,19 @@
 							<td>Lorem Ipsum</td>
 						</tr>
 
-						<tr>
-							<!-- A imagem -->
-							<td><img src="./../image/clientes-cliente.png" /></td>
-							<td>Loren Ipsum</td>
-							<td>21/09/2022</td>
-							<td>Lorem Ipsum</td>
-							<td>15H05</td>
-							<td>Lorem Ipsum</td>
-							<td>Lorem Ipsum</td>
-						</tr>
 
-						<tr>
-							<!-- A imagem -->
-							<td><img src="./../image/clientes-cliente.png" /></td>
-							<td>Loren Ipsum</td>
-							<td>21/09/2022</td>
-							<td>Lorem Ipsum</td>
-							<td>15H05</td>
-							<td>Lorem Ipsum</td>
-							<td>Lorem Ipsum</td>
-						</tr>
 
-						<tr>
-							<!-- A imagem -->
-							<td><img src="./../image/clientes-cliente.png" /></td>
-							<td>Loren Ipsum</td>
-							<td>21/09/2022</td>
-							<td>Lorem Ipsum</td>
-							<td>15H05</td>
-							<td>Lorem Ipsum</td>
-							<td>Lorem Ipsum</td>
-						</tr>
-
-						<tr>
-							<!-- A imagem -->
-							<td><img src="./../image/clientes-cliente.png" /></td>
-							<td>Loren Ipsum</td>
-							<td>21/09/2022</td>
-							<td>Lorem Ipsum</td>
-							<td>15H05</td>
-							<td>Lorem Ipsum</td>
-							<td>Lorem Ipsum</td>
-						</tr>
-
-						<tr>
-							<!-- A imagem -->
-							<td><img src="./../image/clientes-cliente.png" /></td>
-							<td>Loren Ipsum</td>
-							<td>21/09/2022</td>
-							<td>Lorem Ipsum</td>
-							<td>15H05</td>
-							<td>Lorem Ipsum</td>
-							<td>Lorem Ipsum</td>
-						</tr>
-
-						<tr>
-							<!-- A imagem -->
-							<td><img src="./../image/clientes-cliente.png" /></td>
-							<td>Loren Ipsum</td>
-							<td>21/09/2022</td>
-							<td>Lorem Ipsum</td>
-							<td>15H05</td>
-							<td>Lorem Ipsum</td>
-							<td>Lorem Ipsum</td>
-						</tr>
 					</tbody>
 				</table>
+				<?php
+				// echo "<pre>";
+				$page = filter_input(INPUT_GET, "page", FILTER_VALIDATE_INT);
+				$pager = new \CoffeeCode\Paginator\Paginator();
+				$pager->pager(500, 50, $page);
+				echo $pager->render(null, false);
+				// print_r($page);
+				// echo "</pre>";
+				?>
 			</div>
 		</section>
 	</main>

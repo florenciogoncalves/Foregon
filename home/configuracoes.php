@@ -1,3 +1,13 @@
+<?php
+session_start();
+if (isset($_SESSION['userActive'])) {
+	$user = $_SESSION['userActive'];
+} else {
+	header("Location: ../login.php");
+	$_SESSION['message'] = "Você precisa fazer login primeiro!";
+	$_SESSION['type'] = 'danger';
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -16,7 +26,7 @@
 </head>
 <!-- Relativo ao 'Seu score': No evento onload da tag body, defina dois parametros, o primeiro referente ao total positivo, e o segundo referente ao somatorio total -->
 
-<body id="conf-page" class="home-page container-fluid d-flex d-lg-grid" onload="setProgressVal(600, 1000)">
+<body id="conf-page" class="home-page container-fluid d-flex d-lg-grid" onload="setProgressVal(0, 1000)">
 	<nav id="menu-lateral" class="navbar col sticky-bottom py-2 px-4">
 		<div class="logo d-none d-lg-flex">
 			<a href="./" class="logo d-none d-lg-flex">

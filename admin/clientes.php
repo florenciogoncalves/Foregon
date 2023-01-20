@@ -1,7 +1,13 @@
 <?php
+session_start();
 
 require __DIR__ . "/../_support/paginator/src/Paginator.php";
 
+if (!isset($_SESSION['userActive'])) {
+	$_SESSION['message'] = "Você precisa logar primeiro!";
+	$_SESSION['type'] = "danger";
+	header("Location: ./index.php");
+}
 ?>
 <!DOCTYPE html>
 
@@ -31,7 +37,7 @@ require __DIR__ . "/../_support/paginator/src/Paginator.php";
 			display: inline-block;
 			margin: 0 10px;
 			padding: 4px 12px;
-			background: #A287E7;
+			background: #00cc66;
 			color: #fff;
 			text-decoration: none;
 			-webkit-border-radius: 4px;
@@ -40,7 +46,7 @@ require __DIR__ . "/../_support/paginator/src/Paginator.php";
 		}
 
 		.paginator_item:hover {
-			background: #8A6ED5;
+			background: #00cc66;
 		}
 
 		.paginator_active,
@@ -87,8 +93,9 @@ require __DIR__ . "/../_support/paginator/src/Paginator.php";
 			</li>
 			<li class="logout col px-0 py-2">
 				<button>
-					<img class="img-fluid m-auto d-flex" src="./../image/icones-do-menu/logout.svg" alt="logout" />
-				</button>
+					<a href="./logout.php">
+						<img class="img-fluid m-auto d-flex" src="./../image/icones-do-menu/logout.svg" alt="logout" />
+					</a> </button>
 			</li>
 		</ul>
 	</nav>
@@ -152,31 +159,6 @@ require __DIR__ . "/../_support/paginator/src/Paginator.php";
 							<td><button class="btn__imprimir btn btn-primary"></button></td>
 						</tr>
 
-						<tr>
-							<!-- A imagem -->
-							<td><img src="./../image/clientes-cliente.png" /></td>
-							<td>Loren Ipsum</td>
-							<td>21/09/2022</td>
-							<td>Lorem Ipsum</td>
-							<td>15H05</td>
-							<!-- Para o item a seguir, o valor é setado pelo js com base na classe setada -->
-							<td><span class="_status--aprovado">Em processo</span></td>
-							<td><button class="btn__ver btn"></button></td>
-							<td><button class="btn__imprimir btn btn-primary"></button></td>
-						</tr>
-
-						<tr>
-							<!-- A imagem -->
-							<td><img src="./../image/clientes-cliente.png" /></td>
-							<td>Loren Ipsum</td>
-							<td>21/09/2022</td>
-							<td>Lorem Ipsum</td>
-							<td>15H05</td>
-							<!-- Para o item a seguir, o valor é setado pelo js com base na classe setada -->
-							<td><span class="_status--aprovado">Em processo</span></td>
-							<td><button class="btn__ver btn"></button></td>
-							<td><button class="btn__imprimir btn btn-primary"></button></td>
-						</tr>
 
 						<tr>
 							<!-- A imagem -->
@@ -191,45 +173,24 @@ require __DIR__ . "/../_support/paginator/src/Paginator.php";
 							<td><button class="btn__imprimir btn btn-primary"></button></td>
 						</tr>
 
-						<tr>
-							<!-- A imagem -->
-							<td><img src="./../image/clientes-cliente.png" /></td>
-							<td>Loren Ipsum</td>
-							<td>21/09/2022</td>
-							<td>Lorem Ipsum</td>
-							<td>15H05</td>
-							<!-- Para o item a seguir, o valor é setado pelo js com base na classe setada -->
-							<td><span class="_status--aprovado">Em processo</span></td>
-							<td><button class="btn__ver btn"></button></td>
-							<td><button class="btn__imprimir btn btn-primary"></button></td>
-						</tr>
 
-						<tr>
-							<!-- A imagem -->
-							<td><img src="./../image/clientes-cliente.png" /></td>
-							<td>Loren Ipsum</td>
-							<td>21/09/2022</td>
-							<td>Lorem Ipsum</td>
-							<td>15H05</td>
-							<!-- Para o item a seguir, o valor é setado pelo js com base na classe setada -->
-							<td><span class="_status--aprovado">Em processo</span></td>
-							<td><button class="btn__ver btn"></button></td>
-							<td><button class="btn__imprimir btn btn-primary"></button></td>
-						</tr>
 
-						<?php
-						// // echo "<pre>";
-						// $page = filter_input(INPUT_GET, "page", FILTER_VALIDATE_INT);
-						// $pager = new \CoffeeCode\Paginator\Paginator();
-						// $pager->pager(500, 10, $page);
-						// echo $pager->render(null, false);
-						// // print_r($page);
-						// echo "</pre>";
-						?>
+
+
+
 					</tbody>
 
 
 				</table>
+				<?php
+				// echo "<pre>";
+				$page = filter_input(INPUT_GET, "page", FILTER_VALIDATE_INT);
+				$pager = new \CoffeeCode\Paginator\Paginator();
+				$pager->pager(500, 50, $page);
+				echo $pager->render(null, false);
+				// print_r($page);
+				// echo "</pre>";
+				?>
 			</div>
 		</section>
 	</main>

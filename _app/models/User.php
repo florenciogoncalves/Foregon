@@ -20,7 +20,12 @@ class User extends connect
         return false;
     }
 
-    public function getUserPassword(string $email): bool|iterable|object
+
+    /**
+     * @param string $email
+     * @return boolean|iterable|object
+     */
+    public function getUserPassword(string $email)
     {
         $query = $this->connect->prepare("SELECT senha FROM users WHERE email = ?");
         $query->bindParam(1, $email);

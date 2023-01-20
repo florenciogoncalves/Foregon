@@ -3,6 +3,16 @@ session_start();
 require __DIR__ . "/app/Models/produtosModel.php";
 require_once __DIR__ . "/../_app/boot/helpers.php";
 $produtos = new produtosModel();
+
+
+if (isset($_SESSION['userActive'])) {
+	$user = $_SESSION['userActive'];
+} else {
+	header("Location: ../login.php");
+	$_SESSION['message'] = "Você precisa fazer login primeiro!";
+	$_SESSION['type'] = 'danger';
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">

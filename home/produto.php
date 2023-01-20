@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+
 if (isset($_GET['id'])) {
 	$id = $_GET['id'];
 } else {
@@ -9,6 +12,15 @@ if (isset($_GET['id'])) {
 require __DIR__ . "/app/Models/produtosModel.php";
 require_once __DIR__ . "/../_app/boot/helpers.php";
 $produtos = new produtosModel();
+
+if (isset($_SESSION['userActive'])) {
+	$user = $_SESSION['userActive'];
+} else {
+	header("Location: ../login.php");
+	$_SESSION['message'] = "Você precisa fazer login primeiro!";
+	$_SESSION['type'] = 'danger';
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -58,6 +70,21 @@ $produtos = new produtosModel();
 	</nav>
 
 	<main id="conteudo-principal" class="col p-3 p-sm-4 pb-5 mb-3 mb-lg-0">
+
+
+		<?php
+		if (isset($_SESSION['message'])) :
+		?>
+			<div class="alert alert-<?= $_SESSION['type']; ?> text-center">
+				<?= $_SESSION['message'];
+				unset($_SESSION['message']); ?>
+			</div>
+
+		<?php
+		endif;
+		?>
+
+
 		<div class="container-fluid pb-5">
 			<!-- Cartão com os dados do produto -->
 			<?php
@@ -87,7 +114,7 @@ $produtos = new produtosModel();
 							</p>
 							<span class="valor-label">Valor:</span>
 							<h6 class="valor">R$ <span class="monetize"><?= convertToBRL($produto->valor); ?></span></h6>
-							<button class="btn-primary btn btn-primary">Comprar</button>
+							<button class="btn-primary btn btn-reverse" id="btnComprar"><?= $produto->id ? "Comprar" : "Comprado"; ?></button>
 						</figcaption>
 					</figure>
 				</div>
@@ -217,6 +244,12 @@ $produtos = new produtosModel();
 	</main>
 
 	<script src="./../script/script.js"></script>
+	<script>
+		const btnComprar = document.getElementById('btnComprar')
+		btnComprar.addEventListener('click', () => {
+			window.location.href = './app/Controllers/getProduto.php?id=' + <?= $_GET['id']; ?>
+		})
+	</script>
 </body>
 
 </html>

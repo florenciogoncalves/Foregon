@@ -1,3 +1,15 @@
+<?php
+
+session_start();
+if (isset($_SESSION['userActive'])) {
+	$user = $_SESSION['userActive'];
+} else {
+	header("Location: ../login.php");
+	$_SESSION['message'] = "Você precisa fazer login primeiro!";
+	$_SESSION['type'] = 'danger';
+}
+
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 

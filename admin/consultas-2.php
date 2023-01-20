@@ -1,3 +1,13 @@
+<?php
+
+session_start();
+
+if (!isset($_SESSION['userActive'])) {
+	$_SESSION['message'] = "Você precisa logar primeiro!";
+	$_SESSION['type'] = "danger";
+	header("Location: ./index.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -163,7 +173,7 @@
 					</tbody>
 				</table>
 			</div>
-				<button class="btn btn-primary px-5 mx-auto w--35 sticky-bottom">Cadastrar</button>
+			<button class="btn btn-primary px-5 mx-auto w--35 sticky-bottom">Cadastrar</button>
 
 		</section>
 	</main>

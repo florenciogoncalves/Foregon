@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 
 include_once __DIR__ . "/app/Models/Clientes.php";
@@ -35,7 +34,7 @@ if (!isset($_SESSION['userActive'])) {
 </head>
 <!-- Relativo ao 'Seu score': No evento onload da tag body, defina dois parametros, o primeiro referente ao total positivo, e o segundo referente ao somatorio total -->
 
-<body class="home-page __admin container-fluid d-flex d-lg-grid" onload="setProgressVal(600, 1000)">
+<body class="home-page __admin container-fluid d-flex d-lg-grid" onload="setProgressVal(0, 1000)">
 	<nav id="menu-lateral" class="navbar col sticky-bottom py-2 px-4">
 		<div class="logo d-none d-lg-flex">
 			<a href="./" class="logo d-none d-lg-flex">
@@ -115,7 +114,7 @@ if (!isset($_SESSION['userActive'])) {
 					<div class="area-de-conteudo p-2 text-center">
 						<h4>Número de consultas</h4>
 						<hr />
-						<span class="numero-de-consultas">600</span>
+						<span class="numero-de-consultas">0</span>
 					</div>
 					<div class="area-de-conteudo p-2 text-center">
 						<h4>Clientes</h4>
@@ -156,7 +155,7 @@ if (!isset($_SESSION['userActive'])) {
 				<h5 class="mt-2 mt-lg-0">Clientes</h5>
 				<div class="px-3 px-sm-4 p-lg-0">
 
-			
+
 
 					<?php
 

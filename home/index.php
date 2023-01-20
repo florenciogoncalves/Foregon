@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 if (isset($_SESSION['userActive'])) {
   $user = $_SESSION['userActive'];
@@ -12,6 +13,7 @@ include_once __DIR__ . "/app/Models/produtosModel.php";
 require __DIR__ . "/../_app/boot/helpers.php";
 
 $blog = new blogModel();
+
 
 ?>
 
@@ -34,7 +36,7 @@ $blog = new blogModel();
 </head>
 <!-- Relativo ao 'Seu score': No evento onload da tag body, defina dois parametros, o primeiro referente ao total positivo, e o segundo referente ao somatorio total -->
 
-<body class="home-page _loc--index container-fluid d-flex d-lg-grid" onload="setProgressVal(600, 1000)">
+<body class="home-page _loc--index container-fluid d-flex d-lg-grid" onload="setProgressVal(0, 1000)">
   <nav id="menu-lateral" class="navbar col sticky-bottom py-2 px-4">
     <div class="logo d-none d-lg-flex">
       <a href="./" class="logo d-none d-lg-flex">

@@ -9,6 +9,12 @@ if (isset($_GET['id'])) {
 	$id = 1;
 }
 
+if (!isset($_SESSION['userActive'])) {
+	$_SESSION['message'] = "Você precisa logar primeiro!";
+	$_SESSION['type'] = "danger";
+	header("Location: ./index.php");
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
