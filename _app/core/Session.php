@@ -24,7 +24,7 @@ class Session
      * @param string $key
      * @return Session
      */
-    public function get(string $key): Session
+    public function get(string $key): string
     {
         return $_SESSION[$key];
     }
