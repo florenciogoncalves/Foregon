@@ -24,6 +24,15 @@ class Session
      * @param string $key
      * @return Session
      */
+    public function get(string $key): Session
+    {
+        return $_SESSION[$key];
+    }
+
+    /**
+     * @param string $key
+     * @return Session
+     */
     public function unset(string $key): Session
     {
         unset($_SESSION[$key]);
