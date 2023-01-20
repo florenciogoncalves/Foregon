@@ -26,6 +26,8 @@ if (isset($_GET['id'])) {
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="./../style/style.css" />
 	<link rel="stylesheet" href="./../style/responsive.css" />
+	<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+
 </head>
 <!-- Relativo ao 'Seu score': No evento onload da tag body, defina dois parametros, o primeiro referente ao total positivo, e o segundo referente ao somatorio total -->
 
@@ -82,11 +84,15 @@ if (isset($_GET['id'])) {
 				<div class="saiba-tambem">
 					<div class="referencia"><span class="_texto--verde">Referencia: </span><?= $post->referencia; ?></div>
 					<div class="artigo-interacao">
+
 						<!-- Setar 'true' ou 'false' no value do botão a seguir, ele define o estado do botão, se sim ou não curtido -->
-						<button class="artigo-reacao" value="false" onclick="this.value == 'false' ? this.value = 'true' : this.value = 'false'">
-							150
+						<!-- <button class="artigo-reacao" value="false" onclick="this.value == 'false' ? this.value = 'true' : this.value = 'false'">-->
+						<button class="artigo-reacao" id="likeBtn" value="<?= $post->id; ?>">
+
+							<?= $post->likes; ?>
 						</button>
-						<button class="artigo-partilhas">150</button>
+
+						<button class="artigo-partilhas">0</button>
 					</div>
 				</div>
 			</section>
@@ -125,6 +131,14 @@ if (isset($_GET['id'])) {
 	</main>
 
 	<script src="./../script/script.js"></script>
+	<script>
+		const btn = $("#likeBtn").val()
+		addEventListener("click", () => {
+			window.location.href = './app/Controllers/react.php?id=' + btn
+		})
+	</script>
+
+
 </body>
 
 </html>

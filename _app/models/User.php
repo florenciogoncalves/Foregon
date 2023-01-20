@@ -87,4 +87,28 @@ class User extends connect
             return $pic;
         }
     }
+
+
+    public function getLike(string $like, int $id): bool
+    {
+        $query = $this->connect->prepare("UPDATE blog SET likes = ? WHERE id = ?");
+        $query->bindParam(1, $like);
+        $query->bindParam(2, $id);
+
+        if ($query->execute()) {
+            return true;
+        }
+        return false;
+    }
+
+    public function numLikes(int $id): int
+    {
+        $query = $this->connect->prepare("SELECT likes FROM blog WHERE id = ?");
+        $query->bindParam(1, $id);
+        $query->execute();
+
+        foreach ($query->fetch(PDO::FETCH_ASSOC) as $like) {
+            return $like;
+        }
+    }
 }
