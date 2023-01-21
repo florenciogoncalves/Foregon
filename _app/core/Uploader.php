@@ -47,6 +47,9 @@ class Uploader
         // return rename_image($this->photo[$this->name]['name'], $name);
     }
 
+    /**
+     * @return void
+     */
     public function message()
     {
         return $this->message;

@@ -206,7 +206,7 @@
 									consectetur adipis cing elit. Dolor sit amet, consectetur
 									adipis cing elit consectetur adipis cing elit.
 								</p>
-								<a href="./../home/produto.html" class="btn-primary btn btn-primary">
+								<a href="./../home/produto.php" class="btn-primary btn btn-primary">
 									Conferir cartão
 								</a>
 							</figcaption>
@@ -229,7 +229,7 @@
 									consectetur adipis cing elit. Dolor sit amet, consectetur
 									adipis cing elit consectetur adipis cing elit.
 								</p>
-								<a href="./../home/produto.html" class="btn-primary btn btn-primary">
+								<a href="./../home/produto.php" class="btn-primary btn btn-primary">
 									Conferir cartão
 								</a>
 							</figcaption>
@@ -252,7 +252,7 @@
 									consectetur adipis cing elit. Dolor sit amet, consectetur
 									adipis cing elit consectetur adipis cing elit.
 								</p>
-								<a href="./../home/produto.html" class="btn-primary btn btn-primary">
+								<a href="./../home/produto.php" class="btn-primary btn btn-primary">
 									Conferir cartão
 								</a>
 							</figcaption>

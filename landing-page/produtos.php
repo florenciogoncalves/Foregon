@@ -4,14 +4,14 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Conclua seu cadastro | Foregon</title>
+		<title>Landing-Page | Foregon</title>
 		<link
 			rel="shortcut icon"
 			href="./../image/favicon.svg"
 			type="image/x-icon" />
 		<link rel="stylesheet" href="./../style/reset.css" />
 		<link
-			href="../style/bootstrap.min.css"
+			href="./../style/bootstrap.min.css"
 			rel="stylesheet"
 			integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
 			crossorigin="anonymous" />
@@ -20,80 +20,63 @@
 	</head>
 	<body class="landing-page">
 		<header class="main-header _status--not-logged-in row pb-3">
-		<img class="main-header__logo img-fluid" src="./../image/logo-minha-bufunfa.svg" alt="Minha Bufunfa - logo" />
+			<img
+				class="main-header__logo img-fluid"
+				src="./../image/logo-minha-bufunfa.svg"
+				alt="Minha Bufunfa - logo" />
 			<div class="acess-buttons">
 				<a class="btn btn-reverse" href="./login.php">Entrar</a>
 				<a class="btn btn-primary" href="./cadastro.php">Cadastrar-se</a>
 			</div>
 		</header>
 
-		<div id="landing-pos-header" class="margem-topo row">
-			<div class="container-fluid py-3 py-md-4">
-				<form
-					class="interative-area form-group col-12 col-sm-9 col-lg-6 px-4 px-sm-5 my-auto">
-					<h1 class="py-3 pt-lg-0">Finalize seu cadastro</h1>
-					<fieldset class="row gap-2">
-						<input
-							type="text"
-							class="form-control"
-							placeholder="Nome completo"
-							name="nome" />
-						<fieldset class="px-0 row gap-3">
-							<input
-								type="tel"
-								class="form-control col-sm"
-								placeholder="Telefone"
-								name="telefone" />
-							<input
-								type="text"
-								class="form-control col-sm"
-								placeholder="Data de nascimento"
-								name="data-de-nascimento" />
-						</fieldset>
-						<fieldset class="px-0 row gap-3">
-							<select
-								name="estado"
-								class="form-select col-sm"
-								title="Selecione o seu estado">
-								<option value="" selected>Estado</option>
-							</select>
-							<select
-								name="cidade"
-								class="form-select col-sm"
-								title="Selecione a sua cidade">
-								<option value="" selected>Cidade</option>
-							</select>
-						</fieldset>
-						<fieldset class="px-0 row gap-3">
-							<div class="col-sm px-0">
-								<select
-									name="ocupacao"
-									class="form-select"
-									title="Selecione a sua ocupação">
-									<option value="" selected>Ocupação</option>
-								</select>
-							</div>
-							<div class="col-sm px-0">
-								<input
-									type="text"
-									class="form-control"
-									placeholder="Renda Mensal" />
-							</div>
-						</fieldset>
-					</fieldset>
+		<section class="main-carousel p-4 pb-1 container-fluid mb-5 _translate-to--left">
+			<!-- container do carroussel -->
+			<section
+				class="container-all-slides col-11 col-sm-7 col-lg-6 m-auto h-auto pt-2">
+				<div class="container-fluid">
+					<!-- Item do carroussel -->
+					<div class="carousel-slide row col-12 col-lg-10 m-auto">
+						<h3 class="current-slide__title text-center">Lorem ipsum 1</h3>
+						<span class="current-slide__subtitle col-12">
+							It is a long established fact that a reader will be distracted by
+							the readable content of a page when looking at its layout. The
+							point of using Lorem Ipsum is that it has a more-or-less normal
+							distribution of letters, as oppos
+						</span>
+						<button class="btn btn-primary">Lorem Ipsum</button>
+					</div>
 
-					<button
-						type="submit"
-						class="btn btn-primary my-2 mb-3 mt-3 w-75 d-flex justify-content-center mx-auto">
-						Cadastrar
-					</button>
-					<ul id="navegacao-carroussel" class="m-0">
-						<li></li>
-						<li class="current-slide__demarcation"></li>
-					</ul>
-				</form>
-			</div>
-		</div>
+					<!-- Item do carroussel -->
+					<div class="carousel-slide row col-12 col-lg-10 m-auto">
+						<h3 class="current-slide__title text-center">Lorem ipsum 2</h3>
+						<span class="current-slide__subtitle col-12">
+							It is a long established fact that a reader will be distracted by
+							the readable content of a page when looking at its layout. The
+							point of using Lorem Ipsum is that it has a more-or-less normal
+							distribution of letters, as oppos
+						</span>
+						<button class="btn btn-primary">Lorem Ipsum</button>
+					</div>
+
+					<!-- Item do carroussel -->
+					<div class="carousel-slide row col-12 col-lg-10 m-auto">
+						<h3 class="current-slide__title text-center">Lorem ipsum 3</h3>
+						<span class="current-slide__subtitle col-12">
+							It is a long established fact that a reader will be distracted by
+							the readable content of a page when looking at its layout. The
+							point of using Lorem Ipsum is that it has a more-or-less normal
+							distribution of letters, as oppos
+						</span>
+						<button class="btn btn-primary">Lorem Ipsum</button>
+					</div>
+				</div>
+			</section>
+
+			<ul id="navegacao-carroussel">
+				<!-- <li class="current-slide__demarcation"></li> Corresponde ao slide atual -->
+			</ul>
+		</section>
 
 		<main id="conteudo-principal">
 			<div
@@ -251,7 +234,7 @@
 									adipis cing elit consectetur adipis cing elit.
 								</p>
 								<a
-									href="./../home/produto.html"
+									href="./../home/produto.php"
 									class="btn-primary btn btn-primary">
 									Conferir cartão
 								</a>
@@ -276,7 +259,7 @@
 									adipis cing elit consectetur adipis cing elit.
 								</p>
 								<a
-									href="./../home/produto.html"
+									href="./../home/produto.php"
 									class="btn-primary btn btn-primary">
 									Conferir cartão
 								</a>
@@ -301,7 +284,7 @@
 									adipis cing elit consectetur adipis cing elit.
 								</p>
 								<a
-									href="./../home/produto.html"
+									href="./../home/produto.php"
 									class="btn-primary btn btn-primary">
 									Conferir cartão
 								</a>
@@ -321,7 +304,7 @@
 					class="img-fluid col-4 col-md-9 pb-md-2"
 					src="./../image/logo-minha-bufunfa.svg"
 					alt="Minha bufanfa" />
-				<div class="container-fluid p-0">
+				<div class="container-fluid p-0 d-none d-sm-flex">
 					<span>Acesse nossas redes</span>
 					<nav class="row p-0 gap-1 col-5 col-md-8">
 						<a
