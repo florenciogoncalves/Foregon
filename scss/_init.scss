@@ -115,7 +115,7 @@ a {
 	}
 }
 
-select option {
+body:not(.landing-page) select option {
 	&:first-child {
 		color: grey;
 		display: none;
