@@ -512,10 +512,10 @@ a, a:visited, a:hover {
   font-size: 0.75rem !important;
 }
 
-select option {
+body:not(.landing-page) select option {
   color: #555;
 }
-select option:first-child {
+body:not(.landing-page) select option:first-child {
   color: grey;
   display: none;
 }
