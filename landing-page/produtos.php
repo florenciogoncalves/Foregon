@@ -30,24 +30,6 @@
 			</div>
 		</header>
 
-<<<<<<< HEAD:landing-page/produtos.php
-		<section class="main-carousel p-4 pb-1 container-fluid mb-5 _translate-to--left">
-			<!-- container do carroussel -->
-			<section
-				class="container-all-slides col-11 col-sm-7 col-lg-6 m-auto h-auto pt-2">
-				<div class="container-fluid">
-					<!-- Item do carroussel -->
-					<div class="carousel-slide row col-12 col-lg-10 m-auto">
-						<h3 class="current-slide__title text-center">Lorem ipsum 1</h3>
-						<span class="current-slide__subtitle col-12">
-							It is a long established fact that a reader will be distracted by
-							the readable content of a page when looking at its layout. The
-							point of using Lorem Ipsum is that it has a more-or-less normal
-							distribution of letters, as oppos
-						</span>
-						<button class="btn btn-primary">Lorem Ipsum</button>
-					</div>
-=======
 		<div id="landing-pos-header" class="margem-topo row">
 			<div class="container-fluid py-3 py-md-4">
 				<form
@@ -7213,7 +7195,6 @@
 							</div>
 						</fieldset>
 					</fieldset>
->>>>>>> 456b2b74ab1a08d801c0badf691d2b279d4025b3:landing-page/conclua-o-cadastro.html
 
 					<!-- Item do carroussel -->
 					<div class="carousel-slide row col-12 col-lg-10 m-auto">
