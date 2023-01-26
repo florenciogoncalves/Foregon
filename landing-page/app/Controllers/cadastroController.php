@@ -1,3 +1,2 @@
 <?php
-echo "<pre>";
-var_dump($_REQUEST);
+header("Location: ../../conclua-o-cadastro.php");
