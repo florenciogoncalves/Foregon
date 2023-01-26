@@ -43,7 +43,7 @@ $Session = new Session();
 				<?php
 				endif;
 				?>
-				<h1>Faça seu cadastro!</h1>
+				<h1>Veja seu score!</h1>
 				<span>Lorem ipsum dolor sit amet, consectetur adipis cing elit
 					consectetur adipis cing elit.</span>
 				<fieldset class="mt-3 mb-md-2">
