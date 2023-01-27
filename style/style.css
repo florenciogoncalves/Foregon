@@ -679,6 +679,12 @@ body:not(.landing-page) select option:first-child {
   opacity: 1;
 }
 
+.__to-landing {
+  width: max-content;
+  margin: 0 1.5rem 0 auto;
+  font-size: 0.67rem;
+}
+
 main {
   margin-top: -1px;
   background: #fff;
@@ -886,7 +892,7 @@ main {
 }
 
 #landing-pos-header h1,
-.iniciar-sessao .lado-direito img + h1 {
+.iniciar-sessao .lado-direito h1 {
   font-size: 1.25rem;
   text-align: center;
   font-weight: 700;
