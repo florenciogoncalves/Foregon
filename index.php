@@ -70,8 +70,9 @@
 
 		<ul id="navegacao-carroussel">
 			<!-- <li class="current-slide__demarcation"></li> Corresponde ao slide atual -->
-		</ul>
+		</ul><a class="__to-landing btn btn-primary" href="./landing-page/index.php">Acesse a landing-page</a>
 	</section>
+	
 
 	<!-- Conteúdo principal -->
 	<main id="conteudo-principal" class="row d-flex justify-content-center mt-5">

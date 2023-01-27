@@ -33,7 +33,7 @@ session_start();
       <img class="col-lg-5 d-none d-lg-block h-100 mh-100" src="./image/background-login.png" alt="Minha Bufunfa" />
 
       <!-- Conteúdo da direita -->
-      <div class="col-md-9 col-lg-7 m-auto  mb-lg-auto justify-content-center p-0 my-lg-auto">
+      <div class="col-md-9 col-lg-7 margem-topo m-auto  mb-lg-auto justify-content-center p-0 my-lg-auto">
 
         <div class="lado-direito col-sm-10 col-lg-9 h-50 row p-4 p-sm-5 pb-lg-4 pt-lg-4">
 
@@ -48,7 +48,7 @@ session_start();
             <?php
             if (isset($_SESSION['message'])) :
             ?>
-              <div class="alert alert-<?= $_SESSION['type']; ?> text-center">
+              <div class="alert alert-<?= $_SESSION['type']; ?> text-center m-0 mt-1 p-2">
                 <?= $_SESSION['message'];
                 unset($_SESSION['message']); ?>
               </div>
@@ -63,7 +63,7 @@ session_start();
               <input type="password" name="password" id="password" placeholder="********" class="form-control form-control-md" required maxlength="8" />
             </div>
 
-            <div class="mb-3 d-sm-flex justify-content-between form-group form-check">
+            <div class="mb-1 d-sm-flex justify-content-between form-group form-check">
               <label for="salvar-login"><input type="checkbox" name="salvar-login" class="form-check-input" id="salvar-login" />Salvar login</label>
               <a class="d-none d-sm-flex _text--underline" href="./esqueceu-a-senha.php">Esqueci minha senha</a>
             </div>
@@ -75,10 +75,10 @@ session_start();
 
           <span class="d-none d-sm-grid mt-3 mb-2 text-center">Não tem uma conta? Cadastre-se gratuitamente.</span>
 
-          <a class="d-flex mt-3 p-0 col-auto mx-auto _text--underline" href="./cadastro.php">Criar minha conta</a>
+          <a class="d-flex mt-2 p-0 col-auto mx-auto _text--underline" href="./cadastro.php">Criar minha conta</a>
         </div>
       </div>
-      <a class="d-lg-none m-auto mt-3 mb-2 d-flex col-auto start-50 translate-middle _text--underline" href="./esqueceu-a-senha.php" style="
+      <a class="d-lg-none m-auto mt-2 mb-2 d-flex col-auto start-50 translate-middle _text--underline" href="./esqueceu-a-senha.php" style="
             font-size: 0.75rem !important;
             position: absolute;
             bottom: 2rem;
