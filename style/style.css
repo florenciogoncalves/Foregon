@@ -2713,4 +2713,12 @@ a.__author::before {
   grid-template-columns: repeat(5, 1fr);
 }
 
+._bg--red {
+  background-color: #00cc66 !important;
+}
+
+._text--white {
+  color: #fff !important;
+}
+
 /*# sourceMappingURL=style.css.map */

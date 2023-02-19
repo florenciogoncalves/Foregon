@@ -1,24 +1,24 @@
 <?php
-require_once __DIR__ . "/../_app/core/Session.php";
-require __DIR__ . "/app/Models/UserModel.php";
-include __DIR__ . "/app/Models/User2Model.php";
+// require_once __DIR__ . "/../_app/core/Session.php";
+// require __DIR__ . "/app/Models/UserModel.php";
+// include __DIR__ . "/app/Models/User2Model.php";
 
 
-$Session = new Session();
-$User = new UserModel();
-$PhotoModel = new User2Model();
+// $Session = new Session();
+// $User = new UserModel();
+// $PhotoModel = new User2Model();
 
-if ($Session->has('userActive')) {
-	$user = $_SESSION['userActive'];
-}
+// if ($Session->has('userActive')) {
+// 	$user = $_SESSION['userActive'];
+// }
 
-if (isset($_SESSION['userActive'])) {
-	$user = $_SESSION['userActive'];
-} else {
-	header("Location: ../login.php");
-	$_SESSION['message'] = "Você precisa fazer login primeiro!";
-	$_SESSION['type'] = 'danger';
-}
+// if (isset($_SESSION['userActive'])) {
+// 	$user = $_SESSION['userActive'];
+// } else {
+// 	header("Location: ../login.php");
+// 	$_SESSION['message'] = "Você precisa fazer login primeiro!";
+// 	$_SESSION['type'] = 'danger';
+// }
 ?>
 
 <!DOCTYPE html>

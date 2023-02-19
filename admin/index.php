@@ -35,7 +35,7 @@ session_destroy();
       <!-- Conteúdo da direita -->
       <div class="col-md-9 col-lg-7 m-auto  mb-lg-auto justify-content-center p-0 my-lg-auto">
 
-        <div class="lado-direito col-sm-10 col-lg-9 h-50 row p-4 p-sm-5 pb-lg-4 pt-lg-4">
+        <div class="lado-direito margem-topo col-sm-10 col-lg-9 h-50 row p-4 p-sm-5 pb-lg-4 pt-lg-4">
 
           <img class="img-fluid w-25 mt-3 mt-lg-0" src="./../image/favicon.svg" alt="minha-bufunfa" />
           <h1 class="mt-1 mt-lg-0">Acesse sua conta</h1>

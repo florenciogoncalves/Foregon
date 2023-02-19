@@ -70,10 +70,12 @@ if (!isset($_SESSION['userActive'])) {
 		<div class="container-fluid _max-width--85">
 			<section id="graficos-usuario" class="row p-0 gap-2 gap-sm-5 mt-4 mb-3">
 				<div class="row col-8 gap-3">
-					<div class="area-de-conteudo p-2 p-sm-1 p-0">
-						Configurações de conta
+					<div class="area-de-conteudo  col-8 d-flex _bg--red w-100">
+						<a href="./configuracoes-2.php" class="w-100 h-100 p-2 p-sm-1 p-0 _text--white">
+							Configurações de conta
+						</a>
 					</div>
-					<div class="area-de-conteudo p-2 p-sm-1 p-0">
+					<div class="area-de-conteudo p-2 p-sm-1 p-0 _text--white _bg--red">
 						Captação
 					</div>
 				</div>

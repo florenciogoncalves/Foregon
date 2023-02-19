@@ -59,8 +59,10 @@ if (isset($_SESSION['userActive'])) {
 	<main id="conteudo-principal" class="col p-3 p-sm-4 pb-5 mb-3 mb-lg-0">
 		<div class="container-fluid p-0 p-sm-3">
 			<section id="graficos-usuario" class="row p-0 gap-2 gap-sm-5 mt-4 mb-3">
-				<div class="area-de-conteudo p-2 p-sm-3 col-8 p-0">
-					Configurações de conta
+				<div class="area-de-conteudo  col-8 d-flex _bg--red ">
+					<a href="./configuracoes-2.php" class="w-100 h-100 p-2 p-0 _text--white">
+						Configurações de conta
+					</a>
 				</div>
 
 				<div id="score" class="area-de-conteudo p-2 p-sm-3 col-4 gap-2 col-lg p-0 ms-auto">
