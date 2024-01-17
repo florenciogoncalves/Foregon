@@ -1,0 +1,277 @@
+<?php
+
+session_start();
+
+if (isset($_GET['id'])) {
+	$id = $_GET['id'];
+} else {
+	header("Location: ./produtos.html");
+	$id = 1;
+}
+
+require __DIR__ . "/app/Models/produtosModel.html";
+require_once __DIR__ . "/../_app/boot/helpers.html";
+$produtos = new produtosModel();
+
+if (isset($_SESSION['userActive'])) {
+	$user = $_SESSION['userActive'];
+} else {
+	header("Location: ../login.html");
+	$_SESSION['message'] = "Você precisa fazer login primeiro!";
+	$_SESSION['type'] = 'danger';
+}
+
+?>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Produtos | Foregon</title>
+	<link rel="shortcut icon" href="./../image/favicon.svg" type="image/x-icon" />
+	<link rel="stylesheet" href="./../style/reset.css" />
+	<!-- CSS only -->
+	<link href="./../style/bootstrap.min.css" rel="stylesheet" />
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+		crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="./../style/style.css" />
+	<link rel="stylesheet" href="./../style/responsive.css" />
+</head>
+<!-- Relativo ao 'Seu score': No evento onload da tag body, defina dois parametros, o primeiro referente ao total positivo, e o segundo referente ao somatorio total -->
+
+<body class="home-page padrao_produtos container-fluid d-flex d-lg-grid _fullscreen-main">
+	<nav id="menu-lateral" class="navbar col sticky-bottom py-2 px-4">
+		<a href="./" class="logo d-none d-lg-flex">
+			<img src="./../image/Minha-bufunfa-pequeno.svg" alt="Minha Bufunfa" />
+		</a>
+		<ul class="navegacao row p-0 px-sm-4 mb-0 col-12 gap-2 justify-content-between">
+			<li class="col px-0 py-2 rounded-3">
+				<a href="./index.html"><img class="img-fluid m-auto d-flex" src="./../image/icones-do-menu/home.svg"
+						alt="home" /></a>
+			</li>
+			<li class="col px-0 py-2 rounded-3" id="vizualizando">
+				<a href="./produtos.html"><img class="img-fluid m-auto d-flex"
+						src="./../image/icones-do-menu/produtos-white.svg" alt="products" /></a>
+			</li>
+			<li class="col px-0 py-2 rounded-3">
+				<a href="./configuracoes.html"><img class="img-fluid m-auto d-flex"
+						src="./../image/icones-do-menu/configuracoes.svg" alt="configurações" /></a>
+			</li>
+			<li class="col px-0 py-2 rounded-3">
+				<a href="./blog.html"><img class="img-fluid m-auto d-flex" src="./../image/icones-do-menu/blog.svg"
+						alt="blog" /></a>
+			</li>
+			<li class="logout col px-0 py-2">
+				<button>
+					<a href="./logout.html">
+						<img class="img-fluid m-auto d-flex" src="./../image/icones-do-menu/logout.svg" alt="logout" />
+					</a>
+				</button>
+			</li>
+		</ul>
+	</nav>
+
+	<main id="conteudo-principal" class="col p-3 p-sm-4 pb-5 mb-3 mb-lg-0">
+
+
+		<?php
+		if (isset($_SESSION['message'])) :
+		?>
+		<div class="alert alert-<?= $_SESSION['type']; ?> text-center">
+			<?= $_SESSION['message'];
+				unset($_SESSION['message']); ?>
+		</div>
+
+		<?php
+		endif;
+		?>
+
+
+		<div class="container-fluid pb-5">
+			<!-- Cartão com os dados do produto -->
+			<?php
+
+			$produto = $produtos->findById($id);
+			if ($produto) :
+			?>
+
+			<div id="card-produto" class="area-de-conteudo p-2">
+				<figure class="p-0 pt-3 px-sm-0 px-lg-3 pb-1 row">
+					<img src="./../_storage/produtos/<?= $produto->foto_produto; ?>" alt="Minha Bufunfa"
+						class="card__image img-fluid col-6 p-0" />
+					<figcaption class="container col-6">
+						<h4>
+							<?= $produto->nome_produto; ?><span class="visa">(Visa)</span>
+						</h4>
+
+						<div class="classificado">
+							<ul class="estrelas col-8 h-100">
+								<li class="estrelar estrelado col"></li>
+								<li class="estrelar estrelado col"></li>
+								<li class="estrelar estrelado col"></li>
+								<li class="estrelar estrelado col"></li>
+								<li class="estrelar col"></li>
+							</ul>
+							<span class="classificacao-geral col-2">4,2</span>
+						</div>
+						<p>
+							<?= str_limit_words($produto->descricao_produto, 50); ?>
+						</p>
+						<span class="valor-label">Valor:</span>
+						<h6 class="valor">R$ <span class="monetize">
+								<?= convertToBRL($produto->valor); ?>
+							</span></h6>
+						<button class="btn-primary btn btn-reverse" id="btnComprar">
+							<?= $produto->id ? "Comprar" : "Comprado"; ?>
+						</button>
+					</figcaption>
+				</figure>
+			</div>
+			<?php
+			else :
+				echo "";
+			endif;
+			?>
+			<!-- Barra com informações -->
+			<div class="container-informacoes area-de-conteudo row p-3 mt-2 gap-4">
+				<div class="container-coluna p-0 col-auto pe-md-3">
+					<h4 class="titulo-artigo _icone--informacao _texto--verde">
+						Anuidade
+					</h4>
+					<a href="" class="texto-coluna">Vizualizar</a>
+				</div>
+				<div class="container-coluna p-0 col-auto">
+					<h4 class="titulo-artigo _icone--informacao _texto--verde">
+						Renda mínima
+					</h4>
+					<span class="texto-coluna">Não informado</span>
+				</div>
+				<span class="texto-coluna p-0 col-auto __elemento-pontos">Acumule 4<br />pontos a cada<br />dólar
+					gasto</span>
+				<div class="nivelador container-coluna p-0 col-2 row align-items-end">
+					<div class="nivelador__nivel _nivel--1 col"></div>
+					<div class="nivelador__nivel _nivel--2 col"></div>
+					<div class="nivelador__nivel _nivel--3 col"></div>
+				</div>
+				<a href=""
+					class="titulo-artigo _texto--verde p-0 col col-md-auto container-informacoes__descubra">Descubra
+					suas chances de<br />aprovação neste cartão
+					<img src="./../image/proceder.svg" alt="" /></a>
+			</div>
+
+			<!-- Comparação de cartões -->
+			<div class="container-tabela-comparacao table-responsive">
+				<table class="table tabela-comparacao-cartoes mt-5">
+					<colgroup>
+						<col />
+						<col class="_bg-cor--verde" />
+						<col />
+					</colgroup>
+					<thead>
+						<tr>
+							<th class="tabela-coparacao-cartoes__cabecalho pe-4" scope="col">
+								<h2 class="__titulo _texto--verde">Comparação de cartões</h2>
+								<span class="__subtitulo texto-coluna">It is a long established fact that a reader will
+									be
+									distracted<br />by the readable content of a page when
+									looking at its<br />layout. The point of using
+								</span>
+							</th>
+							<th class="tabela-coparacao-cartoes__cartao" scope="col">
+								<div class="container-card px-3">
+									<img class="card__image __imagem-card mb-1" src="./../image/card-mcx.svg"
+										alt="Imagem do cartão" />
+									<span class="__nome-card">Lorem Ipsum</span><button
+										class="__botao-solicitar-card mt-3 mb-1">
+										solicitar cartão
+									</button>
+								</div>
+							</th>
+							<th class="tabela-coparacao-cartoes__cartao" scope="col">
+								<div class="container-card px-3">
+									<img class="card__image __imagem-card mb-1" src="./../image/card-mcx.svg"
+										alt="Imagem do cartão" />
+									<span class="__nome-card">Lorem Ipsum</span><button
+										class="__botao-solicitar-card mt-3 mb-1">
+										solicitar cartão
+									</button>
+								</div>
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th class="__rotulo py-3" scope="row">Anuinidade</th>
+							<td class="__dado">4x de R$ 405,00<br />(R$ 1.620,00)</td>
+							<td class="__dado">Lorem Ipsum</td>
+						</tr>
+						<tr>
+							<th class="__rotulo py-3" scope="row">Renda mínima</th>
+							<td class="__dado">Lorem Ipsum</td>
+							<td class="__dado">Lorem Ipsum</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<div class="container-tabela-comparacao__overlay"></div>
+			</div>
+			<div>
+				<button class="__botao-solicitar-card __ver-analise-completa mt-3 mb-1 mx-auto row">
+					Ver a análise completa
+				</button>
+			</div>
+
+			<!-- Saiba todas as informações do cartão -->
+		</div>
+		<div id="landing-pos-header" class="container-todas-informacoes-produto margem-topo row">
+			<div
+				class="interative-area form-group col-12 col-sm-8 col-md-7 col-lg-6 px-0 px-lg-4 px-sm-5 pt-3 my-auto w-100">
+				<h2 class="texto-coluna subtitulo my-2">
+					Saiba todas as informações do cartão
+				</h2>
+				<h1 class="_texto--verde">Foregon</h1>
+
+				<div class="container-diferencas">
+					<div class="contexto texto-coluna">
+						<span class="contexto__informacao _contexto--esquerda">Lorem Ipsum</span>
+						<span class="contexto__informacao _contexto--direita">Lorem Ipsum</span>
+					</div>
+					<div class="contexto texto-coluna">
+						<span class="contexto__informacao _contexto--esquerda">Lorem Ipsum</span>
+						<span class="contexto__informacao _contexto--direita">Lorem Ipsum</span>
+					</div>
+					<div class="contexto texto-coluna">
+						<span class="contexto__informacao _contexto--esquerda">Lorem Ipsum</span>
+						<span class="contexto__informacao _contexto--direita">Lorem Ipsum</span>
+					</div>
+					<div class="contexto texto-coluna">
+						<span class="contexto__informacao _contexto--esquerda">Lorem Ipsum</span>
+						<span class="contexto__informacao _contexto--direita">Lorem Ipsum</span>
+					</div>
+					<div class="contexto texto-coluna">
+						<span class="contexto__informacao _contexto--esquerda">Lorem Ipsum</span>
+						<span class="contexto__informacao _contexto--direita">Lorem Ipsum</span>
+					</div>
+					<div class="contexto texto-coluna">
+						<span class="contexto__informacao _contexto--esquerda">Lorem Ipsum</span>
+						<span class="contexto__informacao _contexto--direita">Lorem Ipsum</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<script src="./../script/script.js"></script>
+	<script>
+		const btnComprar = document.getElementById('btnComprar')
+		btnComprar.addEventListener('click', () => {
+			window.location.href = './app/Controllers/getproduto.html?id=' + <?= $_GET['id']; ?>
+		})
+	</script>
+</body>
+
+</html>
